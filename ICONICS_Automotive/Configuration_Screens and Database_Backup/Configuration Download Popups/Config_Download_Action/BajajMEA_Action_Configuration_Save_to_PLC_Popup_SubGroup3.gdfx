@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Canvas Background="#FF243782" Width="300" Height="200" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:iwm="clr-namespace:Ico.Windows.Media;assembly=IcoWPF" xmlns:gwx="clr-namespace:Ico.Gwx;assembly=GwxRuntimeCore" xmlns:script="clr-namespace:Ico.Script;assembly=IcoScriptEngine" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:gwxcmd="clr-namespace:Ico.Gwx;assembly=GwxRuntimeCoreCommands">
+  <Canvas.Resources>
+    <BitmapImage x:Key="GwxThumbnailImageKey">
+      <iwm:BitmapImageInfo.StreamSource>
+        <iwm:Base64Stream Data="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" />
+      </iwm:BitmapImageInfo.StreamSource>
+    </BitmapImage>
+  </Canvas.Resources>
+  <gwx:GwxDocument.GwxDocument>
+    <gwx:GwxDocument FileVersion="10.97.020.00" MaximumZoom="1" MinimumZoom="1" ScanRate="500">
+      <gwx:GwxDocument.ScriptCodeManager>
+        <script:ScriptCodeManager>
+          <script:ScriptCodeManager.Scripts>
+            <script:ScriptCode Name="ThisDisplayCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function ThisDisplay_AnimationStarted(sender : System.Object, e : System.EventArgs)
+{
+	Clear();
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="Clear" Type="JScriptNet">
+              <x:XData><![CDATA[function Clear(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs){		
+	
+	// [Declaring Variables]
+	var from_id      				:   System.Windows.Controls.TextBox	=	ThisConfiguration.GetObjectByName("from_id").ToDependencyObject();
+	var to_id        				:   System.Windows.Controls.TextBox	=	ThisConfiguration.GetObjectByName("to_id").ToDependencyObject();
+	 
+	//[Variable Reset] Variables are reset here to default values
+	from_id.Clear();
+	to_id.Clear();
+}]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="Database_Connection" Type="JScriptNet">
+              <x:XData><![CDATA[const DB_SERVER               : String = "AK-WKS-0476-LS\\SQLEXPRESS2017";
+const DB_NAME                 : String = "BajajMEA";
+const DB_USERID               : String = "sa";
+const DB_PASSWORD             : String = "sql_1234";
+var DB_CONNECT_AUTHENTICATION : String = ";User ID="+DB_USERID+";Password="+DB_PASSWORD+";";
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="Download_to_PLC" Type="JScriptNet">
+              <x:XData><![CDATA[// [Declaring Function] Creating a function to download the configuration to the PLC
+function Configuration_Download_to_PLC(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs){
+
+    // [Declaring Variables]
+	var from_id      				:   System.Windows.Controls.TextBox	=	ThisConfiguration.GetObjectByName("from_id").ToDependencyObject();
+    var to_id        				:   System.Windows.Controls.TextBox	=	ThisConfiguration.GetObjectByName("to_id").ToDependencyObject();
+	
+	// [Adding GWX Dynamic Property Variables] Process Points are Created and GwxDynamic properties are added to the process points alongside primary data source / tags
+	var process_point_input_from    :   GwxDynamic 						= 	ThisConfiguration.GetDynamicObjectByName("process_point_input_from1");
+	var process_point_input_to    	:   GwxDynamic 						= 	ThisConfiguration.GetDynamicObjectByName("process_point_input_to1");
+	var process_point_save_command  :   GwxDynamic  					= 	ThisConfiguration.GetDynamicObjectByName("process_point_save_command1");
+
+    // [Establishing Connection with the Database] to be added
+	var connection_string : String = "Data Source="+DB_SERVER+"; Initial Catalog="+DB_NAME+"; Password="+DB_PASSWORD+"; User ID="+DB_USERID+";";
+	// [Opening connection with the database]
+	var connection : System.Data.SqlClient.SqlConnection;
+	connection = new System.Data.SqlClient.SqlConnection(connection_string);
+	connection.Open();
+	    // [Check for User Authentication] not being done yet | Code to be added later
+		
+			
+			//Validation for Equipment ID ranges	
+			try
+			{
+			 
+				var fromid	:int;
+				var toid    :int;
+				var valid   :int;
+				fromid = from_id.Text;
+				toid   = to_id.Text;
+				
+				if(fromid > 1999 && fromid < 3000 && toid > 1999 && toid < 3000 && (toid = fromid || toid > from_id))
+				{
+					MessageBox.Show("Ok");	
+					valid=1;
+								
+				}
+				else{
+					MessageBox.Show("Please Enter valid Range","Error");
+				}
+			}
+			catch(ex : Exception) 
+			{
+				MessageBox.Show (ex.Message);	
+			}	
+
+		    // [If-Else] If else statement based on user authentication status / logged in status | If Range is valid
+		    if (valid == 1){
+
+		        var confirm_result  =   MessageBox.Show("Do you really want to save the current configurtation to PLC", "Confirmation", MessageBoxButton.YesNo);
+		        // [If Statement] This statement runs if the user confirms the command to save configuration to PLC
+		        if  (confirm_result == MessageBoxResult.Yes){
+		            try {
+						process_point_input_from.WriteValueToPrimaryDataSource(from_id.Text);
+			            process_point_input_to.WriteValueToPrimaryDataSource(to_id.Text);
+			            process_point_save_command.WriteValueToPrimaryDataSource(1);
+			
+			            //[Notification to User] MessageBox Confirmation
+			            MessageBox.Show("\n ----------------------------------------------- \n Configuration for \n ----------------------------------------------- \n Action Configuration \n ----------------------------------------------- \n 'From Action ID' :- " + from_id.Text + " \n 'To ActionS ID' :- "+ to_id.Text +" \n ----------------------------------------------- \n will be updated in some time. \n ----------------------------------------------- \n Thank You  \n ----------------------------------------------- ");
+						
+					} catch(ex:Exception){
+						MessageBox.Show(ex);
+						MessageBox.Show("Configuration could not be saved.");
+					}
+				}
+		    } else {
+		
+		    }
+		
+		
+		// [End of Code]
+	connection.Close()
+}]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="From_Code" Type="JScriptNet">
+              <x:XData><![CDATA[// [Creating Function to Handle To Field Value]
+function InputFromField_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs){
+    try {
+        
+        var from_id   :   System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("from_id").ToDependencyObject();
+        from_id_var       =     int;
+        from_id_var       =     from_id;
+
+        //[Validation Code] This Snippet Validates the Input Value | Code can be added below if any type of input validation is required.
+
+    } catch (ex : Exception){
+        MessageBox.Show (ex.Message);	
+    }
+}]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="JScriptDotNetGlobalVariablesCode" Type="JScriptNet" EditorBrowsable="Never">
+              <x:XData><![CDATA[
+var ThisWindow : Ico.Gwx.GwxRuntimeViewControl;
+var ThisDocument : Ico.Gwx.GwxDocument;
+var ThisConfiguration : Ico.Gwx.GwxConfiguration;
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="Refresh_Save_Tag" Type="JScriptNet">
+              <x:XData><![CDATA[
+function Refresh_Save_Tag(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs)
+{
+	var process_point_save_command  :   GwxDynamic  					= 	ThisConfiguration.GetDynamicObjectByName("process_point_save_command1");
+	process_point_save_command.WriteValueToPrimaryDataSource(0);
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="To_Code" Type="JScriptNet">
+              <x:XData><![CDATA[// [Creating Function to Handle To Field Value]
+function InputToField_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs){
+    try {
+        
+        var to_id   :   System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("to_id").ToDependencyObject();
+        to_id_var       =     int;
+        to_id_var       =     to_id;
+
+        //[Validation Code] This Snippet Validates the Input Value | Code can be added below if any type of input validation is required.
+
+    } catch (ex : Exception){
+        MessageBox.Show (ex.Message);	
+    }
+}]]></x:XData>
+            </script:ScriptCode>
+          </script:ScriptCodeManager.Scripts>
+          <script:ScriptCodeManager.Namespaces>
+            <s:String>System</s:String>
+            <s:String>System.Collections</s:String>
+            <s:String>System.ComponentModel</s:String>
+            <s:String>System.Data</s:String>
+            <s:String>System.Xml</s:String>
+            <s:String>System.Windows</s:String>
+            <s:String>System.Windows.Media</s:String>
+            <s:String>System.Windows.Input</s:String>
+            <s:String>System.Windows.Controls</s:String>
+            <s:String>Ico.Gwx</s:String>
+            <s:String>System.Diagnostics</s:String>
+            <s:String>Ico.Fwx.ClientWrapper</s:String>
+            <s:String>Ico.Gdx</s:String>
+          </script:ScriptCodeManager.Namespaces>
+        </script:ScriptCodeManager>
+      </gwx:GwxDocument.ScriptCodeManager>
+      <gwx:GwxDocument.EventBindings>
+        <script:ScriptEventBindings>
+          <script:ScriptEventBindings.EventBindings>
+            <x:Array Type="script:ScriptEventBinding">
+              <script:ScriptEventBinding EventName="AnimationStarted" MethodName="ThisDisplay_AnimationStarted" ScriptType="JScriptNet" />
+              <script:ScriptEventBinding EventName="AnimationStarting" MethodName="ThisDisplay_AnimationStarting" ScriptType="JScriptNet" />
+            </x:Array>
+          </script:ScriptEventBindings.EventBindings>
+        </script:ScriptEventBindings>
+      </gwx:GwxDocument.EventBindings>
+      <gwx:GwxDocument.RuntimeWindowProperties>
+        <gwx:GwxWindowProperties StartLocation="CenterScreen" WindowState="Maximized" WidthString="100%" HeightString="100%" RibbonVisible="True" />
+      </gwx:GwxDocument.RuntimeWindowProperties>
+    </gwx:GwxDocument>
+  </gwx:GwxDocument.GwxDocument>
+  <Label Foreground="#FFC00000" FontFamily="Calibri" FontSize="12" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="errorMsg" Width="150" Height="15" Visibility="Hidden" Canvas.Left="114.18241" Canvas.Top="160.17522">
+    <TextBlock Text="Please Select Valid Range" />
+  </Label>
+  <Button BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,0,0" Name="save_command_button" Width="122.312704" Height="25" Canvas.Left="88.843648" Canvas.Top="150">
+    <Button.Background>
+      <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+        <LinearGradientBrush.GradientStops>
+          <GradientStop Color="#FF444652" Offset="0" />
+          <GradientStop Color="#FF3A3E48" Offset="0.49" />
+          <GradientStop Color="#FF2D2D2D" Offset="0.51" />
+          <GradientStop Color="#FF414141" Offset="1" />
+        </LinearGradientBrush.GradientStops>
+        <LinearGradientBrush.RelativeTransform>
+          <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+        </LinearGradientBrush.RelativeTransform>
+      </LinearGradientBrush>
+    </Button.Background>
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Refresh_Save_Tag1" Control="True">
+            <gwx:GwxPick.CommandParameters>
+              <gwxcmd:LoadDisplayCommand />
+            </gwx:GwxPick.CommandParameters>
+            <gwx:GwxPick.EventBindings>
+              <script:ScriptEventBindings>
+                <script:ScriptEventBindings.EventBindings>
+                  <x:Array Type="script:ScriptEventBinding">
+                    <script:ScriptEventBinding EventName="CommandExecuting" MethodName="Refresh_Save_Tag" ScriptType="JScriptNet" />
+                  </x:Array>
+                </script:ScriptEventBindings.EventBindings>
+              </script:ScriptEventBindings>
+            </gwx:GwxPick.EventBindings>
+          </gwx:GwxPick>
+          <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Config_Download_to_PLC" Control="True">
+            <gwx:GwxPick.CommandParameters>
+              <gwxcmd:ScriptCommand />
+            </gwx:GwxPick.CommandParameters>
+            <gwx:GwxPick.EventBindings>
+              <script:ScriptEventBindings>
+                <script:ScriptEventBindings.EventBindings>
+                  <x:Array Type="script:ScriptEventBinding">
+                    <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Configuration_Download_to_PLC" ScriptType="JScriptNet" />
+                  </x:Array>
+                </script:ScriptEventBindings.EventBindings>
+              </script:ScriptEventBindings>
+            </gwx:GwxPick.EventBindings>
+          </gwx:GwxPick>
+          <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Close_Window" Control="True">
+            <gwx:GwxPick.CommandParameters>
+              <gwxcmd:CloseWindowCommand />
+            </gwx:GwxPick.CommandParameters>
+          </gwx:GwxPick>
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <TextBlock Text="SAVE TO PLC" />
+  </Button>
+  <Rectangle Stroke="#FFFFFFFF" Width="299.302932" Height="30" Canvas.Left="0.348534" Canvas.Top="0">
+    <Rectangle.Fill>
+      <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+        <LinearGradientBrush.GradientStops>
+          <GradientStop Color="#FFF5F5F5" Offset="0" />
+          <GradientStop Color="#FFEBEBEB" Offset="0.49" />
+          <GradientStop Color="#FFE1E1E1" Offset="0.51" />
+          <GradientStop Color="#FFCDCDCD" Offset="1" />
+        </LinearGradientBrush.GradientStops>
+        <LinearGradientBrush.RelativeTransform>
+          <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+        </LinearGradientBrush.RelativeTransform>
+      </LinearGradientBrush>
+    </Rectangle.Fill>
+  </Rectangle>
+  <Label FontFamily="Microsoft Sans Serif" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="header_label" Height="19.543046" Canvas.Left="6.503311" Canvas.Top="5.635762">
+    <TextBlock Text="Configuration Download to PLC" />
+  </Label>
+  <Image Stretch="Fill" Name="close_button" Width="26" Height="26" Canvas.Left="268.532261" Canvas.Top="1.022801">
+    <Image.Source>
+      <BitmapImage>
+        <iwm:BitmapImageInfo.StreamSource>
+          <iwm:Base64Stream Data="iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAACcFBMVEUAAADyQTT4RTj0Qzb0QzbzQjb0Qzb0QzbzQjX0Qzb0Qzb0Qjb0Qjb0QjXzQjb0QjXzQjb0Qzb0QzbzQjX0Qzb0Qzb0QzbyQTX2RTb2RTj0Qjb0QjX0QjX0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0QjX0Qzb0Qzb0Qzb0Qzb0Qjb0QjX0Qzb0Qzb0QjX0QTT0Qzb0Qzb0Qzb0QjX0QjX0Qzb0QzbzQjb0QjX0Qzb0Qzb0QTT1Vkv2ZFr0QjX0Qzb0Qzb0QjX1V0z1TED0QjX0QzbzQjb0QjX1U0j8u7r+1db3cGj0QTT0Qzb0QTT2Zlz9ysn6paL0QzbzQjb0QjX1Vkr8wcD+1db3cGj0QTT0QTT2ZVz9zM39ysn1V0z0Qzb0QTT2W1D8wcD+1db3cGf2ZVz9zMz2Zlz0Qzb0QTT2W1D8wcD+2Nn909T9zMz0Qzb0Qzb0QTT2Wk/9yMf909T0QTT2ZVv9zs/+2Nn2ZVz9zM39zs/9yMf0Qzb0QjT2ZVz9zM32ZVv+1db3cGj0QjX0Qzb0QjT2XFL9zMz8wcD91NT2YFb0QTT0QjX1U0j8ubf9zMz2W1D8wL77rqv1UET0QjX0QjT2XFL0QjT1U0j1TkL0QjX0QjX0Qzb0Qzb0QjX0QjX0Qzb0QzbzQjb0QjX0Qzb0Qzb0QjX0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0QjbzQjXzQjXzQjXzQjX0QjX0Qzb/7vH/7/L/7vH/7vL/7fD/7fD/7fD/7fD/7fD/7vH/7vL/7vL////lRu92AAAAwnRSTlMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMGBgVUp7W0tLWnVAVV8fFUAqb+/qYCBrX+/v7+/v7+/v61Bga0/v7+/v7+/v7+/v61Bv7+///+/v7+/v//tQb+/v///v7+/v///v7+/v///v7//v7+/v/////+/v7+///+/v///v////7+/v/+//7+/v7+/////v7+/v///v///v7+/v7+/v4Gtf7+/v61BgKmpgJU8fBUBVSntra2tqdUBQMGBgYGAxa1CtMAAAABYktHRM+D3sJpAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAB3RJTUUH4gcXAiwRuLM8LQAAAYNJREFUKM9jYCAXMDJJScsgAWkpJkaIDLOsnLyCohIcKCqrqKqxgGRY2dQ1DqEBTS12DqAUp7bOIV09FKB7SN+ACyjFbWh0SE/P2MTUzBwoamFpZa2nd8jGlgcoxWtnf0jPwdHJ2cXVXM/N3cPTy1rvkLcPH1CKX0bpkJ6vn39AYJBrcEhoWLinld6hiEgBmFRUdMzh2Lj4hMSkI8kplihSqWnpGUczs7JzjiXlulugSOnl5RcUHi8qPlGSGFKqhyqlV1ZeUXnyVFV2QrAeupRbdU3t6ZN1WfFAd6JKuYXUN5xpbDqeGRcElEOWam5pbTvW0F5ReLSjs6sbRaqnt+9sW311eUH/uQkTJ6FITZ4ydVpriFtZ/vQZM2fNhkmBA8p4zpS5LUBX582bv2ChAyyguBctBgXv5J5mUKAvWbpsOdCFK1aCgldw1WrMSFmzVggoJSyybj16VG7YKCoMimaWTZu3bN22HQ627di5a7cYJHGIS+zZu28/HOw7cFCSkew0CABQdcNHf+fRzwAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxOC0wNy0yM1QwMjo0NDoxNy0wNDowMP2o+lgAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTgtMDctMjNUMDI6NDQ6MTctMDQ6MDCM9ULkAAAAAElFTkSuQmCC" />
+        </iwm:BitmapImageInfo.StreamSource>
+      </BitmapImage>
+    </Image.Source>
+    <Image.Effect>
+      <DropShadowEffect ShadowDepth="5" Color="#FF000000" Direction="315" Opacity="0.75" BlurRadius="18.75" />
+    </Image.Effect>
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+            <gwx:GwxPick.CommandParameters>
+              <gwxcmd:CloseWindowCommand />
+            </gwx:GwxPick.CommandParameters>
+          </gwx:GwxPick>
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+  </Image>
+  <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="process_point_input_from" Visibility="Hidden" gwx:GwxProperties.Locked="True" gwx:GwxProperties.Stretch="Uniform" Canvas.Left="-218.363335" Canvas.Top="10.679998">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxProcessPoint AnimationMode="Analog" Name="process_point_input_from1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.Andon.SB1.Configuration Download.1_Equipment Parameter Mapping.equipment_id_start.Value" />
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <TextBlock Text="*.??" TextTrimming="CharacterEllipsis" />
+  </Label>
+  <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="process_point_input_to" Visibility="Hidden" gwx:GwxProperties.Locked="True" gwx:GwxProperties.Stretch="Uniform" Canvas.Left="-134.363335" Canvas.Top="11.359995">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxProcessPoint AnimationMode="Analog" Name="process_point_input_to1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.Andon.SB1.Configuration Download.Action Configuration.ID End.Value" />
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <TextBlock Text="*.??" TextTrimming="CharacterEllipsis" />
+  </Label>
+  <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="process_point_save_command" Visibility="Hidden" gwx:GwxProperties.Locked="True" gwx:GwxProperties.Stretch="Uniform" Canvas.Left="-50.363335" Canvas.Top="12.039993">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxProcessPoint AnimationMode="Analog" Name="process_point_save_command1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.Andon.SB1.Configuration Download.Action Configuration.Save From MES.Value" />
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <TextBlock Text="*.??" TextTrimming="CharacterEllipsis" />
+  </Label>
+  <TextBox TextAlignment="Center" BorderBrush="#FF838383" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TabIndex="1" Name="from_id" Width="130.618893" Height="25" IsEnabled="True" Canvas.Left="150" Canvas.Top="69">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="InputFromField_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>3001</TextBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="from_id_label" Height="25" Canvas.Left="15" Canvas.Top="69">
+    <TextBlock Text="From Action ID" />
+  </Label>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="to_id_label" Height="25" Canvas.Left="15" Canvas.Top="107.712189">
+    <TextBlock Text="To Action ID" />
+  </Label>
+  <TextBox TextAlignment="Center" BorderBrush="#FF838383" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TabIndex="1" Name="to_id" Width="130.618893" Height="25" IsEnabled="True" Canvas.Left="150" Canvas.Top="107.712189">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="InputToField_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>3999</TextBox>
+  <Button FontFamily="Calibri" FontSize="12" Name="sub_group_1" Width="66" Height="20" Canvas.Left="0" Canvas.Top="30" Block.TextAlignment="Center">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+            <gwx:GwxPick.CommandParameters>
+              <gwxcmd:LoadDisplayCommand FileName="BajajMEA_Action_Configuration_Save_to_PLC_Popup_SubGroup1.gdfx" />
+            </gwx:GwxPick.CommandParameters>
+          </gwx:GwxPick>
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <TextBlock Text="Sub-Group 1" />
+  </Button>
+  <Button FontFamily="Calibri" FontSize="12" Name="sub_group_2" Width="66" Height="20" Canvas.Left="65" Canvas.Top="30" Block.TextAlignment="Center">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+            <gwx:GwxPick.CommandParameters>
+              <gwxcmd:LoadDisplayCommand FileName="BajajMEA_Action_Configuration_Save_to_PLC_Popup_SubGroup2.gdfx" />
+            </gwx:GwxPick.CommandParameters>
+          </gwx:GwxPick>
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <TextBlock Text="Sub-Group 2" />
+  </Button>
+  <Button Background="#FF7F7F7F" FontFamily="Calibri" FontSize="12" Name="sub_group_3" Width="66" Height="20" Canvas.Left="130" Canvas.Top="30" Block.TextAlignment="Center">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+            <gwx:GwxPick.CommandParameters>
+              <gwxcmd:ScriptCommand />
+            </gwx:GwxPick.CommandParameters>
+            <gwx:GwxPick.EventBindings>
+              <script:ScriptEventBindings>
+                <script:ScriptEventBindings.EventBindings>
+                  <x:Array Type="script:ScriptEventBinding">
+                    <script:ScriptEventBinding EventName="CommandExecuted" MethodName="subgroup3" ScriptType="JScriptNet" />
+                  </x:Array>
+                </script:ScriptEventBindings.EventBindings>
+              </script:ScriptEventBindings>
+            </gwx:GwxPick.EventBindings>
+          </gwx:GwxPick>
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <TextBlock Text="Sub-Group 3" />
+  </Button>
+</Canvas>

@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Canvas Background="#FF243782" Width="300" Height="400" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:iwm="clr-namespace:Ico.Windows.Media;assembly=IcoWPF" xmlns:gwx="clr-namespace:Ico.Gwx;assembly=GwxRuntimeCore" xmlns:script="clr-namespace:Ico.Script;assembly=IcoScriptEngine" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:gwxcmd="clr-namespace:Ico.Gwx;assembly=GwxRuntimeCoreCommands" xmlns:ig="clr-namespace:Ico.Gdx;assembly=GdxViewControl" xmlns:iws="clr-namespace:Ico.WPF.Specialized;assembly=IcoWPFSpecialized" xmlns:igd="clr-namespace:Ico.Gdx.Data;assembly=GdxClientCommon" xmlns:iwc="clr-namespace:Ico.Windows.Controls;assembly=IcoWPF">
+  <Canvas.Resources>
+    <BitmapImage x:Key="GwxThumbnailImageKey">
+      <iwm:BitmapImageInfo.StreamSource>
+        <iwm:Base64Stream Data="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" />
+      </iwm:BitmapImageInfo.StreamSource>
+    </BitmapImage>
+  </Canvas.Resources>
+  <gwx:GwxDocument.GwxDocument>
+    <gwx:GwxDocument FileVersion="10.97.020.00" MaximumZoom="1" MinimumZoom="1" ScanRate="500">
+      <gwx:GwxDocument.ScriptCodeManager>
+        <script:ScriptCodeManager>
+          <script:ScriptCodeManager.Scripts>
+            <script:ScriptCode Name="JScriptDotNetGlobalVariablesCode" Type="JScriptNet" EditorBrowsable="Never">
+              <x:XData><![CDATA[
+var ThisWindow : Ico.Gwx.GwxRuntimeViewControl;
+var ThisDocument : Ico.Gwx.GwxDocument;
+var ThisConfiguration : Ico.Gwx.GwxConfiguration;
+]]></x:XData>
+            </script:ScriptCode>
+          </script:ScriptCodeManager.Scripts>
+          <script:ScriptCodeManager.Namespaces>
+            <s:String>System</s:String>
+            <s:String>System.Collections</s:String>
+            <s:String>System.ComponentModel</s:String>
+            <s:String>System.Data</s:String>
+            <s:String>System.Xml</s:String>
+            <s:String>System.Windows</s:String>
+            <s:String>System.Windows.Media</s:String>
+            <s:String>System.Windows.Input</s:String>
+            <s:String>System.Windows.Controls</s:String>
+            <s:String>Ico.Gwx</s:String>
+            <s:String>System.Diagnostics</s:String>
+            <s:String>Ico.Fwx.ClientWrapper</s:String>
+            <s:String>Ico.Gdx</s:String>
+          </script:ScriptCodeManager.Namespaces>
+        </script:ScriptCodeManager>
+      </gwx:GwxDocument.ScriptCodeManager>
+      <gwx:GwxDocument.EventBindings>
+        <script:ScriptEventBindings>
+          <script:ScriptEventBindings.EventBindings>
+            <x:Array Type="script:ScriptEventBinding">
+              <script:ScriptEventBinding EventName="AnimationStarted" MethodName="ThisDisplay_AnimationStarted" ScriptType="JScriptNet" />
+              <script:ScriptEventBinding EventName="AnimationStarting" MethodName="ThisDisplay_AnimationStarting" ScriptType="JScriptNet" />
+            </x:Array>
+          </script:ScriptEventBindings.EventBindings>
+        </script:ScriptEventBindings>
+      </gwx:GwxDocument.EventBindings>
+      <gwx:GwxDocument.RuntimeWindowProperties>
+        <gwx:GwxWindowProperties StartLocation="CenterScreen" WindowState="Maximized" WidthString="100%" HeightString="100%" RibbonVisible="True" />
+      </gwx:GwxDocument.RuntimeWindowProperties>
+    </gwx:GwxDocument>
+  </gwx:GwxDocument.GwxDocument>
+  <Label Foreground="#FFC00000" FontFamily="Calibri" FontSize="12" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="errorMsg" Width="150" Height="15" Visibility="Hidden" Canvas.Left="114.18241" Canvas.Top="160.17522">
+    <TextBlock Text="Please Select Valid Range" />
+  </Label>
+  <Rectangle Stroke="#FFFFFFFF" Width="300" Height="30" Canvas.Left="0.348534" Canvas.Top="0">
+    <Rectangle.Fill>
+      <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+        <LinearGradientBrush.GradientStops>
+          <GradientStop Color="#FFF5F5F5" Offset="0" />
+          <GradientStop Color="#FFEBEBEB" Offset="0.49" />
+          <GradientStop Color="#FFE1E1E1" Offset="0.51" />
+          <GradientStop Color="#FFCDCDCD" Offset="1" />
+        </LinearGradientBrush.GradientStops>
+        <LinearGradientBrush.RelativeTransform>
+          <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+        </LinearGradientBrush.RelativeTransform>
+      </LinearGradientBrush>
+    </Rectangle.Fill>
+  </Rectangle>
+  <Label FontFamily="Microsoft Sans Serif" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="header_label" Height="19.543046" Canvas.Left="6.503311" Canvas.Top="5.635762">
+    <TextBlock Text="Robot 1" />
+  </Label>
+  <Image Stretch="Fill" Name="close_button" Width="26" Height="26" Canvas.Left="268.532261" Canvas.Top="1.022801">
+    <Image.Source>
+      <BitmapImage>
+        <iwm:BitmapImageInfo.StreamSource>
+          <iwm:Base64Stream Data="iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAACcFBMVEUAAADyQTT4RTj0Qzb0QzbzQjb0Qzb0QzbzQjX0Qzb0Qzb0Qjb0Qjb0QjXzQjb0QjXzQjb0Qzb0QzbzQjX0Qzb0Qzb0QzbyQTX2RTb2RTj0Qjb0QjX0QjX0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0QjX0Qzb0Qzb0Qzb0Qzb0Qjb0QjX0Qzb0Qzb0QjX0QTT0Qzb0Qzb0Qzb0QjX0QjX0Qzb0QzbzQjb0QjX0Qzb0Qzb0QTT1Vkv2ZFr0QjX0Qzb0Qzb0QjX1V0z1TED0QjX0QzbzQjb0QjX1U0j8u7r+1db3cGj0QTT0Qzb0QTT2Zlz9ysn6paL0QzbzQjb0QjX1Vkr8wcD+1db3cGj0QTT0QTT2ZVz9zM39ysn1V0z0Qzb0QTT2W1D8wcD+1db3cGf2ZVz9zMz2Zlz0Qzb0QTT2W1D8wcD+2Nn909T9zMz0Qzb0Qzb0QTT2Wk/9yMf909T0QTT2ZVv9zs/+2Nn2ZVz9zM39zs/9yMf0Qzb0QjT2ZVz9zM32ZVv+1db3cGj0QjX0Qzb0QjT2XFL9zMz8wcD91NT2YFb0QTT0QjX1U0j8ubf9zMz2W1D8wL77rqv1UET0QjX0QjT2XFL0QjT1U0j1TkL0QjX0QjX0Qzb0Qzb0QjX0QjX0Qzb0QzbzQjb0QjX0Qzb0Qzb0QjX0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0QjbzQjXzQjXzQjXzQjX0QjX0Qzb/7vH/7/L/7vH/7vL/7fD/7fD/7fD/7fD/7fD/7vH/7vL/7vL////lRu92AAAAwnRSTlMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMGBgVUp7W0tLWnVAVV8fFUAqb+/qYCBrX+/v7+/v7+/v61Bga0/v7+/v7+/v7+/v61Bv7+///+/v7+/v//tQb+/v///v7+/v///v7+/v///v7//v7+/v/////+/v7+///+/v///v////7+/v/+//7+/v7+/////v7+/v///v///v7+/v7+/v4Gtf7+/v61BgKmpgJU8fBUBVSntra2tqdUBQMGBgYGAxa1CtMAAAABYktHRM+D3sJpAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAB3RJTUUH4gcXAiwRuLM8LQAAAYNJREFUKM9jYCAXMDJJScsgAWkpJkaIDLOsnLyCohIcKCqrqKqxgGRY2dQ1DqEBTS12DqAUp7bOIV09FKB7SN+ACyjFbWh0SE/P2MTUzBwoamFpZa2nd8jGlgcoxWtnf0jPwdHJ2cXVXM/N3cPTy1rvkLcPH1CKX0bpkJ6vn39AYJBrcEhoWLinld6hiEgBmFRUdMzh2Lj4hMSkI8kplihSqWnpGUczs7JzjiXlulugSOnl5RcUHi8qPlGSGFKqhyqlV1ZeUXnyVFV2QrAeupRbdU3t6ZN1WfFAd6JKuYXUN5xpbDqeGRcElEOWam5pbTvW0F5ReLSjs6sbRaqnt+9sW311eUH/uQkTJ6FITZ4ydVpriFtZ/vQZM2fNhkmBA8p4zpS5LUBX582bv2ChAyyguBctBgXv5J5mUKAvWbpsOdCFK1aCgldw1WrMSFmzVggoJSyybj16VG7YKCoMimaWTZu3bN22HQ627di5a7cYJHGIS+zZu28/HOw7cFCSkew0CABQdcNHf+fRzwAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxOC0wNy0yM1QwMjo0NDoxNy0wNDowMP2o+lgAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTgtMDctMjNUMDI6NDQ6MTctMDQ6MDCM9ULkAAAAAElFTkSuQmCC" />
+        </iwm:BitmapImageInfo.StreamSource>
+      </BitmapImage>
+    </Image.Source>
+    <Image.Effect>
+      <DropShadowEffect ShadowDepth="5" Color="#FF000000" Direction="315" Opacity="0.75" BlurRadius="18.75" />
+    </Image.Effect>
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+            <gwx:GwxPick.CommandParameters>
+              <gwxcmd:CloseWindowCommand />
+            </gwx:GwxPick.CommandParameters>
+          </gwx:GwxPick>
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+  </Image>
+  <ig:GdxViewControl FileVersion="10.97.020.00" FontFamily="Segoe UI" FontSize="12" Width="300" Height="184.333334" Canvas.Left="0" Canvas.Top="30.166666">
+    <ig:GdxViewControl.SubscriptionsRepository>
+      <igd:GdxSubscription SubscriptionType="OpcTag" Key="25528928" Name="New Subscription" />
+      <igd:GdxSubscription Key="44890675" Name="New Subscription">
+        <igd:GdxSubscription.Fields>
+          <igd:GdxDataField Key="uid" BuiltInType="Int32" />
+          <igd:GdxDataField IsPrimaryKey="True" Key="alarm_id" BuiltInType="Int32" />
+          <igd:GdxDataField Key="alarm_code" />
+          <igd:GdxDataField IsPrimaryKey="True" Key="alarm_group_id" BuiltInType="Int32" />
+          <igd:GdxDataField Key="alarm_group_name" />
+          <igd:GdxDataField IsPrimaryKey="True" Key="alarm_type_id" BuiltInType="Int32" />
+          <igd:GdxDataField Key="alarm_type_code" />
+          <igd:GdxDataField Key="alarm_type_description" />
+          <igd:GdxDataField IsPrimaryKey="True" Key="stage_id" BuiltInType="Int32" />
+          <igd:GdxDataField Key="stage_name" />
+          <igd:GdxDataField IsPrimaryKey="True" Key="line_id" BuiltInType="Int32" />
+          <igd:GdxDataField Key="line_name" />
+          <igd:GdxDataField IsPrimaryKey="True" Key="shop_name" />
+          <igd:GdxDataField IsPrimaryKey="True" Key="plant_name" />
+          <igd:GdxDataField Key="created_by" />
+          <igd:GdxDataField Key="created_on" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="display_number" BuiltInType="Int32" />
+          <igd:GdxDataField IsPrimaryKey="True" Key="equipment_id" BuiltInType="Int32" />
+          <igd:GdxDataField Key="equipment_name" />
+        </igd:GdxSubscription.Fields>
+        <igd:GdxSubscription.Tags>
+          <s:String>db:BajajMEA.View_Config_Alarms_Active&lt;@line_id=1, @stage_id=0&gt;</s:String>
+        </igd:GdxSubscription.Tags>
+      </igd:GdxSubscription>
+      <igd:GdxSubscription Key="32485067" Name="New Subscription">
+        <igd:GdxSubscription.Tags>
+          <s:String>db:BajajMEA.View_Config_Alarms_Active_Equipment_Wise&lt;@line_id=1, @stage_id=1, @equipment_id=1101&gt;</s:String>
+        </igd:GdxSubscription.Tags>
+      </igd:GdxSubscription>
+      <igd:GdxSubscription Key="41684868" Name="New Subscription">
+        <igd:GdxSubscription.Fields>
+          <igd:GdxDataField Key="uid" BuiltInType="Int32" />
+          <igd:GdxDataField IsPrimaryKey="True" Key="alarm_id" BuiltInType="Int32" />
+          <igd:GdxDataField Key="alarm_code" />
+          <igd:GdxDataField IsPrimaryKey="True" Key="alarm_group_id" BuiltInType="Int32" />
+          <igd:GdxDataField Key="alarm_group_name" />
+          <igd:GdxDataField IsPrimaryKey="True" Key="alarm_type_id" BuiltInType="Int32" />
+          <igd:GdxDataField Key="alarm_type_code" />
+          <igd:GdxDataField Key="alarm_type_description" />
+          <igd:GdxDataField IsPrimaryKey="True" Key="stage_id" BuiltInType="Int32" />
+          <igd:GdxDataField Key="stage_name" />
+          <igd:GdxDataField IsPrimaryKey="True" Key="line_id" BuiltInType="Int32" />
+          <igd:GdxDataField Key="line_name" />
+          <igd:GdxDataField IsPrimaryKey="True" Key="shop_name" />
+          <igd:GdxDataField IsPrimaryKey="True" Key="plant_name" />
+          <igd:GdxDataField Key="created_by" />
+          <igd:GdxDataField Key="created_on" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="display_number" BuiltInType="Int32" />
+          <igd:GdxDataField IsPrimaryKey="True" Key="equipment_id" BuiltInType="Int32" />
+          <igd:GdxDataField Key="equipment_name" />
+        </igd:GdxSubscription.Fields>
+        <igd:GdxSubscription.Tags>
+          <s:String>db:BajajMEA.View_Config_Alarms_Active_Equipment_Wise&lt;@line_id=1, @stage_id=2, @equipment_id=1102&gt;</s:String>
+        </igd:GdxSubscription.Tags>
+      </igd:GdxSubscription>
+    </ig:GdxViewControl.SubscriptionsRepository>
+    <ig:GdxViewControl.Items>
+      <iwc:MultipleTabItem IsSelected="True" Header="Tab">
+        <ig:GdxGridView SubscriptionID="41684868" Uid="local:GdxView_1">
+          <ig:GdxGridView.Columns>
+            <ig:GdxColumn Key="uid" IsVisible="False" Format="{x:Null}" Text="uid" />
+            <ig:GdxColumn Key="alarm_id" Index="1" IsVisible="False" Format="{x:Null}" Text="alarm_id" />
+            <ig:GdxColumn Key="alarm_code" Index="2" Format="{x:Null}" Text="Alarm Code" />
+            <ig:GdxColumn Key="alarm_group_id" Index="3" IsVisible="False" Format="{x:Null}" Text="alarm_group_id" />
+            <ig:GdxColumn Key="alarm_group_name" Index="4" IsVisible="False" Format="{x:Null}" Text="alarm_group_name" />
+            <ig:GdxColumn Key="alarm_type_id" Index="5" IsVisible="False" Format="{x:Null}" Text="alarm_type_id" />
+            <ig:GdxColumn Key="alarm_type_code" Index="6" Format="{x:Null}" Text="Alarm Type Code" />
+            <ig:GdxColumn Key="alarm_type_description" Index="7" IsVisible="False" Format="{x:Null}" Text="alarm_type_description" />
+            <ig:GdxColumn Key="stage_id" Index="8" IsVisible="False" Format="{x:Null}" Text="stage_id" />
+            <ig:GdxColumn Key="stage_name" Index="9" IsVisible="False" Format="{x:Null}" Text="stage_name" />
+            <ig:GdxColumn Key="line_id" Index="10" IsVisible="False" Format="{x:Null}" Text="line_id" />
+            <ig:GdxColumn Key="line_name" Index="11" IsVisible="False" Format="{x:Null}" Text="line_name" />
+            <ig:GdxColumn Key="shop_name" Index="12" IsVisible="False" Format="{x:Null}" Text="shop_name" />
+            <ig:GdxColumn Key="plant_name" Index="13" IsVisible="False" Format="{x:Null}" Text="plant_name" />
+            <ig:GdxColumn Key="created_by" Index="14" IsVisible="False" Format="{x:Null}" Text="created_by" />
+            <ig:GdxColumn Key="created_on" Index="15" IsVisible="False" Format="{x:Null}" Text="created_on" />
+            <ig:GdxColumn Key="display_number" Index="16" IsVisible="False" Format="{x:Null}" Text="display_number" />
+            <ig:GdxColumn Key="equipment_id" Index="17" IsVisible="False" Format="{x:Null}" Text="equipment_id" />
+            <ig:GdxColumn Key="equipment_name" Index="18" IsVisible="False" Format="{x:Null}" Text="equipment_name" />
+          </ig:GdxGridView.Columns>
+        </ig:GdxGridView>
+      </iwc:MultipleTabItem>
+    </ig:GdxViewControl.Items>
+  </ig:GdxViewControl>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label1" Width="290" Height="30" Canvas.Left="5" Canvas.Top="220">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="ac:Robot/SB1_Stage1/Alarm/A1" />
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <TextBlock Text="*.??" TextTrimming="CharacterEllipsis" />
+  </Label>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label2" Width="290" Height="30" Canvas.Left="5" Canvas.Top="360">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="ac:Robot/SB1_Stage1/Alarm/A5" />
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <TextBlock Text="*.??" TextTrimming="CharacterEllipsis" />
+  </Label>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label3" Width="290" Height="30" Canvas.Left="5" Canvas.Top="325">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="ac:Robot/SB1_Stage1/Alarm/A4" />
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <TextBlock Text="*.??" TextTrimming="CharacterEllipsis" />
+  </Label>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label4" Width="290" Height="30" Canvas.Left="5" Canvas.Top="290">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="ac:Robot/SB1_Stage1/Alarm/A3" />
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <TextBlock Text="*.??" TextTrimming="CharacterEllipsis" />
+  </Label>
+  <Label Foreground="#FFFFFFFF" FontFamily="Segoe UI" FontSize="10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label5" Width="290" Height="30" Canvas.Left="5" Canvas.Top="255">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="ac:Robot/SB1_Stage1/Alarm/A2" />
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <TextBlock Text="*.??" TextTrimming="CharacterEllipsis" />
+  </Label>
+</Canvas>

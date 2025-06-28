@@ -1,0 +1,1723 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Canvas Background="#FF243782" Width="1100" Height="700" Focusable="False" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:iwm="clr-namespace:Ico.Windows.Media;assembly=IcoWPF" xmlns:gwx="clr-namespace:Ico.Gwx;assembly=GwxRuntimeCore" xmlns:script="clr-namespace:Ico.Script;assembly=IcoScriptEngine" xmlns:ic="clr-namespace:Ico.Collections;assembly=IcoCollections" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ig="clr-namespace:Ico.Gdx;assembly=GdxViewControl" xmlns:iws="clr-namespace:Ico.WPF.Specialized;assembly=IcoWPFSpecialized" xmlns:ig13="clr-namespace:Ico.Gdx;assembly=GdxClientCommon" xmlns:igd="clr-namespace:Ico.Gdx.Data;assembly=GdxClientCommon" xmlns:iwc="clr-namespace:Ico.Windows.Controls;assembly=IcoWPF" xmlns:gwxcmd="clr-namespace:Ico.Gwx;assembly=GwxRuntimeCoreCommands" xmlns:icc="clr-namespace:Ico.Commanding.Commands;assembly=IcoCommands">
+  <Canvas.Resources>
+    <BitmapImage x:Key="GwxThumbnailImageKey">
+      <iwm:BitmapImageInfo.StreamSource>
+        <iwm:Base64Stream Data="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" />
+      </iwm:BitmapImageInfo.StreamSource>
+    </BitmapImage>
+  </Canvas.Resources>
+  <gwx:GwxDocument.GwxDocument>
+    <gwx:GwxDocument FileVersion="10.97.020.00" IsScalable="True" MinimumZoom="0.16" PanEnabled="False" PreferredStretch="Fill" ScanRate="500">
+      <gwx:GwxDocument.ScriptCodeManager>
+        <script:ScriptCodeManager>
+          <script:ScriptCodeManager.Scripts>
+            <script:ScriptCode Name="ThisDisplayCode" Type="JScriptNet">
+              <x:XData><![CDATA[function ThisDisplay_AnimationStarted(sender : System.Object, e : System.EventArgs)
+{
+	        Clear();
+            ThisWindow.FwxClientWrapper.WriteAsync("@rgs64:headerReg.Value","Manual Order Upload")
+	
+			var plant_empty_label            : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("plant_empty_label");
+		    var assembly_empty_label         : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("assembly_empty_label");
+			var conveyor_empty_label         : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("conveyor_empty_label");
+			var production_date_empty_label  : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("production_date_empty_label");
+            var production_shift_empty_label : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("production_shift_empty_label");
+  			var sku_empty_label              : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("sku_empty_label");
+			var model_empty_label            : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("model_empty_label");
+			var seq_no_empty_label           : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("seq_no_empty_label");
+            var work_order_empty_label       : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("work_order_empty_label");
+			var plan_quantity_empty_label    : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("plan_quantity_empty_label");
+            var colour_empty_label           : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("colour_empty_label");
+
+			plant_empty_label.Visible             = false
+			assembly_empty_label.Visible          = false
+			conveyor_empty_label.Visible          = false
+			production_date_empty_label.Visible   = false
+			production_shift_empty_label.Visible  = false
+			model_empty_label.Visible      		  = false
+			seq_no_empty_label.Visible     		  = false
+			work_order_empty_label.Visible        = false
+			plan_quantity_empty_label.Visible     = false			
+	        colour_empty_label.Visible            = false
+	     	sku_empty_label.Visible            = false
+    			
+
+
+}
+
+function ThisDisplay_AnimationStopped(sender : System.Object, e : System.EventArgs)
+{
+            Clear();
+			ThisWindow.FwxClientWrapper.WriteAsync("@rgs64:headerReg.Value","")
+			
+			var plant_empty_label            : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("plant_empty_label");
+		    var assembly_empty_label         : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("assembly_empty_label");
+			var conveyor_empty_label         : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("conveyor_empty_label");
+			var production_date_empty_label  : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("production_date_empty_label");
+            var production_shift_empty_label : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("production_shift_empty_label");
+  			var model_empty_label            : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("model_empty_label");
+			var sku_empty_label            : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("sku_empty_label");
+			var seq_no_empty_label           : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("seq_no_empty_label");
+            var work_order_empty_label       : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("work_order_empty_label");
+			var plan_quantity_empty_label    : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("plan_quantity_empty_label");
+            var colour_empty_label           : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("colour_empty_label");
+
+			plant_empty_label.Visible             = false
+			assembly_empty_label.Visible          = false
+			conveyor_empty_label.Visible          = false
+			production_date_empty_label.Visible   = false
+			production_shift_empty_label.Visible  = false
+			model_empty_label.Visible      		  = false
+			seq_no_empty_label.Visible     		  = false
+			work_order_empty_label.Visible        = false
+			plan_quantity_empty_label.Visible     = false			
+	        colour_empty_label.Visible            = false
+			sku_empty_label.Visible               = false
+						
+
+			
+					
+	
+}
+
+
+
+
+
+
+
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="assemblyCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function assembly_DropDownOpened(sender : System.Object, e : System.EventArgs)
+{
+	var assembly_empty_label  : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("assembly_empty_label");
+        assembly_empty_label.Visible    = false;
+
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="CLEAR" Type="JScriptNet">
+              <x:XData><![CDATA[function Clear(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs){		
+	
+	// [Variable Declaration] Creating holder variables that will hold the user input values in the script
+	var plant                	: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("plant").ToDependencyObject();
+	var assembly       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("assembly").ToDependencyObject();
+	var conveyor       	    	: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("conveyor").ToDependencyObject();
+    var production_date         : Ico.Gwx.GwxWindowsFormsControl    = Ico.Gwx.GwxWindowsFormsControl(ThisConfiguration.GetObjectByName("production_date"));
+	var production_shift       	: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("production_shift").ToDependencyObject();
+	var model       	    	: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("model").ToDependencyObject();
+	var sku           	    	: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("sku").ToDependencyObject();
+	var seq_no       	    	: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("seq_no").ToDependencyObject();
+	var work_order       	    : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("work_order").ToDependencyObject();
+    var plan_quantity       	: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("plan_quantity").ToDependencyObject();
+    var colour       	    	: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("colour").ToDependencyObject();
+					
+	//[Variable Reset] Variables are reset here to default values
+	plant.Text = "";
+	assembly.Text = "";
+	conveyor.Text= "";
+	production_shift.Text = "";
+	model.Text= "";
+	sku.Text= "";
+	production_date.Text ="";
+	seq_no.Clear();
+	work_order.Clear();
+	plan_quantity.Clear();
+	colour.Clear();
+	//[Inline Test Statemnt] MessageBox.Show('Clearing all fields');
+}]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="CONFIRM" Type="JScriptNet">
+              <x:XData><![CDATA[function CONFIRM(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs){
+	
+	var connection_string : String = "Data Source="+DB_SERVER+"; Initial Catalog="+DB_NAME+"; Password="+DB_PASSWORD+"; User ID="+DB_USERID+";";
+	// [Inline Test Statement] : Prints out connection_string : MessageBox.Show(connection_string);
+			
+	// [Opening connection with the database]
+	var connection : System.Data.SqlClient.SqlConnection;
+	connection = new System.Data.SqlClient.SqlConnection(connection_string);
+			
+	connection.Open();
+    
+	// [Variable Declaration] Creating variable to retrieve the shift value using a process point.
+    var process_point_shift_tag   :   GwxDynamic 			= 	ThisConfiguration.GetDynamicObjectByName("pp_shift_tag");	
+    MessageBox.Show(process_point_shift_tag.Text);
+    //[Error & Exception Handling] Creating a variable for error and exception handling
+    var response		: String;
+    response="";
+		
+    // [Query String] Building Query for calling stored procedure
+    var query_string : String = "EXEC [dbo].[SP_Get_Line_Production_Plan]";
+    query_string += "@shift_id     = '"+process_point_shift_tag.GetValueOfPrimaryDataSource()+"'";	
+					
+	//[Inline Test Statement]
+    //MessageBox.Show(query_string);
+    //MessageBox.Show(process_point_shift_tag.GetValueOfPrimaryDataSource());
+					
+    // [Validation Statement] This if-else statement checks if any of the fields have been left empty
+    
+            // [Inline Test Statement] MessageBox.Show("Thank you for filling all the required values");
+            try {
+                var reader : System.Data.SqlClient.SqlDataReader;
+                //[Inline Test Statement] MessageBox.Show(query_string);
+
+                var stored_procedure_query : System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand(query_string, connection);					
+                reader = stored_procedure_query.ExecuteReader();
+                Clear();	
+                while(reader.Read())
+                {
+                    response = reader["Response"];
+                    MessageBox.Show(response);
+                }
+                reader.Close();
+            }
+        catch(ex : Exception){
+                MessageBox.Show (ex.Message);	
+            }	
+        	
+                        
+		// [Closing connection with the database]
+		
+
+		connection.Close();
+		
+	}]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="conveyorCode" Type="JScriptNet">
+              <x:XData><![CDATA[function conveyor_DropDownOpened(sender : System.Object, e : System.EventArgs)
+{
+	var conveyor_empty_label  : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("conveyor_empty_label");
+        conveyor_empty_label.Visible    = false;
+
+
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="CREATE" Type="JScriptNet">
+              <x:XData><![CDATA[function Create(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs){
+	
+	var connection_string : String = "Data Source="+DB_SERVER+"; Initial Catalog="+DB_NAME+"; Password="+DB_PASSWORD+"; User ID="+DB_USERID+";";
+	// [Inline Test Statement] : Prints out connection_string : MessageBox.Show(connection_string);
+			
+	// [Opening connection with the database]
+	var connection : System.Data.SqlClient.SqlConnection;
+	connection = new System.Data.SqlClient.SqlConnection(connection_string);
+			
+	connection.Open();
+    
+    // [Operation Specification] Specifying the kind of operation that happens on pressing the button 
+    var ActionOp = 'Create';
+    
+	// [Variable Declaration] Creating holder variables that will hold the user input values in the script
+    var plant                	: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("plant").ToDependencyObject();
+    var assembly       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("assembly").ToDependencyObject();
+    var conveyor       	    	: System.Windows.Controls.ComboBox  = ThisConfiguration.GetObjectByName("conveyor").ToDependencyObject();
+    var production_date         : Ico.Gwx.GwxWindowsFormsControl    = Ico.Gwx.GwxWindowsFormsControl(ThisConfiguration.GetObjectByName("production_date"));
+    var production_shift       	: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("production_shift").ToDependencyObject();
+    var model       	    	: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("model").ToDependencyObject();
+    var sku           	    	: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("sku").ToDependencyObject();
+    var seq_no       	    	: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("seq_no").ToDependencyObject();
+    var work_order       	    : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("work_order").ToDependencyObject();
+    var plan_quantity       	: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("plan_quantity").ToDependencyObject();
+    var colour       	    	: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("colour").ToDependencyObject();
+    var plant_empty_label            : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("plant_empty_label");
+    var assembly_empty_label         : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("assembly_empty_label");
+    var conveyor_empty_label         : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("conveyor_empty_label");
+    var production_date_empty_label  : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("production_date_empty_label");
+    var production_shift_empty_label : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("production_shift_empty_label");
+    var model_empty_label            : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("model_empty_label");
+    var seq_no_empty_label           : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("seq_no_empty_label");
+    var work_order_empty_label       : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("work_order_empty_label");
+    var plan_quantity_empty_label    : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("plan_quantity_empty_label");
+    var colour_empty_label           : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("colour_empty_label");
+    var sku_empty_label              : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("sku_empty_label");        
+  
+    // [Hardcoded Variable] These variables have to be replaced using the tag for the logged in user.
+	var created_by 		= 'dalisoft_test_user';	
+    
+    //[Error & Exception Handling] Creating a variable for error and exception handling
+    var response		: String;
+    response="";
+		
+    // [Query String] Building Query for calling stored procedure
+    var query_string : String = "EXEC [dbo].[SP_ManualEntry_ProductionPlan]";
+    query_string += "@work_order_number     = '"+work_order.Text+"',";
+	query_string += "@production_date	    = '"+production_date.Text+"',";
+	query_string += "@shift_id 	    		= '"+production_shift.Text+"',";
+	query_string += "@model_description 	= '"+model.Text+"',";
+    query_string += "@sku_code        		= '"+sku.Text+"',";
+    query_string += "@colour				= '"+colour.Text+"',";
+    query_string += "@sequence_number		= '"+seq_no.Text+"',";
+    query_string += "@planned_quantity		= '"+plan_quantity.Text+"',";
+    query_string += "@plant_name			= '"+plant.Text+"',";
+    query_string += "@assembly_name			= '"+assembly.Text+"',";
+    query_string += "@conveyor_name			= '"+conveyor.Text+"',";
+    query_string += "@transfer_status = 0,";
+	query_string += "@ActionOp 			    = '"+ActionOp+"'";		
+					
+	//[Inline Test Statement]MessageBox.Show(query_string);
+					
+    // [Validation Statement] This if-else statement checks if any of the fields have been left empty
+    if ( plant.Text == ""|| assembly.Text =="" || conveyor.Text == ""|| production_date.Text =="" || production_shift.Text =="" || seq_no.Text==""|| model.Text==""|| work_order.Text=="" || sku.Text==""|| colour.Text=="" ||  plan_quantity.Text==""){
+        
+		//MessageBox.Show("Please fill in all the required values!")
+
+        if(plant.Text == "")
+        {plant_empty_label.Visible = true}
+        else 
+        {plant_empty_label.Visible = false}
+        
+        if(assembly.Text == "")
+        {assembly_empty_label.Visible = true}
+        else					
+        {assembly_empty_label.Visible = false}
+        
+        if(conveyor.Text == "")
+        {conveyor_empty_label.Visible = true}
+        else					
+        {conveyor_empty_label.Visible = false}
+
+        if(production_shift.Text == "")
+        {production_shift_empty_label.Visible = true}
+        else					
+        {production_shift_empty_label.Visible = false}
+        
+        if(model.Text == "")
+        {model_empty_label.Visible = true}
+        else					
+        {model_empty_label.Visible = false}
+        
+        if(sku.Text == "")
+        {sku_empty_label.Visible = true}
+        else					
+        {sku_empty_label.Visible = false}
+        
+        if(seq_no.Text == "")
+        {seq_no_empty_label.Visible = true}
+        else					
+        {seq_no_empty_label.Visible = false}
+        
+        if(work_order.Text == "")
+        {work_order_empty_label.Visible = true}
+        else					
+        {work_order_empty_label.Visible = false}
+        
+        if(plan_quantity.Text == "")
+        {plan_quantity_empty_label.Visible = true}
+        else					
+        {plan_quantity_empty_label.Visible = false}
+        
+        if(colour.Text == "")
+        {colour_empty_label.Visible = true}
+        else					
+        {colour_empty_label.Visible = false}
+        
+        
+        } else {
+            // [Inline Test Statement] MessageBox.Show("Thank you for filling all the required values");
+            try {
+                var reader : System.Data.SqlClient.SqlDataReader;
+                //[Inline Test Statement] MessageBox.Show(query_string);
+
+                var stored_procedure_query : System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand(query_string, connection);					
+                reader = stored_procedure_query.ExecuteReader();
+                Clear();	
+                while(reader.Read())
+                {
+                    response = reader["Response"];
+                    MessageBox.Show(response);
+                }
+                reader.Close();
+            }
+        catch(ex : Exception){
+                MessageBox.Show (ex.Message);	
+            }	
+        }			
+                        
+		// [Closing connection with the database]
+		
+
+		connection.Close();
+		
+	}]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="Database_connection" Type="JScriptNet">
+              <x:XData><![CDATA[const DB_SERVER               : String = "AK-WKS-0476-LS\\SQLEXPRESS2017";
+const DB_NAME                 : String = "BajajMEA";
+const DB_USERID               : String = "sa";
+const DB_PASSWORD             : String = "sql_1234";
+var DB_CONNECT_AUTHENTICATION : String = ";User ID="+DB_USERID+";Password="+DB_PASSWORD+";";
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="DELETE" Type="JScriptNet">
+              <x:XData><![CDATA[function Delete(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs){
+	
+	var connection_string : String = "Data Source="+DB_SERVER+"; Initial Catalog="+DB_NAME+"; Password="+DB_PASSWORD+"; User ID="+DB_USERID+";";
+	// [Inline Test Statement] : Prints out connection_string : MessageBox.Show(connection_string);
+			
+	// [Opening connection with the database]
+	var connection : System.Data.SqlClient.SqlConnection;
+	connection = new System.Data.SqlClient.SqlConnection(connection_string);
+			
+	connection.Open();
+    
+    // [Operation Specification] Specifying the kind of operation that happens on pressing the button 
+    var ActionOp = 'Delete';
+    
+	// [Variable Declaration] Creating holder variables that will hold the user input values in the script
+    var plant                	: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("plant").ToDependencyObject();
+    var assembly       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("assembly").ToDependencyObject();
+    var conveyor       	    	: System.Windows.Controls.ComboBox  = ThisConfiguration.GetObjectByName("conveyor").ToDependencyObject();
+    var production_date         : Ico.Gwx.GwxWindowsFormsControl    = Ico.Gwx.GwxWindowsFormsControl(ThisConfiguration.GetObjectByName("production_date"));
+    var production_shift       	: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("production_shift").ToDependencyObject();
+    var model       	    	: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("model").ToDependencyObject();
+    var sku           	    	: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("sku").ToDependencyObject();
+    var seq_no       	    	: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("seq_no").ToDependencyObject();
+    var work_order       	    : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("work_order").ToDependencyObject();
+    var plan_quantity       	: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("plan_quantity").ToDependencyObject();
+    var colour       	    	: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("colour").ToDependencyObject();
+    var plant_empty_label            : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("plant_empty_label");
+    var assembly_empty_label         : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("assembly_empty_label");
+    var conveyor_empty_label         : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("conveyor_empty_label");
+    var production_date_empty_label  : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("production_date_empty_label");
+    var production_shift_empty_label : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("production_shift_empty_label");
+    var model_empty_label            : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("model_empty_label");
+    var seq_no_empty_label           : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("seq_no_empty_label");
+    var work_order_empty_label       : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("work_order_empty_label");
+    var plan_quantity_empty_label    : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("plan_quantity_empty_label");
+    var colour_empty_label           : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("colour_empty_label");
+    var sku_empty_label              : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("sku_empty_label");        
+  
+    // [Hardcoded Variable] These variables have to be replaced using the tag for the logged in user.
+	var created_by 		= 'dalisoft_test_user';	
+    
+    //[Error & Exception Handling] Creating a variable for error and exception handling
+    var response		: String;
+    response="";
+		
+    // [Query String] Building Query for calling stored procedure
+    var query_string : String = "EXEC [dbo].[SP_ManualEntry_ProductionPlan]";
+    query_string += "@work_order_number     = '"+work_order.Text+"',";
+	query_string += "@production_date	    = '"+production_date.Text+"',";
+	query_string += "@shift_id 	    		= '"+production_shift.Text+"',";
+	query_string += "@model_description 	= '"+model.Text+"',";
+    query_string += "@sku_code        		= '"+sku.Text+"',";
+    query_string += "@colour				= '"+colour.Text+"',";
+    query_string += "@sequence_number		= '"+seq_no.Text+"',";
+    query_string += "@planned_quantity		= '"+plan_quantity.Text+"',";
+    query_string += "@plant_name			= '"+plant.Text+"',";
+    query_string += "@assembly_name			= '"+assembly.Text+"',";
+    query_string += "@conveyor_name			= '"+conveyor.Text+"',";
+    query_string += "@transfer_status = 0,";
+	query_string += "@ActionOp 			    = '"+ActionOp+"'";		
+					
+	//[Inline Test Statement]MessageBox.Show(query_string);
+					
+    // [Validation Statement] This if-else statement checks if any of the fields have been left empty
+    if ( plant.Text == ""|| assembly.Text =="" || conveyor.Text == ""|| production_date.Text =="" || production_shift.Text =="" || seq_no.Text==""|| model.Text==""|| work_order.Text=="" || sku.Text==""|| colour.Text=="" ||  plan_quantity.Text==""){
+        
+		//MessageBox.Show("Please fill in all the required values!")
+
+        if(plant.Text == "")
+        {plant_empty_label.Visible = true}
+        else 
+        {plant_empty_label.Visible = false}
+        
+        if(assembly.Text == "")
+        {assembly_empty_label.Visible = true}
+        else					
+        {assembly_empty_label.Visible = false}
+        
+        if(conveyor.Text == "")
+        {conveyor_empty_label.Visible = true}
+        else					
+        {conveyor_empty_label.Visible = false}
+
+        if(production_shift.Text == "")
+        {production_shift_empty_label.Visible = true}
+        else					
+        {production_shift_empty_label.Visible = false}
+        
+        if(model.Text == "")
+        {model_empty_label.Visible = true}
+        else					
+        {model_empty_label.Visible = false}
+        
+        if(sku.Text == "")
+        {sku_empty_label.Visible = true}
+        else					
+        {sku_empty_label.Visible = false}
+        
+        if(seq_no.Text == "")
+        {seq_no_empty_label.Visible = true}
+        else					
+        {seq_no_empty_label.Visible = false}
+        
+        if(work_order.Text == "")
+        {work_order_empty_label.Visible = true}
+        else					
+        {work_order_empty_label.Visible = false}
+        
+        if(plan_quantity.Text == "")
+        {plan_quantity_empty_label.Visible = true}
+        else					
+        {plan_quantity_empty_label.Visible = false}
+        
+        if(colour.Text == "")
+        {colour_empty_label.Visible = true}
+        else					
+        {colour_empty_label.Visible = false}
+        
+        
+        } else {
+            // [Inline Test Statement] MessageBox.Show("Thank you for filling all the required values");
+            try {
+                var reader : System.Data.SqlClient.SqlDataReader;
+                //[Inline Test Statement] MessageBox.Show(query_string);
+
+                var stored_procedure_query : System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand(query_string, connection);					
+                reader = stored_procedure_query.ExecuteReader();
+                Clear();	
+                while(reader.Read())
+                {
+                    response = reader["Response"];
+                    MessageBox.Show(response);
+                }
+                reader.Close();
+            }
+        catch(ex : Exception){
+                MessageBox.Show (ex.Message);	
+            }	
+        }			
+                        
+		// [Closing connection with the database]
+		
+
+		connection.Close();
+		
+	}]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="Dropdown_Model" Type="JScriptNet">
+              <x:XData><![CDATA[function Dropdown_Model(sender : System.Object, e : System.EventArgs)
+{
+	    var connection_string : String = "Data Source="+DB_SERVER+"; Initial Catalog="+DB_NAME+"; Password="+DB_PASSWORD+"; User ID="+DB_USERID+";";
+		// [Opening connection with the database]
+		var connection : System.Data.SqlClient.SqlConnection;
+		connection = new System.Data.SqlClient.SqlConnection(connection_string);
+		
+		connection.Open();
+
+		// [Variable Declaration] Creating holder variables that will hold the user input values in the script
+		var model       	    	: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("model").ToDependencyObject();
+		var sku           	    	: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("sku").ToDependencyObject();
+    	model.Items.Clear();
+	    sku.Items.Clear();
+		var model_empty_label            : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("model_empty_label");
+		model_empty_label.Visible      		  = false
+	
+			
+		var DataReader : System.Data.SqlClient.SqlDataReader;
+		var RetrieveDataCmd: System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand("SELECT distinct model_description from Config_Model", connection);
+		
+		try{
+			DataReader=RetrieveDataCmd.ExecuteReader();
+
+			while(DataReader.Read())
+			{
+				model.Items.Add(DataReader["model_description"]);
+			}
+			DataReader.Close();
+			connection.Close()
+			
+		}catch(ex:Exception){
+			MessageBox.Show(ex);
+		}
+
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="Dropdown_Production_Shift" Type="JScriptNet">
+              <x:XData><![CDATA[function Dropdown_Production_Shift(sender : System.Object, e : System.EventArgs)
+{
+	var production_shift_empty_label  : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("production_shift_empty_label");
+        production_shift_empty_label.Visible    = false;
+
+
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="Dropdown_SKU" Type="JScriptNet">
+              <x:XData><![CDATA[function Dropdown_SKU(sender : System.Object, e : System.EventArgs)
+{
+	    var connection_string : String = "Data Source="+DB_SERVER+"; Initial Catalog="+DB_NAME+"; Password="+DB_PASSWORD+"; User ID="+DB_USERID+";";
+		// [Opening connection with the database]
+		var connection : System.Data.SqlClient.SqlConnection;
+		connection = new System.Data.SqlClient.SqlConnection(connection_string);
+		
+		connection.Open();
+
+		// [Variable Declaration] Creating holder variables that will hold the user input values in the script
+		var model       	    	: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("model").ToDependencyObject();
+		var sku           	    	: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("sku").ToDependencyObject();
+		sku.Items.Clear();
+		var sku_empty_label              : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("sku_empty_label");
+	    sku_empty_label.Visible            = false
+
+			
+		var DataReader : System.Data.SqlClient.SqlDataReader;
+		var RetrieveDataCmd: System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand("SELECT distinct sku_code from Config_SKU where (model_id = (select model_id from Config_Model where model_description = '"+model.Text+"'))", connection);
+		
+		try{
+			DataReader=RetrieveDataCmd.ExecuteReader();
+
+			while(DataReader.Read())
+			{
+				sku.Items.Add(DataReader["sku_code"]);
+			}
+			DataReader.Close();
+			connection.Close()
+			
+		}catch(ex:Exception){
+			MessageBox.Show(ex);
+		}
+
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="Grid1" Type="JScriptNet">
+              <x:XData><![CDATA[function Grid(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs)
+{
+	
+	// [Variable Declaration] Creating holder variables that will hold the user input values in the script
+	var plant                	: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("plant").ToDependencyObject();
+	var assembly       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("assembly").ToDependencyObject();
+	var conveyor       	    	: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("conveyor").ToDependencyObject();
+    var production_date         : Ico.Gwx.GwxWindowsFormsControl    = Ico.Gwx.GwxWindowsFormsControl(ThisConfiguration.GetObjectByName("production_date"));
+	var production_shift       	: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("production_shift").ToDependencyObject();
+	var model       	    	: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("model").ToDependencyObject();
+	var seq_no       	    	: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("seq_no").ToDependencyObject();
+	var work_order       	    : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("work_order").ToDependencyObject();
+    var plan_quantity       	: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("plan_quantity").ToDependencyObject();
+    var colour       	    	: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("colour").ToDependencyObject();
+	var sku           	    	: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("sku").ToDependencyObject();
+	
+	//[Grid Selection Code]
+	var gdxViewer		: Ico.Gdx.GdxViewControl = Ico.Gdx.GdxViewControl(ThisConfiguration.GetObjectByName("default_grid").ToDependencyObject());
+	var tab_list 		: ItemsControl = ItemsControl(gdxViewer.Items[0]);
+	var grid_list 		: Ico.Gdx.GdxGridView = Ico.Gdx.GdxGridView(tab_list.Items[0]);
+	var Row_Selected 	: DataRow;
+	Row_Selected = grid_list.GetHighlightedRow();
+		
+	if(grid_list.GetHighlightedRow() != null)
+	{
+			//if (Row_Selected.Item[0] != String.IsNullOrEmpty){
+				
+				
+				plant_DropDownOpened();
+				plant.SelectedValue = Row_Selected.Item[13];	
+
+				assembly_DropDownOpened();
+				assembly.SelectedValue = Row_Selected.Item[14];
+				
+
+				conveyor_DropDownOpened();
+				conveyor.SelectedValue = Row_Selected.Item[15];
+				
+				Dropdown_Production_Shift();
+				production_shift.SelectedIndex = Row_Selected.Item[3];
+				
+				Dropdown_Model();
+				model.SelectedValue = Row_Selected.Item[7];
+				
+				Dropdown_SKU();
+				sku.SelectedValue = Row_Selected.Item[9];
+								
+				seq_no.Text = Row_Selected.Item[11];
+				
+				work_order.Text = Row_Selected.Item[1];
+						
+				plan_quantity.Text = Row_Selected.Item[12];
+				
+				colour.Text = Row_Selected.Item[10];
+			    production_date.Text = Row_Selected.Item[2].ToString();
+					
+					
+			}
+	}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="JScriptDotNetGlobalVariablesCode" Type="JScriptNet" EditorBrowsable="Never">
+              <x:XData><![CDATA[
+var ThisWindow : Ico.Gwx.GwxRuntimeViewControl;
+var ThisDocument : Ico.Gwx.GwxDocument;
+var ThisConfiguration : Ico.Gwx.GwxConfiguration;
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="MODIFY" Type="JScriptNet">
+              <x:XData><![CDATA[function Update(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs){
+	
+	var connection_string : String = "Data Source="+DB_SERVER+"; Initial Catalog="+DB_NAME+"; Password="+DB_PASSWORD+"; User ID="+DB_USERID+";";
+	// [Inline Test Statement] : Prints out connection_string : MessageBox.Show(connection_string);
+			
+	// [Opening connection with the database]
+	var connection : System.Data.SqlClient.SqlConnection;
+	connection = new System.Data.SqlClient.SqlConnection(connection_string);
+			
+	connection.Open();
+    
+    // [Operation Specification] Specifying the kind of operation that happens on pressing the button 
+    var ActionOp = 'Update';
+    
+	// [Variable Declaration] Creating holder variables that will hold the user input values in the script
+    var plant                	: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("plant").ToDependencyObject();
+    var assembly       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("assembly").ToDependencyObject();
+    var conveyor       	    	: System.Windows.Controls.ComboBox  = ThisConfiguration.GetObjectByName("conveyor").ToDependencyObject();
+    var production_date         : Ico.Gwx.GwxWindowsFormsControl    = Ico.Gwx.GwxWindowsFormsControl(ThisConfiguration.GetObjectByName("production_date"));
+    var production_shift       	: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("production_shift").ToDependencyObject();
+    var model       	    	: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("model").ToDependencyObject();
+    var sku           	    	: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("sku").ToDependencyObject();
+    var seq_no       	    	: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("seq_no").ToDependencyObject();
+    var work_order       	    : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("work_order").ToDependencyObject();
+    var plan_quantity       	: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("plan_quantity").ToDependencyObject();
+    var colour       	    	: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("colour").ToDependencyObject();
+    var plant_empty_label            : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("plant_empty_label");
+    var assembly_empty_label         : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("assembly_empty_label");
+    var conveyor_empty_label         : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("conveyor_empty_label");
+    var production_date_empty_label  : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("production_date_empty_label");
+    var production_shift_empty_label : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("production_shift_empty_label");
+    var model_empty_label            : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("model_empty_label");
+    var seq_no_empty_label           : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("seq_no_empty_label");
+    var work_order_empty_label       : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("work_order_empty_label");
+    var plan_quantity_empty_label    : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("plan_quantity_empty_label");
+    var colour_empty_label           : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("colour_empty_label");
+    var sku_empty_label              : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("sku_empty_label");        
+  
+    // [Hardcoded Variable] These variables have to be replaced using the tag for the logged in user.
+	var created_by 		= 'dalisoft_test_user';	
+    
+    //[Error & Exception Handling] Creating a variable for error and exception handling
+    var response		: String;
+    response="";
+		
+    // [Query String] Building Query for calling stored procedure
+    var query_string : String = "EXEC [dbo].[SP_ManualEntry_ProductionPlan]";
+    query_string += "@work_order_number     = '"+work_order.Text+"',";
+	query_string += "@production_date	    = '"+production_date.Text+"',";
+	query_string += "@shift_id 	    		= '"+production_shift.Text+"',";
+	query_string += "@model_description 	= '"+model.Text+"',";
+    query_string += "@sku_code        		= '"+sku.Text+"',";
+    query_string += "@colour				= '"+colour.Text+"',";
+    query_string += "@sequence_number		= '"+seq_no.Text+"',";
+    query_string += "@planned_quantity		= '"+plan_quantity.Text+"',";
+    query_string += "@plant_name			= '"+plant.Text+"',";
+    query_string += "@assembly_name			= '"+assembly.Text+"',";
+    query_string += "@conveyor_name			= '"+conveyor.Text+"',";
+    query_string += "@transfer_status 		= 0,";
+	query_string += "@ActionOp 			    = '"+ActionOp+"'";		
+					
+	//[Inline Test Statement]MessageBox.Show(query_string);
+					
+    // [Validation Statement] This if-else statement checks if any of the fields have been left empty
+    if ( plant.Text == ""|| assembly.Text =="" || conveyor.Text == ""|| production_date.Text =="" || production_shift.Text =="" || seq_no.Text==""|| model.Text==""|| work_order.Text=="" || sku.Text==""|| colour.Text=="" ||  plan_quantity.Text==""){
+        
+		//MessageBox.Show("Please fill in all the required values!")
+
+        if(plant.Text == "")
+        {plant_empty_label.Visible = true}
+        else 
+        {plant_empty_label.Visible = false}
+        
+        if(assembly.Text == "")
+        {assembly_empty_label.Visible = true}
+        else					
+        {assembly_empty_label.Visible = false}
+        
+        if(conveyor.Text == "")
+        {conveyor_empty_label.Visible = true}
+        else					
+        {conveyor_empty_label.Visible = false}
+
+        if(production_shift.Text == "")
+        {production_shift_empty_label.Visible = true}
+        else					
+        {production_shift_empty_label.Visible = false}
+        
+        if(model.Text == "")
+        {model_empty_label.Visible = true}
+        else					
+        {model_empty_label.Visible = false}
+        
+        if(sku.Text == "")
+        {sku_empty_label.Visible = true}
+        else					
+        {sku_empty_label.Visible = false}
+        
+        if(seq_no.Text == "")
+        {seq_no_empty_label.Visible = true}
+        else					
+        {seq_no_empty_label.Visible = false}
+        
+        if(work_order.Text == "")
+        {work_order_empty_label.Visible = true}
+        else					
+        {work_order_empty_label.Visible = false}
+        
+        if(plan_quantity.Text == "")
+        {plan_quantity_empty_label.Visible = true}
+        else					
+        {plan_quantity_empty_label.Visible = false}
+        
+        if(colour.Text == "")
+        {colour_empty_label.Visible = true}
+        else					
+        {colour_empty_label.Visible = false}
+        
+        
+        } else {
+            // [Inline Test Statement] MessageBox.Show("Thank you for filling all the required values");
+            try {
+                var reader : System.Data.SqlClient.SqlDataReader;
+                //[Inline Test Statement] MessageBox.Show(query_string);
+
+                var stored_procedure_query : System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand(query_string, connection);					
+                reader = stored_procedure_query.ExecuteReader();
+                Clear();	
+                while(reader.Read())
+                {
+                    response = reader["Response"];
+                    MessageBox.Show(response);
+                }
+                reader.Close();
+            }
+        catch(ex : Exception){
+                MessageBox.Show (ex.Message);	
+            }	
+        }			
+                        
+		// [Closing connection with the database]
+		
+
+		connection.Close();
+		
+	}]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="plantCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function plant_DropDownOpened(sender : System.Object, e : System.EventArgs)
+{
+	var plant_empty_label  : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("plant_empty_label");
+        plant_empty_label.Visible    = false;
+
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="textchanged" Type="JScriptNet">
+              <x:XData><![CDATA[
+function colour_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{
+	var colour_empty_label  : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("colour_empty_label");
+    colour_empty_label.Visible    = false;
+}
+
+
+function work_order_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{
+	var work_order_empty_label  : Ico.Gwx.GwxLabel              = ThisConfiguration.GetObjectByName("work_order_empty_label");
+    work_order_empty_label.Visible    = false;
+}
+
+
+
+function seq_no_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{
+	var seq_no_empty_label  : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("seq_no_empty_label");
+    seq_no_empty_label.Visible    = false;
+}
+
+
+function plan_quantity_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{
+	var plan_quantity_empty_label  : Ico.Gwx.GwxLabel            = ThisConfiguration.GetObjectByName("plan_quantity_empty_label");
+    plan_quantity_empty_label.Visible    = false;
+}
+
+
+
+]]></x:XData>
+            </script:ScriptCode>
+          </script:ScriptCodeManager.Scripts>
+          <script:ScriptCodeManager.AssemblyReferences>
+            <ic:AssemblyReference AssemblyName="mscorlib" />
+            <ic:AssemblyReference AssemblyName="System" />
+            <ic:AssemblyReference AssemblyName="System.Core" />
+            <ic:AssemblyReference AssemblyName="System.Data" />
+            <ic:AssemblyReference AssemblyName="System.Xml" />
+            <ic:AssemblyReference AssemblyName="System.Drawing" />
+            <ic:AssemblyReference AssemblyName="System.Windows.Forms" />
+            <ic:AssemblyReference AssemblyName="WindowsBase" />
+            <ic:AssemblyReference AssemblyName="PresentationCore" />
+            <ic:AssemblyReference AssemblyName="PresentationFramework" />
+            <ic:AssemblyReference AssemblyName="GwxRuntimeCore" />
+            <ic:AssemblyReference AssemblyName="GwxRuntimeCoreCommands" />
+            <ic:AssemblyReference AssemblyName="GwxRuntimeViewControl" />
+            <ic:AssemblyReference AssemblyName="GwxConfigCore" />
+            <ic:AssemblyReference AssemblyName="IcoComponentModel" />
+            <ic:AssemblyReference AssemblyName="IcoFwxClientWrapper" />
+            <ic:AssemblyReference AssemblyName="GdxViewControl" AssemblyCodebase="file:///C:/Program Files/MELSOFT/MC Works64/Components/GdxViewControl.DLL" />
+            <ic:AssemblyReference AssemblyName="IcoWPFSpecialized" AssemblyCodebase="file:///C:/Program Files/MELSOFT/MC Works64/Components/IcoWPFSpecialized.DLL" />
+            <ic:AssemblyReference AssemblyName="IcoCommonCore.Net" />
+          </script:ScriptCodeManager.AssemblyReferences>
+          <script:ScriptCodeManager.Namespaces>
+            <s:String>System</s:String>
+            <s:String>System.Collections</s:String>
+            <s:String>System.ComponentModel</s:String>
+            <s:String>System.Data</s:String>
+            <s:String>System.Xml</s:String>
+            <s:String>System.Windows</s:String>
+            <s:String>System.Windows.Media</s:String>
+            <s:String>System.Windows.Input</s:String>
+            <s:String>System.Windows.Controls</s:String>
+            <s:String>Ico.Gwx</s:String>
+            <s:String>System.Diagnostics</s:String>
+            <s:String>Ico.Fwx.ClientWrapper</s:String>
+            <s:String>System.Flags</s:String>
+          </script:ScriptCodeManager.Namespaces>
+        </script:ScriptCodeManager>
+      </gwx:GwxDocument.ScriptCodeManager>
+      <gwx:GwxDocument.EventBindings>
+        <script:ScriptEventBindings>
+          <script:ScriptEventBindings.EventBindings>
+            <x:Array Type="script:ScriptEventBinding">
+              <script:ScriptEventBinding EventName="AnimationStopped" MethodName="ThisDisplay_AnimationStopped" ScriptType="JScriptNet" />
+              <script:ScriptEventBinding EventName="AnimationStopping" MethodName="ThisDisplay_AnimationStopped" ScriptType="JScriptNet" />
+              <script:ScriptEventBinding EventName="AnimationStarting" MethodName="ThisDisplay_AnimationStarted" ScriptType="JScriptNet" />
+              <script:ScriptEventBinding EventName="AnimationStarted" MethodName="ThisDisplay_AnimationStarted" ScriptType="JScriptNet" />
+            </x:Array>
+          </script:ScriptEventBindings.EventBindings>
+        </script:ScriptEventBindings>
+      </gwx:GwxDocument.EventBindings>
+      <gwx:GwxDocument.RuntimeWindowProperties>
+        <gwx:GwxWindowProperties LeftString="0%" TopString="0%" WidthString="100%" HeightString="100%" ControlBox="False" MaximizeBox="False" MinimizeBox="False" MenuVisible="False" ShowContextMenu="False" NavigationBarVisible="False" StatusBarVisible="False" OuterBorder="False" Resizable="False" />
+      </gwx:GwxDocument.RuntimeWindowProperties>
+    </gwx:GwxDocument>
+  </gwx:GwxDocument.GwxDocument>
+  <Canvas>
+    <Rectangle Stroke="#FF000000" Name="Rectangle1" Width="1100" Height="30" Canvas.Left="0" Canvas.Top="296.111111">
+      <Rectangle.Fill>
+        <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+          <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#FFF5F5F5" Offset="0" />
+            <GradientStop Color="#FFEBEBEB" Offset="0.49" />
+            <GradientStop Color="#FFE1E1E1" Offset="0.51" />
+            <GradientStop Color="#FFCDCDCD" Offset="1" />
+          </LinearGradientBrush.GradientStops>
+          <LinearGradientBrush.RelativeTransform>
+            <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+          </LinearGradientBrush.RelativeTransform>
+        </LinearGradientBrush>
+      </Rectangle.Fill>
+    </Rectangle>
+  </Canvas>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="seq_no_label" Canvas.Left="402.897158" Canvas.Top="133.043479">
+    <TextBlock Text="SEQ No." />
+  </Label>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" VerticalContentAlignment="Center" Padding="0,0,0,0" Name="plant_label" Canvas.Left="20" Canvas.Top="55">
+    <TextBlock Text="Plant" />
+  </Label>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" Padding="0,0,0,0" Name="conveyor_label" Canvas.Left="748.694181" Canvas.Top="55">
+    <TextBlock Text="Conveyor" />
+  </Label>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" VerticalContentAlignment="Center" Padding="0,0,0,0" Name="production_shift_label" Canvas.Left="20" Canvas.Top="133.043479">
+    <TextBlock Text="Production Shift" />
+  </Label>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" VerticalContentAlignment="Center" Padding="0,0,0,0" Name="assembly_label" Canvas.Left="402.897158" Canvas.Top="55">
+    <TextBlock Text="Assembly" />
+  </Label>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" VerticalContentAlignment="Center" Padding="0,0,0,0" Name="production_date_label" Canvas.Left="20" Canvas.Top="94.753521">
+    <TextBlock Text="Production Date" />
+  </Label>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" VerticalContentAlignment="Center" Padding="0,0,0,0" Name="plan_quantity_label" Canvas.Left="20" Canvas.Top="175">
+    <TextBlock Text="Plan Quantity" />
+  </Label>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="colour_label" Canvas.Left="402.897158" Canvas.Top="175">
+    <TextBlock Text="Colour" />
+  </Label>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="work_order_label" Canvas.Left="748.694181" Canvas.Top="133.043479">
+    <TextBlock Text="Work Order" />
+  </Label>
+  <ComboBox IsDropDownOpen="False" Text="" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TabIndex="6" Padding="0,0,0,0" Name="plant" Width="220" Height="25" Focusable="False" gwx:GwxProperties.Description="Select Plant" Canvas.Left="143.788904" Canvas.Top="55">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="DropDownOpened" MethodName="plant_DropDownOpened" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>
+    <s:String>CH01</s:String>
+    <s:String>CH02</s:String>
+  </ComboBox>
+  <ComboBox IsDropDownOpen="False" Text="" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TabIndex="6" Padding="0,0,0,0" Name="assembly" Width="220" Height="25" Focusable="False" Canvas.Left="489.332882" Canvas.Top="55">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="DropDownOpened" MethodName="assembly_DropDownOpened" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>
+    <s:String>Engine</s:String>
+    <s:String>Vehicle</s:String>
+  </ComboBox>
+  <TextBox FontFamily="Calibri" FontSize="16" VerticalContentAlignment="Center" TabIndex="4" Name="plan_quantity" Width="220" Height="25" Canvas.Left="143.788904" Canvas.Top="175">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="plan_quantity_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>
+  </TextBox>
+  <TextBox FontFamily="Calibri" FontSize="16" VerticalContentAlignment="Center" TabIndex="3" Name="seq_no" Width="220" Height="25" IsEnabled="True" Canvas.Left="489.332882" Canvas.Top="133.043479">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="seq_no_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>
+  </TextBox>
+  <gwx:WindowsFormsControl FontFamily="Segoe UI" FontSize="12" Name="production_date" Width="220" Height="24.6666666666667" Canvas.Left="143.788904" Canvas.Top="93.753521">
+    <gwx:WindowsFormsControl.ControlProperties>
+      <XmlDataProvider IsAsynchronous="False">
+        <x:XData>
+          <Data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="">
+            <DateTimePicker xsi:type="System.Windows.Forms.DateTimePicker">
+              <Anchor>Top Bottom Left Right</Anchor>
+              <Checked>false</Checked>
+              <CustomFormat>dd-MMM-yyyy</CustomFormat>
+              <DataBindings>
+                <DefaultDataSourceUpdateMode>OnValidation</DefaultDataSourceUpdateMode>
+              </DataBindings>
+              <Font>Calibri, 12pt</Font>
+              <Format>Custom</Format>
+              <Location>0, 0</Location>
+              <Margin>0, 0, 0, 0</Margin>
+              <MinDate>01/07/2020 01:00:00</MinDate>
+              <Name>production_date</Name>
+              <Size>275, 32</Size>
+              <TabIndex>1</TabIndex>
+            </DateTimePicker>
+          </Data>
+        </x:XData>
+      </XmlDataProvider>
+    </gwx:WindowsFormsControl.ControlProperties>
+  </gwx:WindowsFormsControl>
+  <Label Background="{x:Null}" Foreground="#FFFF0000" FontFamily="Calibri" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="plant_empty_label" Width="9.96" Height="24.413333" RenderTransform="1,0,0.00280955,1,-6.24799187029112,-24.53125" Visibility="Hidden" Canvas.Left="372.408782" Canvas.Top="79.53125">
+    <TextBlock Text="*" />
+  </Label>
+  <Label Background="{x:Null}" Foreground="#FFFF0000" FontFamily="Calibri" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="assembly_empty_label" Width="9.96" Height="24.413333" RenderTransform="1,0,0.00280955,1,-6.24799187029112,-24.53125" Visibility="Hidden" Canvas.Left="720.364005" Canvas.Top="79.53125">
+    <TextBlock Text="*" />
+  </Label>
+  <Label Background="{x:Null}" Foreground="#FFFF0000" FontFamily="Calibri" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="conveyor_empty_label" Width="9.96" Height="24.413333" RenderTransform="1,0,0.00280955,1,-6.24799187029112,-24.53125" Visibility="Hidden" Canvas.Left="1082" Canvas.Top="79.53125">
+    <TextBlock Text="*" />
+  </Label>
+  <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label1" Width="122.988506" Height="51.724138" Visibility="Hidden" gwx:GwxProperties.Stretch="Uniform" Canvas.Left="-136.402297" Canvas.Top="168.424611">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxProcessPoint AnimationMode="Analog" Name="wo" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.Production_Plan_SG1.WorkOrder.Value" />
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <TextBlock Text="*.??" TextTrimming="CharacterEllipsis" LayoutTransform="3.11554749373434,0,0,3.11554749373434,0,0" />
+  </Label>
+  <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label2" Width="122.988506" Height="51.724138" Visibility="Hidden" gwx:GwxProperties.Stretch="Uniform" Canvas.Left="-136.402297" Canvas.Top="261.63624">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxProcessPoint AnimationMode="Analog" Name="day" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.Production_Plan_SG1.Day.Value" />
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <TextBlock Text="*.??" TextTrimming="CharacterEllipsis" LayoutTransform="3.11554749373434,0,0,3.11554749373434,0,0" />
+  </Label>
+  <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label3" Width="122.988506" Height="51.724138" Visibility="Hidden" gwx:GwxProperties.Stretch="Uniform" Canvas.Left="-136.402297" Canvas.Top="354.84787">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxProcessPoint AnimationMode="Analog" Name="Shift" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.Production_Plan_SG1.Shift.Value" />
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <TextBlock Text="*.??" TextTrimming="CharacterEllipsis" LayoutTransform="3.11554749373434,0,0,3.11554749373434,0,0" />
+  </Label>
+  <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label4" Width="122.988506" Height="51.724138" Visibility="Hidden" gwx:GwxProperties.Stretch="Uniform" Canvas.Left="-136.402297" Canvas.Top="448.059499">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxProcessPoint AnimationMode="Analog" Name="event" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.Production_Plan_SG1.Trigger.Value" />
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <TextBlock Text="*.??" TextTrimming="CharacterEllipsis" LayoutTransform="3.11554749373434,0,0,3.11554749373434,0,0" />
+  </Label>
+  <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label5" Width="122.988506" Height="51.724138" Visibility="Hidden" gwx:GwxProperties.Stretch="Uniform" Canvas.Left="-136.402297" Canvas.Top="541.271129">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxProcessPoint AnimationMode="Analog" Name="month" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.Production_Plan_SG1.Month.Value" />
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <TextBlock Text="*.??" TextTrimming="CharacterEllipsis" LayoutTransform="3.11554749373434,0,0,3.11554749373434,0,0" />
+  </Label>
+  <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label6" Width="122.988506" Height="51.724138" Visibility="Hidden" gwx:GwxProperties.Stretch="Uniform" Canvas.Left="-136.402297" Canvas.Top="634.482758">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxProcessPoint AnimationMode="Analog" Name="year" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.Production_Plan_SG1.Year.Value" />
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <TextBlock Text="*.??" TextTrimming="CharacterEllipsis" LayoutTransform="3.11554749373434,0,0,3.11554749373434,0,0" />
+  </Label>
+  <Label Background="{x:Null}" Foreground="#FFFF0000" FontFamily="Calibri" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="production_date_empty_label" Width="9.96" Height="24.413333" RenderTransform="1,0,0.00280955,1,-6.24799187029112,-24.53125" Visibility="Hidden" Canvas.Left="372.408782" Canvas.Top="119.284771">
+    <TextBlock Text="*" />
+  </Label>
+  <Label Background="{x:Null}" Foreground="#FFFF0000" FontFamily="Calibri" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="seq_no_empty_label" Width="9.96" Height="24.413333" RenderTransform="1,0,0.00280955,1,-6.24799187029112,-24.53125" Visibility="Hidden" Canvas.Left="720.364005" Canvas.Top="157.574729">
+    <TextBlock Text="*" />
+  </Label>
+  <Label Background="{x:Null}" Foreground="#FFFF0000" FontFamily="Calibri" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="plan_quantity_empty_label" Width="9.96" Height="24.413333" RenderTransform="1,0,0.00280955,1,-6.24799187029112,-24.53125" Visibility="Hidden" Canvas.Left="372.408782" Canvas.Top="199.53125">
+    <TextBlock Text="*" />
+  </Label>
+  <Label Background="{x:Null}" Foreground="#FFFF0000" FontFamily="Calibri" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="production_shift_empty_label" Width="9.96" Height="24.413333" RenderTransform="1,0,0.00280955,1,-6.24799187029112,-24.53125" Visibility="Hidden" Canvas.Left="372.408782" Canvas.Top="157.574729">
+    <TextBlock Text="*" />
+  </Label>
+  <Label Background="{x:Null}" Foreground="#FFFF0000" FontFamily="Calibri" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="work_order_empty_label" Width="9.96" Height="24.413333" RenderTransform="1,0,0.00280955,1,-6.24799187029112,-24.53125" Visibility="Hidden" Canvas.Left="1082" Canvas.Top="157.574729">
+    <TextBlock Text="*" />
+  </Label>
+  <Label Background="{x:Null}" Foreground="#FFFF0000" FontFamily="Calibri" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="colour_empty_label" Width="9.96" Height="24.413333" RenderTransform="1,0,0.00280955,1,-6.24799187029112,-24.53125" Visibility="Hidden" Canvas.Left="720.364005" Canvas.Top="199.53125">
+    <TextBlock Text="*" />
+  </Label>
+  <Label Background="{x:Null}" Foreground="#FFFF0000" FontFamily="Calibri" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="model_empty_label" Width="9.96" Height="24.413333" RenderTransform="1,0,0.00280955,1,-6.24799187029112,-24.53125" Visibility="Hidden" Canvas.Left="720.364005" Canvas.Top="119.284771">
+    <TextBlock Text="*" />
+  </Label>
+  <ig:GdxViewControl FileVersion="10.97.020.00" Background="#FFBFBFBF" FontFamily="Segoe UI" FontSize="12" IsTabStop="True" Name="default_grid" Width="1100" Height="400" gwx:GwxProperties.Description="Grid Size=H:443,W:1100&#xD;&#xA;Position=X:0,Y:300&#xD;&#xA;Grid Header Font=Style :Calibri,Size:17,Color:White&#xD;&#xA;Grid Header Background color=R :0,G : 24,B :72&#xD;&#xA;Grid Text Font=Style :Calibri,Size:16,Color:White&#xD;&#xA;Grid Scrolbar Foreground color=R :0,G : 24,B :72&#xD;&#xA;" gwx:GwxProperties.ShowDescriptionInToolTip="True" Canvas.Left="0" Canvas.Top="300">
+    <ig:GdxViewControl.DataDictionaryRepository>
+      <ig13:DataDictionary Name="DailyStatus" Key="47993581">
+        <ig13:TextDataTranslation Text="Applicable" FilterKey="15056362" />
+        <ig13:TextDataTranslation Text="Not Applicable" FilterKey="49320909" />
+      </ig13:DataDictionary>
+      <ig13:DataDictionary Name="WeeklyStatus" Key="53237738">
+        <ig13:TextDataTranslation Text="Applicable" FilterKey="61233639" />
+        <ig13:TextDataTranslation Text="Not Applicable" FilterKey="49445506" />
+      </ig13:DataDictionary>
+      <ig13:DataDictionary Name="MonthlyStatus" Key="27952209">
+        <ig13:TextDataTranslation Text="Applicable" FilterKey="1264671" />
+        <ig13:TextDataTranslation Text="Not Applicable" FilterKey="35726287" />
+      </ig13:DataDictionary>
+      <ig13:DataDictionary Name="AnnualStatus" Key="63571381">
+        <ig13:TextDataTranslation Text="Applicable" FilterKey="54214786" />
+        <ig13:TextDataTranslation Text="Not Applicable" FilterKey="47842506" />
+      </ig13:DataDictionary>
+    </ig:GdxViewControl.DataDictionaryRepository>
+    <ig:GdxViewControl.FiltersRepository>
+      <igd:GdxFilter Key="49320909" Expression="x={{Daily}}==0" Name="Daily_Not Applicable" />
+      <igd:GdxFilter Key="15056362" Expression="x={{Daily}}==1" Name="Daily_Applicable" />
+      <igd:GdxFilter Key="61233639" Expression="x={{Weekly}}==1" Name="Weekly_Applicable" />
+      <igd:GdxFilter Key="49445506" Expression="x={{Weekly}}==0" Name="Weekly_Not Applicable" />
+      <igd:GdxFilter Key="1264671" Expression="x={{Monthly}}==1" Name="Monthly_Applicable" />
+      <igd:GdxFilter Key="35726287" Expression="x={{Monthly}}==0" Name="Monthly_Not Applicable" />
+      <igd:GdxFilter Key="54214786" Expression="x={{Annual}}==1" Name="Annual_Applicable" />
+      <igd:GdxFilter Key="47842506" Expression="x={{Annual}}==0" Name="Annual_Not Applicable" />
+    </ig:GdxViewControl.FiltersRepository>
+    <ig:GdxViewControl.SubscriptionsRepository>
+      <igd:GdxSubscription Key="11348180" Name="New Subscription">
+        <igd:GdxSubscription.Fields>
+          <igd:GdxDataField Key="RowID" BuiltInType="Int64" />
+          <igd:GdxDataField Key="AssetID" />
+          <igd:GdxDataField Key="AssetName" />
+          <igd:GdxDataField Key="AssemblyID" />
+          <igd:GdxDataField Key="AssemblyName" />
+          <igd:GdxDataField Key="SubAssemblyID" />
+          <igd:GdxDataField Key="SubAssemblyName" />
+          <igd:GdxDataField Key="ComponentID" />
+          <igd:GdxDataField Key="ComponentName" />
+        </igd:GdxSubscription.Fields>
+        <igd:GdxSubscription.Tags>
+          <s:String>db:CumiMetz. GridAssetComponentInfo</s:String>
+        </igd:GdxSubscription.Tags>
+      </igd:GdxSubscription>
+      <igd:GdxSubscription Key="3170613" Name="New Subscription">
+        <igd:GdxSubscription.Fields>
+          <igd:GdxDataField Key="RowID" BuiltInType="Int64" />
+          <igd:GdxDataField Key="TimeStamp" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="AssetName" />
+          <igd:GdxDataField Key="StartDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="Daily" BuiltInType="Int32" />
+          <igd:GdxDataField Key="Weekly" BuiltInType="Int32" />
+          <igd:GdxDataField Key="WLastDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="WNextDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="WWarning" BuiltInType="Int32" />
+          <igd:GdxDataField Key="Monthly" BuiltInType="Int32" />
+          <igd:GdxDataField Key="MLastDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="MNextDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="MWarning" BuiltInType="Int32" />
+          <igd:GdxDataField Key="Annual" BuiltInType="Int32" />
+          <igd:GdxDataField Key="ALastDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="ANextDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="AWarning" BuiltInType="Int32" />
+          <igd:GdxDataField Key="Maintenancetype" BuiltInType="Int32" />
+        </igd:GdxSubscription.Fields>
+        <igd:GdxSubscription.Tags>
+          <s:String>db:CumiMetz.GridPreventive</s:String>
+        </igd:GdxSubscription.Tags>
+      </igd:GdxSubscription>
+      <igd:GdxSubscription Key="706558" Name="New Subscription">
+        <igd:GdxSubscription.Fields>
+          <igd:GdxDataField Key="RowID" BuiltInType="Int64" />
+          <igd:GdxDataField Key="TimeStamp" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="AssetID" />
+          <igd:GdxDataField Key="AssetName" />
+          <igd:GdxDataField Key="StartDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="Daily" BuiltInType="Int32" />
+          <igd:GdxDataField Key="Weekly" BuiltInType="Int32" />
+          <igd:GdxDataField Key="WLastDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="WNextDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="WWarning" BuiltInType="Int32" />
+          <igd:GdxDataField Key="Monthly" BuiltInType="Int32" />
+          <igd:GdxDataField Key="MLastDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="MNextDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="MWarning" BuiltInType="Int32" />
+          <igd:GdxDataField Key="Annual" BuiltInType="Int32" />
+          <igd:GdxDataField Key="ALastDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="ANextDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="AWarning" BuiltInType="Int32" />
+          <igd:GdxDataField Key="Maintenancetype" BuiltInType="Int32" />
+        </igd:GdxSubscription.Fields>
+        <igd:GdxSubscription.Tags>
+          <s:String>db:CumiMetz.GridPreventive</s:String>
+        </igd:GdxSubscription.Tags>
+      </igd:GdxSubscription>
+      <igd:GdxSubscription Key="60979881" Name="New Subscription" />
+      <igd:GdxSubscription Key="54597518" Name="New Subscription">
+        <igd:GdxSubscription.Fields>
+          <igd:GdxDataField Key="uid" BuiltInType="Int64" />
+          <igd:GdxDataField IsPrimaryKey="True" Key="work_order_number" />
+          <igd:GdxDataField Key="production_date" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="shift_id" BuiltInType="Int32" />
+          <igd:GdxDataField IsPrimaryKey="True" Key="model_family_id" BuiltInType="Int32" />
+          <igd:GdxDataField Key="model_family_code" />
+          <igd:GdxDataField IsPrimaryKey="True" Key="model_id" BuiltInType="Int32" />
+          <igd:GdxDataField Key="model_description" />
+          <igd:GdxDataField IsPrimaryKey="True" Key="sku_id" BuiltInType="Int32" />
+          <igd:GdxDataField Key="sku_code" />
+          <igd:GdxDataField Key="colour" />
+          <igd:GdxDataField Key="sequence_number" BuiltInType="Int32" />
+          <igd:GdxDataField Key="planned_quantity" BuiltInType="Int32" />
+          <igd:GdxDataField Key="plant_name" />
+          <igd:GdxDataField Key="assembly_name" />
+          <igd:GdxDataField Key="conveyor_name" />
+          <igd:GdxDataField Key="transfer_status" BuiltInType="Int32" />
+        </igd:GdxSubscription.Fields>
+        <igd:GdxSubscription.Tags>
+          <s:String>db:BajajMEA.OrderManagement_Manual_Order</s:String>
+        </igd:GdxSubscription.Tags>
+      </igd:GdxSubscription>
+    </ig:GdxViewControl.SubscriptionsRepository>
+    <ig:GdxViewControl.Header>
+      <TextBlock Text="Manual Order Upload" FontFamily="Calibri" FontStyle="Normal" FontWeight="Bold" FontSize="19" Foreground="#FF001848" Padding="0,0,0,0" TextAlignment="Center" Visibility="Visible" />
+    </ig:GdxViewControl.Header>
+    <ig:GdxViewControl.Items>
+      <iwc:MultipleTabItem IsSelected="True" Header="Tab" FontFamily="Calibri" FontSize="16">
+        <ig:GdxGridView HeaderBackground="#FF001848" HeaderBorderBrush="#FFC6C7B5" HeaderCellBorderThickness="0,0,0,0" HeaderFontFamily="Calibri" HeaderFontSize="17" HeaderMouseOverForeground="#FFFFFFFF" HeaderMouseOverBorderBrush="#FF000000" HeaderSelectedForeground="#FFFFFFFF" HeaderSelectedBorderBrush="#FF000000" GroupHeaderBorderBrush="#FFD8D8D8" GroupHeaderBackground="#FFD8D8D8" GroupHeaderForeground="#FFFFFFFF" RowHeaderBackground="#FFD8D8D8" RowHeaderBorderBrush="#FFD8D8D8" RowHeaderCellBorderBrush="#FF626262" RowHeaderBorderThickness="0,0,1,2" RowHeight="25" ScrollBarBackground="#FFD8D8D8" ScrollBarForeground="#FF001848" ScrollBarMouseOverForeground="#FF171F31" ScrollBarMousePressedForeground="#FF171F31" ScrollBarBorderBrush="#FF373D54" ScrollBarMouseOverBorderBrush="#FF229EC8" DateTimeFormat="d" DoubleFormat="N0" SubscriptionID="54597518" AllowPaging="False" BorderBrush="#FFA5B6CB" BorderThickness="0,0,0,0" Background="#FFFFFFFF" FontFamily="Calibri" FontSize="16" Uid="local:GdxView_1">
+          <ig:GdxGridView.HeaderMouseOverBackground>
+            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+              <LinearGradientBrush.GradientStops>
+                <GradientStop Color="#FF8993A2" Offset="0" />
+                <GradientStop Color="#FF545F6D" Offset="0.5" />
+                <GradientStop Color="#FF0C1C32" Offset="0.51" />
+                <GradientStop Color="#FF132F54" Offset="1" />
+              </LinearGradientBrush.GradientStops>
+              <LinearGradientBrush.RelativeTransform>
+                <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+              </LinearGradientBrush.RelativeTransform>
+            </LinearGradientBrush>
+          </ig:GdxGridView.HeaderMouseOverBackground>
+          <ig:GdxGridView.HeaderSelectedBackground>
+            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+              <LinearGradientBrush.GradientStops>
+                <GradientStop Color="#FF6078C8" Offset="0" />
+                <GradientStop Color="#FF4961B2" Offset="0.4" />
+                <GradientStop Color="#FF16399C" Offset="0.41" />
+                <GradientStop Color="#FF16399C" Offset="0.74" />
+                <GradientStop Color="#FF173C9F" Offset="0.75" />
+                <GradientStop Color="#FF39C0DC" Offset="1" />
+              </LinearGradientBrush.GradientStops>
+              <LinearGradientBrush.RelativeTransform>
+                <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+              </LinearGradientBrush.RelativeTransform>
+            </LinearGradientBrush>
+          </ig:GdxGridView.HeaderSelectedBackground>
+          <ig:GdxGridView.MouseOverBackground>
+            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="0.3">
+              <LinearGradientBrush.GradientStops>
+                <GradientStop Color="#FF6078C8" Offset="0" />
+                <GradientStop Color="#FF4961B2" Offset="0.4" />
+                <GradientStop Color="#FF16399C" Offset="0.41" />
+                <GradientStop Color="#FF16399C" Offset="0.74" />
+                <GradientStop Color="#FF173C9F" Offset="0.75" />
+                <GradientStop Color="#FF39C0DC" Offset="1" />
+              </LinearGradientBrush.GradientStops>
+              <LinearGradientBrush.RelativeTransform>
+                <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+              </LinearGradientBrush.RelativeTransform>
+            </LinearGradientBrush>
+          </ig:GdxGridView.MouseOverBackground>
+          <ig:GdxGridView.SelectionBackground>
+            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="0.9">
+              <LinearGradientBrush.GradientStops>
+                <GradientStop Color="#FF6078C8" Offset="0" />
+                <GradientStop Color="#FF4961B2" Offset="0.4" />
+                <GradientStop Color="#FF16399C" Offset="0.41" />
+                <GradientStop Color="#FF16399C" Offset="0.74" />
+                <GradientStop Color="#FF173C9F" Offset="0.75" />
+                <GradientStop Color="#FF39C0DC" Offset="1" />
+              </LinearGradientBrush.GradientStops>
+              <LinearGradientBrush.RelativeTransform>
+                <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+              </LinearGradientBrush.RelativeTransform>
+            </LinearGradientBrush>
+          </ig:GdxGridView.SelectionBackground>
+          <ig:GdxGridView.Columns>
+            <ig:GdxColumn Key="uid" IsVisible="False" Format="{x:Null}" Text="uid" />
+            <ig:GdxColumn Key="work_order_number" Index="1" Format="{x:Null}" Text="W.O. Number" IsAuto="True" />
+            <ig:GdxColumn Key="production_date" Index="2" Format="{x:Null}" Text="Prod. Date" IsAuto="True" />
+            <ig:GdxColumn Key="shift_id" Index="3" Format="{x:Null}" Text="Shift ID" IsAuto="True" />
+            <ig:GdxColumn Key="model_family_id" Index="4" Format="{x:Null}" Text="Model Family ID" IsAuto="True" />
+            <ig:GdxColumn Key="model_family_code" Index="14" Format="{x:Null}" Text="Model Family Code" IsAuto="True" />
+            <ig:GdxColumn Key="model_id" Index="5" Format="{x:Null}" Text="Model ID" IsAuto="True" />
+            <ig:GdxColumn Key="model_description" Index="15" Format="{x:Null}" Text="Model Desc" IsAuto="True" />
+            <ig:GdxColumn Key="sku_id" Index="6" Format="{x:Null}" Text="SKU ID" IsAuto="True" />
+            <ig:GdxColumn Key="sku_code" Index="16" Format="{x:Null}" Text="SKU Code" IsAuto="True" />
+            <ig:GdxColumn Key="colour" Index="7" Format="{x:Null}" Text="Colour" IsAuto="True" />
+            <ig:GdxColumn Key="sequence_number" Index="8" Format="{x:Null}" Text="SEQ No." IsAuto="True" />
+            <ig:GdxColumn Key="planned_quantity" Index="9" Format="{x:Null}" Text="Plan Quantity" IsAuto="True" />
+            <ig:GdxColumn Key="plant_name" Index="10" Format="{x:Null}" Text="Plant Name" IsAuto="True" />
+            <ig:GdxColumn Key="assembly_name" Index="11" Format="{x:Null}" Text="Assembly Name" IsAuto="True" />
+            <ig:GdxColumn Key="conveyor_name" Index="12" Format="{x:Null}" Text="Conveyor Name" IsAuto="True" />
+            <ig:GdxColumn Key="transfer_status" Index="13" Format="{x:Null}" Text="Tr. Status" IsAuto="True" />
+          </ig:GdxGridView.Columns>
+        </ig:GdxGridView>
+      </iwc:MultipleTabItem>
+    </ig:GdxViewControl.Items>
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Grid" ShowToolTip="False" Control="True">
+            <gwx:GwxPick.CommandParameters>
+              <gwxcmd:ScriptCommand />
+            </gwx:GwxPick.CommandParameters>
+            <gwx:GwxPick.EventBindings>
+              <script:ScriptEventBindings>
+                <script:ScriptEventBindings.EventBindings>
+                  <x:Array Type="script:ScriptEventBinding">
+                    <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Grid" ScriptType="JScriptNet" />
+                  </x:Array>
+                </script:ScriptEventBindings.EventBindings>
+              </script:ScriptEventBindings>
+            </gwx:GwxPick.EventBindings>
+          </gwx:GwxPick>
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+  </ig:GdxViewControl>
+  <TextBox FontFamily="Calibri" FontSize="16" VerticalContentAlignment="Center" TabIndex="4" Name="colour" Width="220" Height="25" Canvas.Left="489.332882" Canvas.Top="174">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="colour_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>
+  </TextBox>
+  <TextBox FontFamily="Calibri" FontSize="16" VerticalContentAlignment="Center" TabIndex="4" Name="work_order" Width="220" Height="25" Canvas.Left="851.244925" Canvas.Top="133.043479">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="work_order_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>
+  </TextBox>
+  <ComboBox IsDropDownOpen="False" Text="" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TabIndex="6" Padding="0,0,0,0" Name="conveyor" Width="220" Height="25" Focusable="False" Canvas.Left="851.244925" Canvas.Top="55">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="DropDownOpened" MethodName="conveyor_DropDownOpened" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>
+    <s:String>A</s:String>
+    <s:String>B</s:String>
+    <s:String>C</s:String>
+    <s:String>D</s:String>
+    <s:String>E</s:String>
+    <s:String>F</s:String>
+    <s:String>G</s:String>
+    <s:String>H</s:String>
+  </ComboBox>
+  <Label Background="{x:Null}" Foreground="#FFFF0000" FontFamily="Calibri" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="sku_empty_label" Width="9.96" Height="24.413333" RenderTransform="1,0,0.00280955,1,-6.24799187029112,-24.53125" Visibility="Hidden" Canvas.Left="1082" Canvas.Top="119.284771">
+    <TextBlock Text="*" />
+  </Label>
+  <Canvas>
+    <Canvas>
+      <Button Background="#FF7F7F7F" FontFamily="Calibri" FontSize="16" Name="main" Width="125" Height="24.999984" Canvas.Left="0" Canvas.Top="0" Block.TextAlignment="Center">
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:LoadDisplayCommand FileName="BajajMEA_Order_Manual_Upload.gdfx" />
+                </gwx:GwxPick.CommandParameters>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="Manual Upload" />
+      </Button>
+      <Button Background="#FFD8D8D8" FontFamily="Calibri" FontSize="16" Name="main1" Width="125" Height="24.999984" Canvas.Left="125" Canvas.Top="0" Block.TextAlignment="Center">
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:LoadDisplayCommand FileName="BajajMEA_Order_Excel_Upload.gdfx" />
+                </gwx:GwxPick.CommandParameters>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="Excel Upload" />
+      </Button>
+      <Button FontFamily="Calibri" FontSize="16" Name="main2" Width="133.513932" Height="24.999984" Canvas.Left="250" Canvas.Top="0" Block.TextAlignment="Center">
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:LoadDisplayCommand FileName="BajajMEA_Order_Configuration_Excel_Upload.gdfx" />
+                </gwx:GwxPick.CommandParameters>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="Excel Configuration" />
+      </Button>
+    </Canvas>
+    <Button Background="#FFD8D8D8" FontFamily="Calibri" FontSize="16" Name="main3" Width="125" Height="24.999984" Canvas.Left="383.513932" Canvas.Top="0" Block.TextAlignment="Center">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+              <gwx:GwxPick.CommandParameters>
+                <gwxcmd:LoadDisplayCommand FileName="BajajMEA_Order_SAP_Upload.gdfx" />
+              </gwx:GwxPick.CommandParameters>
+            </gwx:GwxPick>
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="SAP Upload" />
+    </Button>
+  </Canvas>
+  <ComboBox IsDropDownOpen="False" Text="" Background="#FFD8D8D8" FontFamily="Calibri" FontSize="16" Padding="4,2,5,3" Name="model" Width="220" Height="25" Canvas.Left="489.332882" Canvas.Top="93.753521">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="DropDownOpened" MethodName="Dropdown_Model" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>
+    <s:String>Dominar 250</s:String>
+    <s:String>Dominar 400</s:String>
+    <s:String>DUKE /RC 200</s:String>
+    <s:String>DUKE 390</s:String>
+    <s:String>DUKE/RC 125</s:String>
+    <s:String>DUKE/RC 250</s:String>
+    <s:String>PULSAR 160 NS</s:String>
+    <s:String>PULSAR 200 FI </s:String>
+    <s:String>PULSAR 200 NS</s:String>
+    <s:String>PULSAR RS 200</s:String>
+  </ComboBox>
+  <ComboBox IsDropDownOpen="False" Text="" Background="#FFD8D8D8" FontFamily="Calibri" FontSize="16" Padding="4,2,5,3" Name="sku" Width="220" Height="25" Canvas.Left="851.244925" Canvas.Top="94.753521">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="DropDownOpened" MethodName="Dropdown_SKU" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>
+    <s:String>JG501015</s:String>
+    <s:String>JP501002</s:String>
+    <s:String>JY501057</s:String>
+    <s:String>JY501111</s:String>
+  </ComboBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" VerticalContentAlignment="Center" Padding="0,0,0,0" Name="model_label" Canvas.Left="402.897158" Canvas.Top="94.753521">
+    <TextBlock Text="Model" />
+  </Label>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" VerticalContentAlignment="Center" Padding="0,0,0,0" Name="sku_label" Canvas.Left="748.694181" Canvas.Top="94.753521">
+    <TextBlock Text="SKU" />
+  </Label>
+  <ComboBox IsDropDownOpen="False" Text="" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TabIndex="6" Padding="0,0,0,0" Name="production_shift" Width="220" Height="25" Focusable="False" gwx:GwxProperties.Description="Select Plant" Canvas.Left="143.788904" Canvas.Top="134.65493">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="DropDownOpened" MethodName="Dropdown_Production_Shift" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>
+    <s:String></s:String>
+    <s:String>1</s:String>
+    <s:String>2</s:String>
+    <s:String>3</s:String>
+  </ComboBox>
+  <Button Background="#FF001848" Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="12" Name="confirm_command_button" Width="125" Height="24.999984" gwx:GwxProperties.Description="Size=H:25,W:125&#xD;&#xA;Background color=R :255,G : 255,B :255&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :12&#xD;&#xA;Position= X:504  Y:233" gwx:GwxProperties.ShowDescriptionInToolTip="False" Canvas.Left="350" Canvas.Top="240">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" DataSource="db:BajajMEA.test&lt;@shift_id&gt;.@@Execute" Control="True">
+            <gwx:GwxPick.CommandParameters>
+              <gwxcmd:WriteValueCommand OnUpValue="1" />
+            </gwx:GwxPick.CommandParameters>
+          </gwx:GwxPick>
+          <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+            <gwx:GwxPick.CommandParameters>
+              <gwxcmd:ScriptCommand />
+            </gwx:GwxPick.CommandParameters>
+            <gwx:GwxPick.EventBindings>
+              <script:ScriptEventBindings>
+                <script:ScriptEventBindings.EventBindings>
+                  <x:Array Type="script:ScriptEventBinding">
+                    <script:ScriptEventBinding EventName="CommandExecuted" MethodName="CONFIRM" ScriptType="JScriptNet" />
+                  </x:Array>
+                </script:ScriptEventBindings.EventBindings>
+              </script:ScriptEventBindings>
+            </gwx:GwxPick.EventBindings>
+          </gwx:GwxPick>
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <TextBlock Text="CONFIRM" />
+  </Button>
+  <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="process_point_shift_tag" Width="120" Height="50" Visibility="Hidden" gwx:GwxProperties.Stretch="Uniform" Canvas.Left="223.337632" Canvas.Top="227.499992">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxProcessPoint AnimationMode="Analog" Name="pp_shift_tag" DataSource="@{7BC0CC8E-482C-47CA-ABDC-0FE7F9C6E729}\SB1_PLC.RJ71EN71.Andon.SB1.RunningShift.Value" />
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <TextBlock Text="*.??" TextTrimming="CharacterEllipsis" LayoutTransform="3.00751879699248,0,0,3.00751879699248,0,0" />
+  </Label>
+  <Canvas>
+    <Button Background="#FF001848" Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="12" Name="Clear" Width="125" Height="24.999984" gwx:GwxProperties.Description="Size=H:25,W:125&#xD;&#xA;Background color=R :255,G : 255,B :255&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :12&#xD;&#xA;Position= X:504  Y:233" gwx:GwxProperties.ShowDescriptionInToolTip="False" Canvas.Left="494.750004" Canvas.Top="240">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Clear1" Control="True">
+              <gwx:GwxPick.CommandParameters>
+                <gwxcmd:ScriptCommand />
+              </gwx:GwxPick.CommandParameters>
+              <gwx:GwxPick.EventBindings>
+                <script:ScriptEventBindings>
+                  <script:ScriptEventBindings.EventBindings>
+                    <x:Array Type="script:ScriptEventBinding">
+                      <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Clear" ScriptType="JScriptNet" />
+                    </x:Array>
+                  </script:ScriptEventBindings.EventBindings>
+                </script:ScriptEventBindings>
+              </gwx:GwxPick.EventBindings>
+            </gwx:GwxPick>
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="CLEAR" />
+    </Button>
+    <Canvas>
+      <Path Fill="#FFFFFFFF" Name="DatabaseRefresh1" Margin="0,0,0,0" gwx:GwxProperties.Description="Icon, Database, Refresh, Network, Connectivity" gwx:GwxProperties.ShowDescriptionInToolTip="False" gwx:GwxProperties.Title="Database - Refresh">
+        <Path.Data>
+          <PathGeometry FillRule="EvenOdd" Figures="M526.193714435116,254.103219874806L530.158853903088,254.103219874806C529.934615598237,254.941798028231 529.805247046954,255.849471476263 529.805247046954,256.80425677983 529.805247046954,257.451249756337 529.867775039954,258.076256781563 529.975582273806,258.672997321517L526.193714435116,258.672997321517C525.842263818512,258.672997321517,525.557653481063,258.258419901397,525.557653317718,257.746479445296L525.557653317718,255.032879274122C525.557653481063,254.517797922977,525.842263818512,254.103219874806,526.193714435116,254.103219874806z M534.976473727087,251.265577901374C535.017702972241,251.264007767879,535.059202116509,251.264007767879,535.101240843425,251.265577901374L535.103397018286,251.265577901374 535.107708505702,251.265577901374C535.635881451292,251.271859377436,536.136029728674,251.435173358685,536.590905663569,251.727254301933L536.60599586953,251.739816626003C537.949065159265,252.609777979687 538.88037511287,254.578968125781 538.865284260186,256.855942748263 538.843726176375,259.914939943715 537.125546487013,262.370931766563 535.025787657876,262.339525956387 533.387372425911,262.314400994214 532.003343143411,260.781761030404 531.485948700787,258.658678646116L532.846264802488,258.313206569458C533.227843079966,259.525499732807 534.062141117486,260.373476077285 535.038722335703,260.389179610426 536.386103328425,260.408022782506 537.487722208813,258.831414684445 537.500656886641,256.868505700388 537.515747954902,254.908737297347 536.433531630188,253.300722133003 535.086150637466,253.281878018842 534.971892340557,253.281878018842 534.859790218508,253.294440970967 534.749844486889,253.313284771103L534.747688312035,253.300722133003C534.385512590231,253.369816171503,534.04920643966,253.555115475982,533.756016025558,253.83463315308L534.223826853862,254.478467649048C534.251852599945,254.516155563343 534.262631102918,254.575827858789 534.247540034654,254.626078097155 534.234605356828,254.679469230566 534.202268770049,254.71401656384 534.163463874265,254.717157458887L533.027352232239,254.80509529752 532.018433564947,254.883611707125 532.011966333822,254.883611707125C531.983940587732,254.883611707125 531.96022676021,254.864767906992 531.940824204537,254.836502363804 531.92142208001,254.80509529752 531.9127988896,254.764266802206 531.9192663363,254.720297725877L532.080952072675,253.410644666813 532.313779291606,251.557658844622C532.320246738307,251.501127130195 532.348272484391,251.457157739837 532.384921420889,251.447735996785 532.423725669946,251.435173358685 532.462530350154,251.457157739837 532.48408821839,251.504267711212L532.85704330546,252.301994131348C533.374437748078,251.758660740165 533.988843244495,251.406907187444 534.654988745662,251.300124920624 534.66361193607,251.296984339606 534.672235126481,251.296984339606 534.680858316891,251.296984339606 534.739065121625,251.287562596553 534.795116398224,251.28128112049 534.853323202959,251.274999958453 534.894282980147,251.27028924394 534.935243404063,251.267148034868 534.976473727087,251.265577901374z M526.193580606542,248.331455306984L535.109352475856,248.331455306984C535.460724903634,248.331455306984,535.747417043897,248.746047486359,535.747417043897,249.2610864439L535.747417043897,249.515500826669C535.467197524122,249.446414952862 535.180479299355,249.402478849337 534.887314323036,249.402479163363 533.063640943965,249.402478849337 531.470611446598,250.803213468318 530.573852890856,252.901171832516L526.193580606542,252.901171832516C525.842208415899,252.901171832516,525.557647654018,252.486579653143,525.557647680995,251.974684102861L525.557647680995,249.2610864439C525.557647654018,248.746047486359,525.842208415899,248.331455306984,526.193580606542,248.331455306984z M527.433070485423,243.893587287454C527.034274864991,243.893587287454 526.708771404831,244.364366474147 526.708771404831,244.944994366977 526.708771404831,245.525622228405 527.034274864991,245.999540143359 527.433070485423,245.999540143359 527.831865890277,245.999540143359 528.155213649846,245.525622228405 528.155213649846,244.944994366977 528.155213649846,244.364366474147 527.831865890277,243.893587287454 527.433070485423,243.893587287454z M526.193570733237,242.660145367998L535.10934579305,242.660145367998C535.460716711807,242.660145367998,535.747418552917,243.077569659964,535.747418552917,243.589149896037L535.747418552917,246.303977409163C535.747418552917,246.81555767664,535.460716711807,247.229843365953,535.10934579305,247.229843365953L526.193570733237,247.229843365953C525.842199491115,247.229843365953,525.557653478923,246.81555767664,525.557653317718,246.303977409163L525.557653317718,243.589149896037C525.557653478923,243.077569659964,525.842199491115,242.660145367998,526.193570733237,242.660145367998z" />
+        </Path.Data>
+      </Path>
+    </Canvas>
+  </Canvas>
+  <Canvas>
+    <Button Background="#FF001848" Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="12" Name="Add" Width="125" Height="24.999984" gwx:GwxProperties.Description="Size=H:25,W:125&#xD;&#xA;Background color=R :255,G : 255,B :255&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :12&#xD;&#xA;Position= X:647  Y:233" gwx:GwxProperties.ShowDescriptionInToolTip="True" Canvas.Left="639.500004" Canvas.Top="240">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="ADD" Control="True">
+              <gwx:GwxPick.CommandParameters>
+                <gwxcmd:ScriptCommand />
+              </gwx:GwxPick.CommandParameters>
+              <gwx:GwxPick.EventBindings>
+                <script:ScriptEventBindings>
+                  <script:ScriptEventBindings.EventBindings>
+                    <x:Array Type="script:ScriptEventBinding">
+                      <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Create" ScriptType="JScriptNet" />
+                    </x:Array>
+                  </script:ScriptEventBindings.EventBindings>
+                </script:ScriptEventBindings>
+              </gwx:GwxPick.EventBindings>
+            </gwx:GwxPick>
+            <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="DBRefreshAdd" DataSource="db:CumiMetz.GridPreventive.@@Refresh" Control="True">
+              <gwx:GwxPick.CommandParameters>
+                <gwxcmd:ToggleValueCommand>
+                  <gwxcmd:ToggleValueCommand.Values>
+                    <s:String>0</s:String>
+                    <s:String>1</s:String>
+                  </gwxcmd:ToggleValueCommand.Values>
+                </gwxcmd:ToggleValueCommand>
+              </gwx:GwxPick.CommandParameters>
+            </gwx:GwxPick>
+            <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="GridRefreshAdd" Control="True">
+              <gwx:GwxPick.CommandParameters>
+                <gwxcmd:IcoCommandingCommand>
+                  <gwxcmd:IcoCommandingCommand.Command>
+                    <icc:RefreshCommandData Target="Preventitve" />
+                  </gwxcmd:IcoCommandingCommand.Command>
+                </gwxcmd:IcoCommandingCommand>
+              </gwx:GwxPick.CommandParameters>
+            </gwx:GwxPick>
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="ADD" />
+    </Button>
+    <Path Fill="#FFFFFFFF" Name="DatabaseAdd1" Margin="0,0,0,0" gwx:GwxProperties.Description="Icon, Database, Add, Connect, Network, Connectivity" gwx:GwxProperties.ShowDescriptionInToolTip="False" gwx:GwxProperties.Title="Database - Add">
+      <Path.Data>
+        <PathGeometry FillRule="EvenOdd" Figures="M674.490630333619,254.798202566624L679.598359157146,254.798202566624 679.575584481639,254.888986854511C679.399655467064,255.617092206952 679.303589701972,256.403203465858 679.303589701972,257.222720435452 679.303589701972,258.04219911574 679.399655467064,258.828241659013 679.575584481639,259.556263253598L679.598332135312,259.646928913009 674.490630333619,259.646928913009C674.132629341341,259.646928913009,673.842027189509,259.205376628956,673.842027103018,258.662317683686L673.842027103018,255.781958440185C673.842027189509,255.238899494915,674.132629341341,254.798202566624,674.490630333619,254.798202566624z M683.230222399138,253.89635401545L683.230222399138,256.537022541314 681.491007447884,256.537022541314 681.491007447884,258.210837187546 683.230222399138,258.210837187546 683.230222399138,260.851333411533 684.332669231815,260.851333411533 684.332669231815,258.210837187546 686.07188418307,258.210837187546 686.07188418307,256.537022541314 684.332669231815,256.537022541314 684.332669231815,253.89635401545z M683.778517437031,252.104277375791C685.640359938631,252.104277375791 687.149828969638,254.395007279223 687.149828969638,257.222566594487 687.149828969638,260.047289082373 685.640359938631,262.339830548625 683.778517437031,262.339830548625 681.916608957126,262.339830548625 680.407431536722,260.047289082373 680.407431536722,257.222566594487 680.407431536722,254.395007279223 681.916608957126,252.104277375791 683.778517437031,252.104277375791z M674.490630333619,248.674992034518L683.565860573667,248.674992034518C683.923852783848,248.674992034518,684.214132336463,249.115641784914,684.214132336463,249.658814230631L684.214132336463,250.460369754857 684.122281977151,250.447946242332C684.008795011824,250.434792839898 683.894138226355,250.42809460432 683.778471950281,250.42809460432 682.236407384135,250.42809460432 680.873922707238,251.618823666738 680.068911709001,253.426508668747L680.028405982923,253.52235022193 674.490630333619,253.52235022193C674.132629341341,253.522349538191,673.842027189509,253.081699787796,673.842027301316,252.537877107604L673.842027301316,249.658814230631C673.842027189509,249.115641784914,674.132629341341,248.674992034518,674.490630333619,248.674992034518z M675.751452753807,243.966091125071C675.345928735914,243.966091125071 675.015450245087,244.467407581059 675.015450470269,245.083579581284 675.015450245087,245.700581809912 675.345928735914,246.200886778653 675.751452753807,246.200886778653 676.157263068007,246.200886778653 676.48746444995,245.700581809912 676.48746444995,245.083579581284 676.48746444995,244.467407581059 676.157263068007,243.966091125071 675.751452753807,243.966091125071z M674.490630333619,242.660151521846L683.565859672939,242.660151521846C683.923852783848,242.660151712959,684.214132336463,243.100851116714,684.214132336463,243.644046912068L684.214132336463,246.524103567485C684.214132336463,247.068165213972,683.923852783848,247.507851236196,683.565859672939,247.507851236196L674.490630333619,247.507851236196C674.132629341341,247.507851236196,673.842027189509,247.068165213972,673.842027103018,246.524103567485L673.842027103018,243.644046912068C673.842027189509,243.100851116714,674.132629341341,242.660151712959,674.490630333619,242.660151521846z" />
+      </Path.Data>
+    </Path>
+  </Canvas>
+  <Canvas>
+    <Button Background="#FF001848" Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="12" Name="Modify" Width="125" Height="24.999984" gwx:GwxProperties.Description="Size=H:25,W:125&#xD;&#xA;Background color=R :255,G : 255,B :255&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :12&#xD;&#xA;Position= X:790  Y:233" gwx:GwxProperties.ShowDescriptionInToolTip="False" Canvas.Left="784.250004" Canvas.Top="240">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="modify" Control="True">
+              <gwx:GwxPick.CommandParameters>
+                <gwxcmd:ScriptCommand />
+              </gwx:GwxPick.CommandParameters>
+              <gwx:GwxPick.EventBindings>
+                <script:ScriptEventBindings>
+                  <script:ScriptEventBindings.EventBindings>
+                    <x:Array Type="script:ScriptEventBinding">
+                      <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Update" ScriptType="JScriptNet" />
+                    </x:Array>
+                  </script:ScriptEventBindings.EventBindings>
+                </script:ScriptEventBindings>
+              </gwx:GwxPick.EventBindings>
+            </gwx:GwxPick>
+            <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="DBRefreshMod" DataSource="db:CumiMetz.GridPreventive.@@Refresh" Control="True">
+              <gwx:GwxPick.CommandParameters>
+                <gwxcmd:ToggleValueCommand>
+                  <gwxcmd:ToggleValueCommand.Values>
+                    <s:String>0</s:String>
+                    <s:String>1</s:String>
+                  </gwxcmd:ToggleValueCommand.Values>
+                </gwxcmd:ToggleValueCommand>
+              </gwx:GwxPick.CommandParameters>
+            </gwx:GwxPick>
+            <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="GridRefreshMod" Control="True">
+              <gwx:GwxPick.CommandParameters>
+                <gwxcmd:IcoCommandingCommand>
+                  <gwxcmd:IcoCommandingCommand.Command>
+                    <icc:RefreshCommandData Target="Preventitve" />
+                  </gwxcmd:IcoCommandingCommand.Command>
+                </gwxcmd:IcoCommandingCommand>
+              </gwx:GwxPick.CommandParameters>
+            </gwx:GwxPick>
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="MODIFY" />
+    </Button>
+    <Path Fill="#FFFFFFFF" Name="DatabaseEdit2" Margin="0,0,0,0" gwx:GwxProperties.Description="Icon, Database, Edit, Network, Connectivity" gwx:GwxProperties.ShowDescriptionInToolTip="False" gwx:GwxProperties.Title="Database - Edit">
+      <Path.Data>
+        <PathGeometry FillRule="EvenOdd" Figures="M810.759511998851,257.125738488915L820.101956415925,257.125738488915C820.469367849256,257.125738488915,820.76881843395,257.600666118506,820.76881843395,258.186747288375L820.76881843395,261.282200845416C820.76881843395,261.864914114199,820.469367849256,262.339841743789,820.101956415925,262.339841743789L810.759511998851,262.339841743789C810.389976713348,262.339841743789,810.09264953429,261.864914114199,810.092649619813,261.282200845416L810.092649619813,258.186747288375C810.09264953429,257.600666118506,810.389976713348,257.125738488915,810.759511998851,257.125738488915z M810.759511998851,250.538214268908L816.95665986784,250.538214268908 816.648713619622,253.472701697621 820.375921708928,251.949867903262 820.753952615481,251.373751272757C820.764571239268,251.444502804423,820.76881843395,251.518623248052,820.76881843395,251.596112603643L820.76881843395,254.69568581638C820.76881843395,255.278540944728,820.469367849256,255.753583140238,820.101956415925,255.753583140238L810.759511998851,255.753583140238C810.389976713348,255.753583140238,810.09264953429,255.278540944728,810.092649619813,254.69568581638L810.092649619813,251.596112603643C810.09264953429,251.009888900291,810.389976713348,250.538214268908,810.759511998851,250.538214268908z M817.773841785467,248.994888338025L819.513567478094,251.569815344565 817.30651573431,252.105696424002z M812.0567726581,245.470772947044C811.640601752171,245.470772610085 811.29874335329,246.013371093758 811.298743459468,246.673968465113 811.29874335329,247.341313937633 811.640601752171,247.877247245652 812.0567726581,247.877247245652 812.475069093843,247.877247245652 812.812702595813,247.341313937633 812.812702595813,246.673968465113 812.812702595813,246.013371093758 812.475069093843,245.470772610085 812.0567726581,245.470772947044z M820.545348463249,244.344875998612L822.312457518871,247.1245144452 819.969763755587,250.874498939662 819.944275915577,250.257925039337 819.349575858806,249.90078330591 819.347452473827,249.247147330499 818.752752204696,248.960760161364 818.697530179432,248.222892962935 818.202654699964,248.094860830032z M810.759400764821,244.06860705565L819.75609100122,244.06860705565 817.195327999993,248.224415004878 817.084908795555,249.282704211573 810.759400764821,249.282704211573C810.389937532976,249.282704211573,810.092661461921,248.807498591146,810.092661517843,248.224415004878L810.092661517843,245.126978682416C810.092661461921,244.54052133198,810.389937532976,244.06860705565,810.759400764821,244.06860705565z M821.79890224011,242.660325043982C821.895335857177,242.656697659283,821.985799192681,242.70506177053,822.052689111174,242.808238739504L823.30342062717,244.779127436391C823.456311778434,245.01496037162,823.424459092473,245.456304686587,823.235469547083,245.759518287162L822.978528284526,246.173910464034 821.175690977796,243.337178158659 821.434755412972,242.926155173423C821.541062483518,242.755597397582,821.674916646417,242.664988617666,821.79890224011,242.660325043982z" />
+      </Path.Data>
+    </Path>
+  </Canvas>
+  <Canvas>
+    <Button Background="#FF001848" Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="12" Name="Remove" Width="125" Height="24.999984" gwx:GwxProperties.Description="Size=H:25,W:125&#xD;&#xA;Background color=R :255,G : 255,B :255&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :12&#xD;&#xA;Position= X:933  Y:233" gwx:GwxProperties.ShowDescriptionInToolTip="False" Canvas.Left="929.000004" Canvas.Top="240">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Delete" Control="True">
+              <gwx:GwxPick.CommandParameters>
+                <gwxcmd:ScriptCommand />
+              </gwx:GwxPick.CommandParameters>
+              <gwx:GwxPick.EventBindings>
+                <script:ScriptEventBindings>
+                  <script:ScriptEventBindings.EventBindings>
+                    <x:Array Type="script:ScriptEventBinding">
+                      <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Delete" ScriptType="JScriptNet" />
+                    </x:Array>
+                  </script:ScriptEventBindings.EventBindings>
+                </script:ScriptEventBindings>
+              </gwx:GwxPick.EventBindings>
+            </gwx:GwxPick>
+            <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="DBRefreshRemove" DataSource="db:CumiMetz.GridPreventive.@@Refresh" Control="True">
+              <gwx:GwxPick.CommandParameters>
+                <gwxcmd:ToggleValueCommand>
+                  <gwxcmd:ToggleValueCommand.Values>
+                    <s:String>0</s:String>
+                    <s:String>1</s:String>
+                  </gwxcmd:ToggleValueCommand.Values>
+                </gwxcmd:ToggleValueCommand>
+              </gwx:GwxPick.CommandParameters>
+            </gwx:GwxPick>
+            <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="GridRefreshRemove" Control="True">
+              <gwx:GwxPick.CommandParameters>
+                <gwxcmd:IcoCommandingCommand>
+                  <gwxcmd:IcoCommandingCommand.Command>
+                    <icc:RefreshCommandData Target="Preventitve" />
+                  </gwxcmd:IcoCommandingCommand.Command>
+                </gwxcmd:IcoCommandingCommand>
+              </gwx:GwxPick.CommandParameters>
+            </gwx:GwxPick>
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="REMOVE" />
+    </Button>
+    <Path Fill="#FFFFFFFF" Name="DatabaseRemove2" Margin="0,0,0,0" gwx:GwxProperties.Description="Icon, Database, Remove, Delete, Disconnect, Network, Connectivity" gwx:GwxProperties.ShowDescriptionInToolTip="False" gwx:GwxProperties.Title="Database - Remove">
+      <Path.Data>
+        <PathGeometry FillRule="EvenOdd" Figures="M955.894776513008,254.79820745087L961.002441137165,254.79820745087 960.979738294696,254.888704574496C960.803804100937,255.616820227558 960.707736084025,256.402941106891 960.707736084025,257.222468040831 960.707736084025,258.041995316638 960.803804100937,258.82807688106 960.979738294696,259.556129972123L961.002519725661,259.64693375209 955.894776513008,259.64693375209C955.536775588285,259.64693375209,955.246173440701,259.20522623257,955.24617348507,258.662186740591L955.24617348507,255.782100132163C955.246173440701,255.238888338293,955.536775588285,254.79820745087,955.894776513008,254.79820745087z M963.955744295304,254.32335267145L963.176181107296,255.507025975948 964.405972376265,257.373951486928 963.176181107296,259.240841785422 963.955744295304,260.424344155502 965.185557857287,258.55745385701 966.415372319996,260.424344155502 967.194778105831,259.240841785422 965.965030747338,257.373951486928 967.194778105831,255.507025975948 966.415372319996,254.32335267145 965.185557857287,256.1902785243z M965.182663819085,252.104281753322C967.044506320685,252.104281753322 968.55397535169,254.394878809954 968.55397535169,257.222485134272 968.55397535169,260.047425565451 967.044506320685,262.339834185016 965.182663819085,262.339834185016 963.320755339178,262.339834185016 961.811577918778,260.047425565451 961.811577918778,257.222485134272 961.811577918778,254.394878809954 963.320755339178,252.104281753322 965.182663819085,252.104281753322z M955.894776513008,248.674996202205L964.970006054991,248.674996202205C965.3279991659,248.674996202205,965.618278718517,249.115677431498,965.618278718517,249.658717265344L965.618278718517,250.460015411392 965.526549507085,250.447608649677C965.413059839573,250.434454562703 965.298400577104,250.427756668583 965.182730923302,250.427756668583 963.640627625862,250.427756668583 962.278108721313,251.618500846094 961.4730774567,253.426208522061L961.432298134575,253.522696213196 955.894776513008,253.522696213196C955.536775588285,253.522696213196,955.246173440701,253.082015325773,955.24617348507,252.537984072317L955.24617348507,249.658717265344C955.246173440701,249.115677431498,955.536775588285,248.674996202205,955.894776513008,248.674996202205z M957.155599135861,243.966094389248C956.750075005376,243.9660942525 956.419596537068,244.467205652053 956.419596199294,245.083329930909 956.419596537068,245.700289156004 956.750075005376,246.200549267983 957.155599135861,246.200549267983 957.561409450062,246.200549267983 957.891610832003,245.700289156004 957.891610832003,245.083329930909 957.891610832003,244.467205652053 957.561409450062,243.9660942525 957.155599135861,243.966094389248z M955.894776513008,242.660155321469L964.970006054991,242.660155321469C965.3279991659,242.660155380273,965.618278718517,243.100854122822,965.618278718517,243.643883324549L965.618278718517,246.523970172284C965.618278718517,247.067997665182,965.3279991659,247.507855332461,964.970006054991,247.507855674332L955.894776513008,247.507855674332C955.536775588285,247.507855332461,955.246173440701,247.067997665182,955.24617348507,246.523970172284L955.24617348507,243.643883324549C955.246173440701,243.100854122822,955.536775588285,242.660155380273,955.894776513008,242.660155321469z" />
+      </Path.Data>
+    </Path>
+  </Canvas>
+</Canvas>

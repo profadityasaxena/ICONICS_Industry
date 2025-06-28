@@ -1,0 +1,234 @@
+Option Explicit
+Dim g As SWXRuntimeLib.Global
+
+
+' Called once when a new designer/thread is started
+Private Sub GlobalInstance_OnConnection(ByVal SwxGlobal As SWXRuntimeLib.Global, ByVal MTDllInst As Object, Custom() As Variant)
+    On Error GoTo ErrHandler
+    Set g = SwxGlobal
+    ' TODO: Add your thread initialization code here
+    Exit Sub
+
+ErrHandler:
+    g.ConsoleMsg MSG_SEVERE_ERROR, "Designer", "'BajajMEA_OrderManagement' OnConnection failed"
+End Sub
+
+
+' Called once when a new designer/thread is terminated
+Private Sub GlobalInstance_OnDisconnection(Custom() As Variant)
+    On Error GoTo ErrHandler
+    ' TODO: Add your thread termination code here
+    Exit Sub
+
+ErrHandler:
+    g.ConsoleMsg MSG_SEVERE_ERROR, "Designer", "'BajajMEA_OrderManagement' OnDisconnection failed"
+End Sub
+
+
+' Called with a period "Timer Interval" if "Has Timer" is checked.
+Public Sub OnTimer()
+    On Error GoTo ErrHandler
+    ' TODO: Add your code here
+    Exit Sub
+
+ErrHandler:
+    g.ConsoleMsg MSG_SEVERE_ERROR, "Designer", "'BajajMEA_OrderManagement' OnTimer failed"
+End Sub
+
+
+' Called when a variable changes.
+Public Sub OnVarChange(name As String, oldVal As Variant, newVal As Variant, threadIdentif As String)
+    On Error GoTo ErrHandler
+    ' TODO: Add your code here
+    Exit Sub
+
+ErrHandler:
+    g.ConsoleMsg MSG_SEVERE_ERROR, "Designer", "'BajajMEA_OrderManagement' OnVarChange failed"
+End Sub
+
+
+
+
+Public Sub BajajMEA_SG1_Engine_Start(td As TriggerData)
+    On Error GoTo ErrHandler
+
+                                                        
+    Dim running_work_order As Variant
+    running_work_order = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Number.SG1_plc_work_order_number")
+                                                        
+    Dim virtual_engine_number As Variant
+    virtual_engine_number = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Status.SG1_ST00_Engine No")
+                                                        
+    start_quantity As Variant
+    start_quantity = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Triggers.SG1_Engine_Start_Qty")
+
+    Dim engine_status As Variant
+    engine_status = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Triggers.SG1_ST00_Status")
+                                                        
+
+    ' Execute the Stored Procedure from the command line
+    Shell "C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\sqlcmd.exe -S (local)\SQLEXPRESS2017 -d BajajMEA -Q ""Exec SP_OrderTracking_SG1_Engine_Start(" & running_work_order & ", " & virtual_engine_number & "," & start_quantity & "," & engine_status & ")"""
+
+    Exit Sub
+ErrHandler:
+    g.ConsoleMsg MSG_SEVERE_ERROR, "Script", "[Error]- Could not execute"
+End Sub
+
+
+
+
+Public Sub BajajMEA_SG1_Engine_Update(td As TriggerData)
+    On Error GoTo ErrHandler
+    
+    Dim running_work_order As Variant
+    running_work_order = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Number.SG1_plc_work_order_number")
+                                                        
+    Dim virtual_engine_number As Variant
+    engine_number = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Status.SG1_ST00_Engine No")
+                                        
+    Dim engine_status As Variant
+    engine_status = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Triggers.SG1_ST00_Status")
+
+                                                        
+    ' Execute the Stored Procedure from the command line
+    Shell "C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\sqlcmd.exe -S (local)\SQLEXPRESS2017 -d BajajMEA -Q ""Exec SP_OrderTracking_SG1_Engine_Update(" & running_work_order & ", " & engine_number & "," & engine_status & ")"""
+        
+
+    Exit Sub
+ErrHandler:
+    g.ConsoleMsg MSG_SEVERE_ERROR, "Script", "[Error]- Could not execute"
+End Sub
+
+
+Public Sub BajajMEA_SG1_Engine_Reject(td As TriggerData)
+    On Error GoTo ErrHandler
+    ' TODO: Add your code here
+    Dim running_work_order As Variant
+    running_work_order = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Number.SG1_plc_work_order_number")
+    
+    Dim stage As Variant
+    engine_status = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Triggers.Enigine_Reject_Stage")
+
+    Dim engine_number As Variant
+    If stage = 0 Then
+    engine_number = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Status.SG1_ST00_Engine No")
+
+    ElseIf stage = 1 Then
+    engine_number = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Status.SG1_ST01_Engine No")
+
+    ElseIf stage = 2 Then
+    engine_number = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Status.SG1_ST02_Engine No")
+
+    ElseIf stage = 3 Then
+    engine_number = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Status.SG1_ST03_Engine No")
+
+    ElseIf stage = 4 Then
+    engine_number = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Status.SG1_ST04_Engine No")
+
+    ElseIf stage = 5 Then
+    engine_number = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Status.SG1_ST05_Engine No")
+
+    ElseIf stage = 6 Then
+    engine_number = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Status.SG1_ST06_Engine No")
+
+    ElseIf stage = 7 Then
+    engine_number = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Status.SG1_ST07_Engine No")
+
+    ElseIf stage = 12 Then
+    engine_number = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Status.SG1_ST07-5_Engine No")
+
+    ElseIf stage = 8 Then
+    engine_number = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Status.SG1_ST08_Engine No")
+
+    ElseIf stage = 9 Then
+    engine_number = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Status.SG1_ST09_Engine No")
+
+    ElseIf stage = 10 Then
+    engine_number = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Status.SG1_ST10_Engine No")
+
+    ElseIf stage = 11 Then
+    engine_number = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Status.SG1_ST11_Engine No")
+
+    Dim engine_status As Variant
+    engine_status = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Triggers.SG1_ST00_Status")
+                                                                                                        
+     
+     ' Execute the Stored Procedure from the command line
+     Shell "C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\sqlcmd.exe -S (local)\SQLEXPRESS2017 -d BajajMEA -Q ""Exec SP_OrderTracking_SG1_Engine_Reject(" & running_work_order & ", " & engine_number & "," & engine_status & ")"""
+    
+    Exit Sub
+ErrHandler:
+    g.ConsoleMsg MSG_SEVERE_ERROR, "Script", "[Error]- Could not execute"
+End Sub
+
+Public Sub BajajMEA_SG1_Engine_Complet(td As TriggerData)
+    On Error GoTo ErrHandler
+    
+    Dim running_work_order As Variant
+    running_work_order = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Number.SG1_plc_work_order_number")
+                                                        
+    Dim engine_number As Variant
+    engine_number = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Status.SG1_ST11_Engine No")
+                                                                                                
+    Dim engine_status As Variant
+    engine_status = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Triggers.SG1_ST11_Status")
+                                                                                                        
+                                                        
+    ' Execute the Stored Procedure from the command line
+    Shell "C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\sqlcmd.exe -S (local)\SQLEXPRESS2017 -d BajajMEA -Q ""Exec SP_OrderTracking_SG1_Engine_Complete(" & running_work_order & ", " & engine_number & ", " & engine_status & ")"""
+    
+    Exit Sub
+ErrHandler:
+    g.ConsoleMsg MSG_SEVERE_ERROR, "Script", "[Error]- Could not execute"
+End Sub
+
+
+
+
+
+Public Sub BajajMEA_SG1_Engine_Scan(td As TriggerData)
+    On Error GoTo ErrHandler
+    Dim buffer_engine_number As Variant
+    buffer_engine_number = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Number.SG1_Buffer_Engine No")
+                                                        
+    Dim engine_number As Variant
+    engine_number = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Status.SG1_ST07_Engine No")
+                                                                                                
+    Dim engine_status As Variant
+    engine_status = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Triggers.SG1_ST07_Status")
+                                                                                                        
+                                                        
+    ' Execute the Stored Procedure from the command line
+    Shell "C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\sqlcmd.exe -S (local)\SQLEXPRESS2017 -d BajajMEA -Q ""Exec SP_SG1_Engine_Start(" & buffer_engine_number & ", " & engine_number & ", " & engine_status & ")"""
+
+    Exit Sub
+ErrHandler:
+    g.ConsoleMsg MSG_SEVERE_ERROR, "Script", "'BajajMEA_SG1_Engine_Scan' failed"
+End Sub
+
+' *****************************************************************************
+'  Script TestScript generated by ScriptWizard
+'
+'  Description:
+'    Reads an OPC Tag value.
+'
+' *****************************************************************************
+Public Sub TestScript(td As TriggerData)
+On Error GoTo ErrHandler
+
+    Dim opcval As Variant
+    opcval = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Number.SG1_ST00_Engine No")
+    ' TODO: add a custom code to use the value 'opcval'
+    ' Console.WriteLine ("New Engine Started" + opcval)
+    
+    ' Uncomment the next line to display the value 'opcval' in the MonitorWorX console in the tab Runtime.
+    ' g.ConsoleMsg MSG_INFO_VERBOSE, "Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Number.SG1_ST00_Engine No", opcval
+    Exit Sub
+
+ErrHandler:
+    g.ConsoleMsg MSG_SEVERE_ERROR, "Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Number.SG1_ST00_Engine No", "Error reading the OPC value: " & Err.Description
+End Sub
+
+
+
+

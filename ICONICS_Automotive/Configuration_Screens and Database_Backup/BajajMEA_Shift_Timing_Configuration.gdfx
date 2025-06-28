@@ -1,0 +1,2219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Canvas Background="#FF243782" Width="1100" Height="728" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:iwm="clr-namespace:Ico.Windows.Media;assembly=IcoWPF" xmlns:gwx="clr-namespace:Ico.Gwx;assembly=GwxRuntimeCore" xmlns:script="clr-namespace:Ico.Script;assembly=IcoScriptEngine" xmlns:ic="clr-namespace:Ico.Collections;assembly=IcoCollections" xmlns:gwxcmd="clr-namespace:Ico.Gwx;assembly=GwxRuntimeCoreCommands" xmlns:s="clr-namespace:System;assembly=mscorlib">
+  <Canvas.Resources>
+    <BitmapImage x:Key="GwxThumbnailImageKey">
+      <iwm:BitmapImageInfo.StreamSource>
+        <iwm:Base64Stream Data="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" />
+      </iwm:BitmapImageInfo.StreamSource>
+    </BitmapImage>
+  </Canvas.Resources>
+  <gwx:GwxDocument.GwxDocument>
+    <gwx:GwxDocument FileVersion="10.97.020.00" IsScalable="True" MinimumZoom="1E-06" PreferredStretch="Fill" ScanRate="500">
+      <gwx:GwxDocument.ScriptCodeManager>
+        <script:ScriptCodeManager>
+          <script:ScriptCodeManager.Scripts>
+            <script:ScriptCode Name="ThisDisplayCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function ThisDisplay_AnimationStarted(sender : System.Object, e : System.EventArgs)
+{
+	
+	ThisWindow.FwxClientWrapper.WriteAsync("@rgs64:headerReg.Value","Shift Configuration")
+
+	
+	var ShiftStartHrA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("ShiftStartHrA").ToDependencyObject();
+	var ShiftStartMinA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("ShiftStartMinA").ToDependencyObject();
+	var ShiftEndHrA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("ShiftEndHrA").ToDependencyObject();
+	var ShiftEndMinA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("ShiftEndMinA").ToDependencyObject();
+	var ShiftStartHrA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("ShiftStartHrA1");
+	var ShiftStartMinA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("ShiftStartMinA1");
+    var ShiftEndHrA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("ShiftEndHrA1");
+    var ShiftEndMinA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("ShiftEndMinA1");
+	//T1 Time A
+	var T1StrHrA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T1StrHrA").ToDependencyObject();
+	var T1StrMinA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T1StrMinA").ToDependencyObject();
+    var T1EndHrA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T1EndHrA").ToDependencyObject();
+    var T1EndMinA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T1EndMinA").ToDependencyObject();
+	var T1StrHrA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T1StrHrA1");
+	var T1StrMinA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T1StrMinA1");
+	var T1EndHrA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T1EndHrA1");
+	var T1EndMinA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T1EndMinA1");
+	//Lunch Time A
+	var LunchStrHrA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("LunchStrHrA").ToDependencyObject();
+	var LunchStrMinA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("LunchStrMinA").ToDependencyObject();
+    var LunchEndHrA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("LunchEndHrA").ToDependencyObject();
+    var LunchEndMinA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("LunchEndMinA").ToDependencyObject();
+    var LunchStrHrA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("LunchStrHrA1");
+	var LunchStrMinA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("LunchStrMinA1");
+	var LunchEndHrA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("LunchEndHrA1");
+	var LunchEndMinA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("LunchEndMinA1");
+	//T2 Time A
+	var T2StrHrA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T2StrHrA").ToDependencyObject();
+	var T2StrMinA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T2StrMinA").ToDependencyObject();
+    var T2EndHrA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T2EndHrA").ToDependencyObject();
+    var T2EndMinA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T2EndMinA").ToDependencyObject();
+	var T2StrHrA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T2StrHrA1");
+	var T2StrMinA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T2StrMinA1");
+	var T2EndHrA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T2EndHrA1");
+	var T2EndMinA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T2EndMinA1");
+	//Shift Time B
+	var ShiftStartHrB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("ShiftStartHrB").ToDependencyObject();
+	var ShiftStartMinB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("ShiftStartMinB").ToDependencyObject();
+    var ShiftEndHrB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("ShiftEndHrB").ToDependencyObject();
+    var ShiftEndMinB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("ShiftEndMinB").ToDependencyObject();
+	var ShiftStartHrB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("ShiftStartHrB1");
+	var ShiftStartMinB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("ShiftStartMinB1");
+    var ShiftEndHrB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("ShiftEndHrB1");
+    var ShiftEndMinB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("ShiftEndMinB1");
+	//T1 Time B
+	var T1StrHrB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T1StrHrB").ToDependencyObject();
+	var T1StrMinB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T1StrMinB").ToDependencyObject();
+    var T1EndHrB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T1EndHrB").ToDependencyObject();
+    var T1EndMinB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T1EndMinB").ToDependencyObject();
+    var T1StrHrB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T1StrHrB1");
+	var T1StrMinB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T1StrMinB1");
+	var T1EndHrB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T1EndHrB1");
+	var T1EndMinB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T1EndMinB1");
+//Lunch Time B
+	var LunchStrHrB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("LunchStrHrB").ToDependencyObject();
+	var LunchStrMinB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("LunchStrMinB").ToDependencyObject();
+    var LunchEndHrB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("LunchEndHrB").ToDependencyObject();
+    var LunchEndMinB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("LunchEndMinB").ToDependencyObject();
+	var LunchStrHrB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("LunchStrHrB1");
+	var LunchStrMinB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("LunchStrMinB1");
+	var LunchEndHrB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("LunchEndHrB1");
+	var LunchEndMinB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("LunchEndMinB1");
+	//T2 Time B
+	var T2StrHrB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T2StrHrB").ToDependencyObject();
+	var T2StrMinB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T2StrMinB").ToDependencyObject();
+    var T2EndHrB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T2EndHrB").ToDependencyObject();
+    var T2EndMinB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T2EndMinB").ToDependencyObject();
+	var T2StrHrB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T2StrHrB1");
+	var T2StrMinB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T2StrMinB1");
+	var T2EndHrB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T2EndHrB1");
+	var T2EndMinB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T2EndMinB1");		
+	//Shift Time c
+	var ShiftStartHrC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("ShiftStartHrC").ToDependencyObject();
+	var ShiftStartMinC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("ShiftStartMinC").ToDependencyObject();
+  	var ShiftEndHrC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("ShiftEndHrC").ToDependencyObject();
+    var ShiftEndMinC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("ShiftEndMinC").ToDependencyObject();
+	var ShiftStartHrC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("ShiftStartHrC1");
+	var ShiftStartMinC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("ShiftStartMinC1");
+    var ShiftEndHrC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("ShiftEndHrC1");
+    var ShiftEndMinC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("ShiftEndMinC1");
+	//T1 Time C
+	var T1StrHrC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T1StrHrC").ToDependencyObject();
+	var T1StrMinC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T1StrMinC").ToDependencyObject();
+    var T1EndHrC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T1EndHrC").ToDependencyObject();
+    var T1EndMinC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T1EndMinC").ToDependencyObject();
+	var T1StrHrC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T1StrHrC1");
+	var T1StrMinC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T1StrMinC1");
+	var T1EndHrC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T1EndHrC1");
+	var T1EndMinC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T1EndMinC1");
+    //Lunch Time C
+	var LunchStrHrC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("LunchStrHrC").ToDependencyObject();
+	var LunchStrMinC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("LunchStrMinC").ToDependencyObject();
+    var LunchEndHrC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("LunchEndHrC").ToDependencyObject();
+    var LunchEndMinC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("LunchEndMinC").ToDependencyObject();
+	var LunchStrHrC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("LunchStrHrC1");
+	var LunchStrMinC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("LunchStrMinC1");
+	var LunchEndHrC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("LunchEndHrC1");
+	var LunchEndMinC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("LunchEndMinC1");
+    //T2 Time C
+	var T2StrHrC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T2StrHrC").ToDependencyObject();
+	var T2StrMinC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T2StrMinC").ToDependencyObject();
+    var T2EndHrC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T2EndHrC").ToDependencyObject();
+	var T2EndMinC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T2EndMinC").ToDependencyObject();
+	var T2StrHrC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T2StrHrC1");
+	var T2StrMinC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T2StrMinC1");
+	var T2EndHrC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T2EndHrC1");
+	var T2EndMinC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T2EndMinC1");
+	
+	ShiftStartHrA.Text = ShiftStartHrA1.GetValueOfPrimaryDataSource()
+	ShiftStartMinA.Text = ShiftStartMinA1.GetValueOfPrimaryDataSource()
+	ShiftEndHrA.Text = ShiftEndHrA1.GetValueOfPrimaryDataSource()
+	ShiftEndMinA.Text = ShiftEndMinA1.GetValueOfPrimaryDataSource()
+	
+	T1StrHrA.Text = T1StrHrA1.GetValueOfPrimaryDataSource()
+	T1StrMinA.Text = T1StrMinA1.GetValueOfPrimaryDataSource()
+	T1EndHrA.Text = T1EndHrA1.GetValueOfPrimaryDataSource()
+	T1EndMinA.Text = T1EndMinA1.GetValueOfPrimaryDataSource()
+
+	LunchStrHrA.Text = LunchStrHrA1.GetValueOfPrimaryDataSource()
+	LunchStrMinA.Text = LunchStrMinA1.GetValueOfPrimaryDataSource()
+	LunchEndHrA.Text = LunchEndHrA1.GetValueOfPrimaryDataSource()
+	LunchEndMinA.Text = LunchEndMinA1.GetValueOfPrimaryDataSource()
+
+	T2StrHrA.Text = T2StrHrA1.GetValueOfPrimaryDataSource()
+	T2StrMinA.Text = T2StrMinA1.GetValueOfPrimaryDataSource()
+	T2EndHrA.Text = T2EndHrA1.GetValueOfPrimaryDataSource()
+	T2EndMinA.Text = T2EndMinA1.GetValueOfPrimaryDataSource()
+	
+	ShiftStartHrB.Text = ShiftStartHrB1.GetValueOfPrimaryDataSource()
+	ShiftStartMinB.Text = ShiftStartMinB1.GetValueOfPrimaryDataSource()
+	ShiftEndHrB.Text = ShiftEndHrB1.GetValueOfPrimaryDataSource()
+	ShiftEndMinB.Text = ShiftEndMinB1.GetValueOfPrimaryDataSource()
+	
+	T1StrHrB.Text = T1StrHrB1.GetValueOfPrimaryDataSource()
+	T1StrMinB.Text = T1StrMinB1.GetValueOfPrimaryDataSource()
+	T1EndHrB.Text = T1EndHrB1.GetValueOfPrimaryDataSource()
+	T1EndMinB.Text = T1EndMinB1.GetValueOfPrimaryDataSource()
+
+	LunchStrHrB.Text = LunchStrHrB1.GetValueOfPrimaryDataSource()
+	LunchStrMinB.Text = LunchStrMinB1.GetValueOfPrimaryDataSource()
+	LunchEndHrB.Text = LunchEndHrB1.GetValueOfPrimaryDataSource()
+	LunchEndMinB.Text = LunchEndMinB1.GetValueOfPrimaryDataSource()
+
+	T2StrHrB.Text = T2StrHrB1.GetValueOfPrimaryDataSource()
+	T2StrMinB.Text = T2StrMinB1.GetValueOfPrimaryDataSource()
+	T2EndHrB.Text = T2EndHrB1.GetValueOfPrimaryDataSource()
+	T2EndMinB.Text = T2EndMinB1.GetValueOfPrimaryDataSource()
+	
+	ShiftStartHrC.Text = ShiftStartHrC1.GetValueOfPrimaryDataSource()
+	ShiftStartMinC.Text = ShiftStartMinC1.GetValueOfPrimaryDataSource()
+	ShiftEndHrC.Text = ShiftEndHrC1.GetValueOfPrimaryDataSource()
+	ShiftEndMinC.Text = ShiftEndMinC1.GetValueOfPrimaryDataSource()
+	
+	T1StrHrC.Text = T1StrHrC1.GetValueOfPrimaryDataSource()
+	T1StrMinC.Text = T1StrMinC1.GetValueOfPrimaryDataSource()
+	T1EndHrC.Text = T1EndHrC1.GetValueOfPrimaryDataSource()
+	T1EndMinC.Text = T1EndMinC1.GetValueOfPrimaryDataSource()
+
+	LunchStrHrC.Text = LunchStrHrC1.GetValueOfPrimaryDataSource()
+	LunchStrMinC.Text = LunchStrMinC1.GetValueOfPrimaryDataSource()
+	LunchEndHrC.Text = LunchEndHrC1.GetValueOfPrimaryDataSource()
+	LunchEndMinC.Text = LunchEndMinC1.GetValueOfPrimaryDataSource()
+
+	T2StrHrC.Text = T2StrHrC1.GetValueOfPrimaryDataSource()
+	T2StrMinC.Text = T2StrMinC1.GetValueOfPrimaryDataSource()
+	T2EndHrC.Text = T2EndHrC1.GetValueOfPrimaryDataSource()
+	T2EndMinC.Text = T2EndMinC1.GetValueOfPrimaryDataSource()
+
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="DBConnection" Type="JScriptNet">
+              <x:XData><![CDATA[const DB_SERVER:String		= "AK-WKS-0476-LS\\SQLEXPRESS2017";
+const DB_Name:String 		= "Bajaj_MEA_Config";
+const DB_USERID:String      = "sa";
+const DB_PASSWORD:String    = "sql_1234";
+var DB_CONNECT_AUTHENTICATION:String    = ";User ID="+DB_USERID+";Password="+DB_PASSWORD;
+
+
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="JScriptDotNetGlobalVariablesCode" Type="JScriptNet" EditorBrowsable="Never">
+              <x:XData><![CDATA[
+var ThisWindow : Ico.Gwx.GwxRuntimeViewControl;
+var ThisDocument : Ico.Gwx.GwxDocument;
+var ThisConfiguration : Ico.Gwx.GwxConfiguration;
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="LunchEndHrACode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function LunchEndHrA_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="LunchEndHrBCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function LunchEndHrB_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="LunchEndHrCCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function LunchEndHrC_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="LunchEndMinACode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function LunchEndMinA_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="LunchEndMinBCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function LunchEndMinB_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="LunchEndMinCCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function LunchEndMinC_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="LunchStrHrACode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function LunchStrHrA_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="LunchStrHrBCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function LunchStrHrB_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="LunchStrHrCCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function LunchStrHrC_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="LunchStrMinACode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function LunchStrMinA_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="LunchStrMinBCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function LunchStrMinB_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="LunchStrMinCCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function LunchStrMinC_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="Pick1Code" Type="JScriptNet">
+              <x:XData><![CDATA[
+function Pick1_CommandExecuted(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs)
+{
+	var ShiftStartHrA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("ShiftStartHrA").ToDependencyObject();
+	var ShiftStartHrA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("ShiftStartHrA1");
+	ShiftStartHrA.Text = ShiftStartHrA1.GetValueOfPrimaryDataSource()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="SaveCmdScrCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function SaveCmdScr_CommandExecuted(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs)
+{
+	/////////////////////////////////////////////////////////////Object Declarations/////////////////////////////////////////////////////////////	
+	//Shift Time A
+	var ShiftStartHrA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("ShiftStartHrA").ToDependencyObject();
+	var ShiftStartMinA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("ShiftStartMinA").ToDependencyObject();
+	var ShiftEndHrA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("ShiftEndHrA").ToDependencyObject();
+	var ShiftEndMinA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("ShiftEndMinA").ToDependencyObject();
+	var ShiftStartHrA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("ShiftStartHrA1");
+	var ShiftStartMinA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("ShiftStartMinA1");
+    var ShiftEndHrA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("ShiftEndHrA1");
+    var ShiftEndMinA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("ShiftEndMinA1");
+	
+	//var ppt1 : GwxDynamic =ThisConfiguration.GetDynamicObjectByName("ShiftStartHrA1");
+	//var ppt2 : GwxDynamic =ThisConfiguration.GetDynamicObjectByName("ShiftStartHrA");
+	//ppt1.WriteValueToPrimaryDataSource(ShiftStartHrA.Text);
+	//T1 Time A
+	var T1StrHrA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T1StrHrA").ToDependencyObject();
+	var T1StrMinA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T1StrMinA").ToDependencyObject();
+    var T1EndHrA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T1EndHrA").ToDependencyObject();
+    var T1EndMinA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T1EndMinA").ToDependencyObject();
+	var T1StrHrA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T1StrHrA1");
+	var T1StrMinA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T1StrMinA1");
+	var T1EndHrA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T1EndHrA1");
+	var T1EndMinA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T1EndMinA1");
+	//Lunch Time A
+	var LunchStrHrA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("LunchStrHrA").ToDependencyObject();
+	var LunchStrMinA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("LunchStrMinA").ToDependencyObject();
+    var LunchEndHrA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("LunchEndHrA").ToDependencyObject();
+    var LunchEndMinA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("LunchEndMinA").ToDependencyObject();
+    var LunchStrHrA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("LunchStrHrA1");
+	var LunchStrMinA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("LunchStrMinA1");
+	var LunchEndHrA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("LunchEndHrA1");
+	var LunchEndMinA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("LunchEndMinA1");
+
+	//T2 Time A
+	var T2StrHrA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T2StrHrA").ToDependencyObject();
+	var T2StrMinA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T2StrMinA").ToDependencyObject();
+    var T2EndHrA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T2EndHrA").ToDependencyObject();
+    var T2EndMinA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T2EndMinA").ToDependencyObject();
+	var T2StrHrA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T2StrHrA1");
+	var T2StrMinA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T2StrMinA1");
+	var T2EndHrA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T2EndHrA1");
+	var T2EndMinA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T2EndMinA1");
+
+	//Over Time A
+    var TotaltimeA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("TotaltimeA").ToDependencyObject();
+    //var TotaltimeD:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("TotaltimeA").ToDependencyObject();
+
+    var TotaltimeA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("TotaltimeA1");
+	
+	//Shift Time B
+	var ShiftStartHrB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("ShiftStartHrB").ToDependencyObject();
+	var ShiftStartMinB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("ShiftStartMinB").ToDependencyObject();
+    var ShiftEndHrB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("ShiftEndHrB").ToDependencyObject();
+    var ShiftEndMinB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("ShiftEndMinB").ToDependencyObject();
+	var ShiftStartHrB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("ShiftStartHrB1");
+	var ShiftStartMinB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("ShiftStartMinB1");
+    var ShiftEndHrB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("ShiftEndHrB1");
+    var ShiftEndMinB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("ShiftEndMinB1");
+
+	//T1 Time B
+	var T1StrHrB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T1StrHrB").ToDependencyObject();
+	var T1StrMinB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T1StrMinB").ToDependencyObject();
+    var T1EndHrB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T1EndHrB").ToDependencyObject();
+    var T1EndMinB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T1EndMinB").ToDependencyObject();
+    var T1StrHrB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T1StrHrB1");
+	var T1StrMinB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T1StrMinB1");
+	var T1EndHrB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T1EndHrB1");
+	var T1EndMinB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T1EndMinB1");
+//Lunch Time B
+	var LunchStrHrB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("LunchStrHrB").ToDependencyObject();
+	var LunchStrMinB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("LunchStrMinB").ToDependencyObject();
+    var LunchEndHrB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("LunchEndHrB").ToDependencyObject();
+    var LunchEndMinB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("LunchEndMinB").ToDependencyObject();
+	var LunchStrHrB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("LunchStrHrB1");
+	var LunchStrMinB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("LunchStrMinB1");
+	var LunchEndHrB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("LunchEndHrB1");
+	var LunchEndMinB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("LunchEndMinB1");
+
+	//T2 Time B
+	var T2StrHrB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T2StrHrB").ToDependencyObject();
+	var T2StrMinB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T2StrMinB").ToDependencyObject();
+    var T2EndHrB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T2EndHrB").ToDependencyObject();
+    var T2EndMinB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T2EndMinB").ToDependencyObject();
+	var T2StrHrB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T2StrHrB1");
+	var T2StrMinB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T2StrMinB1");
+	var T2EndHrB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T2EndHrB1");
+	var T2EndMinB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T2EndMinB1");
+
+    //Over Time B
+	
+	var TotaltimeB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("TotaltimeB").ToDependencyObject();
+	var TotaltimeB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("TotaltimeB1");
+
+	//  Total Time	
+		
+	//Shift Time c
+	var ShiftStartHrC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("ShiftStartHrC").ToDependencyObject();
+	var ShiftStartMinC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("ShiftStartMinC").ToDependencyObject();
+  	var ShiftEndHrC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("ShiftEndHrC").ToDependencyObject();
+    var ShiftEndMinC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("ShiftEndMinC").ToDependencyObject();
+	var ShiftStartHrC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("ShiftStartHrC1");
+	var ShiftStartMinC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("ShiftStartMinC1");
+    var ShiftEndHrC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("ShiftEndHrC1");
+    var ShiftEndMinC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("ShiftEndMinC1");
+
+	//T1 Time C
+	var T1StrHrC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T1StrHrC").ToDependencyObject();
+	var T1StrMinC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T1StrMinC").ToDependencyObject();
+    var T1EndHrC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T1EndHrC").ToDependencyObject();
+    var T1EndMinC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T1EndMinC").ToDependencyObject();
+	var T1StrHrC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T1StrHrC1");
+	var T1StrMinC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T1StrMinC1");
+	var T1EndHrC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T1EndHrC1");
+	var T1EndMinC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T1EndMinC1");
+
+    //Lunch Time C
+	var LunchStrHrC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("LunchStrHrC").ToDependencyObject();
+	var LunchStrMinC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("LunchStrMinC").ToDependencyObject();
+    var LunchEndHrC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("LunchEndHrC").ToDependencyObject();
+    var LunchEndMinC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("LunchEndMinC").ToDependencyObject();
+	var LunchStrHrC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("LunchStrHrC1");
+	var LunchStrMinC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("LunchStrMinC1");
+	var LunchEndHrC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("LunchEndHrC1");
+	var LunchEndMinC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("LunchEndMinC1");
+    //T2 Time C
+	var T2StrHrC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T2StrHrC").ToDependencyObject();
+	var T2StrMinC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T2StrMinC").ToDependencyObject();
+    var T2EndHrC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T2EndHrC").ToDependencyObject();
+	var T2EndMinC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T2EndMinC").ToDependencyObject();
+	var T2StrHrC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T2StrHrC1");
+	var T2StrMinC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T2StrMinC1");
+	var T2EndHrC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T2EndHrC1");
+	var T2EndMinC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T2EndMinC1");
+	
+	var TotaltimeC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("TotaltimeC").ToDependencyObject();
+	var TotaltimeC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("TotaltimeC1");
+
+	//calculateTotaltimeA();
+	//calculateTotaltimeB();
+	//calculateTotaltimeC();
+
+	//ShiftStartHrA1.WriteValueToPrimaryDataSource(15);
+	//ppt2.WriteValueToPrimaryDataSource(25);
+//Shift-A
+	ShiftStartHrA1.WriteValueToPrimaryDataSource(ShiftStartHrA.Text);
+	//MessageBox.Show(ShiftStartMinA)
+	ShiftStartMinA1.WriteValueToPrimaryDataSource(ShiftStartMinA.Text);
+    ShiftEndHrA1.WriteValueToPrimaryDataSource(ShiftEndHrA.Text);
+	ShiftEndMinA1.WriteValueToPrimaryDataSource(ShiftEndMinA.Text);
+    T1StrHrA1.WriteValueToPrimaryDataSource(T1StrHrA.Text);
+	T1StrMinA1.WriteValueToPrimaryDataSource(T1StrMinA.Text);
+	T1EndHrA1.WriteValueToPrimaryDataSource(T1EndHrA.Text);
+	T1EndMinA1.WriteValueToPrimaryDataSource(T1EndMinA.Text);
+	LunchStrHrA1.WriteValueToPrimaryDataSource(LunchStrHrA.Text);
+	LunchStrMinA1.WriteValueToPrimaryDataSource(LunchStrMinA.Text);
+	LunchEndHrA1.WriteValueToPrimaryDataSource(LunchEndHrA.Text);
+	LunchEndMinA1.WriteValueToPrimaryDataSource(LunchEndMinA.Text);
+	T2StrHrA1.WriteValueToPrimaryDataSource(T2StrHrA.Text);
+	T2StrMinA1.WriteValueToPrimaryDataSource(T2StrMinA.Text);
+	T2EndHrA1.WriteValueToPrimaryDataSource(T2EndHrA.Text);
+	T2EndMinA1.WriteValueToPrimaryDataSource(T2EndMinA.Text);
+	TotaltimeA1.WriteValueToPrimaryDataSource((TotaltimeA.Text)*60);
+//Shift-B	
+	ShiftStartHrB1.WriteValueToPrimaryDataSource(ShiftStartHrB.Text);
+	ShiftStartMinB1.WriteValueToPrimaryDataSource(ShiftStartMinB.Text);
+    ShiftEndHrB1.WriteValueToPrimaryDataSource(ShiftEndHrB.Text);
+	ShiftEndMinB1.WriteValueToPrimaryDataSource(ShiftEndMinB.Text);
+    T1StrHrB1.WriteValueToPrimaryDataSource(T1StrHrB.Text);
+	T1StrMinB1.WriteValueToPrimaryDataSource(T1StrMinB.Text);
+	T1EndHrB1.WriteValueToPrimaryDataSource(T1EndHrB.Text);
+	T1EndMinB1.WriteValueToPrimaryDataSource(T1EndMinB.Text);
+	LunchStrHrB1.WriteValueToPrimaryDataSource(LunchStrHrB.Text);
+	LunchStrMinB1.WriteValueToPrimaryDataSource(LunchStrMinB.Text);
+	LunchEndHrB1.WriteValueToPrimaryDataSource(LunchEndHrB.Text);
+	LunchEndMinB1.WriteValueToPrimaryDataSource(LunchEndMinB.Text);
+	T2StrHrB1.WriteValueToPrimaryDataSource(T2StrHrB.Text);
+	T2StrMinB1.WriteValueToPrimaryDataSource(T2StrMinB.Text);
+	T2EndHrB1.WriteValueToPrimaryDataSource(T2EndHrB.Text);
+	T2EndMinB1.WriteValueToPrimaryDataSource(T2EndMinB.Text);
+	TotaltimeB1.WriteValueToPrimaryDataSource((TotaltimeB.Text)*60);
+//Shift-C	
+	ShiftStartHrC1.WriteValueToPrimaryDataSource(ShiftStartHrC.Text);
+	ShiftStartMinC1.WriteValueToPrimaryDataSource(ShiftStartMinC.Text);
+    ShiftEndHrC1.WriteValueToPrimaryDataSource(ShiftEndHrC.Text);
+	ShiftEndMinC1.WriteValueToPrimaryDataSource(ShiftEndMinC.Text);
+    T1StrHrC1.WriteValueToPrimaryDataSource(T1StrHrC.Text);
+	T1StrMinC1.WriteValueToPrimaryDataSource(T1StrMinC.Text);
+	T1EndHrC1.WriteValueToPrimaryDataSource(T1EndHrC.Text);
+	T1EndMinC1.WriteValueToPrimaryDataSource(T1EndMinC.Text);
+	LunchStrHrC1.WriteValueToPrimaryDataSource(LunchStrHrC.Text);
+	LunchStrMinC1.WriteValueToPrimaryDataSource(LunchStrMinC.Text);
+	LunchEndHrC1.WriteValueToPrimaryDataSource(LunchEndHrC.Text);
+	LunchEndMinC1.WriteValueToPrimaryDataSource(LunchEndMinC.Text);
+	T2StrHrC1.WriteValueToPrimaryDataSource(T2StrHrC.Text);
+	T2StrMinC1.WriteValueToPrimaryDataSource(T2StrMinC.Text);
+	T2EndHrC1.WriteValueToPrimaryDataSource(T2EndHrC.Text);
+	T2EndMinC1.WriteValueToPrimaryDataSource(T2EndMinC.Text);
+	TotaltimeC1.WriteValueToPrimaryDataSource((TotaltimeC.Text)*60);
+
+
+	var Shift_Start_A: String = ShiftStartHrA.Text + ":" + ShiftStartMinA.Text;
+	var Shift_End_A: String = ShiftEndHrA.Text + ":" + ShiftEndMinA.Text;
+	var Shift_Start_B: String = ShiftStartHrB.Text + ":" + ShiftStartMinB.Text;
+	var Shift_End_B: String = ShiftEndHrB.Text + ":" + ShiftEndMinB.Text;
+	var Shift_Start_C: String = ShiftStartHrC.Text + ":" + ShiftStartMinC.Text;
+	var Shift_End_C: String = ShiftEndHrC.Text + ":" + ShiftEndMinC.Text;
+	
+	var Tea1_Start_A: String = T1StrHrA.Text + ":" + T1StrMinA.Text;
+	var Tea1_End_A: String = T1EndHrA.Text + ":" + T1EndMinA.Text;
+	var Tea1_Start_B: String = T1StrHrB.Text + ":" + T1StrMinB.Text;
+	var Tea1_End_B: String = T1EndHrB.Text + ":" + T1EndMinB.Text;
+	var Tea1_Start_C: String = T1StrHrC.Text + ":" + T1StrMinC.Text;
+	var Tea1_End_C: String = T1EndHrC.Text + ":" + T1EndMinC.Text;
+	
+	var Tea2_Start_A: String = T2StrHrA.Text + ":" + T2StrMinA.Text;
+	var Tea2_End_A: String = T2EndHrA.Text + ":" + T2EndMinA.Text;
+	var Tea2_Start_B: String = T2StrHrB.Text + ":" + T2StrMinB.Text;
+	var Tea2_End_B: String = T2EndHrB.Text + ":" + T2EndMinB.Text;
+	var Tea2_Start_C: String = T2StrHrC.Text + ":" + T2StrMinC.Text;
+	var Tea2_End_C: String = T2EndHrC.Text + ":" + T2EndMinC.Text;
+	
+	var Lunch_Start_A: String = LunchStrHrA.Text + ":" + LunchStrMinA.Text;
+	var Lunch_End_A: String = LunchEndHrA.Text + ":" + LunchEndMinA.Text;
+	var Lunch_Start_B: String = LunchStrHrB.Text + ":" + LunchStrMinB.Text;
+	var Lunch_End_B: String = LunchEndHrB.Text + ":" + LunchEndMinB.Text;
+	var Lunch_Start_C: String = LunchStrHrC.Text + ":" + LunchStrMinC.Text;
+	var Lunch_End_C: String = LunchEndHrC.Text + ":" + LunchEndMinC.Text;
+	
+
+	
+	
+	
+	/////////////////////////////////////////////////////////////Connection String/////////////////////////////////////////////////////////////		
+    //var connString : String ="Data Source=DESKTOP-KCF4ITV\\SQLEXPRESS2017;Initial Catalog=Bajaj_MEA_Config;Integrated Security=SSPI";
+
+	var connString : String ="Data Source="+DB_SERVER+";Initial Catalog="+DB_Name+DB_CONNECT_AUTHENTICATION;
+	var connection : System.Data.SqlClient.SqlConnection = new System.Data.SqlClient.SqlConnection(connString);
+	connection.Open();
+	try
+	{
+		var updateCommand1:System.Data.SqlClient.SqlCommand= new System.Data.SqlClient.SqlCommand("UPDATE Shift_Setting SET Start_A='"+ Shift_Start_A +"',End_A='"+Shift_End_A+"',Start_B='"+Shift_Start_B+"',End_B='"+Shift_End_B+"',Start_C='"+ Shift_Start_C+"',End_C='"+Shift_End_C+"' WHERE RowId='1'",connection);
+		updateCommand1.ExecuteNonQuery();
+		//MessageBox.Show("Updared")
+		var updateCommand2:System.Data.SqlClient.SqlCommand= new System.Data.SqlClient.SqlCommand("UPDATE Shift_Setting SET Start_A='"+ Tea1_Start_A +"',End_A='"+Tea1_End_A+"',Start_B='"+Tea1_Start_B+"',End_B='"+Tea1_End_B+"',Start_C='"+ Tea1_Start_C+"',End_C='"+Tea1_End_C+"' WHERE RowId='2'",connection);
+		updateCommand2.ExecuteNonQuery();
+		var updateCommand3:System.Data.SqlClient.SqlCommand= new System.Data.SqlClient.SqlCommand("UPDATE Shift_Setting SET Start_A='"+ Lunch_Start_A +"',End_A='"+Lunch_End_A+"',Start_B='"+Lunch_Start_B+"',End_B='"+Lunch_End_B+"',Start_C='"+ Lunch_Start_C+"',End_C='"+Lunch_End_C+"' WHERE RowId='3'",connection);
+		updateCommand3.ExecuteNonQuery();
+		var updateCommand4:System.Data.SqlClient.SqlCommand= new System.Data.SqlClient.SqlCommand("UPDATE Shift_Setting SET Start_A='"+ Tea2_Start_A +"',End_A='"+Tea2_End_A+"',Start_B='"+Tea2_Start_B+"',End_B='"+Tea2_End_B+"',Start_C='"+ Tea2_Start_C+"',End_C='"+Tea2_End_C+"' WHERE RowId='4'",connection);
+		updateCommand4.ExecuteNonQuery();
+		MessageBox.Show("Shift information inserted successfully!!");
+		}	
+	catch(e:Exception)
+	{
+		MessageBox.Show(e.Message);
+	}
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="ScriptModule1" Type="JScriptNet">
+              <x:XData><![CDATA[function calculateTotaltimeA(sender : System.Object, e : System.EventArgs)
+		{
+	var ShiftStartHrA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("ShiftStartHrA").ToDependencyObject();
+	var ShiftStartMinA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("ShiftStartMinA").ToDependencyObject();
+	var ShiftEndHrA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("ShiftEndHrA").ToDependencyObject();
+	var ShiftEndMinA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("ShiftEndMinA").ToDependencyObject();
+	var ShiftStartHrA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("ShiftStartHrA1");
+	var ShiftStartMinA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("ShiftStartMinA1");
+    var ShiftEndHrA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("ShiftEndHrA1");
+    var ShiftEndMinA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("ShiftEndMinA1");
+	
+	//T1 Time A
+	var T1StrHrA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T1StrHrA").ToDependencyObject();
+	var T1StrMinA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T1StrMinA").ToDependencyObject();
+    var T1EndHrA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T1EndHrA").ToDependencyObject();
+    var T1EndMinA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T1EndMinA").ToDependencyObject();
+	var T1StrHrA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T1StrHrA1");
+	var T1StrMinA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T1StrMinA1");
+	var T1EndHrA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T1EndHrA1");
+	var T1EndMinA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T1EndMinA1");
+	//Lunch Time A
+	var LunchStrHrA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("LunchStrHrA").ToDependencyObject();
+	var LunchStrMinA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("LunchStrMinA").ToDependencyObject();
+    var LunchEndHrA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("LunchEndHrA").ToDependencyObject();
+    var LunchEndMinA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("LunchEndMinA").ToDependencyObject();
+    var LunchStrHrA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("LunchStrHrA1");
+	var LunchStrMinA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("LunchStrMinA1");
+	var LunchEndHrA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("LunchEndHrA1");
+	var LunchEndMinA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("LunchEndMinA1");
+
+	//T2 Time A
+	var T2StrHrA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T2StrHrA").ToDependencyObject();
+	var T2StrMinA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T2StrMinA").ToDependencyObject();
+    var T2EndHrA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T2EndHrA").ToDependencyObject();
+    var T2EndMinA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T2EndMinA").ToDependencyObject();
+	var T2StrHrA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T2StrHrA1");
+	var T2StrMinA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T2StrMinA1");
+	var T2EndHrA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T2EndHrA1");
+	var T2EndMinA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T2EndMinA1");
+
+	//Over Time A
+    var TotaltimeA:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("TotaltimeA").ToDependencyObject();
+    var TotaltimeA1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("TotaltimeA1");
+	
+	//Shift Time B
+	var ShiftStartHrB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("ShiftStartHrB").ToDependencyObject();
+	var ShiftStartMinB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("ShiftStartMinB").ToDependencyObject();
+    var ShiftEndHrB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("ShiftEndHrB").ToDependencyObject();
+    var ShiftEndMinB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("ShiftEndMinB").ToDependencyObject();
+	var ShiftStartHrB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("ShiftStartHrB1");
+	var ShiftStartMinB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("ShiftStartMinB1");
+    var ShiftEndHrB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("ShiftEndHrB1");
+    var ShiftEndMinB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("ShiftEndMinB1");
+
+	//T1 Time B
+	var T1StrHrB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T1StrHrB").ToDependencyObject();
+	var T1StrMinB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T1StrMinB").ToDependencyObject();
+    var T1EndHrB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T1EndHrB").ToDependencyObject();
+    var T1EndMinB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T1EndMinB").ToDependencyObject();
+    var T1StrHrB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T1StrHrB1");
+	var T1StrMinB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T1StrMinB1");
+	var T1EndHrB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T1EndHrB1");
+	var T1EndMinB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T1EndMinB1");
+//Lunch Time B
+	var LunchStrHrB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("LunchStrHrB").ToDependencyObject();
+	var LunchStrMinB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("LunchStrMinB").ToDependencyObject();
+    var LunchEndHrB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("LunchEndHrB").ToDependencyObject();
+    var LunchEndMinB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("LunchEndMinB").ToDependencyObject();
+	var LunchStrHrB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("LunchStrHrB1");
+	var LunchStrMinB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("LunchStrMinB1");
+	var LunchEndHrB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("LunchEndHrB1");
+	var LunchEndMinB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("LunchEndMinB1");
+
+	//T2 Time B
+	var T2StrHrB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T2StrHrB").ToDependencyObject();
+	var T2StrMinB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T2StrMinB").ToDependencyObject();
+    var T2EndHrB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T2EndHrB").ToDependencyObject();
+    var T2EndMinB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T2EndMinB").ToDependencyObject();
+	var T2StrHrB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T2StrHrB1");
+	var T2StrMinB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T2StrMinB1");
+	var T2EndHrB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T2EndHrB1");
+	var T2EndMinB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T2EndMinB1");
+
+    //Over Time B
+	
+	var TotaltimeB:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("TotaltimeB").ToDependencyObject();
+	var TotaltimeB1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("TotaltimeB1");
+
+	//  Total Time	
+		
+	//Shift Time c
+	var ShiftStartHrC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("ShiftStartHrC").ToDependencyObject();
+	var ShiftStartMinC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("ShiftStartMinC").ToDependencyObject();
+  	var ShiftEndHrC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("ShiftEndHrC").ToDependencyObject();
+    var ShiftEndMinC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("ShiftEndMinC").ToDependencyObject();
+	var ShiftStartHrC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("ShiftStartHrC1");
+	var ShiftStartMinC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("ShiftStartMinC1");
+    var ShiftEndHrC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("ShiftEndHrC1");
+    var ShiftEndMinC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("ShiftEndMinC1");
+
+	//T1 Time C
+	var T1StrHrC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T1StrHrC").ToDependencyObject();
+	var T1StrMinC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T1StrMinC").ToDependencyObject();
+    var T1EndHrC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T1EndHrC").ToDependencyObject();
+    var T1EndMinC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T1EndMinC").ToDependencyObject();
+	var T1StrHrC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T1StrHrC1");
+	var T1StrMinC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T1StrMinC1");
+	var T1EndHrC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T1EndHrC1");
+	var T1EndMinC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T1EndMinC1");
+
+    //Lunch Time C
+	var LunchStrHrC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("LunchStrHrC").ToDependencyObject();
+	var LunchStrMinC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("LunchStrMinC").ToDependencyObject();
+    var LunchEndHrC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("LunchEndHrC").ToDependencyObject();
+    var LunchEndMinC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("LunchEndMinC").ToDependencyObject();
+	var LunchStrHrC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("LunchStrHrC1");
+	var LunchStrMinC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("LunchStrMinC1");
+	var LunchEndHrC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("LunchEndHrC1");
+	var LunchEndMinC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("LunchEndMinC1");
+    //T2 Time C
+	var T2StrHrC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T2StrHrC").ToDependencyObject();
+	var T2StrMinC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T2StrMinC").ToDependencyObject();
+    var T2EndHrC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T2EndHrC").ToDependencyObject();
+	var T2EndMinC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("T2EndMinC").ToDependencyObject();
+	var T2StrHrC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T2StrHrC1");
+	var T2StrMinC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T2StrMinC1");
+	var T2EndHrC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T2EndHrC1");
+	var T2EndMinC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("T2EndMinC1");
+	
+	var TotaltimeC:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("TotaltimeC").ToDependencyObject();
+	var TotaltimeC1: GwxDynamic = ThisConfiguration.GetDynamicObjectByName("TotaltimeC1");
+
+			var T1_A: int = ((parseInt(T1EndHrA.Text)*60)+parseInt(T1EndMinA.Text))-((parseInt(T1StrHrA.Text)*60)+parseInt(T1StrMinA.Text));
+			//MessageBox.Show(T1_A);
+			var Lunch_A: int = ((parseInt(LunchEndHrA.Text)*60)+parseInt(LunchEndMinA.Text))-((parseInt(LunchStrHrA.Text)*60)+parseInt(LunchStrMinA.Text));
+			//MessageBox.Show(Lunch_A);
+			var T2_A: int = ((parseInt(T2EndHrA.Text)*60)+parseInt(T2EndMinA.Text))-((parseInt(T2StrHrA.Text)*60)+parseInt(T2StrMinA.Text))
+			
+			var T1_B: int = ((parseInt(T1EndHrB.Text)*60)+parseInt(T1EndMinB.Text))-((parseInt(T1StrHrB.Text)*60)+parseInt(T1StrMinB.Text));
+			//MessageBox.Show(T1_A);
+			var Lunch_B: int = ((parseInt(LunchEndHrB.Text)*60)+parseInt(LunchEndMinB.Text))-((parseInt(LunchStrHrB.Text)*60)+parseInt(LunchStrMinB.Text));
+			//MessageBox.Show(Lunch_A);
+			var T2_B: int = ((parseInt(T2EndHrB.Text)*60)+parseInt(T2EndMinB.Text))-((parseInt(T2StrHrB.Text)*60)+parseInt(T2StrMinB.Text))
+			
+			var T1_C: int = ((parseInt(T1EndHrC.Text)*60)+parseInt(T1EndMinC.Text))-((parseInt(T1StrHrC.Text)*60)+parseInt(T1StrMinC.Text));
+			//MessageBox.Show(T1_A);
+			var Lunch_C: int = ((parseInt(LunchEndHrC.Text)*60)+parseInt(LunchEndMinC.Text))-((parseInt(LunchStrHrC.Text)*60)+parseInt(LunchStrMinC.Text));
+			//MessageBox.Show(Lunch_A);
+			var T2_C: int = ((parseInt(T2EndHrC.Text)*60)+parseInt(T2EndMinC.Text))-((parseInt(T2StrHrC.Text)*60)+parseInt(T2StrMinC.Text))
+			
+			//MessageBox.Show(T2_A);
+		if (parseInt(ShiftEndHrA.Text)== parseInt(ShiftStartHrA.Text) && parseInt(ShiftEndMinA.Text)== parseInt(ShiftStartMinA.Text))
+			{
+			TotaltimeA.Text=((parseInt(ShiftEndHrA.Text)*60)+parseInt(ShiftEndMinA.Text))-((parseInt(ShiftStartHrA.Text)*60)+parseInt(ShiftStartMinA.Text))-(T1_A+Lunch_A+T2_A);
+			}
+ 		else if (parseInt(ShiftEndHrA.Text)>parseInt(ShiftStartHrA.Text))
+			{
+			TotaltimeA.Text=((parseInt(ShiftEndHrA.Text)*60)+parseInt(ShiftEndMinA.Text))-((parseInt(ShiftStartHrA.Text)*60)+parseInt(ShiftStartMinA.Text))-(T1_A+Lunch_A+T2_A);
+			}
+		else
+			{
+			TotaltimeA.Text=(((24-parseInt(ShiftStartHrA.Text))*60)-parseInt(ShiftStartMinA.Text))+((parseInt(ShiftEndHrA.Text)*60)+parseInt(ShiftEndMinA.Text))-(T1_A+Lunch_A+T2_A);
+			}
+			
+			//Bshift
+		if (parseInt(ShiftEndHrB.Text)== parseInt(ShiftStartHrB.Text) && parseInt(ShiftEndMinB.Text)== parseInt(ShiftStartMinB.Text) )
+			{
+			TotaltimeB.Text=0;
+			}
+		else if (parseInt(ShiftEndHrB.Text)>parseInt(ShiftStartHrB.Text))
+			{
+			TotaltimeB.Text=((parseInt(ShiftEndHrB.Text)*60)+parseInt(ShiftEndMinB.Text))-((parseInt(ShiftStartHrB.Text)*60)+parseInt(ShiftStartMinB.Text))-(T1_B+Lunch_B+T2_B);
+			}
+		else
+			{
+			TotaltimeB.Text=(((24-parseInt(ShiftStartHrB.Text))*60)-parseInt(ShiftStartMinB.Text))+((parseInt(ShiftEndHrB.Text)*60)+parseInt(ShiftEndMinB.Text))-(T1_B+Lunch_B+T2_B);
+			}
+			//C-Shift
+		if (parseInt(ShiftEndHrC.Text)== parseInt(ShiftStartHrC.Text) && parseInt(ShiftEndMinC.Text)== parseInt(ShiftStartHrC.Text))
+			{
+			TotaltimeC.Text=0;	
+			}
+		else if (parseInt(ShiftEndHrC.Text)>parseInt(ShiftStartHrC.Text))
+			{
+			TotaltimeC.Text=((parseInt(ShiftEndHrC.Text)*60)+parseInt(ShiftEndMinC.Text))-((parseInt(ShiftStartHrC.Text)*60)+parseInt(ShiftStartMinC.Text))-(T1_C+Lunch_C+T2_C);
+			}
+		else
+			{
+			TotaltimeC.Text=(((24-parseInt(ShiftStartHrC.Text))*60)-parseInt(ShiftStartMinC.Text))+((parseInt(ShiftEndHrC.Text)*60)+parseInt(ShiftEndMinC.Text))-(T1_C+Lunch_C+T2_C);
+			}
+
+		}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="ShiftEndHrACode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function ShiftEndHrA_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="ShiftEndHrBCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function ShiftEndHrB_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="ShiftEndHrCCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function ShiftEndHrC_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="ShiftEndMinACode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function ShiftEndMinA_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="ShiftEndMinBCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function ShiftEndMinB_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="ShiftEndMinCCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function ShiftEndMinC_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="ShiftStartHrACode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function ShiftStartHrA_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{
+	calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="ShiftStartHrBCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function ShiftStartHrB_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{
+	calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="ShiftStartHrCCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function ShiftStartHrC_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{
+	calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="ShiftStartMinACode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function ShiftStartMinA_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="ShiftStartMinBCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function ShiftStartMinB_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="ShiftStartMinCCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function ShiftStartMinC_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="T1EndHrACode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function T1EndHrA_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="T1EndHrBCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function T1EndHrB_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="T1EndHrCCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function T1EndHrC_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="T1EndMinACode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function T1EndMinA_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="T1EndMinBCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function T1EndMinB_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="T1EndMinCCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function T1EndMinC_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="T1StrHrACode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function T1StrHrA_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="T1StrHrBCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function T1StrHrB_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="T1StrHrCCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function T1StrHrC_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="T1StrMinACode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function T1StrMinA_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="T1StrMinBCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function T1StrMinB_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="T1StrMinCCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function T1StrMinC_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="T2EndHrACode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function T2EndHrA_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="T2EndHrBCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function T2EndHrB_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="T2EndHrCCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function T2EndHrC_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="T2EndMinACode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function T2EndMinA_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="T2EndMinBCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function T2EndMinB_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="T2EndMinCCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function T2EndMinC_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="T2StrHrACode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function T2StrHrA_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="T2StrHrBCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function T2StrHrB_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="T2StrHrCCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function T2StrHrC_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="T2StrMinACode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function T2StrMinA_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="T2StrMinBCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function T2StrMinB_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="T2StrMinCCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function T2StrMinC_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{calculateTotaltimeA()
+}
+]]></x:XData>
+            </script:ScriptCode>
+          </script:ScriptCodeManager.Scripts>
+          <script:ScriptCodeManager.AssemblyReferences>
+            <ic:AssemblyReference AssemblyName="mscorlib" />
+            <ic:AssemblyReference AssemblyName="System" />
+            <ic:AssemblyReference AssemblyName="System.Core" />
+            <ic:AssemblyReference AssemblyName="System.Data" />
+            <ic:AssemblyReference AssemblyName="System.Xml" />
+            <ic:AssemblyReference AssemblyName="System.Drawing" />
+            <ic:AssemblyReference AssemblyName="System.Windows.Forms" />
+            <ic:AssemblyReference AssemblyName="WindowsBase" />
+            <ic:AssemblyReference AssemblyName="PresentationCore" />
+            <ic:AssemblyReference AssemblyName="PresentationFramework" />
+            <ic:AssemblyReference AssemblyName="GwxRuntimeCore" />
+            <ic:AssemblyReference AssemblyName="GwxRuntimeCoreCommands" />
+            <ic:AssemblyReference AssemblyName="GwxRuntimeViewControl" />
+            <ic:AssemblyReference AssemblyName="GwxConfigCore" />
+            <ic:AssemblyReference AssemblyName="IcoComponentModel" />
+            <ic:AssemblyReference AssemblyName="IcoFwxClientWrapper" />
+            <ic:AssemblyReference AssemblyName="GdxViewControl" AssemblyCodebase="file:///C:/Program Files/MELSOFT/MC Works64/Components/GdxViewControl.DLL" />
+            <ic:AssemblyReference AssemblyName="IcoWPFSpecialized" AssemblyCodebase="file:///C:/Program Files/MELSOFT/MC Works64/Components/IcoWPFSpecialized.DLL" />
+            <ic:AssemblyReference AssemblyName="IcoCommonCore.Net" />
+          </script:ScriptCodeManager.AssemblyReferences>
+        </script:ScriptCodeManager>
+      </gwx:GwxDocument.ScriptCodeManager>
+      <gwx:GwxDocument.EventBindings>
+        <script:ScriptEventBindings>
+          <script:ScriptEventBindings.EventBindings>
+            <x:Array Type="script:ScriptEventBinding">
+              <script:ScriptEventBinding EventName="DataReady" MethodName="ThisDisplay_AnimationStarted" ScriptType="JScriptNet" />
+            </x:Array>
+          </script:ScriptEventBindings.EventBindings>
+        </script:ScriptEventBindings>
+      </gwx:GwxDocument.EventBindings>
+      <gwx:GwxDocument.RuntimeWindowProperties>
+        <gwx:GwxWindowProperties LeftString="0%" TopString="0%" WidthString="100%" HeightString="100%" ControlBox="False" MaximizeBox="False" MinimizeBox="False" MenuVisible="False" ShowContextMenu="False" NavigationBarVisible="False" StatusBarVisible="False" OuterBorder="False" Resizable="False" />
+      </gwx:GwxDocument.RuntimeWindowProperties>
+    </gwx:GwxDocument>
+  </gwx:GwxDocument.GwxDocument>
+  <Label BorderBrush="#FFFFFFFF" Background="#FFBFBFBF" Foreground="#FF000000" FontFamily="Cambria Math" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="5,5,5,5" Name="Label3" Width="202.27811" Height="30.894826" Canvas.Left="183.999999" Canvas.Top="483.141664" Block.TextAlignment="Center">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxColor TargetPropertyName="Background" UseEndColor="True" EndBrush="#FF00FF00" AnimationMode="Discrete" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.Shift-C_Enable.Value" />
+          <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.Shift-C_Enable.Value" Control="True">
+            <gwx:GwxPick.CommandParameters>
+              <gwxcmd:ToggleValueCommand>
+                <gwxcmd:ToggleValueCommand.Values>
+                  <s:String>1</s:String>
+                  <s:String>0</s:String>
+                </gwxcmd:ToggleValueCommand.Values>
+              </gwxcmd:ToggleValueCommand>
+            </gwx:GwxPick.CommandParameters>
+          </gwx:GwxPick>
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <TextBlock Text="{}{{x=IF {{@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.Shift-C_Enable.Value}} == 1&#xD;&#xA;THEN &quot;SHIFT-C - Enable&quot;&#xD;&#xA;ELSE &quot;SHIFT-C - Disable&quot;}}" HorizontalAlignment="Center" />
+  </Label>
+  <Label BorderBrush="#FFFFFFFF" Background="#FFBFBFBF" Foreground="#FF000000" FontFamily="Cambria Math" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="5,5,5,5" Name="Label2" Width="202.27811" Height="30.894826" Canvas.Left="183.999998" Canvas.Top="244.566484" Block.TextAlignment="Center">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxColor TargetPropertyName="Background" UseEndColor="True" EndBrush="#FF00FF00" AnimationMode="Discrete" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.Shift-B_Enable.Value" />
+          <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.Shift-B_Enable.Value" Control="True">
+            <gwx:GwxPick.CommandParameters>
+              <gwxcmd:ToggleValueCommand>
+                <gwxcmd:ToggleValueCommand.Values>
+                  <s:String>1</s:String>
+                  <s:String>0</s:String>
+                </gwxcmd:ToggleValueCommand.Values>
+              </gwxcmd:ToggleValueCommand>
+            </gwx:GwxPick.CommandParameters>
+          </gwx:GwxPick>
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <TextBlock Text="{}{{x=IF {{@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.Shift-B_Enable.Value}} == 1&#xD;&#xA;THEN &quot;SHIFT-B - Enable&quot;&#xD;&#xA;ELSE &quot;SHIFT-B - Disable&quot;}}" HorizontalAlignment="Center" />
+  </Label>
+  <Label BorderBrush="#FFFFFFFF" Background="#FF003860" Foreground="#FFFFFFFF" FontFamily="Cambria Math" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="5,5,5,5" Width="203.590062" Height="31.09319" Canvas.Left="184.00001" Canvas.Top="284.329025" Block.TextAlignment="Center">
+    <TextBlock Text="Shift Time" HorizontalAlignment="Center" />
+  </Label>
+  <Label BorderBrush="#FFFFFFFF" Background="#FF003860" Foreground="#FFFFFFFF" FontFamily="Cambria Math" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="5,5,5,5" Width="203.590062" Height="31.09319" Canvas.Left="184.000009" Canvas.Top="324.091551" Block.TextAlignment="Center">
+    <TextBlock Text="Tea Break 01" HorizontalAlignment="Center" />
+  </Label>
+  <Label BorderBrush="#FFFFFFFF" Background="#FF003860" Foreground="#FFFFFFFF" FontFamily="Cambria Math" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="5,5,5,5" Width="203.590062" Height="31.09319" Canvas.Left="184.000009" Canvas.Top="363.854078" Block.TextAlignment="Center">
+    <TextBlock Text="Lunch" HorizontalAlignment="Center" />
+  </Label>
+  <Label BorderBrush="#FFFFFFFF" Background="#FF003860" Foreground="#FFFFFFFF" FontFamily="Cambria Math" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="5,5,5,5" Width="203.590062" Height="31.09319" Canvas.Left="184.000008" Canvas.Top="403.616605" Block.TextAlignment="Center">
+    <TextBlock Text="Tea Break 02" HorizontalAlignment="Center" />
+  </Label>
+  <Label BorderBrush="#FFFFFFFF" Background="#FF003860" Foreground="#FFFFFFFF" FontFamily="Cambria Math" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="5,5,5,5" Width="203.590062" Height="31.09319" Canvas.Left="184.000008" Canvas.Top="45.75384" Block.TextAlignment="Center">
+    <TextBlock Text="Shift Time" HorizontalAlignment="Center" />
+  </Label>
+  <Label BorderBrush="#FFFFFFFF" Background="#FF003860" Foreground="#FFFFFFFF" FontFamily="Cambria Math" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="5,5,5,5" Width="203.590062" Height="31.09319" Canvas.Left="184.000008" Canvas.Top="85.516366" Block.TextAlignment="Center">
+    <TextBlock Text="Tea Break 01" HorizontalAlignment="Center" />
+  </Label>
+  <Label BorderBrush="#FFFFFFFF" Background="#FF003860" Foreground="#FFFFFFFF" FontFamily="Cambria Math" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="5,5,5,5" Width="203.590062" Height="31.09319" Canvas.Left="184.000007" Canvas.Top="125.278893" Block.TextAlignment="Center">
+    <TextBlock Text="Lunch" HorizontalAlignment="Center" />
+  </Label>
+  <Label BorderBrush="#FFFFFFFF" Background="#FF003860" Foreground="#FFFFFFFF" FontFamily="Cambria Math" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="5,5,5,5" Width="203.590062" Height="31.09319" Canvas.Left="184.00001" Canvas.Top="165.041419" Block.TextAlignment="Center">
+    <TextBlock Text="Tea Break 02" HorizontalAlignment="Center" />
+  </Label>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="1" Name="ShiftStartHrA" Width="121.590062" Height="31.09319" Canvas.Left="393.438749" Canvas.Top="46.247447">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="ShiftStartHrA_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>6</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="2" Name="ShiftStartMinA" Width="121.590062" Height="31.09319" Canvas.Left="517.877531" Canvas.Top="46.247447">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="ShiftStartMinA_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>30</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="3" Name="ShiftEndHrA" Width="121.590062" Height="31.09319" Canvas.Left="642.316297" Canvas.Top="46.247447">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="ShiftEndHrA_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>15</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="4" Name="ShiftEndMinA" Width="121.590062" Height="31.09319" Canvas.Left="766.755109" Canvas.Top="46.247447">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="ShiftEndMinA_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>25</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="5" Name="T1StrHrA" Width="121.590062" Height="31.09319" Canvas.Left="393.438749" Canvas.Top="85.979121">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="T1StrHrA_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>8</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="6" Name="T1StrMinA" Width="121.590062" Height="31.09319" Canvas.Left="517.877531" Canvas.Top="85.979121">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="T1StrMinA_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>30</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="7" Name="T1EndHrA" Width="121.590062" Height="31.09319" Canvas.Left="642.316297" Canvas.Top="85.979121">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="T1EndHrA_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>8</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="8" Name="T1EndMinA" Width="121.590062" Height="31.09319" Canvas.Left="766.755109" Canvas.Top="85.979121">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="T1EndMinA_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>40</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="9" Name="LunchStrHrA" Width="121.590062" Height="31.09319" Canvas.Left="393.438749" Canvas.Top="125.710796">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="LunchStrHrA_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>10</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="10" Name="LunchStrMinA" Width="121.590062" Height="31.09319" Canvas.Left="517.877531" Canvas.Top="125.710796">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="LunchStrMinA_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>30</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="11" Name="LunchEndHrA" Width="121.590062" Height="31.09319" Canvas.Left="642.316297" Canvas.Top="125.710796">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="LunchEndHrA_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>11</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="12" Name="LunchEndMinA" Width="121.590062" Height="31.09319" Canvas.Left="766.755109" Canvas.Top="125.710796">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="LunchEndMinA_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>5</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="13" Name="T2StrHrA" Width="121.590062" Height="31.09319" Canvas.Left="393.438749" Canvas.Top="165.44247">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="T2StrHrA_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>13</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="14" Name="T2StrMinA" Width="121.590062" Height="31.09319" Canvas.Left="517.877531" Canvas.Top="165.44247">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="T2StrMinA_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>15</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="15" Name="T2EndHrA" Width="121.590062" Height="31.09319" Canvas.Left="642.316297" Canvas.Top="165.44247">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="T2EndHrA_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>13</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="16" Name="T2EndMinA" Width="121.590062" Height="31.09319" Canvas.Left="766.755109" Canvas.Top="165.44247">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="T2EndMinA_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>25</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="17" Name="ShiftStartHrB" Width="121.590062" Height="31.09319" Canvas.Left="393.438749" Canvas.Top="284.637518">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="ShiftStartHrB_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>15</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="18" Name="ShiftStartMinB" Width="121.590062" Height="31.09319" Canvas.Left="517.877531" Canvas.Top="284.637518">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="ShiftStartMinB_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>35</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="19" Name="ShiftEndHrB" Width="121.590062" Height="31.09319" Canvas.Left="642.316297" Canvas.Top="284.637518">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="ShiftEndHrB_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>0</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="20" Name="ShiftEndMinB" Width="121.590062" Height="31.09319" Canvas.Left="766.755109" Canvas.Top="284.637518">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="ShiftEndMinB_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>30</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="21" Name="T1StrHrB" Width="121.590062" Height="31.09319" Canvas.Left="393.438749" Canvas.Top="324.369192">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="T1StrHrB_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>17</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="22" Name="T1StrMinB" Width="121.590062" Height="31.09319" Canvas.Left="517.877531" Canvas.Top="324.369192">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="T1StrMinB_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>35</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="23" Name="T1EndHrB" Width="121.590062" Height="31.09319" Canvas.Left="642.316297" Canvas.Top="324.369192">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="T1EndHrB_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>17</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="24" Name="T1EndMinB" Width="121.590062" Height="31.09319" Canvas.Left="766.755109" Canvas.Top="324.369192">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="T1EndMinB_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>45</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="25" Name="LunchStrHrB" Width="121.590062" Height="31.09319" Canvas.Left="393.438749" Canvas.Top="364.100866">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="LunchStrHrB_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>19</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="26" Name="LunchStrMinB" Width="121.590062" Height="31.09319" Canvas.Left="517.877531" Canvas.Top="364.100866">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="LunchStrMinB_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>30</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="27" Name="LunchEndHrB" Width="121.590062" Height="31.09319" Canvas.Left="642.316297" Canvas.Top="364.100866">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="LunchEndHrB_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>20</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="28" Name="LunchEndMinB" Width="121.590062" Height="31.09319" Canvas.Left="766.755109" Canvas.Top="364.100866">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="LunchEndMinB_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>5</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="29" Name="T2StrHrB" Width="121.590062" Height="31.09319" Canvas.Left="393.438749" Canvas.Top="403.832541">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="T2StrHrB_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>22</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="30" Name="T2StrMinB" Width="121.590062" Height="31.09319" Canvas.Left="517.877531" Canvas.Top="403.832541">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="T2StrMinB_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>15</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="31" Name="T2EndHrB" Width="121.590062" Height="31.09319" Canvas.Left="642.316297" Canvas.Top="403.832541">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="T2EndHrB_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>22</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="32" Name="T2EndMinB" Width="121.590062" Height="31.09319" Canvas.Left="766.755109" Canvas.Top="403.832541">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="T2EndMinB_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>25</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" Name="TotaltimeA" Width="121.590062" Height="31.09319" Focusable="False" Canvas.Left="393.438749" Canvas.Top="205.174144">480</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" Name="TotaltimeB" Width="121.590062" Height="31.09319" Focusable="False" Canvas.Left="393.438749" Canvas.Top="443.564215">480</TextBox>
+  <Label BorderBrush="#FFFFFFFF" Background="#FF003860" Foreground="#FFFFFFFF" FontFamily="Cambria" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="5,5,5,5" Width="203.590062" Height="31.09319" Canvas.Left="184.000007" Canvas.Top="204.803946" Block.TextAlignment="Center">
+    <TextBlock Text="Total Working Time (Min)" HorizontalAlignment="Center" />
+  </Label>
+  <Label BorderBrush="#FFFFFFFF" Background="#FF003860" Foreground="#FFFFFFFF" FontFamily="Cambria" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="5,5,5,5" Width="203.590062" Height="31.09319" Canvas.Left="184.000006" Canvas.Top="443.379131" Block.TextAlignment="Center">
+    <TextBlock Text="Total Working Time (Min)" HorizontalAlignment="Center" />
+  </Label>
+  <Label BorderBrush="#FFFFFFFF" Background="#FF003860" Foreground="#FFFFFFFF" FontFamily="Cambria Math" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="5,5,5,5" Width="203.590062" Height="31.09319" Canvas.Left="184.000006" Canvas.Top="522.904195" Block.TextAlignment="Center">
+    <TextBlock Text="Shift Time" HorizontalAlignment="Center" />
+  </Label>
+  <Label BorderBrush="#FFFFFFFF" Background="#FF003860" Foreground="#FFFFFFFF" FontFamily="Cambria Math" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="5,5,5,5" Width="203.590062" Height="31.09319" Canvas.Left="184.000005" Canvas.Top="562.666721" Block.TextAlignment="Center">
+    <TextBlock Text="Tea Break 01" HorizontalAlignment="Center" />
+  </Label>
+  <Label BorderBrush="#FFFFFFFF" Background="#FF003860" Foreground="#FFFFFFFF" FontFamily="Cambria Math" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="5,5,5,5" Width="203.590062" Height="31.09319" Canvas.Left="184.000005" Canvas.Top="602.429248" Block.TextAlignment="Center">
+    <TextBlock Text="Lunch" HorizontalAlignment="Center" />
+  </Label>
+  <Label BorderBrush="#FFFFFFFF" Background="#FF003860" Foreground="#FFFFFFFF" FontFamily="Cambria Math" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="5,5,5,5" Width="203.590062" Height="31.09319" Canvas.Left="184.000005" Canvas.Top="642.191774" Block.TextAlignment="Center">
+    <TextBlock Text="Tea Break 02" HorizontalAlignment="Center" />
+  </Label>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="33" Name="ShiftStartHrC" Width="121.590062" Height="31.09319" Canvas.Left="393.438749" Canvas.Top="523.027604">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="ShiftStartHrC_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>0</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="34" Name="ShiftStartMinC" Width="121.590062" Height="31.09319" Canvas.Left="517.877531" Canvas.Top="523.027604">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="ShiftStartMinC_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>0</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="35" Name="ShiftEndHrC" Width="121.590062" Height="31.09319" Canvas.Left="642.316297" Canvas.Top="523.027604">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="ShiftEndHrC_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>0</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="36" Name="ShiftEndMinC" Width="121.590062" Height="31.09319" Canvas.Left="766.755109" Canvas.Top="523.027604">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="ShiftEndMinC_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>0</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="37" Name="T1StrHrC" Width="121.590062" Height="31.09319" Canvas.Left="393.438749" Canvas.Top="562.759278">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="T1StrHrC_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>0</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="38" Name="T1StrMinC" Width="121.590062" Height="31.09319" Canvas.Left="517.877531" Canvas.Top="562.759278">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="T1StrMinC_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>0</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="39" Name="T1EndHrC" Width="121.590062" Height="31.09319" Canvas.Left="642.316297" Canvas.Top="562.759278">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="T1EndHrC_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>0</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="40" Name="T1EndMinC" Width="121.590062" Height="31.09319" Canvas.Left="766.755109" Canvas.Top="562.759278">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="T1EndMinC_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>0</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="41" Name="LunchStrHrC" Width="121.590062" Height="31.09319" Canvas.Left="393.438749" Canvas.Top="602.490953">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="LunchStrHrC_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>0</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="42" Name="LunchStrMinC" Width="121.590062" Height="31.09319" Canvas.Left="517.877531" Canvas.Top="602.490953">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="LunchStrMinC_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>0</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="43" Name="LunchEndHrC" Width="121.590062" Height="31.09319" Canvas.Left="642.316297" Canvas.Top="602.490953">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="LunchEndHrC_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>0</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="44" Name="LunchEndMinC" Width="121.590062" Height="31.09319" Canvas.Left="766.755109" Canvas.Top="602.490953">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="LunchEndMinC_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>0</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="45" Name="T2StrHrC" Width="121.590062" Height="31.09319" Canvas.Left="393.438749" Canvas.Top="642.191774">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="T2StrHrC_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>0</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="46" Name="T2StrMinC" Width="121.590062" Height="31.09319" Canvas.Left="517.877531" Canvas.Top="642.191774">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="T2StrMinC_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>0</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="47" Name="T2EndHrC" Width="121.590062" Height="31.09319" Canvas.Left="642.316297" Canvas.Top="642.191774">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="T2EndHrC_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>0</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" TabIndex="48" Name="T2EndMinC" Width="121.590062" Height="31.09319" Canvas.Left="766.755109" Canvas.Top="642.191774">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="T2EndMinC_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>0</TextBox>
+  <TextBox MaxLines="1" MaxLength="2" TextAlignment="Center" BorderBrush="#FF000000" FontFamily="Segoe UI" FontSize="18" Name="TotaltimeC" Width="121.590062" Height="31.09319" Focusable="False" Canvas.Left="393.438749" Canvas.Top="681.954301">0</TextBox>
+  <Label BorderBrush="#FFFFFFFF" Background="#FF003860" Foreground="#FFFFFFFF" FontFamily="Cambria" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="5,5,5,5" Width="203.590062" Height="31.09319" Canvas.Left="184.000011" Canvas.Top="681.954301" Block.TextAlignment="Center">
+    <TextBlock Text="Total Working Time (Min)" HorizontalAlignment="Center" />
+  </Label>
+  <Label BorderBrush="#FFFFFFFF" Background="#FF003860" Foreground="#FFFFFFFF" FontFamily="Cambria Math" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="5,5,5,5" Width="121.590062" Height="31.09319" Canvas.Left="766.448576" Canvas.Top="483.611622" Block.TextAlignment="Center">
+    <TextBlock Text="END MIN" HorizontalAlignment="Center" />
+  </Label>
+  <Label BorderBrush="#FFFFFFFF" Background="#FF003860" Foreground="#FFFFFFFF" FontFamily="Cambria Math" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="5,5,5,5" Width="121.590062" Height="31.09319" Canvas.Left="642.623258" Canvas.Top="483.561348" Block.TextAlignment="Center">
+    <TextBlock Text="END HR" HorizontalAlignment="Center" />
+  </Label>
+  <Label BorderBrush="#FFFFFFFF" Background="#FF003860" Foreground="#FFFFFFFF" FontFamily="Cambria Math" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="5,5,5,5" Width="121.590062" Height="31.09319" Canvas.Left="517.448205" Canvas.Top="483.205694" Block.TextAlignment="Center">
+    <TextBlock Text="START MIN" HorizontalAlignment="Center" />
+  </Label>
+  <Label BorderBrush="#FFFFFFFF" Background="#FF003860" Foreground="#FFFFFFFF" FontFamily="Cambria Math" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="5,5,5,5" Width="120.366607" Height="30.63426" Canvas.Left="393.438751" Canvas.Top="483.295897" Block.TextAlignment="Center">
+    <TextBlock Text="START HR" HorizontalAlignment="Center" />
+  </Label>
+  <Button BorderBrush="#FF000000" BorderThickness="4,4,4,4" Background="#FF001848" Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="28" FontWeight="Bold" Name="Shift_Save" Width="200.781797" Height="40.033187" Canvas.Left="687.213252" Canvas.Top="679.247671">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="SaveCmdScr" Control="True">
+            <gwx:GwxPick.CommandParameters>
+              <gwxcmd:ScriptCommand />
+            </gwx:GwxPick.CommandParameters>
+            <gwx:GwxPick.EventBindings>
+              <script:ScriptEventBindings>
+                <script:ScriptEventBindings.EventBindings>
+                  <x:Array Type="script:ScriptEventBinding">
+                    <script:ScriptEventBinding EventName="CommandExecuted" MethodName="SaveCmdScr_CommandExecuted" ScriptType="JScriptNet" />
+                  </x:Array>
+                </script:ScriptEventBindings.EventBindings>
+              </script:ScriptEventBindings>
+            </gwx:GwxPick.EventBindings>
+          </gwx:GwxPick>
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <TextBlock Text="Save" />
+  </Button>
+  <Path Fill="#FFFFFFFF" Name="DatabaseAdd1" Margin="0,0,0,0" gwx:GwxProperties.Description="Icon, Database, Add, Connect, Network, Connectivity" gwx:GwxProperties.ShowDescriptionInToolTip="False" gwx:GwxProperties.Title="Database - Add">
+    <Path.Data>
+      <PathGeometry FillRule="EvenOdd" Figures="M709.70721501343,703.564322308207L718.260134597399,703.564322308207 718.221998279894,703.667026407267C717.927404191967,704.490730662531 717.766541547921,705.380056893823 717.766541547921,706.307174944598 717.766541547921,707.234249678753 717.927404191967,708.123498172174 718.221998279894,708.947107672327L718.260089349195,709.04967756721 709.70721501343,709.04967756721C709.107740412541,709.04967756721,708.621125535083,708.550150274798,708.621125390251,707.935788681962L708.621125390251,704.677243531043C708.621125535083,704.062881938208,709.107740412541,703.564322308207,709.70721501343,703.564322308207z M724.34170927021,702.544062689576L724.34170927021,705.531446169454 721.429384412869,705.531446169454 721.429384412869,707.425029621353 724.34170927021,707.425029621353 724.34170927021,710.412218176429 726.187762463573,710.412218176429 726.187762463573,707.425029621353 729.100087320914,707.425029621353 729.100087320914,705.531446169454 726.187762463573,705.531446169454 726.187762463573,702.544062689576z M725.259832281321,700.516689660532C728.377497636,700.516689660532 730.905111705332,703.108188216047 730.905111705332,706.307000904596 730.905111705332,709.502604295513 728.377497636,712.09615226874 725.259832281321,712.09615226874 722.142056445612,712.09615226874 719.614930679812,709.502604295513 719.614930679812,706.307000904596 719.614930679812,703.108188216047 722.142056445612,700.516689660532 725.259832281321,700.516689660532z M709.70721501343,696.637145417867L724.903737211636,696.637145417867C725.503197106858,696.637145417867,725.989271790179,697.135651675601,725.989271790179,697.750141671283L725.989271790179,698.656939971724 725.835467865952,698.642885274696C725.645433327743,698.628004854549 725.453439919369,698.620427152874 725.259756113511,698.620427152874 722.677560644012,698.620427152874 720.396072671861,699.967496766207 719.048077394503,702.01252750707L718.980250336762,702.120952881122 709.70721501343,702.120952881122C709.107740412541,702.12095210761,708.621125535083,701.622445849875,708.621125722309,701.007220245119L708.621125722309,697.750141671283C708.621125535083,697.135651675601,709.107740412541,696.637145417867,709.70721501343,696.637145417867z M711.818468986011,691.309974420269C711.139416821294,691.309974420269 710.586028798174,691.877112811225 710.586029175244,692.574187069582 710.586028798174,693.272200563816 711.139416821294,693.838194661097 711.818468986011,693.838194661097 712.498000555448,693.838194661097 713.050924558236,693.272200563816 713.050924558236,692.574187069582 713.050924558236,691.877112811225 712.498000555448,691.309974420269 711.818468986011,691.309974420269z M709.70721501343,689.832567332564L724.903735703362,689.832567332564C725.503197106858,689.832567548771,725.989271790179,690.331129979259,725.989271790179,690.945646390343L725.989271790179,694.203849223918C725.989271790179,694.819345170808,725.503197106858,695.316761164621,724.903735703362,695.316761164621L709.70721501343,695.316761164621C709.107740412541,695.316761164621,708.621125535083,694.819345170808,708.621125390251,694.203849223918L708.621125390251,690.945646390343C708.621125535083,690.331129979259,709.107740412541,689.832567548771,709.70721501343,689.832567332564z" />
+    </Path.Data>
+  </Path>
+  <Label BorderBrush="#FFFFFFFF" Background="#FF003860" Foreground="#FFFFFFFF" FontFamily="Cambria Math" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="5,5,5,5" Width="121.590062" Height="31.09319" Canvas.Left="766.448545" Canvas.Top="6.831495" Block.TextAlignment="Center">
+    <TextBlock Text="END MIN" HorizontalAlignment="Center" />
+  </Label>
+  <Label BorderBrush="#FFFFFFFF" Background="#FF003860" Foreground="#FFFFFFFF" FontFamily="Cambria Math" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="5,5,5,5" Width="120.366616" Height="30.634236" Canvas.Left="393.438756" Canvas.Top="6.515772" Block.TextAlignment="Center">
+    <TextBlock Text="START HR" HorizontalAlignment="Center" />
+  </Label>
+  <Label BorderBrush="#FFFFFFFF" Background="#FF003860" Foreground="#FFFFFFFF" FontFamily="Cambria Math" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="5,5,5,5" Width="121.590062" Height="31.09319" Canvas.Left="517.448212" Canvas.Top="6.425558" Block.TextAlignment="Center">
+    <TextBlock Text="START MIN" HorizontalAlignment="Center" />
+  </Label>
+  <Label BorderBrush="#FFFFFFFF" Background="#FFBFBFBF" Foreground="#FF000000" FontFamily="Cambria Math" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="5,5,5,5" Name="Label1" Width="202.27811" Height="30.894826" Canvas.Left="184.000009" Canvas.Top="6.515771" Block.TextAlignment="Center">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxColor TargetPropertyName="Background" UseEndColor="True" EndBrush="#FF00FF00" AnimationMode="Discrete" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.Shift-A_Enable.Value" />
+          <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.Shift-A_Enable.Value" Control="True">
+            <gwx:GwxPick.CommandParameters>
+              <gwxcmd:ToggleValueCommand>
+                <gwxcmd:ToggleValueCommand.Values>
+                  <s:String>1</s:String>
+                  <s:String>0</s:String>
+                </gwxcmd:ToggleValueCommand.Values>
+              </gwxcmd:ToggleValueCommand>
+            </gwx:GwxPick.CommandParameters>
+          </gwx:GwxPick>
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <TextBlock Text="{}{{x=IF {{@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.Shift-A_Enable.Value}} == 1&#xD;&#xA;THEN &quot;SHIFT-A - Enable&quot;&#xD;&#xA;ELSE &quot;SHIFT-A - Disable&quot;}}" HorizontalAlignment="Center" />
+  </Label>
+  <Label BorderBrush="#FFFFFFFF" Background="#FF003860" Foreground="#FFFFFFFF" FontFamily="Cambria Math" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="5,5,5,5" Width="121.590062" Height="31.09319" Canvas.Left="642.623262" Canvas.Top="6.781221" Block.TextAlignment="Center">
+    <TextBlock Text="END HR" HorizontalAlignment="Center" />
+  </Label>
+  <Label BorderBrush="#FFFFFFFF" Background="#FF003860" Foreground="#FFFFFFFF" FontFamily="Cambria Math" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="5,5,5,5" Width="120.366607" Height="30.63426" Canvas.Left="393.43875" Canvas.Top="244.905811" Block.TextAlignment="Center">
+    <TextBlock Text="START HR" HorizontalAlignment="Center" />
+  </Label>
+  <Label BorderBrush="#FFFFFFFF" Background="#FF003860" Foreground="#FFFFFFFF" FontFamily="Cambria Math" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="5,5,5,5" Width="121.590062" Height="31.09319" Canvas.Left="517.448196" Canvas.Top="244.815602" Block.TextAlignment="Center">
+    <TextBlock Text="START MIN" HorizontalAlignment="Center" />
+  </Label>
+  <Label BorderBrush="#FFFFFFFF" Background="#FF003860" Foreground="#FFFFFFFF" FontFamily="Cambria Math" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="5,5,5,5" Width="121.590062" Height="31.09319" Canvas.Left="642.62325" Canvas.Top="245.171264" Block.TextAlignment="Center">
+    <TextBlock Text="END HR" HorizontalAlignment="Center" />
+  </Label>
+  <Label BorderBrush="#FFFFFFFF" Background="#FF003860" Foreground="#FFFFFFFF" FontFamily="Cambria Math" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="5,5,5,5" Width="121.590062" Height="31.09319" Canvas.Left="766.448537" Canvas.Top="245.221538" Block.TextAlignment="Center">
+    <TextBlock Text="END MIN" HorizontalAlignment="Center" />
+  </Label>
+  <Canvas Visibility="Hidden">
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="ShiftEndHrA11" Canvas.Left="103.517402" Canvas.Top="48.320435" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="ShiftEndHrA1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.A.Shift End Hr.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="ShiftStartHrA11" Canvas.Left="14.850735" Canvas.Top="48.320435" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="ShiftStartHrA1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.A.Shift Start Hr.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="ShiftStartMinA11" Canvas.Left="57.482598" Canvas.Top="46.107669" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="ShiftStartMinA1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.A.Shift Start Min.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="ShiftEndMinA11" Canvas.Left="148.701469" Canvas.Top="51.016731" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="ShiftEndMinA1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.A.Shift End Min.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="T1StrHrA11" Canvas.Left="14" Canvas.Top="88.082962" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="T1StrHrA1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.A.Tea-1 Start Hr.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="T1StrMinA11" Canvas.Left="60.034802" Canvas.Top="88.082961" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="T1StrMinA1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.A.Tea-1 Start Min.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="T1EndHrA11" Canvas.Left="102.666667" Canvas.Top="85.386665" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="T1EndHrA1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.A.Tea-1 End Hr.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="T1EndMinA11" Canvas.Left="147" Canvas.Top="88.082961" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="T1EndMinA1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.A.Tea-1 End Min.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="LunchStrHrA11" Canvas.Left="14.850735" Canvas.Top="127.845488" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="LunchStrHrA1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.A.Lunch Start Hr.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="LunchStrMinA11" Canvas.Left="58.333333" Canvas.Top="127.845488" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="LunchStrMinA1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.A.Lunch Start Min.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="LunchEndHrA11" Canvas.Left="102.666667" Canvas.Top="127.845488" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="LunchEndHrA1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.A.Lunch End Hr.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="LunchEndMinA11" Canvas.Left="147.850735" Canvas.Top="127.845488" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="LunchEndMinA1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.A.Lunch End Min.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="T2StrHrA11" Canvas.Left="14" Canvas.Top="167.608015" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="T2StrHrA1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.A.Tea-2 Start Hr.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="T2StrMinA11" Canvas.Left="58.333333" Canvas.Top="167.608014" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="T2StrMinA1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.A.Tea-2 Start Min.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="T2EndHrA11" Canvas.Left="103.517402" Canvas.Top="167.608014" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="T2EndHrA1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.A.Tea-2 End Hr.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="T2EndMinA11" Canvas.Left="147.850735" Canvas.Top="167.608014" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="T2EndMinA1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.A.Tea-2 End Min.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="TotaltimeA11" Canvas.Left="14" Canvas.Top="207.370541" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="TotaltimeA1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.Total Time Shift-A.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="ShiftEndHrB11" Canvas.Left="100.666667" Canvas.Top="287" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="ShiftEndHrB1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.B.Shift End Hr.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="ShiftStartHrB11" Canvas.Left="12" Canvas.Top="287" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="ShiftStartHrB1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.B.Shift Start Hr.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="ShiftStartMinB11" Canvas.Left="58.885537" Canvas.Top="287" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="ShiftStartMinB1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.B.Shift Start Min.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="ShiftEndMinB11" Canvas.Left="145" Canvas.Top="287" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="ShiftEndMinB1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.B.Shift End Min.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="T1StrHrB11" Canvas.Left="12" Canvas.Top="326.762527" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="T1StrHrB1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.B.Tea-1 Start Hr.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="T1StrMinB11" Canvas.Left="56.333333" Canvas.Top="326.762526" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="T1StrMinB1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.B.Tea-1 Start Min.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="T1EndHrB11" Canvas.Left="100.666667" Canvas.Top="326.762526" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="T1EndHrB1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.B.Tea-1 End Hr.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="T1EndMinB11" Canvas.Left="145" Canvas.Top="326.762526" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="T1EndMinB1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.B.Tea-1 End Min.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="LunchStrHrB11" Canvas.Left="12" Canvas.Top="367.873201" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="LunchStrHrB1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.B.Lunch Start Hr.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="LunchStrMinB11" Canvas.Left="57.184068" Canvas.Top="366.525053" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="LunchStrMinB1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.B.Lunch Start Min.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="LunchEndHrB11" Canvas.Left="100.666667" Canvas.Top="366.525053" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="LunchEndHrB1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.B.Lunch End Hr.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="LunchEndMinB11" Canvas.Left="145" Canvas.Top="366.525053" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="LunchEndMinB1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.B.Lunch End Min.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="T2StrHrB11" Canvas.Left="12" Canvas.Top="406.28758" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="T2StrHrB1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.B.Tea-2 Start Hr.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="T2StrMinB11" Canvas.Left="56.333333" Canvas.Top="406.287579" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="T2StrMinB1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.B.Tea-2 Start Min.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="T2EndHrB11" Canvas.Left="100.666667" Canvas.Top="406.287579" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="T2EndHrB1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.B.Tea-2 End Hr.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="T2EndMinB11" Canvas.Left="145" Canvas.Top="404.939431" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="T2EndMinB1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.B.Tea-2 End Min.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="TotaltimeB11" Canvas.Left="12" Canvas.Top="446.050106" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="TotaltimeB1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.Total Time Shift-B.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="ShiftEndHrC11" Canvas.Left="99.618123" Canvas.Top="519.059259" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="ShiftEndHrC1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.C.Lunch End Hr.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="ShiftStartHrC11" Canvas.Left="10.951456" Canvas.Top="519.059259" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="ShiftStartHrC1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.C.Shift Start Hr.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="ShiftStartMinC11" Canvas.Left="57.836993" Canvas.Top="519.059259" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="ShiftStartMinC1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.C.Shift Start Min.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="ShiftEndMinC11" Canvas.Left="143.951456" Canvas.Top="519.059259" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="ShiftEndMinC1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.C.Shift End Min.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="T1StrHrC11" Canvas.Left="10.951456" Canvas.Top="558.821786" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="T1StrHrC1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.C.Tea-1 Start Hr.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="T1StrMinC11" Canvas.Left="55.284789" Canvas.Top="558.821785" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="T1StrMinC1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.C.Tea-1 Start Min.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="T1EndHrC11" Canvas.Left="99.618123" Canvas.Top="558.821785" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="T1EndHrC1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.C.Tea-1 End Hr.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="T1EndMinC11" Canvas.Left="143.951456" Canvas.Top="558.821785" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="T1EndMinC1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.C.Tea-1 End Min.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="LunchStrHrC11" Canvas.Left="13.50366" Canvas.Top="598.584312" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="LunchStrHrC1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.C.Lunch Start Hr.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="LunchStrMinC11" Canvas.Left="55.284789" Canvas.Top="598.584312" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="LunchStrMinC1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.C.Lunch Start Min.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="LunchEndHrC11" Canvas.Left="101.319592" Canvas.Top="597.236164" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="LunchEndHrC1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.C.Lunch End Hr.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="LunchEndMinC11" Canvas.Left="143.951456" Canvas.Top="598.584312" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="LunchEndMinC1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.C.Lunch End Min.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="T2StrHrC11" Canvas.Left="10.951456" Canvas.Top="638.346839" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="T2StrHrC1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.C.Tea-2 Start Hr.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="T2StrMinC11" Canvas.Left="55.284789" Canvas.Top="638.346838" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="T2StrMinC1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.C.Tea-2 Start Min.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="T2EndHrC11" Canvas.Left="101.319592" Canvas.Top="638.346838" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="T2EndHrC1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.C.Tea-2 End Hr.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="T2EndMinC11" Canvas.Left="144.802191" Canvas.Top="638.346838" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="T2EndMinC1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.C.Tea-2 End Min.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+    <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="TotaltimeC11" Canvas.Left="10.951456" Canvas.Top="678.109365" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" Name="TotaltimeC1" DataSource="@Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.ShiftSetting.Total Time Shift-C.Value" Control="True" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*" />
+    </Label>
+  </Canvas>
+</Canvas>

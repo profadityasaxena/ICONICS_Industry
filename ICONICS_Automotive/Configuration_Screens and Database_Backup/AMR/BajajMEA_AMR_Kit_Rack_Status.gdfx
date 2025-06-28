@@ -1,0 +1,604 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Canvas Background="#FF243782" Width="1100" Height="728" gwx:GwxProperties.Description="Display Size: H=1100 W:728" gwx:GwxProperties.ShowDescriptionInToolTip="True" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:gwx="clr-namespace:Ico.Gwx;assembly=GwxRuntimeCore" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:iwm="clr-namespace:Ico.Windows.Media;assembly=IcoWPF" xmlns:script="clr-namespace:Ico.Script;assembly=IcoScriptEngine" xmlns:ic="clr-namespace:Ico.Collections;assembly=IcoCollections" xmlns:ig="clr-namespace:Ico.Gdx;assembly=GdxViewControl" xmlns:iws="clr-namespace:Ico.WPF.Specialized;assembly=IcoWPFSpecialized" xmlns:ig12="clr-namespace:Ico.Gdx;assembly=GdxClientCommon" xmlns:igd="clr-namespace:Ico.Gdx.Data;assembly=GdxClientCommon" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:iwc="clr-namespace:Ico.Windows.Controls;assembly=IcoWPF" xmlns:gwxcmd="clr-namespace:Ico.Gwx;assembly=GwxRuntimeCoreCommands">
+  <Canvas.Resources>
+    <BitmapImage x:Key="GwxThumbnailImageKey">
+      <iwm:BitmapImageInfo.StreamSource>
+        <iwm:Base64Stream Data="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" />
+      </iwm:BitmapImageInfo.StreamSource>
+    </BitmapImage>
+  </Canvas.Resources>
+  <gwx:GwxDocument.GwxDocument>
+    <gwx:GwxDocument FileVersion="10.97.020.00" IsScalable="True" MaximumZoom="1" MinimumZoom="1" PanEnabled="False" PreferredStretch="Fill" ScanRate="500">
+      <gwx:GwxDocument.ScriptCodeManager>
+        <script:ScriptCodeManager>
+          <script:ScriptCodeManager.Scripts>
+            <script:ScriptCode Name="ThisDisplayCode" Type="JScriptNet">
+              <x:XData><![CDATA[function ThisDisplay_AnimationStarted(sender : System.Object, e : System.EventArgs)
+{
+			Clear();
+            ThisWindow.FwxClientWrapper.WriteAsync("@rgs64:headerReg.Value","Kit Rack Status")
+}
+
+
+function ThisDisplay_AnimationStopped(sender : System.Object, e : System.EventArgs)
+{
+	Clear();
+    ThisWindow.FwxClientWrapper.WriteAsync("@rgs64:headerReg.Value","")
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="ClearCode" Type="JScriptNet">
+              <x:XData><![CDATA[function Clear(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs){		
+	
+	// [Variable Declaration] Creating holder variables that will hold the user input values in the script
+	
+	var location_name         	: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("location_name").ToDependencyObject();
+	var rack_code        	    : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("rack_code").ToDependencyObject();
+	var rack_type        		: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("rack_type").ToDependencyObject();
+	var rack_status        		: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("rack_status").ToDependencyObject();
+	var source_ready        	: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("source_ready").ToDependencyObject();
+	var status_timestamp      	: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("status_timestamp").ToDependencyObject();
+	var decision_status        	: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("decision_status").ToDependencyObject();
+	var model01        			: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("model01").ToDependencyObject();
+	var model01_quantity       	: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("model01_quantity").ToDependencyObject();
+	var model02        			: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("model02").ToDependencyObject();
+	var model02_quantity        : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("model02_quantity").ToDependencyObject();
+
+	
+	location_name.Clear();
+	rack_code.Clear();
+	rack_type.Clear();
+	rack_status.Clear();
+	source_ready.Clear();
+	status_timestamp.Clear();
+	decision_status.Clear();
+	model01.Clear();
+	model01_quantity.Clear();
+	model02.Clear();
+	model02_quantity.Clear();
+
+	
+}]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="GridCode" Type="JScriptNet">
+              <x:XData><![CDATA[function Grid(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs)
+{
+	
+	// [Variable Declaration] Creating holder variables that will hold the user input values in the script
+	
+	var location_name         	: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("location_name").ToDependencyObject();
+	var rack_code        	    : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("rack_code").ToDependencyObject();
+	var rack_type        		: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("rack_type").ToDependencyObject();
+	var rack_status        		: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("rack_status").ToDependencyObject();
+	var source_ready        	: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("source_ready").ToDependencyObject();
+	var status_timestamp      	: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("status_timestamp").ToDependencyObject();
+	var decision_status        	: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("decision_status").ToDependencyObject();
+	var model01        			: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("model01").ToDependencyObject();
+	var model01_quantity       	: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("model01_quantity").ToDependencyObject();
+	var model02        			: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("model02").ToDependencyObject();
+	var model02_quantity        : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("model02_quantity").ToDependencyObject();
+				
+	//[Grid Selection Code]
+	var gdxViewer		: Ico.Gdx.GdxViewControl = Ico.Gdx.GdxViewControl(ThisConfiguration.GetObjectByName("default_grid").ToDependencyObject());
+	var tab_list 		: ItemsControl = ItemsControl(gdxViewer.Items[0]);
+	var grid_list 		: Ico.Gdx.GdxGridView = Ico.Gdx.GdxGridView(tab_list.Items[0]);
+	var Row_Selected 	: DataRow;
+	Row_Selected = grid_list.GetHighlightedRow();
+		
+	if(grid_list.GetHighlightedRow() != null)
+	{
+			if (Row_Selected.Item[0] != String.IsNullOrEmpty){
+				
+				location_name.Text 		= Row_Selected.Item[1];
+				rack_code.Text 	    	= Row_Selected.Item[2];
+				rack_type.Text 	    	= Row_Selected.Item[3];
+				rack_status.Text 		= Row_Selected.Item[4];
+				source_ready.Text 		= Row_Selected.Item[9];
+				status_timestamp.Text 	= Row_Selected.Item[10];
+				decision_status.Text 	= Row_Selected.Item[11];
+				model01.Text 			= Row_Selected.Item[5];	
+				model01_quantity.Text 	= Row_Selected.Item[7];	
+				model02.Text 			= Row_Selected.Item[6];	
+				model02_quantity.Text 	= Row_Selected.Item[8];
+			}
+	}
+}]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="JScriptDotNetGlobalVariablesCode" Type="JScriptNet" EditorBrowsable="Never">
+              <x:XData><![CDATA[
+var ThisWindow : Ico.Gwx.GwxRuntimeViewControl;
+var ThisDocument : Ico.Gwx.GwxDocument;
+var ThisConfiguration : Ico.Gwx.GwxConfiguration;
+]]></x:XData>
+            </script:ScriptCode>
+          </script:ScriptCodeManager.Scripts>
+          <script:ScriptCodeManager.AssemblyReferences>
+            <ic:AssemblyReference AssemblyName="mscorlib" />
+            <ic:AssemblyReference AssemblyName="System" />
+            <ic:AssemblyReference AssemblyName="System.Core" />
+            <ic:AssemblyReference AssemblyName="System.Data" />
+            <ic:AssemblyReference AssemblyName="System.Xml" />
+            <ic:AssemblyReference AssemblyName="System.Drawing" />
+            <ic:AssemblyReference AssemblyName="System.Windows.Forms" />
+            <ic:AssemblyReference AssemblyName="WindowsBase" />
+            <ic:AssemblyReference AssemblyName="PresentationCore" />
+            <ic:AssemblyReference AssemblyName="PresentationFramework" />
+            <ic:AssemblyReference AssemblyName="GwxRuntimeCore" />
+            <ic:AssemblyReference AssemblyName="GwxRuntimeCoreCommands" />
+            <ic:AssemblyReference AssemblyName="GwxRuntimeViewControl" />
+            <ic:AssemblyReference AssemblyName="GwxConfigCore" />
+            <ic:AssemblyReference AssemblyName="IcoComponentModel" />
+            <ic:AssemblyReference AssemblyName="IcoFwxClientWrapper" />
+            <ic:AssemblyReference AssemblyName="GdxViewControl" AssemblyCodebase="file:///C:/Program Files/MELSOFT/MC Works64/Components/GdxViewControl.DLL" />
+            <ic:AssemblyReference AssemblyName="IcoWPFSpecialized" AssemblyCodebase="file:///C:/Program Files/MELSOFT/MC Works64/Components/IcoWPFSpecialized.DLL" />
+            <ic:AssemblyReference AssemblyName="IcoCommonCore.Net" />
+          </script:ScriptCodeManager.AssemblyReferences>
+        </script:ScriptCodeManager>
+      </gwx:GwxDocument.ScriptCodeManager>
+      <gwx:GwxDocument.EventBindings>
+        <script:ScriptEventBindings>
+          <script:ScriptEventBindings.EventBindings>
+            <x:Array Type="script:ScriptEventBinding">
+              <script:ScriptEventBinding EventName="AnimationStopped" MethodName="ThisDisplay_AnimationStopped" ScriptType="JScriptNet" />
+              <script:ScriptEventBinding EventName="AnimationStarted" MethodName="ThisDisplay_AnimationStarted" ScriptType="JScriptNet" />
+              <script:ScriptEventBinding EventName="AnimationStarting" MethodName="Clear" ScriptType="JScriptNet" />
+            </x:Array>
+          </script:ScriptEventBindings.EventBindings>
+        </script:ScriptEventBindings>
+      </gwx:GwxDocument.EventBindings>
+      <gwx:GwxDocument.RuntimeWindowProperties>
+        <gwx:GwxWindowProperties LeftString="0%" TopString="0%" WindowState="Maximized" WidthString="100%" HeightString="100%" ControlBox="False" MaximizeBox="False" MinimizeBox="False" HorizontalScrollVisible="Hidden" VerticalScrollVisible="Hidden" MenuVisible="False" ShowContextMenu="False" NavigationBarVisible="False" StatusBarVisible="False" TitleBarVisible="False" OuterBorder="False" Resizable="False" InnerBorder="False" CommandingEnabled="False" DragAndDropCommandingEnabled="False" />
+      </gwx:GwxDocument.RuntimeWindowProperties>
+      <gwx:GwxDocument.ToolTipOptions>
+        <gwx:GwxToolTipOptions ShowToolTips="False" />
+      </gwx:GwxDocument.ToolTipOptions>
+    </gwx:GwxDocument>
+  </gwx:GwxDocument.GwxDocument>
+  <Rectangle Stroke="#FF000000" Width="1100" Height="30" Canvas.Left="0" Canvas.Top="300">
+    <Rectangle.Fill>
+      <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+        <LinearGradientBrush.GradientStops>
+          <GradientStop Color="#FFF5F5F5" Offset="0" />
+          <GradientStop Color="#FFEBEBEB" Offset="0.49" />
+          <GradientStop Color="#FFE1E1E1" Offset="0.51" />
+          <GradientStop Color="#FFCDCDCD" Offset="1" />
+        </LinearGradientBrush.GradientStops>
+        <LinearGradientBrush.RelativeTransform>
+          <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+        </LinearGradientBrush.RelativeTransform>
+      </LinearGradientBrush>
+    </Rectangle.Fill>
+  </Rectangle>
+  <ig:GdxViewControl FileVersion="10.97.020.00" FontFamily="Segoe UI" FontSize="12" IsTabStop="True" Name="default_grid" Width="1100" Height="407.724978" Canvas.Left="0" Canvas.Top="300" gwx:GwxProperties.Description="Grid Size=H:443,W:1100&#xD;&#xA;Position=X:0,Y:300&#xD;&#xA;Grid Header Font=Style :Calibri,Size:17,Color:White&#xD;&#xA;Grid Header Background color=R :0,G : 24,B :72&#xD;&#xA;Grid Text Font=Style :Calibri,Size:16,Color:White&#xD;&#xA;Grid Scrolbar Foreground color=R :0,G : 24,B :72&#xD;&#xA;" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <ig:GdxViewControl.DataDictionaryRepository>
+      <ig12:DataDictionary Name="DailyStatus" Key="47993581">
+        <ig12:TextDataTranslation Text="Applicable" FilterKey="15056362" />
+        <ig12:TextDataTranslation Text="Not Applicable" FilterKey="49320909" />
+      </ig12:DataDictionary>
+      <ig12:DataDictionary Name="WeeklyStatus" Key="53237738">
+        <ig12:TextDataTranslation Text="Applicable" FilterKey="61233639" />
+        <ig12:TextDataTranslation Text="Not Applicable" FilterKey="49445506" />
+      </ig12:DataDictionary>
+      <ig12:DataDictionary Name="MonthlyStatus" Key="27952209">
+        <ig12:TextDataTranslation Text="Applicable" FilterKey="1264671" />
+        <ig12:TextDataTranslation Text="Not Applicable" FilterKey="35726287" />
+      </ig12:DataDictionary>
+      <ig12:DataDictionary Name="AnnualStatus" Key="63571381">
+        <ig12:TextDataTranslation Text="Applicable" FilterKey="54214786" />
+        <ig12:TextDataTranslation Text="Not Applicable" FilterKey="47842506" />
+      </ig12:DataDictionary>
+    </ig:GdxViewControl.DataDictionaryRepository>
+    <ig:GdxViewControl.FiltersRepository>
+      <igd:GdxFilter Key="49320909" Expression="x={{Daily}}==0" Name="Daily_Not Applicable" />
+      <igd:GdxFilter Key="15056362" Expression="x={{Daily}}==1" Name="Daily_Applicable" />
+      <igd:GdxFilter Key="61233639" Expression="x={{Weekly}}==1" Name="Weekly_Applicable" />
+      <igd:GdxFilter Key="49445506" Expression="x={{Weekly}}==0" Name="Weekly_Not Applicable" />
+      <igd:GdxFilter Key="1264671" Expression="x={{Monthly}}==1" Name="Monthly_Applicable" />
+      <igd:GdxFilter Key="35726287" Expression="x={{Monthly}}==0" Name="Monthly_Not Applicable" />
+      <igd:GdxFilter Key="54214786" Expression="x={{Annual}}==1" Name="Annual_Applicable" />
+      <igd:GdxFilter Key="47842506" Expression="x={{Annual}}==0" Name="Annual_Not Applicable" />
+    </ig:GdxViewControl.FiltersRepository>
+    <ig:GdxViewControl.SubscriptionsRepository>
+      <igd:GdxSubscription Key="11348180" Name="New Subscription">
+        <igd:GdxSubscription.Fields>
+          <igd:GdxDataField Key="RowID" BuiltInType="Int64" />
+          <igd:GdxDataField Key="AssetID" />
+          <igd:GdxDataField Key="AssetName" />
+          <igd:GdxDataField Key="AssemblyID" />
+          <igd:GdxDataField Key="AssemblyName" />
+          <igd:GdxDataField Key="SubAssemblyID" />
+          <igd:GdxDataField Key="SubAssemblyName" />
+          <igd:GdxDataField Key="ComponentID" />
+          <igd:GdxDataField Key="ComponentName" />
+        </igd:GdxSubscription.Fields>
+        <igd:GdxSubscription.Tags>
+          <s:String>db:CumiMetz. GridAssetComponentInfo</s:String>
+        </igd:GdxSubscription.Tags>
+      </igd:GdxSubscription>
+      <igd:GdxSubscription Key="3170613" Name="New Subscription">
+        <igd:GdxSubscription.Fields>
+          <igd:GdxDataField Key="RowID" BuiltInType="Int64" />
+          <igd:GdxDataField Key="TimeStamp" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="AssetName" />
+          <igd:GdxDataField Key="StartDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="Daily" BuiltInType="Int32" />
+          <igd:GdxDataField Key="Weekly" BuiltInType="Int32" />
+          <igd:GdxDataField Key="WLastDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="WNextDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="WWarning" BuiltInType="Int32" />
+          <igd:GdxDataField Key="Monthly" BuiltInType="Int32" />
+          <igd:GdxDataField Key="MLastDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="MNextDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="MWarning" BuiltInType="Int32" />
+          <igd:GdxDataField Key="Annual" BuiltInType="Int32" />
+          <igd:GdxDataField Key="ALastDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="ANextDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="AWarning" BuiltInType="Int32" />
+          <igd:GdxDataField Key="Maintenancetype" BuiltInType="Int32" />
+        </igd:GdxSubscription.Fields>
+        <igd:GdxSubscription.Tags>
+          <s:String>db:CumiMetz.GridPreventive</s:String>
+        </igd:GdxSubscription.Tags>
+      </igd:GdxSubscription>
+      <igd:GdxSubscription Key="706558" Name="New Subscription">
+        <igd:GdxSubscription.Fields>
+          <igd:GdxDataField Key="RowID" BuiltInType="Int64" />
+          <igd:GdxDataField Key="TimeStamp" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="AssetID" />
+          <igd:GdxDataField Key="AssetName" />
+          <igd:GdxDataField Key="StartDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="Daily" BuiltInType="Int32" />
+          <igd:GdxDataField Key="Weekly" BuiltInType="Int32" />
+          <igd:GdxDataField Key="WLastDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="WNextDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="WWarning" BuiltInType="Int32" />
+          <igd:GdxDataField Key="Monthly" BuiltInType="Int32" />
+          <igd:GdxDataField Key="MLastDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="MNextDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="MWarning" BuiltInType="Int32" />
+          <igd:GdxDataField Key="Annual" BuiltInType="Int32" />
+          <igd:GdxDataField Key="ALastDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="ANextDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="AWarning" BuiltInType="Int32" />
+          <igd:GdxDataField Key="Maintenancetype" BuiltInType="Int32" />
+        </igd:GdxSubscription.Fields>
+        <igd:GdxSubscription.Tags>
+          <s:String>db:CumiMetz.GridPreventive</s:String>
+        </igd:GdxSubscription.Tags>
+      </igd:GdxSubscription>
+      <igd:GdxSubscription Key="14152581" Name="New Subscription" />
+      <igd:GdxSubscription Key="23926047" Name="New Subscription">
+        <igd:GdxSubscription.Fields>
+          <igd:GdxDataField Key="uid" BuiltInType="Int32" />
+          <igd:GdxDataField IsPrimaryKey="True" Key="model_id" BuiltInType="Int32" />
+          <igd:GdxDataField IsPrimaryKey="True" Key="model_family_id" BuiltInType="Int32" />
+          <igd:GdxDataField Key="model_family_code" />
+          <igd:GdxDataField Key="model_description" />
+          <igd:GdxDataField Key="created_by" />
+          <igd:GdxDataField Key="created_on" BuiltInType="DateTime" />
+        </igd:GdxSubscription.Fields>
+        <igd:GdxSubscription.Tags>
+          <s:String>db:BajajMEA.Config_Model</s:String>
+        </igd:GdxSubscription.Tags>
+      </igd:GdxSubscription>
+      <igd:GdxSubscription Key="10202947" Name="New Subscription">
+        <igd:GdxSubscription.Fields>
+          <igd:GdxDataField IsReadOnly="True" Key="uid" BuiltInType="Int32" />
+          <igd:GdxDataField Key="screen_id" BuiltInType="Int32" />
+          <igd:GdxDataField Key="display_id" BuiltInType="Int32" />
+          <igd:GdxDataField Key="dwell_time" BuiltInType="Int32" />
+        </igd:GdxSubscription.Fields>
+        <igd:GdxSubscription.Tags>
+          <s:String>db:BajajMEA.Config_ANDON_Dwell_Time</s:String>
+        </igd:GdxSubscription.Tags>
+      </igd:GdxSubscription>
+      <igd:GdxSubscription Key="57898686" Name="New Subscription">
+        <igd:GdxSubscription.Fields>
+          <igd:GdxDataField Key="uid" BuiltInType="Int32" />
+          <igd:GdxDataField Key="dwell_time" BuiltInType="Int32" />
+          <igd:GdxDataField IsPrimaryKey="True" Key="display_id" BuiltInType="Int32" />
+          <igd:GdxDataField Key="display_name" />
+          <igd:GdxDataField IsPrimaryKey="True" Key="screen_id" BuiltInType="Int32" />
+          <igd:GdxDataField Key="screen_name" />
+        </igd:GdxSubscription.Fields>
+        <igd:GdxSubscription.Tags>
+          <s:String>db:BajajMEA.Config_ANDON_Dwell_Time</s:String>
+        </igd:GdxSubscription.Tags>
+      </igd:GdxSubscription>
+      <igd:GdxSubscription Key="12678567" Name="New Subscription">
+        <igd:GdxSubscription.Fields>
+          <igd:GdxDataField Key="loc_id" BuiltInType="Int32" />
+          <igd:GdxDataField Key="location_name" />
+          <igd:GdxDataField Key="rack_code" />
+          <igd:GdxDataField Key="rack_type" />
+          <igd:GdxDataField Key="rack_status" />
+          <igd:GdxDataField Key="model_01" />
+          <igd:GdxDataField Key="model_02" />
+          <igd:GdxDataField Key="qty_model_01" BuiltInType="Int32" />
+          <igd:GdxDataField Key="qty_model_02" BuiltInType="Int32" />
+          <igd:GdxDataField Key="source_ready" />
+          <igd:GdxDataField Key="status_timestamp" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="decision_status" />
+        </igd:GdxSubscription.Fields>
+        <igd:GdxSubscription.Tags>
+          <s:String>db:BajajMEA.AMR_Kit_Rack_Status</s:String>
+        </igd:GdxSubscription.Tags>
+      </igd:GdxSubscription>
+    </ig:GdxViewControl.SubscriptionsRepository>
+    <ig:GdxViewControl.Header>
+      <TextBlock Text="Kit Rack Status" FontFamily="Calibri" FontStyle="Normal" FontWeight="Bold" FontSize="19" Foreground="#FF001848" Padding="0,0,0,0" TextAlignment="Center" Visibility="Visible" />
+    </ig:GdxViewControl.Header>
+    <ig:GdxViewControl.Items>
+      <iwc:MultipleTabItem IsSelected="True" Header="Tab" FontFamily="Calibri" FontSize="16">
+        <ig:GdxGridView HeaderBackground="#FF001848" HeaderBorderBrush="#FFC6C7B5" HeaderCellBorderThickness="0,0,0,0" HeaderFontFamily="Calibri" HeaderFontSize="17" HeaderMouseOverForeground="#FFFFFFFF" HeaderMouseOverBorderBrush="#FF000000" HeaderSelectedForeground="#FFFFFFFF" HeaderSelectedBorderBrush="#FF000000" GroupHeaderBorderBrush="#FFD8D8D8" GroupHeaderBackground="#FFD8D8D8" GroupHeaderForeground="#FFFFFFFF" RowHeaderBackground="#FFD8D8D8" RowHeaderBorderBrush="#FFD8D8D8" RowHeaderCellBorderBrush="#FF626262" RowHeaderBorderThickness="0,0,1,2" RowHeight="25" ScrollBarBackground="#FFD8D8D8" ScrollBarForeground="#FF001848" ScrollBarMouseOverForeground="#FF171F31" ScrollBarMousePressedForeground="#FF171F31" ScrollBarBorderBrush="#FF373D54" ScrollBarMouseOverBorderBrush="#FF229EC8" DateTimeFormat="d" DoubleFormat="N0" SubscriptionID="12678567" AllowPaging="False" BorderBrush="#FFA5B6CB" BorderThickness="0,0,0,0" Background="#FFFFFFFF" FontFamily="Calibri" FontSize="16" Uid="local:GdxView_1">
+          <ig:GdxGridView.HeaderMouseOverBackground>
+            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+              <LinearGradientBrush.GradientStops>
+                <GradientStop Color="#FF8993A2" Offset="0" />
+                <GradientStop Color="#FF545F6D" Offset="0.5" />
+                <GradientStop Color="#FF0C1C32" Offset="0.51" />
+                <GradientStop Color="#FF132F54" Offset="1" />
+              </LinearGradientBrush.GradientStops>
+              <LinearGradientBrush.RelativeTransform>
+                <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+              </LinearGradientBrush.RelativeTransform>
+            </LinearGradientBrush>
+          </ig:GdxGridView.HeaderMouseOverBackground>
+          <ig:GdxGridView.HeaderSelectedBackground>
+            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+              <LinearGradientBrush.GradientStops>
+                <GradientStop Color="#FF6078C8" Offset="0" />
+                <GradientStop Color="#FF4961B2" Offset="0.4" />
+                <GradientStop Color="#FF16399C" Offset="0.41" />
+                <GradientStop Color="#FF16399C" Offset="0.74" />
+                <GradientStop Color="#FF173C9F" Offset="0.75" />
+                <GradientStop Color="#FF39C0DC" Offset="1" />
+              </LinearGradientBrush.GradientStops>
+              <LinearGradientBrush.RelativeTransform>
+                <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+              </LinearGradientBrush.RelativeTransform>
+            </LinearGradientBrush>
+          </ig:GdxGridView.HeaderSelectedBackground>
+          <ig:GdxGridView.MouseOverBackground>
+            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="0.3">
+              <LinearGradientBrush.GradientStops>
+                <GradientStop Color="#FF6078C8" Offset="0" />
+                <GradientStop Color="#FF4961B2" Offset="0.4" />
+                <GradientStop Color="#FF16399C" Offset="0.41" />
+                <GradientStop Color="#FF16399C" Offset="0.74" />
+                <GradientStop Color="#FF173C9F" Offset="0.75" />
+                <GradientStop Color="#FF39C0DC" Offset="1" />
+              </LinearGradientBrush.GradientStops>
+              <LinearGradientBrush.RelativeTransform>
+                <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+              </LinearGradientBrush.RelativeTransform>
+            </LinearGradientBrush>
+          </ig:GdxGridView.MouseOverBackground>
+          <ig:GdxGridView.SelectionBackground>
+            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="0.9">
+              <LinearGradientBrush.GradientStops>
+                <GradientStop Color="#FF6078C8" Offset="0" />
+                <GradientStop Color="#FF4961B2" Offset="0.4" />
+                <GradientStop Color="#FF16399C" Offset="0.41" />
+                <GradientStop Color="#FF16399C" Offset="0.74" />
+                <GradientStop Color="#FF173C9F" Offset="0.75" />
+                <GradientStop Color="#FF39C0DC" Offset="1" />
+              </LinearGradientBrush.GradientStops>
+              <LinearGradientBrush.RelativeTransform>
+                <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+              </LinearGradientBrush.RelativeTransform>
+            </LinearGradientBrush>
+          </ig:GdxGridView.SelectionBackground>
+          <ig:GdxGridView.Columns>
+            <ig:GdxColumn Key="loc_id" Text="ID" TextAlignment="Center" IsStar="True" />
+            <ig:GdxColumn Key="location_name" Index="1" Format="{x:Null}" Text="Location Name" TextAlignment="Center" IsStar="True" />
+            <ig:GdxColumn Key="rack_code" Index="2" Format="{x:Null}" Text="Rack Code" TextAlignment="Center" IsStar="True" />
+            <ig:GdxColumn Key="rack_type" Index="3" Format="{x:Null}" Text="Rack Type" TextAlignment="Center" IsStar="True" />
+            <ig:GdxColumn Key="rack_status" Index="4" Format="{x:Null}" Text="Rack Status" TextAlignment="Center" IsStar="True" />
+            <ig:GdxColumn Key="model_01" Index="5" Format="{x:Null}" Text="Model - 01" TextAlignment="Center" IsStar="True" />
+            <ig:GdxColumn Key="model_02" Index="6" IsVisible="False" Text="Model - 02" TextAlignment="Center" IsStar="True" />
+            <ig:GdxColumn Key="qty_model_01" Index="7" Format="{x:Null}" Text="Model - 01 Quantity" TextAlignment="Center" IsStar="True" />
+            <ig:GdxColumn Key="qty_model_02" Index="8" IsVisible="False" Text="Model - 02 Quantity" TextAlignment="Center" IsStar="True" />
+            <ig:GdxColumn Key="source_ready" Index="9" Format="{x:Null}" Text="Source Ready" TextAlignment="Center" IsStar="True" />
+            <ig:GdxColumn Key="status_timestamp" Index="10" Format="{x:Null}" Text="Status Timestamp" TextAlignment="Center" IsStar="True" />
+            <ig:GdxColumn Key="decision_status" Index="11" Format="{x:Null}" Text="Decision Status" TextAlignment="Center" IsStar="True" />
+          </ig:GdxGridView.Columns>
+        </ig:GdxGridView>
+      </iwc:MultipleTabItem>
+    </ig:GdxViewControl.Items>
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Grid" ShowToolTip="False" Control="True">
+            <gwx:GwxPick.CommandParameters>
+              <gwxcmd:ScriptCommand />
+            </gwx:GwxPick.CommandParameters>
+            <gwx:GwxPick.EventBindings>
+              <script:ScriptEventBindings>
+                <script:ScriptEventBindings.EventBindings>
+                  <x:Array Type="script:ScriptEventBinding">
+                    <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Grid" ScriptType="JScriptNet" />
+                  </x:Array>
+                </script:ScriptEventBindings.EventBindings>
+              </script:ScriptEventBindings>
+            </gwx:GwxPick.EventBindings>
+          </gwx:GwxPick>
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+  </ig:GdxViewControl>
+  <TextBox FontFamily="Calibri" FontSize="16" Padding="4,2,5,3" Name="rack_code" Width="204.482759" Height="25" IsEnabled="True" Canvas.Left="503.765826" Canvas.Top="26.021641">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="rack_code_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings></TextBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="3,3,3,3" Name="rack_code_lbl" Width="73.34" Height="25.53" Canvas.Left="395.758389" Canvas.Top="26.021641" gwx:GwxProperties.Description="Size=H:25,W:Automatic&#xD;&#xA;Background color=None&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :16&#xD;&#xA;Position= X:589  Y:15" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <TextBlock Text="Rack Code" />
+  </Label>
+  <TextBox FontFamily="Calibri" FontSize="16" Padding="4,2,5,3" Name="location_name" Width="204.482759" Height="25" IsEnabled="True" Canvas.Left="139.265765" Canvas.Top="26.021641">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="location_name_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings></TextBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="3,3,3,3" Name="location_name_lbl" Width="105.34" Height="25.53" Canvas.Left="29.016949" Canvas.Top="26.021641" gwx:GwxProperties.Description="Size=H:25,W:Automatic&#xD;&#xA;Background color=None&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :16&#xD;&#xA;Position= X:589  Y:15" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <TextBlock Text="Location Name" />
+  </Label>
+  <Button Background="#FF001848" Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="12" Name="Clear" Width="125" Height="24.999984" Canvas.Left="789.549578" Canvas.Top="257.752002" gwx:GwxProperties.Description="Size=H:25,W:125&#xD;&#xA;Background color=R :255,G : 255,B :255&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :12&#xD;&#xA;Position= X:504  Y:233" gwx:GwxProperties.ShowDescriptionInToolTip="False">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="ClearScript" Control="True">
+            <gwx:GwxPick.CommandParameters>
+              <gwxcmd:ScriptCommand />
+            </gwx:GwxPick.CommandParameters>
+            <gwx:GwxPick.EventBindings>
+              <script:ScriptEventBindings>
+                <script:ScriptEventBindings.EventBindings>
+                  <x:Array Type="script:ScriptEventBinding">
+                    <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Clear" ScriptType="JScriptNet" />
+                  </x:Array>
+                </script:ScriptEventBindings.EventBindings>
+              </script:ScriptEventBindings>
+            </gwx:GwxPick.EventBindings>
+          </gwx:GwxPick>
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <TextBlock Text="CLEAR" />
+  </Button>
+  <Canvas>
+    <Path Fill="#FFFFFFFF" Name="DatabaseRefresh1" Margin="0,0,0,0" gwx:GwxProperties.Description="Icon, Database, Refresh, Network, Connectivity" gwx:GwxProperties.ShowDescriptionInToolTip="False" gwx:GwxProperties.Title="Database - Refresh">
+      <Path.Data>
+        <PathGeometry FillRule="EvenOdd" Figures="M820.454126082169,271.58636788014L824.419265550141,271.58636788014C824.19502724529,272.424946033565 824.065658694007,273.332619481597 824.065658694007,274.287404785163 824.065658694007,274.934397761671 824.128186687007,275.559404786896 824.235993920859,276.15614532685L820.454126082169,276.15614532685C820.102675465565,276.15614532685,819.818065128116,275.741567906731,819.818064964771,275.22962745063L819.818064964771,272.516027279456C819.818065128116,272.000945928311,820.102675465565,271.58636788014,820.454126082169,271.58636788014z M829.23688537414,268.748725906708C829.278114619294,268.747155773213,829.319613763562,268.747155773213,829.361652490478,268.748725906708L829.363808665339,268.748725906708 829.368120152755,268.748725906708C829.896293098345,268.75500738277,830.396441375727,268.918321364019,830.851317310622,269.210402307267L830.866407516583,269.222964631337C832.209476806318,270.092925985021 833.140786759923,272.062116131114 833.125695907239,274.339090753597 833.104137823428,277.398087949048 831.385958134066,279.854079771896 829.286199304929,279.82267396172 827.647784072964,279.797548999548 826.263754790464,278.264909035738 825.74636034784,276.141826651449L827.106676449541,275.796354574792C827.488254727019,277.008647738141 828.322552764539,277.856624082618 829.299133982756,277.87232761576 830.646514975478,277.89117078784 831.748133855866,276.314562689779 831.761068533694,274.351653705722 831.776159601955,272.391885302681 830.693943277241,270.783870138337 829.346562284519,270.765026024176 829.23230398761,270.765026024176 829.120201865561,270.777588976301 829.010256133942,270.796432776436L829.008099959088,270.783870138337C828.645924237284,270.852964176837,828.309618086713,271.038263481316,828.016427672611,271.317781158414L828.484238500915,271.961615654382C828.512264246998,271.999303568677 828.523042749971,272.058975864122 828.507951681707,272.109226102488 828.495017003881,272.162617235899 828.462680417102,272.197164569174 828.423875521318,272.20030546422L827.287763879292,272.288243302854 826.278845212,272.366759712459 826.272377980875,272.366759712459C826.244352234785,272.366759712459 826.220638407263,272.347915912326 826.20123585159,272.319650369137 826.181833727063,272.288243302854 826.173210536653,272.24741480754 826.179677983353,272.203445731211L826.341363719728,270.893792672147 826.574190938659,269.040806849956C826.58065838536,268.984275135528 826.608684131444,268.94030574517 826.645333067942,268.930884002118 826.684137316999,268.918321364019 826.722941997207,268.94030574517 826.744499865443,268.987415716546L827.117454952513,269.785142136682C827.634849395131,269.241808745499 828.249254891548,268.890055192778 828.915400392715,268.783272925958 828.924023583123,268.780132344939 828.932646773534,268.780132344939 828.941269963944,268.780132344939 828.999476768678,268.770710601887 829.055528045277,268.764429125824 829.113734850012,268.758147963787 829.1546946272,268.753437249274 829.195655051116,268.750296040202 829.23688537414,268.748725906708z M820.453992253595,265.814603312318L829.369764122909,265.814603312318C829.721136550687,265.814603312318,830.00782869095,266.229195491693,830.00782869095,266.744234449234L830.00782869095,266.998648832002C829.727609171175,266.929562958196 829.440890946408,266.885626854671 829.147725970089,266.885627168697 827.324052591018,266.885626854671 825.731023093651,268.286361473652 824.834264537909,270.384319837849L820.453992253595,270.384319837849C820.102620062952,270.384319837849,819.818059301071,269.969727658477,819.818059328048,269.457832108195L819.818059328048,266.744234449234C819.818059301071,266.229195491693,820.102620062952,265.814603312318,820.453992253595,265.814603312318z M821.693482132476,261.376735292788C821.294686512044,261.376735292788 820.969183051884,261.847514479481 820.969183051884,262.428142372311 820.969183051884,263.008770233738 821.294686512044,263.482688148692 821.693482132476,263.482688148692 822.09227753733,263.482688148692 822.415625296899,263.008770233738 822.415625296899,262.428142372311 822.415625296899,261.847514479481 822.09227753733,261.376735292788 821.693482132476,261.376735292788z M820.45398238029,260.143293373332L829.369757440103,260.143293373332C829.72112835886,260.143293373332,830.00783019997,260.560717665298,830.00783019997,261.07229790137L830.00783019997,263.787125414497C830.00783019997,264.298705681974,829.72112835886,264.712991371287,829.369757440103,264.712991371287L820.45398238029,264.712991371287C820.102611138168,264.712991371287,819.818065125976,264.298705681974,819.818064964771,263.787125414497L819.818064964771,261.07229790137C819.818065125976,260.560717665298,820.102611138168,260.143293373332,820.45398238029,260.143293373332z" />
+      </Path.Data>
+    </Path>
+  </Canvas>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="3,3,3,3" Name="rack_status_label" Canvas.Left="29.016949" Canvas.Top="76.2" gwx:GwxProperties.Description="Size=H:25,W:Automatic&#xD;&#xA;Background color=None&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :16&#xD;&#xA;Position= X:589  Y:15" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <TextBlock Text="Rack Status" />
+  </Label>
+  <TextBox FontFamily="Calibri" FontSize="16" Padding="4,2,5,3" Name="rack_status" Width="204.482759" Height="25" IsEnabled="True" Canvas.Left="139.265765" Canvas.Top="76.2">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="rack_code_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings></TextBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="3,3,3,3" Name="timestamp_label" Width="77.623884" Height="43.386604" Canvas.Left="754.881073" Canvas.Top="65.2" gwx:GwxProperties.Description="Size=H:25,W:Automatic&#xD;&#xA;Background color=None&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :16&#xD;&#xA;Position= X:589  Y:15" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <TextBlock Text="Status&#xD;&#xA;Timestamp" />
+  </Label>
+  <TextBox FontFamily="Calibri" FontSize="16" Padding="4,2,5,3" Name="status_timestamp" Width="204.482759" Height="25" IsEnabled="True" Canvas.Left="849.52851" Canvas.Top="76.2">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="rack_code_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings></TextBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="3,3,3,3" Name="rack_type_label" Width="71.176774" Height="25.53" Canvas.Left="754.881073" Canvas.Top="26.021641" gwx:GwxProperties.Description="Size=H:25,W:Automatic&#xD;&#xA;Background color=None&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :16&#xD;&#xA;Position= X:589  Y:15" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <TextBlock Text="Rack Type" />
+  </Label>
+  <TextBox FontFamily="Calibri" FontSize="16" Padding="4,2,5,3" Name="rack_type" Width="204.482759" Height="25" IsEnabled="True" Canvas.Left="849.52851" Canvas.Top="26.021641">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="rack_code_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings></TextBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="3,3,3,3" Name="source_ready_label" Canvas.Left="395.758389" Canvas.Top="76.2" gwx:GwxProperties.Description="Size=H:25,W:Automatic&#xD;&#xA;Background color=None&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :16&#xD;&#xA;Position= X:589  Y:15" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <TextBlock Text="Source Ready" />
+  </Label>
+  <TextBox FontFamily="Calibri" FontSize="16" Padding="4,2,5,3" Name="source_ready" Width="204.482759" Height="25" IsEnabled="True" Canvas.Left="503.765826" Canvas.Top="76.2">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="rack_code_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings></TextBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="3,3,3,3" Name="decision_status_label" Canvas.Left="29.016949" Canvas.Top="129.85283" gwx:GwxProperties.Description="Size=H:25,W:Automatic&#xD;&#xA;Background color=None&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :16&#xD;&#xA;Position= X:589  Y:15" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <TextBlock Text="Decision Status" />
+  </Label>
+  <TextBox FontFamily="Calibri" FontSize="16" Padding="4,2,5,3" Name="decision_status" Width="204.482759" Height="25" IsEnabled="True" Canvas.Left="139.826987" Canvas.Top="129.85283">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="rack_code_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings></TextBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="3,3,3,3" Name="model01_label" Canvas.Left="395.758389" Canvas.Top="129.85283" gwx:GwxProperties.Description="Size=H:25,W:Automatic&#xD;&#xA;Background color=None&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :16&#xD;&#xA;Position= X:589  Y:15" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <TextBlock Text="Model-01" />
+  </Label>
+  <TextBox FontFamily="Calibri" FontSize="16" Padding="4,2,5,3" Name="model01" Width="204.482759" Height="25" IsEnabled="True" Canvas.Left="503.765826" Canvas.Top="129.85283">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="rack_code_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings></TextBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="3,3,3,3" Name="model01_quantity_label" Width="68.970983" Height="43.386604" Canvas.Left="754.881073" Canvas.Top="120.924528" gwx:GwxProperties.Description="Size=H:25,W:Automatic&#xD;&#xA;Background color=None&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :16&#xD;&#xA;Position= X:589  Y:15" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <TextBlock Text="Model-01&#xD;&#xA;Quantity" />
+  </Label>
+  <TextBox FontFamily="Calibri" FontSize="16" Padding="4,2,5,3" Name="model01_quantity" Width="204.482759" Height="25" IsEnabled="True" Canvas.Left="849.52851" Canvas.Top="129.85283">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="rack_code_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings></TextBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="3,3,3,3" Name="model02_label" Canvas.Left="29.016949" Canvas.Top="184.724528" gwx:GwxProperties.Description="Size=H:25,W:Automatic&#xD;&#xA;Background color=None&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :16&#xD;&#xA;Position= X:589  Y:15" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <TextBlock Text="Model-02" />
+  </Label>
+  <TextBox FontFamily="Calibri" FontSize="16" Padding="4,2,5,3" Name="model02" Width="204.482759" Height="25" IsEnabled="True" Canvas.Left="139.826987" Canvas.Top="184.724528">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="rack_code_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings></TextBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="3,3,3,3" Name="model02_quantity_label" Width="68.970983" Height="43.386604" Canvas.Left="395.758389" Canvas.Top="175.796226" gwx:GwxProperties.Description="Size=H:25,W:Automatic&#xD;&#xA;Background color=None&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :16&#xD;&#xA;Position= X:589  Y:15" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <TextBlock Text="Model-02&#xD;&#xA;Quantity" />
+  </Label>
+  <TextBox FontFamily="Calibri" FontSize="16" Padding="4,2,5,3" Name="model02_quantity" Width="204.482759" Height="25" IsEnabled="True" Canvas.Left="503.765826" Canvas.Top="184.724528">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="rack_code_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings></TextBox>
+  <Rectangle Fill="#FFD8D8D8" Stroke="#FF000000" Width="1058.697318" Height="206.037736" Opacity="0" Canvas.Left="16.858238" Canvas.Top="17.856604" />
+</Canvas>

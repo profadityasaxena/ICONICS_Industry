@@ -1,0 +1,627 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Canvas Background="#FF243782" Width="1100" Height="700" Focusable="False" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:iwm="clr-namespace:Ico.Windows.Media;assembly=IcoWPF" xmlns:gwx="clr-namespace:Ico.Gwx;assembly=GwxRuntimeCore" xmlns:script="clr-namespace:Ico.Script;assembly=IcoScriptEngine" xmlns:ic="clr-namespace:Ico.Collections;assembly=IcoCollections" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:gwxcmd="clr-namespace:Ico.Gwx;assembly=GwxRuntimeCoreCommands" xmlns:icc="clr-namespace:Ico.Commanding.Commands;assembly=IcoCommands">
+  <Canvas.Resources>
+    <BitmapImage x:Key="GwxThumbnailImageKey">
+      <iwm:BitmapImageInfo.StreamSource>
+        <iwm:Base64Stream Data="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" />
+      </iwm:BitmapImageInfo.StreamSource>
+    </BitmapImage>
+  </Canvas.Resources>
+  <gwx:GwxDocument.GwxDocument>
+    <gwx:GwxDocument FileVersion="10.97.020.00" IsScalable="True" MinimumZoom="0.16" PreferredStretch="Fill" ScanRate="500">
+      <gwx:GwxDocument.ScriptCodeManager>
+        <script:ScriptCodeManager>
+          <script:ScriptCodeManager.Scripts>
+            <script:ScriptCode Name="ThisDisplayCode" Type="JScriptNet">
+              <x:XData><![CDATA[function ThisDisplay_AnimationStarting(sender : System.Object, e : System.EventArgs)
+{
+	
+	ThisWindow.FwxClientWrapper.Write("@rgs64:headerReg.Value","Production Plan Excel Upload File Configuration");
+}
+function ThisDisplay_AnimationStopping(sender : System.Object, e : System.EventArgs)
+{
+	ThisWindow.FwxClientWrapper.Write("@rgs64:headerReg.Value","");
+}
+
+function ThisDisplay_AnimationStarted(sender : System.Object, e : System.EventArgs)
+{
+	
+	     
+	var connString : String = "Data Source=" + DB_SERVER+ ";Initial Catalog=" + DB_NAME + DB_CONNECT_AUTHENTICATION;
+  	var connection : System.Data.SqlClient.SqlConnection = new System.Data.SqlClient.SqlConnection(connString);
+	var profileReader : System.Data.SqlClient.SqlDataReader;  
+	
+	//try
+	//{
+		connection.Open();
+		var profileCMD : System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand("SELECT top(1) * FROM excelUpoadProfileMaster", connection);
+		profileReader = profileCMD .ExecuteReader();
+		
+		var AssemblyName:System.Windows.Controls.TextBox= ThisConfiguration.GetObjectByName("Assembly_Name").ToDependencyObject();
+		var ConveyorName:System.Windows.Controls.TextBox= ThisConfiguration.GetObjectByName("Conveyor_Name").ToDependencyObject();
+		var txb_profileId:System.Windows.Controls.TextBox= ThisConfiguration.GetObjectByName("txb_profileId").ToDependencyObject();
+		
+				
+		var ShiftIndex:int =0;
+		var DataColumnIndex:int =0;
+
+		while(profileReader .Read())
+		{		
+			AssemblyName.Text=profileReader ["assemblyName"];
+			ConveyorName.Text=profileReader ["conveyorName"];
+			txb_profileId.Text=profileReader ["profileId"];
+			
+			var shiftCMD : System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand("SELECT * FROM excelUpoadShifts where profileId ="+txb_profileId.Text, connection);
+			shiftReader = shiftCMD .ExecuteReader();
+			
+			while(shiftReader .Read())
+			{
+				//MessageBox.Show("ShiftName"+(ShiftIndex+1));
+				var ShiftDetails:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("ShiftName"+(ShiftIndex+1)).ToDependencyObject();
+				ShiftDetails.Text=shiftReader ["shiftName"];
+				
+				ShiftDetails=ThisConfiguration.GetObjectByName("ExlShtNumShift"+(ShiftIndex+1)).ToDependencyObject();
+				ShiftDetails.Text=shiftReader ["excelSheetName"];
+				
+				ShiftDetails=ThisConfiguration.GetObjectByName("FirstRowShift"+(ShiftIndex+1)).ToDependencyObject();
+				ShiftDetails.Text=shiftReader ["frst_row"];
+
+
+				ShiftDetails=ThisConfiguration.GetObjectByName("LastRowShift"+(ShiftIndex+1)).ToDependencyObject();
+				ShiftDetails.Text=shiftReader ["last_row"];
+				
+				ShiftDetails=ThisConfiguration.GetObjectByName("txb_shiftId"+(ShiftIndex+1)).ToDependencyObject();
+				ShiftDetails.Text=shiftReader ["shiftsId"];
+				
+				var dataColumnCMD : System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand("SELECT * FROM excelUpoaDataColumns where shiftsId="+ShiftDetails.Text, connection);
+				dataColumnReader = dataColumnCMD .ExecuteReader();
+				
+				while(dataColumnReader.Read())
+				{
+					var dataColumnName:String=dataColumnReader ["column_name"];				
+
+					var dataColumnDetails:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName(dataColumnName+(ShiftIndex+1)).ToDependencyObject();
+					dataColumnDetails.Text=dataColumnReader ["column_name"];
+					
+					dataColumnDetails =ThisConfiguration.GetObjectByName(dataColumnName+"ExcelColumn"+(ShiftIndex+1)).ToDependencyObject();
+					dataColumnDetails.Text=dataColumnReader ["excel_column"];
+					
+					dataColumnDetails =ThisConfiguration.GetObjectByName(dataColumnName+"Id"+(ShiftIndex+1)).ToDependencyObject();
+					dataColumnDetails.Text=dataColumnReader ["dataId"];
+
+
+
+					
+					DataColumnIndex++;
+				}
+				dataColumnReader.Close();
+
+				
+				ShiftIndex++; 
+			}				
+			shiftReader.Close();
+
+		}
+		profileReader.Close();
+		
+		
+	//}
+	//catch(ex : Exception) 
+	//{
+	//	MessageBox.Show ("Error: "+ ex.Message);	
+	//}
+
+	
+
+	
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="Database" Type="JScriptNet">
+              <x:XData><![CDATA[/////////////////////Database Connection///////////////////////////////////////////////
+//[Windows Based Authentication] User is authenticated to the SQL Server based on Windows IAM
+const DB_SERVER               : String = "DESKTOP-BI1L6JI\\SQLEXPRESS2017";
+const DB_NAME                 : String = "BajajMEA";
+const DB_USERID               : String = "sa";
+const DB_PASSWORD             : String = "sql_1234";
+var DB_CONNECT_AUTHENTICATION : String = ";User ID="+DB_USERID+";Password="+DB_PASSWORD+";";
+var ID:String;
+var dragRow:int  = -1;
+var dragLabel= System.Windows.Forms.Label;]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="JScriptDotNetGlobalVariablesCode" Type="JScriptNet" EditorBrowsable="Never">
+              <x:XData><![CDATA[
+var ThisWindow : Ico.Gwx.GwxRuntimeViewControl;
+var ThisDocument : Ico.Gwx.GwxDocument;
+var ThisConfiguration : Ico.Gwx.GwxConfiguration;
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="ModifyCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function Modify_CommandExecuted(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs)
+{
+	var connString : String = "Data Source=" + DB_SERVER+ ";Initial Catalog=" + DB_NAME+ DB_CONNECT_AUTHENTICATION;
+   	var connection : System.Data.SqlClient.SqlConnection = new System.Data.SqlClient.SqlConnection(connString);
+
+	
+	
+		
+
+	
+	
+	var reader: System.Data.SqlClient.SqlDataReader;
+	//try
+	//{
+		var loginReader:System.Data.SqlClient.SqlDataReader;
+		var userName: String
+		var user: String
+		var password: String	
+		////////////////////checking for user authentication//////////////////////////////
+		user=ThisWindow.FwxClientWrapper.Read("@rgs64:Login.UserId.Value");	
+		password=ThisWindow.FwxClientWrapper.Read("@rgs64:Login.Password.Value");		
+		connection.Open();
+		var loginCmd: System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand("SELECT User_ID,Password FROM Users where User_ID='" + user.Substring(0,user.IndexOf(",")) + "' and Password='" + password.Substring(0,password.IndexOf(",")) + "'", connection);
+		//loginReader=loginCmd.ExecuteReader();
+		//if(loginReader.HasRows==true)
+		if(true)
+		{
+			//loginReader.Close();
+			var confirmResult = MessageBox.Show("Do you want to modify The Configuration","Confirmation",MessageBoxButton.YesNo)
+			if(confirmResult == MessageBoxResult.Yes)
+			{	
+										
+					var AssemblyName:System.Windows.Controls.TextBox= ThisConfiguration.GetObjectByName("Assembly_Name").ToDependencyObject();
+					var ConveyorName:System.Windows.Controls.TextBox= ThisConfiguration.GetObjectByName("Conveyor_Name").ToDependencyObject();
+					var txb_profileId:System.Windows.Controls.TextBox= ThisConfiguration.GetObjectByName("txb_profileId").ToDependencyObject();
+	
+										 
+					var updateCmd1 : System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand("sp_UpsertProfileMaster", connection);	   
+					
+					//connection.Open();
+					updateCmd1.CommandType = CommandType.StoredProcedure;
+					updateCmd1.Parameters.AddWithValue("@profileId",txb_profileId.Text);
+					updateCmd1.Parameters.AddWithValue("@profileName","Profile1");
+					updateCmd1.Parameters.AddWithValue("@conveyorName",ConveyorName.Text);
+					updateCmd1.Parameters.AddWithValue("@assemblyName",AssemblyName.Text);
+					//updateCmd1.Prepare();
+					updateCmd1.ExecuteNonQuery();
+					
+					var ShiftIndex:int =0;
+					var DataColumnIndex:int =0;
+					
+					for (ShiftIndex=0; ShiftIndex<2;ShiftIndex++)
+					{
+						var shiftName:String;
+						var excelSheetName:String;
+						var frst_row:String;
+						var last_row:String;
+						var shiftsId:String;
+						
+						var ShiftDetails:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("ShiftName"+(ShiftIndex+1)).ToDependencyObject();
+						shiftName=ShiftDetails.Text;
+						
+						ShiftDetails=ThisConfiguration.GetObjectByName("ExlShtNumShift"+(ShiftIndex+1)).ToDependencyObject();
+						excelSheetName=ShiftDetails.Text;
+						
+						ShiftDetails=ThisConfiguration.GetObjectByName("FirstRowShift"+(ShiftIndex+1)).ToDependencyObject();
+						frst_row=ShiftDetails.Text;
+		
+		
+						ShiftDetails=ThisConfiguration.GetObjectByName("LastRowShift"+(ShiftIndex+1)).ToDependencyObject();
+						last_row=ShiftDetails.Text;
+						
+						ShiftDetails=ThisConfiguration.GetObjectByName("txb_shiftId"+(ShiftIndex+1)).ToDependencyObject();
+						shiftsId=ShiftDetails.Text;
+						
+						var updateCmd2 : System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand("sp_UpsertShiftMaster", connection);	   
+						//connection.Open();
+						updateCmd2.CommandType = CommandType.StoredProcedure;
+						updateCmd2.Parameters.AddWithValue("@profileId",txb_profileId.Text);
+						updateCmd2.Parameters.AddWithValue("@shiftsId",shiftsId);
+						updateCmd2.Parameters.AddWithValue("@shiftName",shiftName);
+						updateCmd2.Parameters.AddWithValue("@excelSheetName",excelSheetName);
+						updateCmd2.Parameters.AddWithValue("@frst_row",frst_row);
+						updateCmd2.Parameters.AddWithValue("@last_row",last_row);
+						updateCmd2.ExecuteNonQuery();
+
+		
+						
+						var dataColumnCMD : System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand("SELECT * FROM excelUpoaDataColumns where shiftsId="+ShiftDetails.Text, connection);
+						dataColumnReader = dataColumnCMD .ExecuteReader();
+						
+						while(dataColumnReader.Read())
+						{
+							var dataId:String;
+							var excel_column:String;					
+							var dataColumnName:String=dataColumnReader ["column_name"];		
+							var dataType:String=dataColumnReader ["column_data_type"];					
+
+							
+							
+							var dataColumnDetails:System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName(dataColumnName+"ExcelColumn"+(ShiftIndex+1)).ToDependencyObject();
+							excel_column=dataColumnDetails.Text;
+							
+							dataColumnDetails =ThisConfiguration.GetObjectByName(dataColumnName+"Id"+(ShiftIndex+1)).ToDependencyObject();
+							dataId=dataColumnDetails.Text;
+							
+							var updateCmd : System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand("sp_UpsertColumnMaster", connection);	   
+							//connection.Open();
+							updateCmd.CommandType = CommandType.StoredProcedure;
+							updateCmd.Parameters.AddWithValue("@shiftsId",shiftsId);
+							updateCmd.Parameters.AddWithValue("@dataId",dataId);
+							updateCmd.Parameters.AddWithValue("@column_name",dataColumnName);
+							updateCmd.Parameters.AddWithValue("@column_data_type",dataType);
+							updateCmd.Parameters.AddWithValue("@excel_column",excel_column);
+							updateCmd.ExecuteNonQuery(); 
+							
+							DataColumnIndex++;
+						}
+						dataColumnReader.Close();
+												
+					}		
+	
+	
+				MessageBox.Show("Update Success!!");
+			}
+		}
+		else
+		{
+			MessageBox.Show("Please Login First!!")
+		}
+	//}
+	//catch(ex : Exception) 
+	//{
+	//	MessageBox.Show (ex.Message);	
+	//}	}
+
+	
+
+}]]></x:XData>
+            </script:ScriptCode>
+          </script:ScriptCodeManager.Scripts>
+          <script:ScriptCodeManager.AssemblyReferences>
+            <ic:AssemblyReference AssemblyName="mscorlib" />
+            <ic:AssemblyReference AssemblyName="System" />
+            <ic:AssemblyReference AssemblyName="System.Core" />
+            <ic:AssemblyReference AssemblyName="System.Data" />
+            <ic:AssemblyReference AssemblyName="System.Xml" />
+            <ic:AssemblyReference AssemblyName="System.Drawing" />
+            <ic:AssemblyReference AssemblyName="System.Windows.Forms" />
+            <ic:AssemblyReference AssemblyName="WindowsBase" />
+            <ic:AssemblyReference AssemblyName="PresentationCore" />
+            <ic:AssemblyReference AssemblyName="PresentationFramework" />
+            <ic:AssemblyReference AssemblyName="GwxRuntimeCore" />
+            <ic:AssemblyReference AssemblyName="GwxRuntimeCoreCommands" />
+            <ic:AssemblyReference AssemblyName="GwxRuntimeViewControl" />
+            <ic:AssemblyReference AssemblyName="GwxConfigCore" />
+            <ic:AssemblyReference AssemblyName="IcoComponentModel" />
+            <ic:AssemblyReference AssemblyName="IcoFwxClientWrapper" />
+            <ic:AssemblyReference AssemblyName="GdxViewControl" AssemblyCodebase="file:///C:/Program Files/MELSOFT/MC Works64/Components/GdxViewControl.DLL" />
+            <ic:AssemblyReference AssemblyName="IcoWPFSpecialized" AssemblyCodebase="file:///C:/Program Files/MELSOFT/MC Works64/Components/IcoWPFSpecialized.DLL" />
+            <ic:AssemblyReference AssemblyName="IcoCommonCore.Net" />
+            <ic:AssemblyReference AssemblyName="TwxViewControl" AssemblyCodebase="file:///C:/Program Files/ICONICS/GENESIS64/Components/TwxViewControl.DLL" />
+          </script:ScriptCodeManager.AssemblyReferences>
+          <script:ScriptCodeManager.Namespaces>
+            <s:String>System</s:String>
+            <s:String>System.Collections</s:String>
+            <s:String>System.ComponentModel</s:String>
+            <s:String>System.Data</s:String>
+            <s:String>System.Xml</s:String>
+            <s:String>System.Windows</s:String>
+            <s:String>System.Windows.Media</s:String>
+            <s:String>System.Windows.Input</s:String>
+            <s:String>System.Windows.Controls</s:String>
+            <s:String>Ico.Gwx</s:String>
+            <s:String>System.Diagnostics</s:String>
+            <s:String>Ico.Fwx.ClientWrapper</s:String>
+            <s:String>System.Flags</s:String>
+          </script:ScriptCodeManager.Namespaces>
+        </script:ScriptCodeManager>
+      </gwx:GwxDocument.ScriptCodeManager>
+      <gwx:GwxDocument.EventBindings>
+        <script:ScriptEventBindings>
+          <script:ScriptEventBindings.EventBindings>
+            <x:Array Type="script:ScriptEventBinding">
+              <script:ScriptEventBinding EventName="AnimationStopping" MethodName="ThisDisplay_AnimationStopping" ScriptType="JScriptNet" />
+              <script:ScriptEventBinding EventName="AnimationStarting" MethodName="ThisDisplay_AnimationStarting" ScriptType="JScriptNet" />
+              <script:ScriptEventBinding EventName="AnimationStarted" MethodName="ThisDisplay_AnimationStarted" ScriptType="JScriptNet" />
+            </x:Array>
+          </script:ScriptEventBindings.EventBindings>
+        </script:ScriptEventBindings>
+      </gwx:GwxDocument.EventBindings>
+    </gwx:GwxDocument>
+  </gwx:GwxDocument.GwxDocument>
+  <TextBox FontFamily="Segoe UI" FontSize="14" Name="change" Width="231.544074" Height="17.96" Visibility="Hidden" Canvas.Left="802.936507" Canvas.Top="196.413079">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxProcessPoint AnimationMode="Analog" DataSource=":CurrentTime1" />
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="change_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>1</TextBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="14" Padding="0,0,0,0" Name="lbl_AlarmRange" Height="30" Canvas.Left="14" Canvas.Top="30">
+    <TextBlock Text="Assembly" />
+  </Label>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="14" Padding="0,0,0,0" Name="lbl_AlarmRange1" Height="30" Canvas.Left="14" Canvas.Top="70">
+    <TextBlock Text="Conveyor" />
+  </Label>
+  <TextBox TextWrapping="Wrap" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="Assembly_Name" Width="123" Height="30" IsEnabled="True" Canvas.Left="140" Canvas.Top="30">AssemblyNAME</TextBox>
+  <TextBox TextWrapping="Wrap" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="Conveyor_Name" Width="123" Height="30" IsEnabled="True" Canvas.Left="140" Canvas.Top="70">Conveyer</TextBox>
+  <Rectangle Stroke="#FF000000" Width="535" Height="530" Canvas.Left="7.739465" Canvas.Top="125" />
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="14" Padding="0,0,0,0" Name="lbl_AlarmRange3" Width="80.59" Height="30" Canvas.Left="19" Canvas.Top="160">
+    <TextBlock Text="Shift Name" />
+  </Label>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="14" Padding="0,0,0,0" Name="lbl_AlarmRange4" Width="82.52" Height="30" Canvas.Left="19" Canvas.Top="200">
+    <TextBlock Text="Excel Sheet" />
+  </Label>
+  <TextBox TextWrapping="Wrap" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="ShiftName1" Width="220" Height="30" IsEnabled="True" Canvas.Left="106" Canvas.Top="160">Shift1</TextBox>
+  <TextBox TextWrapping="Wrap" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="ExlShtNumShift1" Width="220" Height="30" IsEnabled="True" Canvas.Left="106" Canvas.Top="200" />
+  <Label Background="#FF66779F" Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="14" HorizontalContentAlignment="Center" Padding="0,0,0,0" Name="lbl_AlarmRange5" Width="57.272424" Height="18" Canvas.Left="40.882038" Canvas.Top="115" Block.TextAlignment="Center">
+    <TextBlock Text="Shift1" />
+  </Label>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="14" Padding="0,0,0,0" Name="lbl_AlarmRange6" Width="66.996667" Height="62" Canvas.Left="336" Canvas.Top="159">
+    <TextBlock Text="First Row" />
+  </Label>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="14" Padding="0,0,0,0" Name="lbl_AlarmRange7" Width="64.82" Height="30" Canvas.Left="337" Canvas.Top="200">
+    <TextBlock Text="Last Row" />
+  </Label>
+  <TextBox TextWrapping="Wrap" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="FirstRowShift1" Width="40" Height="30" IsEnabled="True" Canvas.Left="416" Canvas.Top="160">151</TextBox>
+  <TextBox TextWrapping="Wrap" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="LastRowShift1" Width="40" Height="30" IsEnabled="True" Canvas.Left="416" Canvas.Top="200">158</TextBox>
+  <Rectangle Stroke="#FF000000" Width="504.39073" Height="326.382001" Canvas.Left="22.947627" Canvas.Top="312.888754" />
+  <Label Background="#FF66779F" Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="14" HorizontalContentAlignment="Center" Padding="0,0,0,0" Name="lbl_AlarmRange10" Width="115.564868" Height="18" Canvas.Left="37.124389" Canvas.Top="298.322314" Block.TextAlignment="Center">
+    <TextBlock Text="Data Columns" />
+  </Label>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="14" Padding="0,0,0,0" Name="lbl_AlarmRange8" Height="30" Canvas.Left="55" Canvas.Top="335">
+    <TextBlock Text="Column Name" />
+  </Label>
+  <TextBox TextWrapping="Wrap" IsReadOnly="True" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="MODEL1" Width="123" Height="30" IsEnabled="True" Canvas.Left="175" Canvas.Top="335">MODEL</TextBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="14" Padding="0,0,0,0" Name="lbl_AlarmRange13" Height="30" Canvas.Left="315" Canvas.Top="335">
+    <TextBlock Text="Excel Col" />
+  </Label>
+  <TextBox TextWrapping="Wrap" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="MODELExcelColumn1" Width="70" Height="30" IsEnabled="True" Canvas.Left="395" Canvas.Top="335">B</TextBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="14" Padding="0,0,0,0" Name="lbl_AlarmRange9" Height="30" Canvas.Left="55" Canvas.Top="383">
+    <TextBlock Text="Column Name" />
+  </Label>
+  <TextBox TextWrapping="Wrap" IsReadOnly="True" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="WO1" Width="123" Height="30" IsEnabled="True" Canvas.Left="175" Canvas.Top="383">WO</TextBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="14" Padding="0,0,0,0" Name="lbl_AlarmRange14" Height="30" Canvas.Left="315" Canvas.Top="391.857055">
+    <TextBlock Text="Excel Col" />
+  </Label>
+  <TextBox TextWrapping="Wrap" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="WOExcelColumn1" Width="70" Height="30" IsEnabled="True" Canvas.Left="395" Canvas.Top="383">C</TextBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="14" Padding="0,0,0,0" Name="lbl_AlarmRange11" Height="30" Canvas.Left="55" Canvas.Top="431">
+    <TextBlock Text="Column Name" />
+  </Label>
+  <TextBox TextWrapping="Wrap" IsReadOnly="True" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="SKU1" Width="123" Height="30" IsEnabled="True" Canvas.Left="175" Canvas.Top="431">SKU</TextBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="14" Padding="0,0,0,0" Name="lbl_AlarmRange15" Height="30" Canvas.Left="315" Canvas.Top="439.857055">
+    <TextBlock Text="Excel Col" />
+  </Label>
+  <TextBox TextWrapping="Wrap" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="SKUExcelColumn1" Width="70" Height="30" IsEnabled="True" Canvas.Left="395" Canvas.Top="431">D</TextBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="14" Padding="0,0,0,0" Name="lbl_AlarmRange16" Height="30" Canvas.Left="55" Canvas.Top="480">
+    <TextBlock Text="Column Name" />
+  </Label>
+  <TextBox TextWrapping="Wrap" IsReadOnly="True" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="COLOUR1" Width="123" Height="30" IsEnabled="True" Canvas.Left="175" Canvas.Top="480">COLOUR</TextBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="14" Padding="0,0,0,0" Name="lbl_AlarmRange17" Height="30" Canvas.Left="315" Canvas.Top="488.857055">
+    <TextBlock Text="Excel Col" />
+  </Label>
+  <TextBox TextWrapping="Wrap" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="COLOURExcelColumn1" Width="70" Height="30" IsEnabled="True" Canvas.Left="395" Canvas.Top="480">E</TextBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="14" Padding="0,0,0,0" Name="lbl_AlarmRange18" Height="30" Canvas.Left="55" Canvas.Top="529">
+    <TextBlock Text="Column Name" />
+  </Label>
+  <TextBox TextWrapping="Wrap" IsReadOnly="True" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="DESCRIPTION1" Width="123" Height="30" IsEnabled="True" Canvas.Left="175" Canvas.Top="529">DESCRIPTION</TextBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="14" Padding="0,0,0,0" Name="lbl_AlarmRange19" Height="30" Canvas.Left="315" Canvas.Top="537.857055">
+    <TextBlock Text="Excel Col" />
+  </Label>
+  <TextBox TextWrapping="Wrap" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="DESCRIPTIONExcelColumn1" Width="70" Height="30" IsEnabled="True" Canvas.Left="395" Canvas.Top="529">F</TextBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="14" Padding="0,0,0,0" Name="lbl_AlarmRange20" Height="30" Canvas.Left="55" Canvas.Top="578">
+    <TextBlock Text="Column Name" />
+  </Label>
+  <TextBox TextWrapping="Wrap" IsReadOnly="True" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="QTY1" Width="123" Height="30" IsEnabled="True" Canvas.Left="175" Canvas.Top="578">QTY</TextBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="14" Padding="0,0,0,0" Name="lbl_AlarmRange21" Height="30" Canvas.Left="315" Canvas.Top="586.857055">
+    <TextBlock Text="Excel Col" />
+  </Label>
+  <TextBox TextWrapping="Wrap" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="QTYExcelColumn1" Width="70" Height="30" IsEnabled="True" Canvas.Left="395" Canvas.Top="578">G</TextBox>
+  <TextBox TextWrapping="Wrap" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="txb_profileId" Width="15.846154" Height="30" Visibility="Hidden" IsEnabled="True" Canvas.Left="500" Canvas.Top="30">1</TextBox>
+  <TextBox TextWrapping="Wrap" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="txb_shiftId1" Width="15.846154" Height="30" Visibility="Hidden" IsEnabled="True" Canvas.Left="500" Canvas.Top="160">1</TextBox>
+  <TextBox TextWrapping="Wrap" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="COLOURId1" Width="15.846154" Height="30" Visibility="Hidden" IsEnabled="True" Canvas.Left="500" Canvas.Top="486.414141">4</TextBox>
+  <TextBox TextWrapping="Wrap" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="SKUId1" Width="15.846154" Height="30" Visibility="Hidden" IsEnabled="True" Canvas.Left="500" Canvas.Top="432.134986">3</TextBox>
+  <TextBox TextWrapping="Wrap" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="WOId1" Width="15.846154" Height="30" Visibility="Hidden" IsEnabled="True" Canvas.Left="500" Canvas.Top="385.56933">2</TextBox>
+  <TextBox TextWrapping="Wrap" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="MODELId1" Width="15.846154" Height="30" Visibility="Hidden" IsEnabled="True" Canvas.Left="500" Canvas.Top="335.146924">1</TextBox>
+  <TextBox TextWrapping="Wrap" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="DESCRIPTIONId1" Width="15.846154" Height="30" Visibility="Hidden" IsEnabled="True" Canvas.Left="500" Canvas.Top="527.699725">5</TextBox>
+  <TextBox TextWrapping="Wrap" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="QTYId1" Width="15.846154" Height="30" Visibility="Hidden" IsEnabled="True" Canvas.Left="500" Canvas.Top="574.837466">6</TextBox>
+  <Rectangle Stroke="#FF000000" Width="535" Height="530" Canvas.Left="551.739465" Canvas.Top="125" />
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="14" Padding="0,0,0,0" Name="lbl_AlarmRange22" Width="80.59" Height="30" Canvas.Left="560" Canvas.Top="160">
+    <TextBlock Text="Shift Name" />
+  </Label>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="14" Padding="0,0,0,0" Name="lbl_AlarmRange23" Width="82.52" Height="30" Canvas.Left="560" Canvas.Top="200">
+    <TextBlock Text="Excel Sheet" />
+  </Label>
+  <TextBox TextWrapping="Wrap" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="ShiftName2" Width="220" Height="30" IsEnabled="True" Canvas.Left="653" Canvas.Top="160">Shift2</TextBox>
+  <TextBox TextWrapping="Wrap" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="ExlShtNumShift2" Width="220" Height="30" IsEnabled="True" Canvas.Left="653" Canvas.Top="200">BAL-C  DAILY PRODUCTION PLAN</TextBox>
+  <Label Background="#FF66779F" Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="14" HorizontalContentAlignment="Center" Padding="0,0,0,0" Name="lbl_AlarmRange24" Width="57.272424" Height="18" Canvas.Left="585.882038" Canvas.Top="115" Block.TextAlignment="Center">
+    <TextBlock Text="Shift2" />
+  </Label>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="14" Padding="0,0,0,0" Name="lbl_AlarmRange25" Width="66.996667" Height="30" Canvas.Left="882" Canvas.Top="162">
+    <TextBlock Text="First Row" />
+  </Label>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="14" Padding="0,0,0,0" Name="lbl_AlarmRange26" Width="64.82" Height="30" Canvas.Left="882" Canvas.Top="202">
+    <TextBlock Text="Last Row" />
+  </Label>
+  <TextBox TextWrapping="Wrap" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="FirstRowShift2" Width="40" Height="30" IsEnabled="True" Canvas.Left="962" Canvas.Top="160">178</TextBox>
+  <TextBox TextWrapping="Wrap" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="LastRowShift2" Width="40" Height="30" IsEnabled="True" Canvas.Left="962" Canvas.Top="200">197</TextBox>
+  <Rectangle Stroke="#FF000000" Width="504.39073" Height="326.382001" Canvas.Left="567.947627" Canvas.Top="313.888754" />
+  <Label Background="#FF66779F" Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="14" HorizontalContentAlignment="Center" Padding="0,0,0,0" Name="lbl_AlarmRange27" Width="115.564868" Height="17.65662" Canvas.Left="582.124389" Canvas.Top="299.322314" Block.TextAlignment="Center">
+    <TextBlock Text="Data Columns" />
+  </Label>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="14" Padding="0,0,0,0" Name="lbl_AlarmRange28" Height="30" Canvas.Left="600" Canvas.Top="336">
+    <TextBlock Text="Column Name" />
+  </Label>
+  <TextBox TextWrapping="Wrap" IsReadOnly="True" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="MODEL2" Width="123" Height="30" IsEnabled="True" Canvas.Left="720" Canvas.Top="336">MODEL</TextBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="14" Padding="0,0,0,0" Name="lbl_AlarmRange29" Height="30" Canvas.Left="860" Canvas.Top="336">
+    <TextBlock Text="Excel Col" />
+  </Label>
+  <TextBox TextWrapping="Wrap" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="MODELExcelColumn2" Width="70" Height="30" IsEnabled="True" Canvas.Left="940" Canvas.Top="336">K</TextBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="14" Padding="0,0,0,0" Name="lbl_AlarmRange30" Height="30" Canvas.Left="600" Canvas.Top="384">
+    <TextBlock Text="Column Name" />
+  </Label>
+  <TextBox TextWrapping="Wrap" IsReadOnly="True" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="WO2" Width="123" Height="30" IsEnabled="True" Canvas.Left="720" Canvas.Top="384">WO</TextBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="14" Padding="0,0,0,0" Name="lbl_AlarmRange31" Height="30" Canvas.Left="860" Canvas.Top="392.857055">
+    <TextBlock Text="Excel Col" />
+  </Label>
+  <TextBox TextWrapping="Wrap" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="WOExcelColumn2" Width="70" Height="30" IsEnabled="True" Canvas.Left="940" Canvas.Top="384">L</TextBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="14" Padding="0,0,0,0" Name="lbl_AlarmRange32" Height="30" Canvas.Left="600" Canvas.Top="432">
+    <TextBlock Text="Column Name" />
+  </Label>
+  <TextBox TextWrapping="Wrap" IsReadOnly="True" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="SKU2" Width="123" Height="30" IsEnabled="True" Canvas.Left="720" Canvas.Top="432">SKU</TextBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="14" Padding="0,0,0,0" Name="lbl_AlarmRange33" Height="30" Canvas.Left="860" Canvas.Top="440.857055">
+    <TextBlock Text="Excel Col" />
+  </Label>
+  <TextBox TextWrapping="Wrap" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="SKUExcelColumn2" Width="70" Height="30" IsEnabled="True" Canvas.Left="940" Canvas.Top="432">M</TextBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="14" Padding="0,0,0,0" Name="lbl_AlarmRange34" Height="30" Canvas.Left="600" Canvas.Top="481">
+    <TextBlock Text="Column Name" />
+  </Label>
+  <TextBox TextWrapping="Wrap" IsReadOnly="True" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="COLOUR2" Width="123" Height="30" IsEnabled="True" Canvas.Left="720" Canvas.Top="481">COLOUR</TextBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="14" Padding="0,0,0,0" Name="lbl_AlarmRange35" Height="30" Canvas.Left="860" Canvas.Top="489.857055">
+    <TextBlock Text="Excel Col" />
+  </Label>
+  <TextBox TextWrapping="Wrap" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="COLOURExcelColumn2" Width="70" Height="30" IsEnabled="True" Canvas.Left="940" Canvas.Top="481">N</TextBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="14" Padding="0,0,0,0" Name="lbl_AlarmRange36" Height="30" Canvas.Left="600" Canvas.Top="530">
+    <TextBlock Text="Column Name" />
+  </Label>
+  <TextBox TextWrapping="Wrap" IsReadOnly="True" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="DESCRIPTION2" Width="123" Height="30" IsEnabled="True" Canvas.Left="720" Canvas.Top="530">DESCRIPTION</TextBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="14" Padding="0,0,0,0" Name="lbl_AlarmRange37" Height="30" Canvas.Left="860" Canvas.Top="538.857055">
+    <TextBlock Text="Excel Col" />
+  </Label>
+  <TextBox TextWrapping="Wrap" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="DESCRIPTIONExcelColumn2" Width="70" Height="30" IsEnabled="True" Canvas.Left="940" Canvas.Top="530">O</TextBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="14" Padding="0,0,0,0" Name="lbl_AlarmRange38" Height="30" Canvas.Left="600" Canvas.Top="579">
+    <TextBlock Text="Column Name" />
+  </Label>
+  <TextBox TextWrapping="Wrap" IsReadOnly="True" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="QTY2" Width="123" Height="30" IsEnabled="True" Canvas.Left="720" Canvas.Top="579">QTY</TextBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="14" Padding="0,0,0,0" Name="lbl_AlarmRange39" Height="30" Canvas.Left="860" Canvas.Top="587.857055">
+    <TextBlock Text="Excel Col" />
+  </Label>
+  <TextBox TextWrapping="Wrap" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="QTYExcelColumn2" Width="70" Height="30" IsEnabled="True" Canvas.Left="940" Canvas.Top="579">P</TextBox>
+  <TextBox TextWrapping="Wrap" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="txb_shiftId2" Width="15.846154" Height="30" Visibility="Hidden" IsEnabled="True" Canvas.Left="1045" Canvas.Top="160">2</TextBox>
+  <TextBox TextWrapping="Wrap" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="COLOURId2" Width="15.846154" Height="30" Visibility="Hidden" IsEnabled="True" Canvas.Left="1045" Canvas.Top="487.414141">10</TextBox>
+  <TextBox TextWrapping="Wrap" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="SKUId2" Width="15.846154" Height="30" Visibility="Hidden" IsEnabled="True" Canvas.Left="1045" Canvas.Top="433.134986">9</TextBox>
+  <TextBox TextWrapping="Wrap" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="WOId2" Width="15.846154" Height="30" Visibility="Hidden" IsEnabled="True" Canvas.Left="1045" Canvas.Top="386.56933">8</TextBox>
+  <TextBox TextWrapping="Wrap" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="MODELId2" Width="15.846154" Height="30" Visibility="Hidden" IsEnabled="True" Canvas.Left="1045" Canvas.Top="336.146924">7</TextBox>
+  <TextBox TextWrapping="Wrap" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="DESCRIPTIONId2" Width="15.846154" Height="30" Visibility="Hidden" IsEnabled="True" Canvas.Left="1045" Canvas.Top="528.699725">11</TextBox>
+  <TextBox TextWrapping="Wrap" FontFamily="Calibri" FontSize="14" TabIndex="3" Name="QTYId2" Width="15.846154" Height="30" Visibility="Hidden" IsEnabled="True" Canvas.Left="1045" Canvas.Top="575.837466">12</TextBox>
+  <Canvas>
+    <Button Background="#FF001848" Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="12" Name="btn_updateProfile" Width="125" Height="24.999984" Canvas.Left="279.309239" Canvas.Top="75" gwx:GwxProperties.Description="Size=H:25,W:125&#xD;&#xA;Background color=R :255,G : 255,B :255&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :12&#xD;&#xA;Position= X:790  Y:233" gwx:GwxProperties.ShowDescriptionInToolTip="False">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="ModifyScript" Control="True">
+              <gwx:GwxPick.CommandParameters>
+                <gwxcmd:ScriptCommand />
+              </gwx:GwxPick.CommandParameters>
+              <gwx:GwxPick.EventBindings>
+                <script:ScriptEventBindings>
+                  <script:ScriptEventBindings.EventBindings>
+                    <x:Array Type="script:ScriptEventBinding">
+                      <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Modify_CommandExecuted" ScriptType="JScriptNet" />
+                    </x:Array>
+                  </script:ScriptEventBindings.EventBindings>
+                </script:ScriptEventBindings>
+              </gwx:GwxPick.EventBindings>
+            </gwx:GwxPick>
+            <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="DBRefreshMod" DataSource="db:CumiMetz.GridPreventive.@@Refresh" Control="True">
+              <gwx:GwxPick.CommandParameters>
+                <gwxcmd:ToggleValueCommand>
+                  <gwxcmd:ToggleValueCommand.Values>
+                    <s:String>0</s:String>
+                    <s:String>1</s:String>
+                  </gwxcmd:ToggleValueCommand.Values>
+                </gwxcmd:ToggleValueCommand>
+              </gwx:GwxPick.CommandParameters>
+            </gwx:GwxPick>
+            <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="GridRefreshMod" Control="True">
+              <gwx:GwxPick.CommandParameters>
+                <gwxcmd:IcoCommandingCommand>
+                  <gwxcmd:IcoCommandingCommand.Command>
+                    <icc:RefreshCommandData Target="Preventitve" />
+                  </gwxcmd:IcoCommandingCommand.Command>
+                </gwxcmd:IcoCommandingCommand>
+              </gwx:GwxPick.CommandParameters>
+            </gwx:GwxPick>
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="MODIFY" />
+    </Button>
+    <Path Fill="#FFFFFFFF" Name="DatabaseEdit2" Margin="0,0,0,0" gwx:GwxProperties.Description="Icon, Database, Edit, Network, Connectivity" gwx:GwxProperties.ShowDescriptionInToolTip="False" gwx:GwxProperties.Title="Database - Edit">
+      <Path.Data>
+        <PathGeometry FillRule="EvenOdd" Figures="M306.632355285513,91.6286835973272L315.974799702587,91.6286835973272C316.342211135918,91.6286835973272,316.641661720612,92.1036112269182,316.641661720612,92.6896923967872L316.641661720612,95.7851459538282C316.641661720612,96.3678592226112,316.342211135918,96.8427868522012,315.974799702587,96.8427868522012L306.632355285513,96.8427868522012C306.26282000001,96.8427868522012,305.965492820952,96.3678592226112,305.965492906475,95.7851459538282L305.965492906475,92.6896923967872C305.965492820952,92.1036112269182,306.26282000001,91.6286835973272,306.632355285513,91.6286835973272z M306.632355285513,85.0411593773202L312.829503154502,85.0411593773202 312.521556906284,87.9756468060332 316.24876499559,86.4528130116742 316.626795902143,85.8766963811692C316.63741452593,85.9474479128352,316.641661720612,86.0215683564642,316.641661720612,86.0990577120552L316.641661720612,89.1986309247922C316.641661720612,89.7814860531402,316.342211135918,90.2565282486502,315.974799702587,90.2565282486502L306.632355285513,90.2565282486502C306.26282000001,90.2565282486502,305.965492820952,89.7814860531402,305.965492906475,89.1986309247922L305.965492906475,86.0990577120552C305.965492820952,85.5128340087032,306.26282000001,85.0411593773202,306.632355285513,85.0411593773202z M313.646685072129,83.4978334464372L315.386410764756,86.0727604529772 313.179359020972,86.6086415324142z M307.929615944762,79.9737180554562C307.513445038833,79.9737177184972 307.171586639952,80.5163162021702 307.17158674613,81.1769135735252 307.171586639952,81.8442590460452 307.513445038833,82.3801923540642 307.929615944762,82.3801923540642 308.347912380505,82.3801923540642 308.685545882475,81.8442590460452 308.685545882475,81.1769135735252 308.685545882475,80.5163162021702 308.347912380505,79.9737177184972 307.929615944762,79.9737180554562z M316.418191749911,78.8478211070242L318.185300805533,81.6274595536122 315.842607042249,85.3774440480742 315.817119202239,84.7608701477492 315.222419145468,84.4037284143222 315.220295760489,83.7500924389112 314.625595491358,83.4637052697762 314.570373466094,82.7258380713472 314.075497986626,82.5978059384442z M306.632244051483,78.5715521640622L315.628934287882,78.5715521640622 313.068171286655,82.7273601132902 312.957752082217,83.7856493199852 306.632244051483,83.7856493199852C306.262780819638,83.7856493199852,305.965504748583,83.3104436995582,305.965504804505,82.7273601132902L305.965504804505,79.6299237908282C305.965504748583,79.0434664403922,306.262780819638,78.5715521640622,306.632244051483,78.5715521640622z M317.671745526772,77.1632701523942C317.768179143839,77.1596427676952,317.858642479343,77.2080068789422,317.925532397836,77.3111838479162L319.176263913832,79.2820725448032C319.329155065096,79.5179054800322,319.297302379135,79.9592497949992,319.108312833745,80.2624633955742L318.851371571188,80.6768555724462 317.048534264458,77.8401232670712 317.307598699634,77.4291002818352C317.41390577018,77.2585425059942,317.547759933079,77.1679337260782,317.671745526772,77.1632701523942z" />
+      </Path.Data>
+    </Path>
+  </Canvas>
+  <Canvas>
+    <Canvas>
+      <Button FontFamily="Calibri" FontSize="16" Name="main" Width="125" Height="24.999984" Canvas.Left="0" Canvas.Top="0" Block.TextAlignment="Center">
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:LoadDisplayCommand FileName="BajajMEA_Order_Manual_Upload.gdfx" />
+                </gwx:GwxPick.CommandParameters>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="Manual Upload" />
+      </Button>
+      <Button Background="#FFD8D8D8" FontFamily="Calibri" FontSize="16" Name="main1" Width="125" Height="24.999984" Canvas.Left="125" Canvas.Top="0" Block.TextAlignment="Center">
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:LoadDisplayCommand FileName="BajajMEA_Order_Excel_Upload.gdfx" />
+                </gwx:GwxPick.CommandParameters>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="Excel Upload" />
+      </Button>
+      <Button Background="#FF7F7F7F" FontFamily="Calibri" FontSize="16" Name="main2" Width="133.513932" Height="24.999984" Canvas.Left="250" Canvas.Top="0" Block.TextAlignment="Center">
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:LoadDisplayCommand FileName="BajajMEA_Order_Configuration_Excel_Upload.gdfx" />
+                </gwx:GwxPick.CommandParameters>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="Excel Configuration" />
+      </Button>
+    </Canvas>
+    <Button Background="#FFD8D8D8" FontFamily="Calibri" FontSize="16" Name="main3" Width="125" Height="24.999984" Canvas.Left="383.513932" Canvas.Top="0" Block.TextAlignment="Center">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+              <gwx:GwxPick.CommandParameters>
+                <gwxcmd:LoadDisplayCommand FileName="BajajMEA_Order_SAP_Upload.gdfx" />
+              </gwx:GwxPick.CommandParameters>
+            </gwx:GwxPick>
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="SAP Upload" />
+    </Button>
+  </Canvas>
+</Canvas>

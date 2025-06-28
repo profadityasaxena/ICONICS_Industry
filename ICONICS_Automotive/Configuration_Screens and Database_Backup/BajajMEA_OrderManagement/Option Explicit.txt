@@ -1,0 +1,274 @@
+Option Explicit
+Dim g As SWXRuntimeLib.Global
+
+
+' Called once when a new designer/thread is started
+Private Sub GlobalInstance_OnConnection(ByVal SwxGlobal As SWXRuntimeLib.Global, ByVal MTDllInst As Object, Custom() As Variant)
+    On Error GoTo ErrHandler
+    Set g = SwxGlobal
+    ' TODO: Add your thread initialization code here
+    Exit Sub
+
+ErrHandler:
+    g.ConsoleMsg MSG_SEVERE_ERROR, "Designer", "'SG1_Engine_WIP' OnConnection failed"
+End Sub
+
+
+' Called once when a new designer/thread is terminated
+Private Sub GlobalInstance_OnDisconnection(Custom() As Variant)
+    On Error GoTo ErrHandler
+    ' TODO: Add your thread termination code here
+    Exit Sub
+
+ErrHandler:
+    g.ConsoleMsg MSG_SEVERE_ERROR, "Designer", "'SG1_Engine_WIP' OnDisconnection failed"
+End Sub
+
+
+' Called with a period "Timer Interval" if "Has Timer" is checked.
+Public Sub OnTimer()
+    On Error GoTo ErrHandler
+    ' TODO: Add your code here
+    Exit Sub
+
+ErrHandler:
+    g.ConsoleMsg MSG_SEVERE_ERROR, "Designer", "'SG1_Engine_WIP' OnTimer failed"
+End Sub
+
+
+' Called when a variable changes.
+Public Sub OnVarChange(name As String, oldVal As Variant, newVal As Variant, threadIdentif As String)
+    On Error GoTo ErrHandler
+    ' TODO: Add your code here
+    Exit Sub
+
+ErrHandler:
+    g.ConsoleMsg MSG_SEVERE_ERROR, "Designer", "'SG1_Engine_WIP' OnVarChange failed"
+End Sub
+
+
+
+Public Sub SG1_Engine_Complete(td As TriggerData)
+    On Error GoTo ErrHandler
+    ' TODO: Add your code here
+    
+    ' [Creating Variable to Read Test Tag]
+    Dim st12_running_work_order As Variant
+    st12_running_work_order = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Triggers.SG1_Complete_work_order_number")
+    
+    Dim st12_engine_number As Variant
+    st12_engine_number = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Number.SG1_ST00_Engine No")
+    
+    Dim st12_engine_status As Variant
+    st12_engine_status = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Status.SG1_Buffer_Status")
+    
+    Dim database_connection     As Object
+    Dim result_set              As Object
+    Dim query_string            As String
+    
+    ' [Building the Database Credentials]
+    Set database_connection = CreateObject("ADODB.Connection")
+    database_connection.ConnectionString = "Provider=SQLOLEDB;Data Source=AK-WKS-0476-LS\SQLEXPRESS2017;Initial Catalog=BajajMEA; User ID=sa; Password=sql_1234; MultipleActiveResultSets=True"
+    
+    ' [Opening the Database Connection]
+    database_connection.Open
+        
+        ' [Declaring a Result Set]
+        Set result_set = CreateObject("ADODB.RecordSet")
+        
+        ' IMPORTANT [Declaring the Query String]
+        query_string = "EXEC [dbo].[SP_OrderTracking_SG1_Engine_Complete] @running_work_order = " & st12_running_work_order & ", @engine_number = '" & st12_engine_number & "', @engine_status = '" & st12_engine_status & "'"""
+            
+        ' [Executing the Query String]
+        database_connection.Execute query_string
+    
+        ' [Closing the Result Set]
+        result_set.Close
+        Set result_set = Nothing
+    
+    ' [Closing the Datavase Connection]
+    database_connection.Close
+    Set database_connection = Nothing
+    
+    ' Uncomment the next line to display the value 'opcval' in the MonitorWorX console in the tab Runtime.
+    ' g.ConsoleMsg MSG_INFO_VERBOSE, "Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Number.SG1_ST00_Engine No", opcval
+
+    Exit Sub
+ErrHandler:
+    g.ConsoleMsg MSG_SEVERE_ERROR, "Script", "'SG1_Engine_Complete' failed"
+End Sub
+
+
+Public Sub NewScript(td As TriggerData)
+    On Error GoTo ErrHandler
+    ' TODO: Add your code here
+
+    Exit Sub
+ErrHandler:
+    g.ConsoleMsg MSG_SEVERE_ERROR, "Script", "'NewScript' failed"
+End Sub
+
+
+Public Sub SG1_Engine_Start(td As TriggerData)
+    On Error GoTo ErrHandler
+    ' TODO: Add your code here
+    
+    ' [Creating Variable to Read Tags for SG1 Engine Start]
+    Dim st00_plc_work_order As Variant
+    Dim st00_engine_number As Variant
+    Dim st00_engine_start_quantity As Variant
+    Dim st00_engine_status As Variant
+
+    st00_plc_work_order = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Triggers.SG1_Start_work_order_number")
+    st00_engine_number = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Number.SG1_ST01_Engine No")
+    st00_engine_start_quantity = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Triggers.SG1_Engine_Start_Qty")
+    st00_engine_status = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Status.SG1_ST01_Status")
+
+    Dim database_connection     As Object
+    Dim result_set              As Object
+    Dim query_string            As String
+    
+    ' [Building the Database Credentials]
+    Set database_connection = CreateObject("ADODB.Connection")
+    database_connection.ConnectionString = "Provider=SQLOLEDB;Data Source=AK-WKS-0476-LS\SQLEXPRESS2017;Initial Catalog=BajajMEA; User ID=sa; Password=sql_1234; MultipleActiveResultSets=True"
+    
+    ' [Opening the Database Connection]
+    database_connection.Open
+        
+        ' [Declaring a Result Set]
+        Set result_set = CreateObject("ADODB.RecordSet")
+        
+        ' [Declaring the Query String]
+        query_string = "EXEC    [dbo].[SP_OrderTracking_SG1_Engine_Start] @running_work_order = " & st00_plc_work_order & ", @virtual_engine_number = " & st00_engine_number & ", @start_quantity = " & st00_engine_start_quantity & ", @engine_status = " & st00_engine_status & ""
+            
+        ' [Executing the Query String]
+        database_connection.Execute query_string
+    
+        ' [Closing the Result Set]
+        result_set.Close
+        Set result_set = Nothing
+    
+    ' [Closing the Datavase Connection]
+    database_connection.Close
+    Set database_connection = Nothing
+   
+    Exit Sub
+ErrHandler:
+    g.ConsoleMsg MSG_SEVERE_ERROR, "Script", "'SG1_Engine_Start' failed"
+End Sub
+
+
+Public Sub SG1_Engine_Scan(td As TriggerData)
+    On Error GoTo ErrHandler
+    ' TODO: Add your code here
+    
+    ' [Creating Variable to Read Test Tag]
+    Dim st07_barcode_scan_engine_number As Variant
+    Dim st07_engine_number As Variant
+    st07_barcode_scan_engine_number = g.OPC.Read("epware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Number.SG1_ST07_Barcode Scan")
+    st07_engine_number = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Number.SG1_ST07_Engine No")
+     
+    Dim database_connection     As Object
+    Dim result_set              As Object
+    Dim query_string            As String
+    
+    ' [Building the Database Credentials]
+    Set database_connection = CreateObject("ADODB.Connection")
+    database_connection.ConnectionString = "Provider=SQLOLEDB;Data Source=AK-WKS-0476-LS\SQLEXPRESS2017;Initial Catalog=BajajMEA; User ID=sa; Password=sql_1234; MultipleActiveResultSets=True"
+    
+    ' [Opening the Database Connection]
+    database_connection.Open
+        
+        ' [Declaring a Result Set]
+        Set result_set = CreateObject("ADODB.RecordSet")
+        
+        ' [Declaring the Query String]
+        query_string = "EXEC [dbo].[SP_OrderTracking_SG1_Engine_Scan] @barcode_scan_engine_number = '" & st07_barcode_scan_engine_number & "', @engine_number = '" & st07_engine_number & "'"
+            
+        ' [Executing the Query String]
+        database_connection.Execute query_string
+    
+        ' [Closing the Result Set]
+        result_set.Close
+        Set result_set = Nothing
+    
+    ' [Closing the Datavase Connection]
+    database_connection.Close
+    Set database_connection = Nothing
+    
+    Exit Sub
+ErrHandler:
+    g.ConsoleMsg MSG_SEVERE_ERROR, "Script", "'SG1_Engine_Scan' failed"
+End Sub
+
+
+Public Sub SG1_Engine_Reject(td As TriggerData)
+    On Error GoTo ErrHandler
+    ' TODO: Add your code here
+    
+    ' [Creating Variable to Read Test Tag]
+    Dim engine_reject_stage As Variant
+    engine_reject_stage = g.OPC.Read("epware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Triggers.SG1_Engine_Reject_Stage")
+    
+    Dim engine_number As Variant
+    If (engine_reject_stage = 1) Then
+        engine_number = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Number.SG1_ST00_Engine No")
+    ElseIf (engine_reject_stage = 2) Then
+        engine_number = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Number.SG1_ST01_Engine No")
+    ElseIf (engine_reject_stage = 3) Then
+        engine_number = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Number.SG1_ST02_Engine No")
+    ElseIf (engine_reject_stage = 4) Then
+        engine_number = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Number.SG1_ST03_Engine No")
+    ElseIf (engine_reject_stage = 5) Then
+        engine_number = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Number.SG1_ST04_Engine No")
+    ElseIf (engine_reject_stage = 6) Then
+        engine_number = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Number.SG1_ST05_Engine No")
+    ElseIf (engine_reject_stage = 7) Then
+        engine_number = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Number.SG1_ST06_Engine No")
+    ElseIf (engine_reject_stage = 8) Then
+        engine_number = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Number.SG1_ST07_Engine No")
+    ElseIf (engine_reject_stage = 9) Then
+        engine_number = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Number.SG1_ST08_Engine No")
+    ElseIf (engine_reject_stage = 10) Then
+        engine_number = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Number.SG1_ST09_Engine No")
+    ElseIf (engine_reject_stage = 11) Then
+        engine_number = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Number.SG1_ST10_Engine No")
+    ElseIf (engine_reject_stage = 12) Then
+        engine_number = g.OPC.Read("Kepware.KEPServerEX.V6\SB1_PLC.RJ71EN71.01_Sub Group1.Engine WIP.Engine Number.SG1_ST07-5_Engine No")
+    End If
+    
+     
+    Dim database_connection     As Object
+    Dim result_set              As Object
+    Dim query_string            As String
+    
+    ' [Building the Database Credentials]
+    Set database_connection = CreateObject("ADODB.Connection")
+    database_connection.ConnectionString = "Provider=SQLOLEDB;Data Source=AK-WKS-0476-LS\SQLEXPRESS2017;Initial Catalog=BajajMEA; User ID=sa; Password=sql_1234; MultipleActiveResultSets=True"
+    
+    ' [Opening the Database Connection]
+    database_connection.Open
+        
+        ' [Declaring a Result Set]
+        Set result_set = CreateObject("ADODB.RecordSet")
+        
+        ' [Declaring the Query String]
+        query_string = "EXEC [dbo].[SP_OrderTracking_SG1_Engine_Reject] @engine_number = '" & engine_number & "', @engine_status = 2"
+            
+        ' [Executing the Query String]
+        database_connection.Execute query_string
+    
+        ' [Closing the Result Set]
+        result_set.Close
+        Set result_set = Nothing
+    
+    ' [Closing the Datavase Connection]
+    database_connection.Close
+    Set database_connection = Nothing
+
+    Exit Sub
+ErrHandler:
+    g.ConsoleMsg MSG_SEVERE_ERROR, "Script", "'SG1_Engine_Reject' failed"
+End Sub
+
+

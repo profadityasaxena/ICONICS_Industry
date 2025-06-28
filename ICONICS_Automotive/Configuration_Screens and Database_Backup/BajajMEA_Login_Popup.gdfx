@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Canvas Background="#FF66799F" Width="400" Height="300" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:iwm="clr-namespace:Ico.Windows.Media;assembly=IcoWPF" xmlns:gwx="clr-namespace:Ico.Gwx;assembly=GwxRuntimeCore" xmlns:script="clr-namespace:Ico.Script;assembly=IcoScriptEngine" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:gwxcmd="clr-namespace:Ico.Gwx;assembly=GwxRuntimeCoreCommands">
+  <Canvas.Resources>
+    <BitmapImage x:Key="GwxThumbnailImageKey">
+      <iwm:BitmapImageInfo.StreamSource>
+        <iwm:Base64Stream Data="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" />
+      </iwm:BitmapImageInfo.StreamSource>
+    </BitmapImage>
+  </Canvas.Resources>
+  <gwx:GwxDocument.GwxDocument>
+    <gwx:GwxDocument FileVersion="10.97.020.00" IsScalable="True" MaximumZoom="1" MinimumZoom="1" ScanRate="500">
+      <gwx:GwxDocument.ScriptCodeManager>
+        <script:ScriptCodeManager>
+          <script:ScriptCodeManager.Scripts>
+            <script:ScriptCode Name="ThisDisplayCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function ThisDisplay_AnimationStarted(sender : System.Object, e : System.EventArgs)
+{
+
+	var login_username					:	System.Windows.Controls.TextBox	=	ThisConfiguration.GetObjectByName("login_username").ToDependencyObject();	
+	var login_user_password_control		:	Ico.Gwx.GwxWindowsFormsControl=ThisConfiguration.GetObjectByName("login_user_password");
+	var login_user_password				: 	System.Windows.Forms.TextBox;	
+	login_user_password					= 	System.Windows.Forms.TextBox(login_user_password_control.Control);	
+	var error_message					:	Ico.Gwx.GwxLabel	=	ThisConfiguration.GetObjectByName("error_message");
+	error_message.Visible				=	false;
+
+	var login							:	String;
+	login								=	ThisWindow.FwxClientWrapper.Read("@rgs64:Login.login.Value");
+	
+	if((login.Substring(0,login.IndexOf(",")))=="Logout")
+	{		
+			ThisWindow.FwxClientWrapper.WriteAsync("@rgs64:Login.UserName.Value","");
+			ThisWindow.FwxClientWrapper.WriteAsync("@rgs64:Login.UserId.Value","");
+			ThisWindow.FwxClientWrapper.WriteAsync("@rgs64:Login.Password.Value","");
+			ThisWindow.FwxClientWrapper.WriteAsync("@rgs64:Login.login.Value","Login");
+	}	
+}
+
+function ThisDisplay_AnimationStopped(sender : System.Object, e : System.EventArgs)
+{
+	var error_message		:	Ico.Gwx.GwxLabel=ThisConfiguration.GetObjectByName("error_message");
+	error_message.Visible	=	false;	
+	var login_username		:	System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("login_username").ToDependencyObject();		
+	login_username.Clear();
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="Database_Connection" Type="JScriptNet">
+              <x:XData><![CDATA[const DB_SERVER               : String = "AK-WKS-0476-LS\\SQLEXPRESS2017";
+const DB_NAME                 : String = "BajajMEA";
+const DB_USERID               : String = "sa";
+const DB_PASSWORD             : String = "sql_1234";
+var DB_CONNECT_AUTHENTICATION : String = ";User ID="+DB_USERID+";Password="+DB_PASSWORD+";";
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="JScriptDotNetGlobalVariablesCode" Type="JScriptNet" EditorBrowsable="Never">
+              <x:XData><![CDATA[
+var ThisWindow : Ico.Gwx.GwxRuntimeViewControl;
+var ThisDocument : Ico.Gwx.GwxDocument;
+var ThisConfiguration : Ico.Gwx.GwxConfiguration;
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="Login_Command" Type="JScriptNet">
+              <x:XData><![CDATA[function Login_Command(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs){
+		
+		// [Creating Connection String]
+		var connection_string : String = "Data Source="+DB_SERVER+"; Initial Catalog=" + DB_NAME + "; Password=" + DB_PASSWORD + "; User ID=" + DB_USERID + ";";
+		// [Inline Test Statement] : Prints out connection_string : MessageBox.Show(connection_string);
+		
+		// [Opening connection with the database]
+		var connection : System.Data.SqlClient.SqlConnection;
+		connection = new System.Data.SqlClient.SqlConnection(connection_string);
+		
+		// [Declaration of Variables]
+		var login_username 				: System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("login_username").ToDependencyObject();
+		
+		// [Question] Ask Aditya Sharma for why this control variable has been created
+		var login_user_password_control : Ico.Gwx.GwxWindowsFormsControl;
+		login_user_password_control 	= Ico.Gwx.GwxWindowsFormsControl(ThisConfiguration.GetObjectByName("login_user_password"));
+		login_user_password 			: System.Windows.Forms.TextBox;
+		login_user_password				= System.Windows.Forms.TextBox(login_user_password_control.Control);
+		var error_message 				: Ico.Gwx.GwxLabel=ThisConfiguration.GetObjectByName("error_message");
+		
+		var reader						: System.Data.SqlClient.SqlDataReader;
+		var user_name;
+		var user;
+		var password;
+		
+		// [Opening SQL Connection]
+		connection.Open();
+		
+		// [Creating the Query String]
+		var query_string 	: System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand("SELECT dbo.Config_User.* FROM dbo.Config_User WHERE user_name = '" + login_username.Text + "' and user_password='" + login_user_password.Text + "'", connection);
+		
+		// [Executing the Query]
+		reader = query_string.ExecuteReader();	
+		if(reader.HasRows == true)
+		{
+			if(reader.Read() == true)
+			{
+				//user_id			=	reader["user_id"];
+				user_name		=	reader["user_name"];
+				user_password	=	reader["user_password"];
+				
+			ThisWindow.FwxClientWrapper.WriteAsync("@rgs64:Login.UserName.Value",user_name);
+			//ThisWindow.FwxClientWrapper.WriteAsync("@rgs64:Login.UserId.Value",user_id);
+			ThisWindow.FwxClientWrapper.WriteAsync("@rgs64:Login.Password.Value",user_password);
+			ThisWindow.FwxClientWrapper.WriteAsync("@rgs64:Login.login.Value","Logout");
+	     	MessageBox.Show("Login Successful!!");
+				ThisWindow.Close();
+			}
+			reader.Close();	
+		}
+	
+		else
+		{
+			error_message.Visible = true;
+		}
+	}]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="PasswordCode" Type="JScriptNet">
+              <x:XData><![CDATA[function login_user_password_TextChanged(sender : System.Object, e : System.EventArgs)
+{
+	var error_message		:	Ico.Gwx.GwxLabel=ThisConfiguration.GetObjectByName("error_message");
+	error_message.Visible	= 	false;		
+}
+
+
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="UernameCode" Type="JScriptNet">
+              <x:XData><![CDATA[function login_username_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{
+	var error_message	:	Ico.Gwx.GwxLabel=ThisConfiguration.GetObjectByName("error_message");
+	error_message.Visible	= 	false;		
+
+}
+]]></x:XData>
+            </script:ScriptCode>
+          </script:ScriptCodeManager.Scripts>
+          <script:ScriptCodeManager.Namespaces>
+            <s:String>System</s:String>
+            <s:String>System.Collections</s:String>
+            <s:String>System.ComponentModel</s:String>
+            <s:String>System.Data</s:String>
+            <s:String>System.Xml</s:String>
+            <s:String>System.Windows</s:String>
+            <s:String>System.Windows.Media</s:String>
+            <s:String>System.Windows.Input</s:String>
+            <s:String>System.Windows.Controls</s:String>
+            <s:String>Ico.Gwx</s:String>
+            <s:String>System.Diagnostics</s:String>
+            <s:String>Ico.Fwx.ClientWrapper</s:String>
+            <s:String>Ico.Gdx</s:String>
+          </script:ScriptCodeManager.Namespaces>
+        </script:ScriptCodeManager>
+      </gwx:GwxDocument.ScriptCodeManager>
+      <gwx:GwxDocument.EventBindings>
+        <script:ScriptEventBindings>
+          <script:ScriptEventBindings.EventBindings>
+            <x:Array Type="script:ScriptEventBinding">
+              <script:ScriptEventBinding EventName="AnimationStarted" MethodName="ThisDisplay_AnimationStarted" ScriptType="JScriptNet" />
+              <script:ScriptEventBinding EventName="AnimationStopped" MethodName="ThisDisplay_AnimationStopped" ScriptType="JScriptNet" />
+            </x:Array>
+          </script:ScriptEventBindings.EventBindings>
+        </script:ScriptEventBindings>
+      </gwx:GwxDocument.EventBindings>
+      <gwx:GwxDocument.RuntimeWindowProperties>
+        <gwx:GwxWindowProperties LeftString="0%" TopString="0%" WidthString="100%" HeightString="100%" ControlBox="False" MaximizeBox="False" MinimizeBox="False" MenuVisible="False" ShowContextMenu="False" NavigationBarVisible="False" StatusBarVisible="False" OuterBorder="False" Resizable="False" />
+      </gwx:GwxDocument.RuntimeWindowProperties>
+    </gwx:GwxDocument>
+  </gwx:GwxDocument.GwxDocument>
+  <Label Foreground="#FFC00000" FontFamily="Calibri" FontSize="12" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="error_message" Width="184.5" Height="15" Visibility="Hidden" Canvas.Left="148" Canvas.Top="152.891832">
+    <TextBlock Text="Incorrect User Name or Password" />
+  </Label>
+  <Button BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,0,0" Name="login_button" Width="200" Height="30" Canvas.Left="145" Canvas.Top="181.017859">
+    <Button.Background>
+      <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+        <LinearGradientBrush.GradientStops>
+          <GradientStop Color="#FF444652" Offset="0" />
+          <GradientStop Color="#FF3A3E48" Offset="0.49" />
+          <GradientStop Color="#FF2D2D2D" Offset="0.51" />
+          <GradientStop Color="#FF414141" Offset="1" />
+        </LinearGradientBrush.GradientStops>
+        <LinearGradientBrush.RelativeTransform>
+          <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+        </LinearGradientBrush.RelativeTransform>
+      </LinearGradientBrush>
+    </Button.Background>
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="login" Control="True">
+            <gwx:GwxPick.CommandParameters>
+              <gwxcmd:ScriptCommand />
+            </gwx:GwxPick.CommandParameters>
+            <gwx:GwxPick.EventBindings>
+              <script:ScriptEventBindings>
+                <script:ScriptEventBindings.EventBindings>
+                  <x:Array Type="script:ScriptEventBinding">
+                    <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Login_Command" ScriptType="JScriptNet" />
+                  </x:Array>
+                </script:ScriptEventBindings.EventBindings>
+              </script:ScriptEventBindings>
+            </gwx:GwxPick.EventBindings>
+          </gwx:GwxPick>
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <TextBlock Text="Log in" />
+  </Button>
+  <TextBox TextAlignment="Center" BorderBrush="#FF838383" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="login_username" Width="200" Height="25" IsEnabled="True" Canvas.Left="145" Canvas.Top="93.982143">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="login_username_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>
+  </TextBox>
+  <Label Foreground="#FF000000" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="login_username_label" Height="25" Canvas.Left="55" Canvas.Top="93.982143">
+    <TextBlock Text="User Name" />
+  </Label>
+  <Label Foreground="#FF000000" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="login_user_password_label" Height="25" Canvas.Left="55" Canvas.Top="126.121615">
+    <TextBlock Text="Password" />
+  </Label>
+  <gwx:WindowsFormsControl FontFamily="Calibri" FontSize="16" Name="login_user_password" Width="200" Height="30" Canvas.Left="145" Canvas.Top="126.121615">
+    <gwx:WindowsFormsControl.ControlProperties>
+      <XmlDataProvider IsAsynchronous="False">
+        <x:XData>
+          <Data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="">
+            <TextBox xsi:type="System.Windows.Forms.TextBox">
+              <BorderStyle>FixedSingle</BorderStyle>
+              <DataBindings>
+                <DefaultDataSourceUpdateMode>OnValidation</DefaultDataSourceUpdateMode>
+              </DataBindings>
+              <Font>Calibri, 11.25pt</Font>
+              <Location>0, 0</Location>
+              <Margin>0, 0, 0, 0</Margin>
+              <MaximumSize>200, 25</MaximumSize>
+              <MaxLength>20</MaxLength>
+              <MinimumSize>200, 25</MinimumSize>
+              <Name>login_user_password</Name>
+              <Size>200, 25</Size>
+              <TabIndex>0</TabIndex>
+              <TextAlign>Center</TextAlign>
+              <UseSystemPasswordChar>true</UseSystemPasswordChar>
+            </TextBox>
+          </Data>
+        </x:XData>
+      </XmlDataProvider>
+    </gwx:WindowsFormsControl.ControlProperties>
+    <gwx:WindowsFormsControl.EventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="login_user_password_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:WindowsFormsControl.EventBindings>
+  </gwx:WindowsFormsControl>
+  <Rectangle Stroke="#FFFFFFFF" Width="400" Height="30" Canvas.Left="0.056338" Canvas.Top="-1.140845">
+    <Rectangle.Fill>
+      <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+        <LinearGradientBrush.GradientStops>
+          <GradientStop Color="#FFF5F5F5" Offset="0" />
+          <GradientStop Color="#FFEBEBEB" Offset="0.49" />
+          <GradientStop Color="#FFE1E1E1" Offset="0.51" />
+          <GradientStop Color="#FFCDCDCD" Offset="1" />
+        </LinearGradientBrush.GradientStops>
+        <LinearGradientBrush.RelativeTransform>
+          <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+        </LinearGradientBrush.RelativeTransform>
+      </LinearGradientBrush>
+    </Rectangle.Fill>
+  </Rectangle>
+  <Image Stretch="Fill" Width="20" Height="20" RenderTransform="-1,0,0,1,26,0" Canvas.Left="1.056338" Canvas.Top="3.859155">
+    <Image.Source>
+      <BitmapImage>
+        <iwm:BitmapImageInfo.StreamSource>
+          <iwm:Base64Stream Data="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" />
+        </iwm:BitmapImageInfo.StreamSource>
+      </BitmapImage>
+    </Image.Source>
+  </Image>
+  <Label FontFamily="Microsoft Sans Serif" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Height="19.543046" Canvas.Left="31.559649" Canvas.Top="3.494917">
+    <TextBlock Text="Please Login" />
+  </Label>
+  <Image Stretch="Fill" Name="Image1" Width="26" Height="26" Canvas.Left="367.937133" Canvas.Top="0.859155">
+    <Image.Source>
+      <BitmapImage>
+        <iwm:BitmapImageInfo.StreamSource>
+          <iwm:Base64Stream Data="iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAACcFBMVEUAAADyQTT4RTj0Qzb0QzbzQjb0Qzb0QzbzQjX0Qzb0Qzb0Qjb0Qjb0QjXzQjb0QjXzQjb0Qzb0QzbzQjX0Qzb0Qzb0QzbyQTX2RTb2RTj0Qjb0QjX0QjX0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0QjX0Qzb0Qzb0Qzb0Qzb0Qjb0QjX0Qzb0Qzb0QjX0QTT0Qzb0Qzb0Qzb0QjX0QjX0Qzb0QzbzQjb0QjX0Qzb0Qzb0QTT1Vkv2ZFr0QjX0Qzb0Qzb0QjX1V0z1TED0QjX0QzbzQjb0QjX1U0j8u7r+1db3cGj0QTT0Qzb0QTT2Zlz9ysn6paL0QzbzQjb0QjX1Vkr8wcD+1db3cGj0QTT0QTT2ZVz9zM39ysn1V0z0Qzb0QTT2W1D8wcD+1db3cGf2ZVz9zMz2Zlz0Qzb0QTT2W1D8wcD+2Nn909T9zMz0Qzb0Qzb0QTT2Wk/9yMf909T0QTT2ZVv9zs/+2Nn2ZVz9zM39zs/9yMf0Qzb0QjT2ZVz9zM32ZVv+1db3cGj0QjX0Qzb0QjT2XFL9zMz8wcD91NT2YFb0QTT0QjX1U0j8ubf9zMz2W1D8wL77rqv1UET0QjX0QjT2XFL0QjT1U0j1TkL0QjX0QjX0Qzb0Qzb0QjX0QjX0Qzb0QzbzQjb0QjX0Qzb0Qzb0QjX0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0QjbzQjXzQjXzQjXzQjX0QjX0Qzb/7vH/7/L/7vH/7vL/7fD/7fD/7fD/7fD/7fD/7vH/7vL/7vL////lRu92AAAAwnRSTlMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMGBgVUp7W0tLWnVAVV8fFUAqb+/qYCBrX+/v7+/v7+/v61Bga0/v7+/v7+/v7+/v61Bv7+///+/v7+/v//tQb+/v///v7+/v///v7+/v///v7//v7+/v/////+/v7+///+/v///v////7+/v/+//7+/v7+/////v7+/v///v///v7+/v7+/v4Gtf7+/v61BgKmpgJU8fBUBVSntra2tqdUBQMGBgYGAxa1CtMAAAABYktHRM+D3sJpAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAB3RJTUUH4gcXAiwRuLM8LQAAAYNJREFUKM9jYCAXMDJJScsgAWkpJkaIDLOsnLyCohIcKCqrqKqxgGRY2dQ1DqEBTS12DqAUp7bOIV09FKB7SN+ACyjFbWh0SE/P2MTUzBwoamFpZa2nd8jGlgcoxWtnf0jPwdHJ2cXVXM/N3cPTy1rvkLcPH1CKX0bpkJ6vn39AYJBrcEhoWLinld6hiEgBmFRUdMzh2Lj4hMSkI8kplihSqWnpGUczs7JzjiXlulugSOnl5RcUHi8qPlGSGFKqhyqlV1ZeUXnyVFV2QrAeupRbdU3t6ZN1WfFAd6JKuYXUN5xpbDqeGRcElEOWam5pbTvW0F5ReLSjs6sbRaqnt+9sW311eUH/uQkTJ6FITZ4ydVpriFtZ/vQZM2fNhkmBA8p4zpS5LUBX582bv2ChAyyguBctBgXv5J5mUKAvWbpsOdCFK1aCgldw1WrMSFmzVggoJSyybj16VG7YKCoMimaWTZu3bN22HQ627di5a7cYJHGIS+zZu28/HOw7cFCSkew0CABQdcNHf+fRzwAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxOC0wNy0yM1QwMjo0NDoxNy0wNDowMP2o+lgAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTgtMDctMjNUMDI6NDQ6MTctMDQ6MDCM9ULkAAAAAElFTkSuQmCC" />
+        </iwm:BitmapImageInfo.StreamSource>
+      </BitmapImage>
+    </Image.Source>
+    <Image.Effect>
+      <DropShadowEffect ShadowDepth="5" Color="#FF000000" Direction="315" Opacity="0.75" BlurRadius="18.75" />
+    </Image.Effect>
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+            <gwx:GwxPick.CommandParameters>
+              <gwxcmd:CloseWindowCommand />
+            </gwx:GwxPick.CommandParameters>
+          </gwx:GwxPick>
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+  </Image>
+</Canvas>

@@ -1,0 +1,1671 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Canvas Background="#FF243782" Width="1100" Height="728" gwx:GwxProperties.Description="Display Size: H=1100 W:728" gwx:GwxProperties.ShowDescriptionInToolTip="True" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:gwx="clr-namespace:Ico.Gwx;assembly=GwxRuntimeCore" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:iwm="clr-namespace:Ico.Windows.Media;assembly=IcoWPF" xmlns:script="clr-namespace:Ico.Script;assembly=IcoScriptEngine" xmlns:ic="clr-namespace:Ico.Collections;assembly=IcoCollections" xmlns:ig="clr-namespace:Ico.Gdx;assembly=GdxViewControl" xmlns:iws="clr-namespace:Ico.WPF.Specialized;assembly=IcoWPFSpecialized" xmlns:ig12="clr-namespace:Ico.Gdx;assembly=GdxClientCommon" xmlns:igd="clr-namespace:Ico.Gdx.Data;assembly=GdxClientCommon" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:iwc="clr-namespace:Ico.Windows.Controls;assembly=IcoWPF" xmlns:gwxcmd="clr-namespace:Ico.Gwx;assembly=GwxRuntimeCoreCommands">
+  <Canvas.Resources>
+    <BitmapImage x:Key="GwxThumbnailImageKey">
+      <iwm:BitmapImageInfo.StreamSource>
+        <iwm:Base64Stream Data="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" />
+      </iwm:BitmapImageInfo.StreamSource>
+    </BitmapImage>
+  </Canvas.Resources>
+  <gwx:GwxDocument.GwxDocument>
+    <gwx:GwxDocument FileVersion="10.97.020.00" IsScalable="True" MaximumZoom="1" MinimumZoom="1" PanEnabled="False" PreferredStretch="Fill" ScanRate="500">
+      <gwx:GwxDocument.ScriptCodeManager>
+        <script:ScriptCodeManager>
+          <script:ScriptCodeManager.Scripts>
+            <script:ScriptCode Name="ThisDisplayCode" Type="JScriptNet">
+              <x:XData><![CDATA[function ThisDisplay_AnimationStarted(sender : System.Object, e : System.EventArgs)
+{
+	        Clear();
+			var engine_number_LB             : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("engine_number_LB");
+            var model_LB              : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("model_LB");
+            var sku_LB                       : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("sku_LB");
+			var inspection_gate_LB           : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("inspection_gate_LB");
+			var inspection_name_LB           : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("inspection_name_LB");
+			var inspection_description_LB    : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("inspection_description_LB");
+			var defect_name_LB               : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("defect_name_LB");
+			var defect_description_LB        : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("defect_description_LB");
+			var defect_status_LB             : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("defect_status_LB");
+
+
+
+
+
+			engine_number_LB.Visible            = false
+			model_LB.Visible             = false
+			sku_LB.Visible                      = false
+			inspection_gate_LB.Visible          = false
+	        inspection_name_LB.Visible          = false
+			inspection_description_LB.Visible   = false
+			defect_name_LB.Visible              = false
+			defect_description_LB.Visible       = false
+			defect_status_LB.Visible       = false
+
+
+
+					
+                ThisWindow.FwxClientWrapper.WriteAsync("@rgs64:headerReg.Value","Quality Gate Configuration")
+}
+
+function ThisDisplay_AnimationStopped(sender : System.Object, e : System.EventArgs)
+{
+
+				ThisWindow.FwxClientWrapper.WriteAsync("@rgs64:headerReg.Value","")	
+}
+
+
+
+
+
+
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="ALL_OK" Type="JScriptNet">
+              <x:XData><![CDATA[function Rest_Ok(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs){
+		
+    var connection_string : String = "Data Source="+DB_SERVER+"; Initial Catalog="+DB_NAME+"; Password="+DB_PASSWORD+"; User ID="+DB_USERID+";";
+    // [Inline Test Statement] : Prints out connection_string : MessageBox.Show(connection_string);
+    
+    // [Opening connection with the database]
+    var connection : System.Data.SqlClient.SqlConnection;
+    connection = new System.Data.SqlClient.SqlConnection(connection_string);
+    
+    connection.Open();
+    
+    // [Opening SQL Data Reader]
+
+    // [Operation Specification] Specifying the kind of operation that happens on pressing the button 
+    var ActionOp = 'Rest_Ok';
+        
+    // [Variable Declaration] Creating holder variables that will hold the user input values in the script
+    var engine_number               : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("engine_number").ToDependencyObject();
+    var model                       : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("model").ToDependencyObject();
+    var sku                         : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("sku").ToDependencyObject();
+    var inspection_gate        	    : System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("inspection_gate").ToDependencyObject();
+    var inspection_name             : System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("inspection_name").ToDependencyObject();
+    var inspection_description      : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("inspection_description").ToDependencyObject();
+    var defect_name                 : System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("defect_name").ToDependencyObject();
+    var defect_description          : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("defect_description").ToDependencyObject();	
+    var remarks                     : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("remarks").ToDependencyObject();			
+    var engine_number_LB            : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("engine_number_LB");
+    var model_LB                    : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("model_LB");
+    var sku_LB                      : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("sku_LB");
+    var inspection_gate_LB          : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("inspection_gate_LB");
+    var inspection_name_LB          : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("inspection_name_LB");
+    var inspection_description_LB   : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("inspection_description_LB");
+    var defect_name_LB              : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("defect_name_LB");
+    var defect_description_LB       : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("defect_description_LB");
+
+    var CurrentUser : System.Windows.Controls.TextBox = ThisConfiguration.GetObjectByName("CurrentUser").ToDependencyObject();
+    var created_by 		= CurrentUser.Text;
+    
+    var defect_status = '1'
+        
+    //[Error & Exception Handling] Creating a variable for error and exception handling
+    var response		: String;
+    response="";
+    
+    // [Query String] Building Query for calling stored procedure
+    var query_string : String = "Exec [dbo].[SP_Quality_Gate] ";		
+    query_string += "@engine_number		        = '"+engine_number.Text+"',";
+    query_string += "@model				        = '"+model.Text+"',";
+    query_string += "@sku			            = '"+sku.Text+"',";
+    query_string += "@inspection_gate		    = '"+inspection_gate.Text+"',";
+    query_string += "@inspection_name		    = '"+inspection_name.Text+"',";
+    query_string += "@defect_name		        = '"+defect_name.Text+"',";
+    query_string += "@defect_status		        = '"+defect_status+"',";
+    query_string += "@remarks		            = '"+remarks.Text+"',";
+    query_string += "@created_by 			    = '"+created_by+"',";
+    query_string += "@ActionOp 				    = '"+ActionOp+"'";
+
+        //[Inline Test Statement] MessageBox.Show(query_string);
+                
+    // [Validation Statement] This if-else statement checks if any of the fields have been left empty
+    if (engine_number.Text == ""|| model.Text == ""|| sku.Text == ""|| inspection_name.Text == ""||inspection_gate.Text == ""){
+        //MessageBox.Show("Please fill in all the required values!")
+        if(engine_number.Text == "")
+        {engine_number_LB.Visible = true}
+        else
+        {engine_number_LB.Visible = false}
+        if(model.Text == "")
+        {model_LB.Visible = true}
+        else
+        {model_LB.Visible = false}
+        if(sku.Text == "")
+        {sku_LB.Visible = true}
+        else
+        {sku_LB.Visible = false}
+        if(inspection_gate.Text == "")
+        {inspection_gate_LB.Visible = true}
+        else
+        {inspection_gate_LB.Visible = false}		
+        if(inspection_name.Text == "")
+        {inspection_name_LB.Visible = true}
+        else
+        {inspection_name_LB.Visible = false}	
+    } else {
+            // [Inline Test Statement] MessageBox.Show("Thank you for filling all the required values");
+            try {
+                var reader : System.Data.SqlClient.SqlDataReader;	
+                //[Inline Test Statement] MessageBox.Show("[DEBUGGER - Screen Under Observation]\n"+query_string);
+                var stored_procedure_query : System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand(query_string, connection);					
+                reader = stored_procedure_query.ExecuteReader();
+                //Clear();
+                
+                while(reader.Read())
+                {
+                    response = reader["Response"];
+                    MessageBox.Show(response);
+                }
+                reader.Close();
+            }
+        catch(ex : Exception){
+                MessageBox.Show (ex.Message);	
+            }	
+        }							
+    // [Closing connection with the database]
+    connection.Close();
+}
+    
+    ]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="ClearCode" Type="JScriptNet">
+              <x:XData><![CDATA[function Clear(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs){		
+	
+	// [Variable Declaration] Creating holder variables that will hold the user input values in the script
+	var engine_number            : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("engine_number").ToDependencyObject();
+	var model                    : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("model").ToDependencyObject();
+	var sku                      : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("sku").ToDependencyObject();
+	var inspection_gate        	 : System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("inspection_gate").ToDependencyObject();
+	var inspection_name          : System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("inspection_name").ToDependencyObject();
+	var inspection_description   : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("inspection_description").ToDependencyObject();
+	var defect_name              : System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("defect_name").ToDependencyObject();
+	var defect_description       : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("defect_description").ToDependencyObject();	
+	var remarks                  : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("remarks").ToDependencyObject();
+	var defect_status            : System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("defect_status").ToDependencyObject();
+
+    
+	
+	inspection_gate.Items.Clear();
+	inspection_name.Items.Clear();
+	defect_name.Items.Clear();
+	defect_status.Items.Clear();
+
+	inspection_gate.SelectedIndex = 0;
+	inspection_name.SelectedIndex = 0;
+	defect_name.SelectedIndex = 0;
+	defect_status.SelectedIndex = 0;
+
+	
+	//[Variable Reset] Variables are reset here to default values
+	
+	defect_description.Clear();
+	inspection_description.Clear();
+	remarks.Clear();
+	engine_number.Clear();
+	model.Clear();
+	sku.Clear();
+	
+	ThisWindow.SetGlobalAliases("#engine_number=All;\2");
+	//[Inline Test Statemnt] MessageBox.Show('Clearing all fields');
+}]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="Database_Connection" Type="JScriptNet">
+              <x:XData><![CDATA[
+
+/*const DB_SERVER               : String = "MSI\\SQLEXPRESS2017";
+const DB_NAME                 : String = "BajajMEA";
+const DB_USERID               : String = "ks";
+const DB_PASSWORD             : String = "8101";
+var DB_CONNECT_AUTHENTICATION : String = ";User ID="+DB_USERID+";Password="+DB_PASSWORD+";";*/
+
+//[Windows Based Authentication] User is authenticated to the SQL Server based on Windows IAM
+
+const DB_SERVER               : String = "DESKTOP-BI1L6JI\\SQLEXPRESS2017";
+const DB_NAME                 : String = "BajajMEA";
+const DB_USERID               : String = "sa";
+const DB_PASSWORD             : String = "sql_1234";
+var DB_CONNECT_AUTHENTICATION : String = ";User ID="+DB_USERID+";Password="+DB_PASSWORD+";";
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="defectCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function defect_description_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{
+	var defect_description_LB    : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("defect_description_LB");
+	
+	
+    defect_description_LB.Visible        = false
+
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="Dropdown_Defect_Name" Type="JScriptNet">
+              <x:XData><![CDATA[function Dropdown_Defect_Name(sender : System.Object, e : System.EventArgs)
+{
+	var connection_string : String = "Data Source="+DB_SERVER+"; Initial Catalog="+DB_NAME+"; Password="+DB_PASSWORD+"; User ID="+DB_USERID+";";
+	// [Inline Test Statement] : Prints out connection_string : MessageBox.Show(connection_string);
+	// [Opening connection with the database]
+	var connection : System.Data.SqlClient.SqlConnection;
+	connection = new System.Data.SqlClient.SqlConnection(connection_string);		
+	connection.Open();
+	
+	// [Variable Declaration] Creating holder variables that will hold the user input values in the script
+	        var engine_number            : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("engine_number").ToDependencyObject();
+			var model             : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("model").ToDependencyObject();
+			var sku                      : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("sku").ToDependencyObject();
+			var inspection_gate        	 : System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("inspection_gate").ToDependencyObject();
+			var inspection_name          : System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("inspection_name").ToDependencyObject();
+			var inspection_description   : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("inspection_description").ToDependencyObject();
+			var defect_name              : System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("defect_name").ToDependencyObject();
+			var defect_description       : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("defect_description").ToDependencyObject();	
+			var remarks                  : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("remarks").ToDependencyObject();
+			var engine_number_LB             : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("engine_number_LB");
+            var model_LB              : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("model_LB");
+            var sku_LB                       : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("sku_LB");
+			var inspection_gate_LB           : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("inspection_gate_LB");
+			var inspection_name_LB           : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("inspection_name_LB");
+			var inspection_description_LB    : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("inspection_description_LB");
+			var defect_name_LB               : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("defect_name_LB");
+			var defect_description_LB        : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("defect_description_LB");
+	
+	defect_name_LB.Visible        = false
+	// [Array Reset] Collection arrays are reset here to default values
+	defect_name.Items.Clear();
+
+		
+	// [Setting Index] Setting Index to Zero	
+	defect_name.SelectedIndex 	    = 0;
+	defect_description.Clear();
+
+	
+	//[Retrieving Database Values ]
+	var DataReader : System.Data.SqlClient.SqlDataReader;
+    var RetrieveDataCmd: System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand("SELECT distinct defect_name from Rework_and_Reject_Defect where inspection_name='"+inspection_name.Text+"'", connection);
+    
+     try{
+                DataReader=RetrieveDataCmd.ExecuteReader();
+
+                while(DataReader.Read())
+                {
+                   defect_name.Items.Add(DataReader["defect_name"]);
+                }
+                DataReader.Close();
+                var FetchDefectDescriptionCMD : System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand("select defect_description from Rework_and_Reject_Defect where defect_name = '"+defect_name.Text+"'",connection);
+		        defect_description.Text = FetchDefectDescriptionCMD.ExecuteScalar();
+
+                connection.Close();
+                
+            }catch(ex:Exception){
+                MessageBox.Show(ex);
+            }
+
+	
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="Dropdown_Defect_Status" Type="JScriptNet">
+              <x:XData><![CDATA[function Dropdown_Defect_Status(sender : System.Object, e : System.EventArgs)
+{
+	var connection_string : String = "Data Source="+DB_SERVER+"; Initial Catalog="+DB_NAME+"; Password="+DB_PASSWORD+"; User ID="+DB_USERID+";";
+	// [Inline Test Statement] : Prints out connection_string : MessageBox.Show(connection_string);
+	// [Opening connection with the database]
+	var connection : System.Data.SqlClient.SqlConnection;
+	connection = new System.Data.SqlClient.SqlConnection(connection_string);		
+	connection.Open();
+	
+	// [Variable Declaration] Creating holder variables that will hold the user input values in the script
+			var defect_status            : System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("defect_status").ToDependencyObject();	
+			var defect_status_LB               : Ico.Gwx.GwxLabel                       = ThisConfiguration.GetObjectByName("defect_status_LB");
+
+	defect_status_LB.Visible        = false
+	// [Array Reset] Collection arrays are reset here to default values
+	defect_status.Items.Clear();
+
+		
+	// [Setting Index] Setting Index to Zero	
+	defect_status.SelectedIndex 	    = 0;
+	
+	defect_status.Items.Add('Ok');
+	defect_status.Items.Add('Not Ok');	
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="Dropdown_Inspection_Gate" Type="JScriptNet">
+              <x:XData><![CDATA[function Dropdown_Inspection_Gate(sender : System.Object, e : System.EventArgs)
+{
+	var connection_string : String = "Data Source="+DB_SERVER+"; Initial Catalog="+DB_NAME+"; Password="+DB_PASSWORD+"; User ID="+DB_USERID+";";
+	// [Inline Test Statement] : Prints out connection_string : MessageBox.Show(connection_string);
+	// [Opening connection with the database]
+	var connection : System.Data.SqlClient.SqlConnection;
+	connection = new System.Data.SqlClient.SqlConnection(connection_string);		
+	connection.Open();
+	
+	// [Variable Declaration] Creating holder variables that will hold the user input values in the script
+	       var engine_number            : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("engine_number").ToDependencyObject();
+			var model             : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("model").ToDependencyObject();
+			var sku                      : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("sku").ToDependencyObject();
+			var inspection_gate        	 : System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("inspection_gate").ToDependencyObject();
+			var inspection_name          : System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("inspection_name").ToDependencyObject();
+			var inspection_description   : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("inspection_description").ToDependencyObject();
+			var defect_name              : System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("defect_name").ToDependencyObject();
+			var defect_description       : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("defect_description").ToDependencyObject();	
+			var remarks                  : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("remarks").ToDependencyObject();			
+			var engine_number_LB             : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("engine_number_LB");
+            var model_LB              : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("model_LB");
+            var sku_LB                       : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("sku_LB");
+			var inspection_gate_LB           : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("inspection_gate_LB");
+			var inspection_name_LB           : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("inspection_name_LB");
+			var inspection_description_LB    : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("inspection_description_LB");
+			var defect_name_LB               : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("defect_name_LB");
+			var defect_description_LB        : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("defect_description_LB");
+
+			//var inspection_description_LB    : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("inspection_description_LB");
+	
+	inspection_gate_LB.Visible        = false
+
+	
+	// [Array Reset] Collection arrays are reset here to default values
+	inspection_gate.Items.Clear();
+	inspection_name.Items.Clear();
+	defect_name.Items.Clear();
+
+		
+	// [Setting Index] Setting Index to Zero	
+	inspection_gate.SelectedIndex 	    = 0;
+	inspection_name.SelectedIndex 	    = 0;
+	defect_name.SelectedIndex = 0;
+	inspection_description.Clear();
+	defect_description.Clear();
+
+
+	
+	//[Retrieving Database Values ]
+	var DataReader : System.Data.SqlClient.SqlDataReader;
+    var RetrieveDataCmd: System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand("SELECT distinct inspection_gate from Rework_and_Reject_Inspection ", connection);
+    
+     try{
+                DataReader=RetrieveDataCmd.ExecuteReader();
+
+                while(DataReader.Read())
+                {
+                   inspection_gate.Items.Add(DataReader["inspection_gate"]);
+                }
+                DataReader.Close();
+                connection.Close();
+                
+            }catch(ex:Exception){
+                MessageBox.Show(ex);
+            }
+
+
+	
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="Dropdown_Inspection_Name" Type="JScriptNet">
+              <x:XData><![CDATA[function Dropdown_Inspection_Name(sender : System.Object, e : System.EventArgs)
+{
+	var connection_string : String = "Data Source="+DB_SERVER+"; Initial Catalog="+DB_NAME+"; Password="+DB_PASSWORD+"; User ID="+DB_USERID+";";
+	// [Inline Test Statement] : Prints out connection_string : MessageBox.Show(connection_string);
+	// [Opening connection with the database]
+	var connection : System.Data.SqlClient.SqlConnection;
+	connection = new System.Data.SqlClient.SqlConnection(connection_string);		
+	connection.Open();
+	
+	// [Variable Declaration] Creating holder variables that will hold the user input values in the script
+	        var engine_number            : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("engine_number").ToDependencyObject();
+			var model             : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("model").ToDependencyObject();
+			var sku                      : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("sku").ToDependencyObject();
+			var inspection_gate        	 : System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("inspection_gate").ToDependencyObject();
+			var inspection_name          : System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("inspection_name").ToDependencyObject();
+			var inspection_description   : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("inspection_description").ToDependencyObject();
+			var defect_name              : System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("defect_name").ToDependencyObject();
+			var defect_description       : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("defect_description").ToDependencyObject();	
+			var remarks                  : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("remarks").ToDependencyObject();
+			var engine_number_LB             : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("engine_number_LB");
+            var model_LB              : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("model_LB");
+            var sku_LB                       : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("sku_LB");
+			var inspection_gate_LB           : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("inspection_gate_LB");
+			var inspection_name_LB           : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("inspection_name_LB");
+			var inspection_description_LB    : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("inspection_description_LB");
+			var defect_name_LB               : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("defect_name_LB");
+			var defect_description_LB        : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("defect_description_LB");
+	
+	inspection_name_LB.Visible        = false
+	// [Array Reset] Collection arrays are reset here to default values
+	inspection_name.Items.Clear();
+	defect_name.Items.Clear();
+
+		
+	// [Setting Index] Setting Index to Zero	
+	inspection_name.SelectedIndex 	    = 0;
+	defect_name.SelectedIndex = 0;
+	inspection_description.Clear();
+	defect_description.Clear();
+	
+	//[Retrieving Database Values ]
+	var DataReader : System.Data.SqlClient.SqlDataReader;
+    var RetrieveDataCmd: System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand("SELECT distinct inspection_name from Rework_and_Reject_Inspection where inspection_gate='"+inspection_gate.Text+"'", connection);
+    
+     try{
+                DataReader=RetrieveDataCmd.ExecuteReader();
+
+                while(DataReader.Read())
+                {
+                   inspection_name.Items.Add(DataReader["inspection_name"]);
+                }
+                DataReader.Close();
+                var FetchInspectionDescriptionCMD : System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand("select inspection_description from Rework_and_Reject_Inspection where inspection_name = '"+inspection_name.Text+"'",connection);
+		        inspection_description.Text = FetchInspectionDescriptionCMD.ExecuteScalar();
+
+                connection.Close();
+                
+            }catch(ex:Exception){
+                MessageBox.Show(ex);
+            }
+
+	
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="engineCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function engine_number_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{
+	var connection_string : String = "Data Source="+DB_SERVER+"; Initial Catalog="+DB_NAME+"; Password="+DB_PASSWORD+"; User ID="+DB_USERID+";";
+	// [Inline Test Statement] : Prints out connection_string : MessageBox.Show(connection_string);
+	// [Opening connection with the database]
+	var connection : System.Data.SqlClient.SqlConnection;
+	connection = new System.Data.SqlClient.SqlConnection(connection_string);		
+	connection.Open();
+	
+	 var engine_number            : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("engine_number").ToDependencyObject();
+			var model             : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("model").ToDependencyObject();
+			var sku                      : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("sku").ToDependencyObject();
+			var inspection_gate        	 : System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("inspection_gate").ToDependencyObject();
+			var inspection_name          : System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("inspection_name").ToDependencyObject();
+			var inspection_description   : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("inspection_description").ToDependencyObject();
+			var defect_name              : System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("defect_name").ToDependencyObject();
+			var defect_description       : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("defect_description").ToDependencyObject();	
+			var remarks                  : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("remarks").ToDependencyObject();
+			var engine_number_LB             : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("engine_number_LB");
+            var model_LB              : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("model_LB");
+            var sku_LB                       : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("sku_LB");
+			var inspection_gate_LB           : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("inspection_gate_LB");
+			var inspection_name_LB           : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("inspection_name_LB");
+			var inspection_description_LB    : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("inspection_description_LB");
+			var defect_name_LB               : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("defect_name_LB");
+			var defect_description_LB        : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("defect_description_LB");
+
+
+	//var engine_number_LB    : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("engine_number_LB");
+    engine_number_LB.Visible        = false
+
+    ThisWindow.SetGlobalAliases("#engine_number="+ engine_number.Text + ";\2");
+
+    
+   //[Retrieving Database Values ]
+	
+                var FetchModelCMD : System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand("select model_description from [dbo].[Config_Model] where model_id in (select model from OrderManagement_Engine_WIP where engine_number = '"+engine_number.Text+"')",connection);
+		        model.Text = FetchModelCMD.ExecuteScalar();
+		        
+		        var FetchSKUCMD : System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand("select sku_code from [dbo].[Config_SKU] where sku_id in (select sku from OrderManagement_Engine_WIP where engine_number = '"+engine_number.Text+"')",connection);
+		        sku.Text = FetchSKUCMD.ExecuteScalar();
+
+
+                connection.Close();
+       
+
+    
+
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="GridCode" Type="JScriptNet">
+              <x:XData><![CDATA[function Grid(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs)
+{
+	
+	// [Variable Declaration] Creating holder variables that will hold the user input values in the script
+    var engine_number            : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("engine_number").ToDependencyObject();
+	var model             : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("model").ToDependencyObject();
+	var sku                      : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("sku").ToDependencyObject();
+	var inspection_gate        	 : System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("inspection_gate").ToDependencyObject();
+	var inspection_name          : System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("inspection_name").ToDependencyObject();
+	var inspection_description   : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("inspection_description").ToDependencyObject();
+	var defect_name              : System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("defect_name").ToDependencyObject();
+	var defect_description       : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("defect_description").ToDependencyObject();	
+	var remarks                  : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("remarks").ToDependencyObject();
+	var defect_status            : System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("defect_status").ToDependencyObject();
+
+	
+				
+	//[Grid Selection Code]
+	var gdxViewer		: Ico.Gdx.GdxViewControl = Ico.Gdx.GdxViewControl(ThisConfiguration.GetObjectByName("default_grid").ToDependencyObject());
+	var tab_list 		: ItemsControl = ItemsControl(gdxViewer.Items[0]);
+	var grid_list 		: Ico.Gdx.GdxGridView = Ico.Gdx.GdxGridView(tab_list.Items[0]);
+	var Row_Selected 	: DataRow;
+	Row_Selected = grid_list.GetHighlightedRow();
+		
+	if(grid_list.GetHighlightedRow() != null)
+	{
+			if (Row_Selected.Item[0] != String.IsNullOrEmpty){
+				
+				Dropdown_Inspection_Gate();	
+				inspection_gate.SelectedValue = Row_Selected.Item[1];
+				
+				Dropdown_Inspection_Name();	
+				inspection_name.SelectedValue = Row_Selected.Item[2];
+				
+				Dropdown_Defect_Name();	
+				defect_name.SelectedValue = Row_Selected.Item[4];
+				
+				Dropdown_Defect_Status();
+				if (Row_Selected.Item[7] == 0){
+					defect_status.SelectedValue ='Ok'
+				}
+				else if(Row_Selected.Item[7] == 1){
+					defect_status.SelectedValue ='Not Ok'
+				}
+	
+				
+				
+				inspection_description.Text = Row_Selected.Item[3];
+
+								
+				defect_description.Text = Row_Selected.Item[5];	
+				remarks.Text = Row_Selected.Item[8];	
+				engine_number.Text = Row_Selected.Item[9];	
+				sku.Text = Row_Selected.Item[11];	
+				model.Text = Row_Selected.Item[10];	
+				
+					
+			}
+	}
+}]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="inspectionCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function inspection_description_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{
+	var inspection_description_LB    : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("inspection_description_LB");
+	
+	
+    inspection_description_LB.Visible        = false
+
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="JScriptDotNetGlobalVariablesCode" Type="JScriptNet" EditorBrowsable="Never">
+              <x:XData><![CDATA[
+var ThisWindow : Ico.Gwx.GwxRuntimeViewControl;
+var ThisDocument : Ico.Gwx.GwxDocument;
+var ThisConfiguration : Ico.Gwx.GwxConfiguration;
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="modelCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function model_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{
+	var model_LB    : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("model_LB");
+	
+	
+    model_LB.Visible        = false
+
+
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="REST_OK" Type="JScriptNet">
+              <x:XData><![CDATA[function Rest_Ok(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs){
+		
+		var connection_string : String = "Data Source="+DB_SERVER+"; Initial Catalog="+DB_NAME+"; Password="+DB_PASSWORD+"; User ID="+DB_USERID+";";
+		// [Inline Test Statement] : Prints out connection_string : MessageBox.Show(connection_string);
+		
+		// [Opening connection with the database]
+		var connection : System.Data.SqlClient.SqlConnection;
+		connection = new System.Data.SqlClient.SqlConnection(connection_string);
+		
+		connection.Open();
+		
+		// [Opening SQL Data Reader]
+
+		
+			// [Operation Specification] Specifying the kind of operation that happens on pressing the button 
+			var ActionOp = 'Rest_Ok';
+			
+			// [Variable Declaration] Creating holder variables that will hold the user input values in the script
+			var engine_number            : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("engine_number").ToDependencyObject();
+			var model             : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("model").ToDependencyObject();
+			var sku                      : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("sku").ToDependencyObject();
+			var inspection_gate        	 : System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("inspection_gate").ToDependencyObject();
+			var inspection_name          : System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("inspection_name").ToDependencyObject();
+			var inspection_description   : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("inspection_description").ToDependencyObject();
+			var defect_name              : System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("defect_name").ToDependencyObject();
+			var defect_description       : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("defect_description").ToDependencyObject();	
+			var remarks                  : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("remarks").ToDependencyObject();			
+			var engine_number_LB             : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("engine_number_LB");
+            var model_LB              : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("model_LB");
+            var sku_LB                       : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("sku_LB");
+			var inspection_gate_LB           : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("inspection_gate_LB");
+			var inspection_name_LB           : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("inspection_name_LB");
+			var inspection_description_LB    : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("inspection_description_LB");
+			var defect_name_LB               : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("defect_name_LB");
+			var defect_description_LB        : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("defect_description_LB");
+
+
+		
+			var CurrentUser : System.Windows.Controls.TextBox = ThisConfiguration.GetObjectByName("CurrentUser").ToDependencyObject();
+			var created_by 		= CurrentUser.Text;
+			
+			var defect_status = '1'
+	
+			
+			//[Error & Exception Handling] Creating a variable for error and exception handling
+			var response		: String;
+			response="";
+			
+			// [Query String] Building Query for calling stored procedure
+			var query_string : String = "Exec [dbo].[SP_Quality_Gate] ";		
+			query_string += "@engine_number		        = '"+engine_number.Text+"',";
+			query_string += "@model				        = '"+model.Text+"',";
+			query_string += "@sku			            = '"+sku.Text+"',";
+			query_string += "@inspection_gate		    = '"+inspection_gate.Text+"',";
+			query_string += "@inspection_name		    = '"+inspection_name.Text+"',";
+			query_string += "@defect_name		        = '"+defect_name.Text+"',";
+			query_string += "@defect_status		        = '"+defect_status+"',";
+			query_string += "@remarks		            = '"+remarks.Text+"',";
+			query_string += "@created_by 			    = '"+created_by+"',";
+			query_string += "@ActionOp 				    = '"+ActionOp+"'";
+	
+			//[Inline Test Statement] MessageBox.Show(query_string);
+					
+			// [Validation Statement] This if-else statement checks if any of the fields have been left empty
+			if (engine_number.Text == ""|| model.Text == ""|| sku.Text == ""|| inspection_name.Text == ""||inspection_gate.Text == ""){
+					//MessageBox.Show("Please fill in all the required values!")
+					
+				if(engine_number.Text == "")
+				{engine_number_LB.Visible = true}
+				else
+				{engine_number_LB.Visible = false}
+
+			    if(model.Text == "")
+				{model_LB.Visible = true}
+				else
+				{model_LB.Visible = false}
+ 
+			    if(sku.Text == "")
+				{sku_LB.Visible = true}
+				else
+				{sku_LB.Visible = false}
+
+					
+				if(inspection_gate.Text == "")
+				{inspection_gate_LB.Visible = true}
+				else
+				{inspection_gate_LB.Visible = false}
+				
+				        		
+				if(inspection_name.Text == "")
+				{inspection_name_LB.Visible = true}
+				else
+				{inspection_name_LB.Visible = false}
+	
+				
+				
+
+
+				
+				} else {
+					// [Inline Test Statement] MessageBox.Show("Thank you for filling all the required values");
+					try {
+						var reader : System.Data.SqlClient.SqlDataReader;	
+						//[Inline Test Statement] MessageBox.Show("[DEBUGGER - Screen Under Observation]\n"+query_string);
+						var stored_procedure_query : System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand(query_string, connection);					
+						reader = stored_procedure_query.ExecuteReader();
+						Clear();
+						
+						while(reader.Read())
+						{
+							response = reader["Response"];
+							MessageBox.Show(response);
+						}
+						reader.Close();
+						
+				   
+						
+					}
+				catch(ex : Exception){
+						MessageBox.Show (ex.Message);	
+					}	
+				}			
+								
+		// [Closing connection with the database]
+		
+		
+		connection.Close();
+		
+	}]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="SAVE" Type="JScriptNet">
+              <x:XData><![CDATA[function Save(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs){
+		
+		var connection_string : String = "Data Source="+DB_SERVER+"; Initial Catalog="+DB_NAME+"; Password="+DB_PASSWORD+"; User ID="+DB_USERID+";";
+		// [Inline Test Statement] : Prints out connection_string : MessageBox.Show(connection_string);
+		
+		// [Opening connection with the database]
+		var connection : System.Data.SqlClient.SqlConnection;
+		connection = new System.Data.SqlClient.SqlConnection(connection_string);
+		
+		connection.Open();
+		
+		// [Opening SQL Data Reader]
+
+		
+			// [Operation Specification] Specifying the kind of operation that happens on pressing the button 
+			var ActionOp = 'Save';
+			
+			// [Variable Declaration] Creating holder variables that will hold the user input values in the script
+			var engine_number            : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("engine_number").ToDependencyObject();
+			var model             : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("model").ToDependencyObject();
+			var sku                      : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("sku").ToDependencyObject();
+			var inspection_gate        	 : System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("inspection_gate").ToDependencyObject();
+			var inspection_name          : System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("inspection_name").ToDependencyObject();
+			var inspection_description   : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("inspection_description").ToDependencyObject();
+			var defect_name              : System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("defect_name").ToDependencyObject();
+			var defect_description       : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("defect_description").ToDependencyObject();	
+			var remarks                  : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("remarks").ToDependencyObject();			
+			var defect_status            : System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("defect_status").ToDependencyObject();
+			var engine_number_LB             : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("engine_number_LB");
+            var model_LB              : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("model_LB");
+            var sku_LB                       : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("sku_LB");
+			var inspection_gate_LB           : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("inspection_gate_LB");
+			var inspection_name_LB           : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("inspection_name_LB");
+			var inspection_description_LB    : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("inspection_description_LB");
+			var defect_name_LB               : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("defect_name_LB");
+			var defect_description_LB        : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("defect_description_LB");
+
+
+		
+			var CurrentUser : System.Windows.Controls.TextBox = ThisConfiguration.GetObjectByName("CurrentUser").ToDependencyObject();
+			var created_by 		= CurrentUser.Text;
+			
+	
+			
+			//[Error & Exception Handling] Creating a variable for error and exception handling
+			var response		: String;
+			response="";
+			
+			// [Query String] Building Query for calling stored procedure
+			var query_string : String = "Exec [dbo].[SP_Quality_Gate] ";		
+			query_string += "@engine_number		        = '"+engine_number.Text+"',";
+			query_string += "@model				        = '"+model.Text+"',";
+			query_string += "@sku			            = '"+sku.Text+"',";
+			query_string += "@inspection_gate		    = '"+inspection_gate.Text+"',";
+			query_string += "@inspection_name		    = '"+inspection_name.Text+"',";
+			query_string += "@defect_name		        = '"+defect_name.Text+"',";
+			query_string += "@defect_status		        = '"+defect_status.Text+"',";
+			query_string += "@remarks		            = '"+remarks.Text+"',";
+			query_string += "@created_by 			    = '"+created_by+"',";
+			query_string += "@ActionOp 				    = '"+ActionOp+"'";
+	
+			//[Inline Test Statement] 
+					MessageBox.Show(query_string);
+					
+			// [Validation Statement] This if-else statement checks if any of the fields have been left empty
+			if (engine_number.Text == ""|| model.Text == ""|| sku.Text == ""|| inspection_name.Text == ""||inspection_gate.Text == ""|| defect_name.Text == "" ){
+					//MessageBox.Show("Please fill in all the required values!")
+					
+				if(engine_number.Text == "")
+				{engine_number_LB.Visible = true}
+				else
+				{engine_number_LB.Visible = false}
+
+			    if(model.Text == "")
+				{model_LB.Visible = true}
+				else
+				{model_LB.Visible = false}
+ 
+			    if(sku.Text == "")
+				{sku_LB.Visible = true}
+				else
+				{sku_LB.Visible = false}
+
+					
+				if(inspection_gate.Text == "")
+				{inspection_gate_LB.Visible = true}
+				else
+				{inspection_gate_LB.Visible = false}
+				
+				        		
+				if(inspection_name.Text == "")
+				{inspection_name_LB.Visible = true}
+				else
+				{inspection_name_LB.Visible = false}
+				
+				if(inspection_description.Text == "")
+				{inspection_description_LB.Visible = true}
+				else
+				{inspection_description_LB.Visible = false}
+				
+				if(defect_name.Text == "")
+				{defect_name_LB.Visible = true}
+				else					
+				{defect_name_LB.Visible = false}
+				
+				if(defect_description.Text == "")
+				{defect_description_LB.Visible = true}
+				else
+				{defect_description_LB.Visible = false}
+
+				
+				
+
+
+				
+				} else {
+					// [Inline Test Statement] MessageBox.Show("Thank you for filling all the required values");
+					try {
+						var reader : System.Data.SqlClient.SqlDataReader;	
+						//[Inline Test Statement] MessageBox.Show("[DEBUGGER - Screen Under Observation]\n"+query_string);
+						var stored_procedure_query : System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand(query_string, connection);					
+						reader = stored_procedure_query.ExecuteReader();
+						//Clear();
+						
+						while(reader.Read())
+						{
+							response = reader["Response"];
+							MessageBox.Show(response);
+						}
+						reader.Close();
+						
+				   
+						
+					}
+				catch(ex : Exception){
+						MessageBox.Show (ex.Message);	
+					}	
+				}			
+								
+		// [Closing connection with the database]
+		
+		
+		connection.Close();
+		
+	}]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="skuCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function sku_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{
+	var sku_LB    : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("sku_LB");
+	
+	
+    sku_LB.Visible        = false
+
+
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="UPDATE" Type="JScriptNet">
+              <x:XData><![CDATA[function Update(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs){
+		
+		var connection_string : String = "Data Source="+DB_SERVER+"; Initial Catalog="+DB_NAME+"; Password="+DB_PASSWORD+"; User ID="+DB_USERID+";";
+		// [Inline Test Statement] : Prints out connection_string : MessageBox.Show(connection_string);
+		
+		// [Opening connection with the database]
+		var connection : System.Data.SqlClient.SqlConnection;
+		connection = new System.Data.SqlClient.SqlConnection(connection_string);
+		
+		connection.Open();
+		
+		// [Opening SQL Data Reader]
+
+		
+			// [Operation Specification] Specifying the kind of operation that happens on pressing the button 
+			var ActionOp = 'Update';
+			
+			// [Variable Declaration] Creating holder variables that will hold the user input values in the script
+			var engine_number            : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("engine_number").ToDependencyObject();
+			var model             : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("model").ToDependencyObject();
+			var sku                      : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("sku").ToDependencyObject();
+			var inspection_gate        	 : System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("inspection_gate").ToDependencyObject();
+			var inspection_name          : System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("inspection_name").ToDependencyObject();
+			var inspection_description   : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("inspection_description").ToDependencyObject();
+			var defect_name              : System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("defect_name").ToDependencyObject();
+			var defect_description       : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("defect_description").ToDependencyObject();	
+			var remarks                  : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("remarks").ToDependencyObject();			
+			var defect_status            : System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("defect_status").ToDependencyObject();
+			var engine_number_LB             : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("engine_number_LB");
+            var model_LB              : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("model_LB");
+            var sku_LB                       : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("sku_LB");
+			var inspection_gate_LB           : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("inspection_gate_LB");
+			var inspection_name_LB           : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("inspection_name_LB");
+			var inspection_description_LB    : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("inspection_description_LB");
+			var defect_name_LB               : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("defect_name_LB");
+			var defect_description_LB        : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("defect_description_LB");
+			var defect_status_LB        : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("defect_status_LB");
+
+
+
+		
+			var CurrentUser : System.Windows.Controls.TextBox = ThisConfiguration.GetObjectByName("CurrentUser").ToDependencyObject();
+			var created_by 		= CurrentUser.Text;
+			
+			
+	
+			
+			//[Error & Exception Handling] Creating a variable for error and exception handling
+			var response		: String;
+			response="";
+			
+			// [Query String] Building Query for calling stored procedure
+			var query_string : String = "Exec [dbo].[SP_Quality_Gate] ";		
+			query_string += "@engine_number		        = '"+engine_number.Text+"',";
+			query_string += "@model				        = '"+model.Text+"',";
+			query_string += "@sku			            = '"+sku.Text+"',";
+			query_string += "@inspection_gate		    = '"+inspection_gate.Text+"',";
+			query_string += "@inspection_name		    = '"+inspection_name.Text+"',";
+			query_string += "@defect_name		        = '"+defect_name.Text+"',";
+			query_string += "@defect_status		        = '"+defect_status.Text+"',";
+			query_string += "@remarks		            = '"+remarks.Text+"',";
+			query_string += "@created_by 			    = '"+created_by+"',";
+			query_string += "@ActionOp 				    = '"+ActionOp+"'";
+	
+			//[Inline Test Statement] MessageBox.Show(query_string);
+					
+			// [Validation Statement] This if-else statement checks if any of the fields have been left empty
+			if (engine_number.Text == ""|| model.Text == ""|| sku.Text == ""|| inspection_name.Text == ""||inspection_gate.Text == "" || defect_name.Text == "" || defect_status.Text == "" ){
+					//MessageBox.Show("Please fill in all the required values!")
+					
+				if(engine_number.Text == "")
+				{engine_number_LB.Visible = true}
+				else
+				{engine_number_LB.Visible = false}
+
+			    if(model.Text == "")
+				{model_LB.Visible = true}
+				else
+				{model_LB.Visible = false}
+ 
+			    if(sku.Text == "")
+				{sku_LB.Visible = true}
+				else
+				{sku_LB.Visible = false}
+
+					
+				if(inspection_gate.Text == "")
+				{inspection_gate_LB.Visible = true}
+				else
+				{inspection_gate_LB.Visible = false}
+				
+				        		
+				if(inspection_name.Text == "")
+				{inspection_name_LB.Visible = true}
+				else
+				{inspection_name_LB.Visible = false}
+				
+				if(inspection_description.Text == "")
+				{inspection_description_LB.Visible = true}
+				else
+				{inspection_description_LB.Visible = false}
+				
+				if(defect_name.Text == "")
+				{defect_name_LB.Visible = true}
+				else					
+				{defect_name_LB.Visible = false}
+				
+				if(defect_status.Text == "")
+				{defect_status_LB.Visible = true}
+				else					
+				{defect_status_LB.Visible = false}
+
+				
+				if(defect_description.Text == "")
+				{defect_description_LB.Visible = true}
+				else
+				{defect_description_LB.Visible = false}
+
+				
+				
+
+
+				
+				} else {
+					// [Inline Test Statement] MessageBox.Show("Thank you for filling all the required values");
+					try {
+						var reader : System.Data.SqlClient.SqlDataReader;	
+						//[Inline Test Statement] MessageBox.Show("[DEBUGGER - Screen Under Observation]\n"+query_string);
+						var stored_procedure_query : System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand(query_string, connection);					
+						reader = stored_procedure_query.ExecuteReader();
+						//Clear();
+						
+						while(reader.Read())
+						{
+							response = reader["Response"];
+							MessageBox.Show(response);
+						}
+						reader.Close();
+						
+				   
+						
+					}
+				catch(ex : Exception){
+						MessageBox.Show (ex.Message);	
+					}	
+				}			
+								
+		// [Closing connection with the database]
+		
+		
+		connection.Close();
+		
+	}]]></x:XData>
+            </script:ScriptCode>
+          </script:ScriptCodeManager.Scripts>
+          <script:ScriptCodeManager.AssemblyReferences>
+            <ic:AssemblyReference AssemblyName="mscorlib" />
+            <ic:AssemblyReference AssemblyName="System" />
+            <ic:AssemblyReference AssemblyName="System.Core" />
+            <ic:AssemblyReference AssemblyName="System.Data" />
+            <ic:AssemblyReference AssemblyName="System.Xml" />
+            <ic:AssemblyReference AssemblyName="System.Drawing" />
+            <ic:AssemblyReference AssemblyName="System.Windows.Forms" />
+            <ic:AssemblyReference AssemblyName="WindowsBase" />
+            <ic:AssemblyReference AssemblyName="PresentationCore" />
+            <ic:AssemblyReference AssemblyName="PresentationFramework" />
+            <ic:AssemblyReference AssemblyName="GwxRuntimeCore" />
+            <ic:AssemblyReference AssemblyName="GwxRuntimeCoreCommands" />
+            <ic:AssemblyReference AssemblyName="GwxRuntimeViewControl" />
+            <ic:AssemblyReference AssemblyName="GwxConfigCore" />
+            <ic:AssemblyReference AssemblyName="IcoComponentModel" />
+            <ic:AssemblyReference AssemblyName="IcoFwxClientWrapper" />
+            <ic:AssemblyReference AssemblyName="GdxViewControl" AssemblyCodebase="file:///C:/Program Files/MELSOFT/MC Works64/Components/GdxViewControl.DLL" />
+            <ic:AssemblyReference AssemblyName="IcoWPFSpecialized" AssemblyCodebase="file:///C:/Program Files/MELSOFT/MC Works64/Components/IcoWPFSpecialized.DLL" />
+            <ic:AssemblyReference AssemblyName="IcoCommonCore.Net" />
+          </script:ScriptCodeManager.AssemblyReferences>
+        </script:ScriptCodeManager>
+      </gwx:GwxDocument.ScriptCodeManager>
+      <gwx:GwxDocument.EventBindings>
+        <script:ScriptEventBindings>
+          <script:ScriptEventBindings.EventBindings>
+            <x:Array Type="script:ScriptEventBinding">
+              <script:ScriptEventBinding EventName="AnimationStopped" MethodName="ThisDisplay_AnimationStopped" ScriptType="JScriptNet" />
+              <script:ScriptEventBinding EventName="AnimationStarted" MethodName="ThisDisplay_AnimationStarted" ScriptType="JScriptNet" />
+              <script:ScriptEventBinding EventName="AnimationStarting" MethodName="Clear" ScriptType="JScriptNet" />
+            </x:Array>
+          </script:ScriptEventBindings.EventBindings>
+        </script:ScriptEventBindings>
+      </gwx:GwxDocument.EventBindings>
+      <gwx:GwxDocument.RuntimeWindowProperties>
+        <gwx:GwxWindowProperties LeftString="0%" TopString="0%" WindowState="Maximized" WidthString="100%" HeightString="100%" ControlBox="False" MaximizeBox="False" MinimizeBox="False" HorizontalScrollVisible="Hidden" VerticalScrollVisible="Hidden" MenuVisible="False" ShowContextMenu="False" NavigationBarVisible="False" StatusBarVisible="False" TitleBarVisible="False" OuterBorder="False" Resizable="False" InnerBorder="False" CommandingEnabled="False" DragAndDropCommandingEnabled="False" />
+      </gwx:GwxDocument.RuntimeWindowProperties>
+      <gwx:GwxDocument.ToolTipOptions>
+        <gwx:GwxToolTipOptions ShowToolTips="False" />
+      </gwx:GwxDocument.ToolTipOptions>
+    </gwx:GwxDocument>
+  </gwx:GwxDocument.GwxDocument>
+  <Rectangle Stroke="#FF000000" Width="1100" Height="30" Canvas.Left="0" Canvas.Top="300">
+    <Rectangle.Fill>
+      <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+        <LinearGradientBrush.GradientStops>
+          <GradientStop Color="#FFF5F5F5" Offset="0" />
+          <GradientStop Color="#FFEBEBEB" Offset="0.49" />
+          <GradientStop Color="#FFE1E1E1" Offset="0.51" />
+          <GradientStop Color="#FFCDCDCD" Offset="1" />
+        </LinearGradientBrush.GradientStops>
+        <LinearGradientBrush.RelativeTransform>
+          <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+        </LinearGradientBrush.RelativeTransform>
+      </LinearGradientBrush>
+    </Rectangle.Fill>
+  </Rectangle>
+  <ig:GdxViewControl FileVersion="10.97.020.00" FontFamily="Segoe UI" FontSize="12" IsTabStop="True" Name="default_grid" Width="1100" Height="428" Canvas.Left="0" Canvas.Top="300" gwx:GwxProperties.Description="Grid Size=H:443,W:1100&#xD;&#xA;Position=X:0,Y:300&#xD;&#xA;Grid Header Font=Style :Calibri,Size:17,Color:White&#xD;&#xA;Grid Header Background color=R :0,G : 24,B :72&#xD;&#xA;Grid Text Font=Style :Calibri,Size:16,Color:White&#xD;&#xA;Grid Scrolbar Foreground color=R :0,G : 24,B :72&#xD;&#xA;" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <ig:GdxViewControl.DataDictionaryRepository>
+      <ig12:DataDictionary Name="DailyStatus" Key="47993581">
+        <ig12:TextDataTranslation Text="Applicable" FilterKey="15056362" />
+        <ig12:TextDataTranslation Text="Not Applicable" FilterKey="49320909" />
+      </ig12:DataDictionary>
+      <ig12:DataDictionary Name="WeeklyStatus" Key="53237738">
+        <ig12:TextDataTranslation Text="Applicable" FilterKey="61233639" />
+        <ig12:TextDataTranslation Text="Not Applicable" FilterKey="49445506" />
+      </ig12:DataDictionary>
+      <ig12:DataDictionary Name="MonthlyStatus" Key="27952209">
+        <ig12:TextDataTranslation Text="Applicable" FilterKey="1264671" />
+        <ig12:TextDataTranslation Text="Not Applicable" FilterKey="35726287" />
+      </ig12:DataDictionary>
+      <ig12:DataDictionary Name="AnnualStatus" Key="63571381">
+        <ig12:TextDataTranslation Text="Applicable" FilterKey="54214786" />
+        <ig12:TextDataTranslation Text="Not Applicable" FilterKey="47842506" />
+      </ig12:DataDictionary>
+      <ig12:DataDictionary Name="defect_status_text" Key="64518898">
+        <ig12:TextDataTranslation Text="Ok" FilterKey="27835406" />
+        <ig12:TextDataTranslation Text="Not Ok" FilterKey="10503126" />
+      </ig12:DataDictionary>
+    </ig:GdxViewControl.DataDictionaryRepository>
+    <ig:GdxViewControl.FiltersRepository>
+      <igd:GdxFilter Key="49320909" Expression="x={{Daily}}==0" Name="Daily_Not Applicable" />
+      <igd:GdxFilter Key="15056362" Expression="x={{Daily}}==1" Name="Daily_Applicable" />
+      <igd:GdxFilter Key="61233639" Expression="x={{Weekly}}==1" Name="Weekly_Applicable" />
+      <igd:GdxFilter Key="49445506" Expression="x={{Weekly}}==0" Name="Weekly_Not Applicable" />
+      <igd:GdxFilter Key="1264671" Expression="x={{Monthly}}==1" Name="Monthly_Applicable" />
+      <igd:GdxFilter Key="35726287" Expression="x={{Monthly}}==0" Name="Monthly_Not Applicable" />
+      <igd:GdxFilter Key="54214786" Expression="x={{Annual}}==1" Name="Annual_Applicable" />
+      <igd:GdxFilter Key="47842506" Expression="x={{Annual}}==0" Name="Annual_Not Applicable" />
+      <igd:GdxFilter Key="27835406" Expression="x={{defect_status}} == 0" Name="defect_ok" />
+      <igd:GdxFilter Key="10503126" Expression="x={{defect_status}} == 1" Name="defect_not_ok" />
+    </ig:GdxViewControl.FiltersRepository>
+    <ig:GdxViewControl.SubscriptionsRepository>
+      <igd:GdxSubscription Key="11348180" Name="New Subscription">
+        <igd:GdxSubscription.Fields>
+          <igd:GdxDataField Key="RowID" BuiltInType="Int64" />
+          <igd:GdxDataField Key="AssetID" />
+          <igd:GdxDataField Key="AssetName" />
+          <igd:GdxDataField Key="AssemblyID" />
+          <igd:GdxDataField Key="AssemblyName" />
+          <igd:GdxDataField Key="SubAssemblyID" />
+          <igd:GdxDataField Key="SubAssemblyName" />
+          <igd:GdxDataField Key="ComponentID" />
+          <igd:GdxDataField Key="ComponentName" />
+        </igd:GdxSubscription.Fields>
+        <igd:GdxSubscription.Tags>
+          <s:String>db:CumiMetz. GridAssetComponentInfo</s:String>
+        </igd:GdxSubscription.Tags>
+      </igd:GdxSubscription>
+      <igd:GdxSubscription Key="3170613" Name="New Subscription">
+        <igd:GdxSubscription.Fields>
+          <igd:GdxDataField Key="RowID" BuiltInType="Int64" />
+          <igd:GdxDataField Key="TimeStamp" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="AssetName" />
+          <igd:GdxDataField Key="StartDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="Daily" BuiltInType="Int32" />
+          <igd:GdxDataField Key="Weekly" BuiltInType="Int32" />
+          <igd:GdxDataField Key="WLastDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="WNextDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="WWarning" BuiltInType="Int32" />
+          <igd:GdxDataField Key="Monthly" BuiltInType="Int32" />
+          <igd:GdxDataField Key="MLastDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="MNextDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="MWarning" BuiltInType="Int32" />
+          <igd:GdxDataField Key="Annual" BuiltInType="Int32" />
+          <igd:GdxDataField Key="ALastDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="ANextDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="AWarning" BuiltInType="Int32" />
+          <igd:GdxDataField Key="Maintenancetype" BuiltInType="Int32" />
+        </igd:GdxSubscription.Fields>
+        <igd:GdxSubscription.Tags>
+          <s:String>db:CumiMetz.GridPreventive</s:String>
+        </igd:GdxSubscription.Tags>
+      </igd:GdxSubscription>
+      <igd:GdxSubscription Key="706558" Name="New Subscription">
+        <igd:GdxSubscription.Fields>
+          <igd:GdxDataField Key="RowID" BuiltInType="Int64" />
+          <igd:GdxDataField Key="TimeStamp" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="AssetID" />
+          <igd:GdxDataField Key="AssetName" />
+          <igd:GdxDataField Key="StartDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="Daily" BuiltInType="Int32" />
+          <igd:GdxDataField Key="Weekly" BuiltInType="Int32" />
+          <igd:GdxDataField Key="WLastDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="WNextDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="WWarning" BuiltInType="Int32" />
+          <igd:GdxDataField Key="Monthly" BuiltInType="Int32" />
+          <igd:GdxDataField Key="MLastDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="MNextDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="MWarning" BuiltInType="Int32" />
+          <igd:GdxDataField Key="Annual" BuiltInType="Int32" />
+          <igd:GdxDataField Key="ALastDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="ANextDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="AWarning" BuiltInType="Int32" />
+          <igd:GdxDataField Key="Maintenancetype" BuiltInType="Int32" />
+        </igd:GdxSubscription.Fields>
+        <igd:GdxSubscription.Tags>
+          <s:String>db:CumiMetz.GridPreventive</s:String>
+        </igd:GdxSubscription.Tags>
+      </igd:GdxSubscription>
+      <igd:GdxSubscription Key="14152581" Name="New Subscription" />
+      <igd:GdxSubscription Key="20377050" Name="New Subscription" />
+      <igd:GdxSubscription Key="50563150" Name="New Subscription" />
+      <igd:GdxSubscription Key="31069067" Name="New Subscription" />
+      <igd:GdxSubscription Key="47810060" Name="New Subscription" />
+      <igd:GdxSubscription Key="34997618" Name="New Subscription">
+        <igd:GdxSubscription.Fields>
+          <igd:GdxDataField Key="uid" BuiltInType="Int32" />
+          <igd:GdxDataField Key="inspection_gate" />
+          <igd:GdxDataField Key="inspection_name" />
+          <igd:GdxDataField Key="inspection_description" />
+          <igd:GdxDataField Key="defect_name" />
+          <igd:GdxDataField Key="defect_description" />
+          <igd:GdxDataField Key="q_alert_stage" />
+          <igd:GdxDataField Key="defect_status" BuiltInType="Int32" />
+          <igd:GdxDataField Key="remarks" />
+          <igd:GdxDataField Key="engine_number" />
+          <igd:GdxDataField Key="model" />
+          <igd:GdxDataField Key="sku" />
+          <igd:GdxDataField Key="created_by" />
+          <igd:GdxDataField Key="created_on" BuiltInType="DateTime" />
+        </igd:GdxSubscription.Fields>
+        <igd:GdxSubscription.Tags>
+          <s:String>db:BajajMEA.Rework_and_Reject_Quality_Gate&lt;@engine_number="&lt;#engine_number#&gt;"&gt;</s:String>
+        </igd:GdxSubscription.Tags>
+      </igd:GdxSubscription>
+    </ig:GdxViewControl.SubscriptionsRepository>
+    <ig:GdxViewControl.Header>
+      <TextBlock Text="Quality Gate  Configuration" FontFamily="Calibri" FontStyle="Normal" FontWeight="Bold" FontSize="19" Foreground="#FF001848" Padding="0,0,0,0" TextAlignment="Center" Visibility="Visible" />
+    </ig:GdxViewControl.Header>
+    <ig:GdxViewControl.Items>
+      <iwc:MultipleTabItem IsSelected="True" Header="Tab" FontFamily="Calibri" FontSize="16">
+        <ig:GdxGridView HeaderBackground="#FF001848" HeaderBorderBrush="#FFC6C7B5" HeaderCellBorderThickness="0,0,0,0" HeaderFontFamily="Calibri" HeaderFontSize="17" HeaderMouseOverForeground="#FFFFFFFF" HeaderMouseOverBorderBrush="#FF000000" HeaderSelectedForeground="#FFFFFFFF" HeaderSelectedBorderBrush="#FF000000" GroupHeaderBorderBrush="#FFD8D8D8" GroupHeaderBackground="#FFD8D8D8" GroupHeaderForeground="#FFFFFFFF" RowHeaderBackground="#FFD8D8D8" RowHeaderBorderBrush="#FFD8D8D8" RowHeaderCellBorderBrush="#FF626262" RowHeaderBorderThickness="0,0,1,2" RowHeight="25" ScrollBarBackground="#FFD8D8D8" ScrollBarForeground="#FF001848" ScrollBarMouseOverForeground="#FF171F31" ScrollBarMousePressedForeground="#FF171F31" ScrollBarBorderBrush="#FF373D54" ScrollBarMouseOverBorderBrush="#FF229EC8" DateTimeFormat="d" DoubleFormat="N0" SubscriptionID="34997618" AllowPaging="False" BorderBrush="#FFA5B6CB" BorderThickness="0,0,0,0" Background="#FFFFFFFF" FontFamily="Calibri" FontSize="16" Uid="local:GdxView_1">
+          <ig:GdxGridView.HeaderMouseOverBackground>
+            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+              <LinearGradientBrush.GradientStops>
+                <GradientStop Color="#FF8993A2" Offset="0" />
+                <GradientStop Color="#FF545F6D" Offset="0.5" />
+                <GradientStop Color="#FF0C1C32" Offset="0.51" />
+                <GradientStop Color="#FF132F54" Offset="1" />
+              </LinearGradientBrush.GradientStops>
+              <LinearGradientBrush.RelativeTransform>
+                <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+              </LinearGradientBrush.RelativeTransform>
+            </LinearGradientBrush>
+          </ig:GdxGridView.HeaderMouseOverBackground>
+          <ig:GdxGridView.HeaderSelectedBackground>
+            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+              <LinearGradientBrush.GradientStops>
+                <GradientStop Color="#FF6078C8" Offset="0" />
+                <GradientStop Color="#FF4961B2" Offset="0.4" />
+                <GradientStop Color="#FF16399C" Offset="0.41" />
+                <GradientStop Color="#FF16399C" Offset="0.74" />
+                <GradientStop Color="#FF173C9F" Offset="0.75" />
+                <GradientStop Color="#FF39C0DC" Offset="1" />
+              </LinearGradientBrush.GradientStops>
+              <LinearGradientBrush.RelativeTransform>
+                <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+              </LinearGradientBrush.RelativeTransform>
+            </LinearGradientBrush>
+          </ig:GdxGridView.HeaderSelectedBackground>
+          <ig:GdxGridView.MouseOverBackground>
+            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="0.3">
+              <LinearGradientBrush.GradientStops>
+                <GradientStop Color="#FF6078C8" Offset="0" />
+                <GradientStop Color="#FF4961B2" Offset="0.4" />
+                <GradientStop Color="#FF16399C" Offset="0.41" />
+                <GradientStop Color="#FF16399C" Offset="0.74" />
+                <GradientStop Color="#FF173C9F" Offset="0.75" />
+                <GradientStop Color="#FF39C0DC" Offset="1" />
+              </LinearGradientBrush.GradientStops>
+              <LinearGradientBrush.RelativeTransform>
+                <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+              </LinearGradientBrush.RelativeTransform>
+            </LinearGradientBrush>
+          </ig:GdxGridView.MouseOverBackground>
+          <ig:GdxGridView.SelectionBackground>
+            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="0.9">
+              <LinearGradientBrush.GradientStops>
+                <GradientStop Color="#FF6078C8" Offset="0" />
+                <GradientStop Color="#FF4961B2" Offset="0.4" />
+                <GradientStop Color="#FF16399C" Offset="0.41" />
+                <GradientStop Color="#FF16399C" Offset="0.74" />
+                <GradientStop Color="#FF173C9F" Offset="0.75" />
+                <GradientStop Color="#FF39C0DC" Offset="1" />
+              </LinearGradientBrush.GradientStops>
+              <LinearGradientBrush.RelativeTransform>
+                <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+              </LinearGradientBrush.RelativeTransform>
+            </LinearGradientBrush>
+          </ig:GdxGridView.SelectionBackground>
+          <ig:GdxGridView.Columns>
+            <ig:GdxColumn Key="uid" IsVisible="False" Format="{x:Null}" Text="uid" />
+            <ig:GdxColumn Key="inspection_gate" Index="1" Format="{x:Null}" Text="Inspection Gate" TextAlignment="Center" IsStar="True" />
+            <ig:GdxColumn Key="inspection_name" Index="2" Format="{x:Null}" Text="Inspection Name" TextAlignment="Center" IsStar="True" />
+            <ig:GdxColumn Key="inspection_description" Index="3" Format="{x:Null}" Text="Inspection Description" TextAlignment="Center" IsStar="True" />
+            <ig:GdxColumn Key="defect_name" Index="4" Format="{x:Null}" Text="Defect Name" TextAlignment="Center" IsStar="True" />
+            <ig:GdxColumn Key="defect_description" Index="5" Format="{x:Null}" Text="Defect Description" TextAlignment="Center" IsStar="True" />
+            <ig:GdxColumn Key="q_alert_stage" Index="6" IsVisible="False" Format="{x:Null}" Text="q_alert_stage" />
+            <ig:GdxColumn DictionaryKey="64518898" Key="defect_status" Index="7" Format="{x:Null}" Text="Defect Status" TextAlignment="Center" IsStar="True" />
+            <ig:GdxColumn Key="remarks" Index="8" Format="{x:Null}" Text="Remarks" TextAlignment="Center" IsStar="True" />
+            <ig:GdxColumn Key="engine_number" Index="9" Format="{x:Null}" Text="Engine Number" TextAlignment="Center" IsStar="True" />
+            <ig:GdxColumn Key="model" Index="10" Format="{x:Null}" Text="Model" TextAlignment="Center" />
+            <ig:GdxColumn Key="sku" Index="11" Format="{x:Null}" Text="SKU" TextAlignment="Center" IsStar="True" />
+            <ig:GdxColumn Key="created_by" Index="12" IsVisible="False" Format="{x:Null}" Text="created_by" />
+            <ig:GdxColumn Key="created_on" Index="13" IsVisible="False" Format="{x:Null}" Text="created_on" />
+          </ig:GdxGridView.Columns>
+        </ig:GdxGridView>
+      </iwc:MultipleTabItem>
+    </ig:GdxViewControl.Items>
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Grid" ShowToolTip="False" Control="True">
+            <gwx:GwxPick.CommandParameters>
+              <gwxcmd:ScriptCommand />
+            </gwx:GwxPick.CommandParameters>
+            <gwx:GwxPick.EventBindings>
+              <script:ScriptEventBindings>
+                <script:ScriptEventBindings.EventBindings>
+                  <x:Array Type="script:ScriptEventBinding">
+                    <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Grid" ScriptType="JScriptNet" />
+                  </x:Array>
+                </script:ScriptEventBindings.EventBindings>
+              </script:ScriptEventBindings>
+            </gwx:GwxPick.EventBindings>
+          </gwx:GwxPick>
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+  </ig:GdxViewControl>
+  <Label Foreground="#FFC00000" FontFamily="Calibri" FontSize="24" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="inspection_gate_LB" Width="24.971297" Height="15" Visibility="Hidden" Canvas.Left="455" Canvas.Top="75.090909">
+    <TextBlock Text="*" />
+  </Label>
+  <Label Foreground="#FFC00000" FontFamily="Calibri" FontSize="24" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="inspection_name_LB" Width="24.971297" Height="55" Visibility="Hidden" Canvas.Left="455" Canvas.Top="97.781818">
+    <TextBlock Text="*" />
+  </Label>
+  <Label Foreground="#FFC00000" FontFamily="Calibri" FontSize="24" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="defect_name_LB" Width="24.971297" Height="15" Visibility="Hidden" Canvas.Left="455" Canvas.Top="150">
+    <TextBlock Text="*" />
+  </Label>
+  <Label Foreground="#FFC00000" FontFamily="Calibri" FontSize="24" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="inspection_description_LB" Width="24.971297" Height="15" Visibility="Hidden" Canvas.Left="1052" Canvas.Top="111.162109">
+    <TextBlock Text="*" />
+  </Label>
+  <TextBox FontFamily="Segoe UI" FontSize="12" Name="CurrentUser" Width="54.119138" Height="65.32" Visibility="Hidden" Canvas.Left="303" Canvas.Top="177">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="localsim::currentUser" />
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="CurrentUser_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>*.??</TextBox>
+  <Label Foreground="#FFC00000" FontFamily="Calibri" FontSize="24" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="defect_description_LB" Width="24.971297" Height="15" Visibility="Hidden" Canvas.Left="1052" Canvas.Top="151.088966">
+    <TextBlock Text="*" />
+  </Label>
+  <Label Foreground="#FFC00000" FontFamily="Calibri" FontSize="24" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="sku_LB" Width="24.971297" Height="15" Visibility="Hidden" Canvas.Left="1052.592735" Canvas.Top="17.036364" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <TextBlock Text="*" />
+  </Label>
+  <Line X1="-17.8792572021484" Y1="57.527271270752" X2="1106.38549804688" Y2="57.527271270752" Stroke="#FFFFFFFF" StrokeThickness="3" />
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="defect_name_label" Canvas.Left="56.16099" Canvas.Top="151.018182" gwx:GwxProperties.Description="Size=H:25,W:Automatic&#xD;&#xA;Background color=None&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :16&#xD;&#xA;Position= X:589  Y:55" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <TextBlock Text="Defect Name" />
+  </Label>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="3,3,3,3" Name="inspection_name_label" Canvas.Left="53.16099" Canvas.Top="110" gwx:GwxProperties.Description="Size=H:25,W:Automatic&#xD;&#xA;Background color=None&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :16&#xD;&#xA;Position= X:589  Y:15" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <TextBlock Text="Inspection Name" />
+  </Label>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="3,3,3,3" Name="inspection_gate_label" Canvas.Left="53.16099" Canvas.Top="70" gwx:GwxProperties.Description="Size=H:25,W:Automatic&#xD;&#xA;Background color=None&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :16&#xD;&#xA;Position= X:589  Y:15" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <TextBlock Text="Inspection Gate" />
+  </Label>
+  <ComboBox IsDropDownOpen="False" Text="Sub Group 1 - End of Line" Background="#FFD8D8D8" FontFamily="Calibri" FontSize="16" Padding="4,2,5,3" Name="inspection_gate" Width="250" Height="25" Canvas.Left="209.012383" Canvas.Top="70">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="DropDownOpened" MethodName="Dropdown_Inspection_Gate" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>
+    <s:String>Manual - End of Line</s:String>
+    <s:String>Sub Group 1 - End of Line</s:String>
+    <s:String>Sub Group 2 - End of Line</s:String>
+    <s:String>Sub Group 3 - End of Line</s:String>
+  </ComboBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="inspection_description_label" Canvas.Left="496.16099" Canvas.Top="110" gwx:GwxProperties.Description="Size=H:25,W:Automatic&#xD;&#xA;Background color=None&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :16&#xD;&#xA;Position= X:589  Y:55" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <TextBlock Text="Inspection Description" />
+  </Label>
+  <TextBox FontFamily="Calibri" FontSize="16" Padding="4,2,5,3" Name="inspection_description" Width="399.793774" Height="25" IsEnabled="True" Canvas.Left="656.436647" Canvas.Top="110" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="inspection_description_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>Rejected Items - Sub Group 1 - End of Line </TextBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="defect_description_label" Canvas.Left="496.16099" Canvas.Top="150" gwx:GwxProperties.Description="Size=H:25,W:Automatic&#xD;&#xA;Background color=None&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :16&#xD;&#xA;Position= X:589  Y:55" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <TextBlock Text="Defect Description" />
+  </Label>
+  <TextBox FontFamily="Calibri" FontSize="16" Padding="4,2,5,3" Name="defect_description" Width="399.793774" Height="25" IsEnabled="True" Canvas.Left="656.436647" Canvas.Top="150" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="defect_description_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>[SG1] Defect 2</TextBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="remark_label" Canvas.Left="56.566563" Canvas.Top="190" gwx:GwxProperties.Description="Size=H:25,W:Automatic&#xD;&#xA;Background color=None&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :16&#xD;&#xA;Position= X:589  Y:55" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <TextBlock Text="Remarks" />
+  </Label>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="3,3,3,3" Name="engine_number_label" Canvas.Left="53.16099" Canvas.Top="15" gwx:GwxProperties.Description="Size=H:25,W:Automatic&#xD;&#xA;Background color=None&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :16&#xD;&#xA;Position= X:589  Y:15" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <TextBlock Text="Engine Number" />
+  </Label>
+  <TextBox FontFamily="Calibri" FontSize="16" Padding="4,2,5,3" Name="engine_number" Width="170" Height="25" IsEnabled="True" Canvas.Left="208.16099" Canvas.Top="15">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="engine_number_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>EN#008</TextBox>
+  <Label Foreground="#FFC00000" FontFamily="Calibri" FontSize="24" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="engine_number_LB" Width="24.971297" Height="15" Visibility="Hidden" Canvas.Left="375" Canvas.Top="15" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <TextBlock Text="*" />
+  </Label>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="3,3,3,3" Name="model_label" Canvas.Left="486.294034" Canvas.Top="15" gwx:GwxProperties.Description="Size=H:25,W:Automatic&#xD;&#xA;Background color=None&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :16&#xD;&#xA;Position= X:589  Y:15" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <TextBlock Text="Model " />
+  </Label>
+  <TextBox FontFamily="Calibri" FontSize="16" Padding="4,2,5,3" Name="model" Width="170" Height="25" IsEnabled="True" Canvas.Left="555.851674" Canvas.Top="15">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="model_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>JG Husq</TextBox>
+  <Label Foreground="#FFC00000" FontFamily="Calibri" FontSize="24" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="model_LB" Width="24.971297" Height="15" Visibility="Hidden" Canvas.Left="730.41486" Canvas.Top="17.036363">
+    <TextBlock Text="*" />
+  </Label>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="3,3,3,3" Name="sku_label" Canvas.Left="827.077398" Canvas.Top="15" gwx:GwxProperties.Description="Size=H:25,W:Automatic&#xD;&#xA;Background color=None&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :16&#xD;&#xA;Position= X:589  Y:15" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <TextBlock Text="SKU" />
+  </Label>
+  <TextBox FontFamily="Calibri" FontSize="16" Padding="4,2,5,3" Name="sku" Width="170" Height="25" IsEnabled="True" Canvas.Left="880.761609" Canvas.Top="15">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="sku_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>test</TextBox>
+  <ComboBox IsDropDownOpen="False" Text="[SG1] Defect 2" Background="#FFD8D8D8" FontFamily="Calibri" FontSize="16" Padding="4,2,5,3" Name="defect_name" Width="250" Height="25" Canvas.Left="208.16099" Canvas.Top="150">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="DropDownOpened" MethodName="Dropdown_Defect_Name" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>
+    <s:String>[SG1] Defect 1</s:String>
+    <s:String>[SG1] Defect 2</s:String>
+    <s:String>[SG1] Defect 3</s:String>
+    <s:String>[SG1] Defect 4</s:String>
+  </ComboBox>
+  <TextBox FontFamily="Calibri" FontSize="16" Padding="4,2,5,3" Name="remarks" Width="250" Height="25" IsEnabled="True" Canvas.Left="208.16099" Canvas.Top="190" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="defect_description_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>
+  </TextBox>
+  <ComboBox IsDropDownOpen="False" Text="Rejected Items - Sub Group 1 - End of Line " Background="#FFD8D8D8" FontFamily="Calibri" FontSize="16" Padding="4,2,5,3" Name="inspection_name" Width="250" Height="25" Canvas.Left="208.16099" Canvas.Top="110">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="DropDownOpened" MethodName="Dropdown_Inspection_Name" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>
+    <s:String>Rejected Items - Sub Group 1 - End of Line </s:String>
+  </ComboBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="defect_status_label" Canvas.Left="496.16099" Canvas.Top="190" gwx:GwxProperties.Description="Size=H:25,W:Automatic&#xD;&#xA;Background color=None&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :16&#xD;&#xA;Position= X:589  Y:55" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <TextBlock Text="Defect Status" />
+  </Label>
+  <ComboBox IsDropDownOpen="False" Text="Not Ok" Background="#FFD8D8D8" FontFamily="Calibri" FontSize="16" Padding="4,2,5,3" Name="defect_status" Width="106.578947" Height="25" Canvas.Left="656.436647" Canvas.Top="190">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="DropDownOpened" MethodName="Dropdown_Defect_Status" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>
+    <s:String>Ok</s:String>
+    <s:String>Not Ok</s:String>
+  </ComboBox>
+  <Label Foreground="#FFC00000" FontFamily="Calibri" FontSize="24" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="defect_status_LB" Width="24.971297" Height="15" Visibility="Hidden" Canvas.Left="759.189189" Canvas.Top="191.304918">
+    <TextBlock Text="*" />
+  </Label>
+  <Button Background="#FF001848" Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="12" Name="Update" Width="125" Height="24.999984" Canvas.Left="933.851386" Canvas.Top="190.236365" gwx:GwxProperties.Description="Size=H:25,W:125&#xD;&#xA;Background color=R :255,G : 255,B :255&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :12&#xD;&#xA;Position= X:933  Y:233" gwx:GwxProperties.ShowDescriptionInToolTip="False">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="RemoveScript" Control="True">
+            <gwx:GwxPick.CommandParameters>
+              <gwxcmd:ScriptCommand />
+            </gwx:GwxPick.CommandParameters>
+            <gwx:GwxPick.EventBindings>
+              <script:ScriptEventBindings>
+                <script:ScriptEventBindings.EventBindings>
+                  <x:Array Type="script:ScriptEventBinding">
+                    <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Update" ScriptType="JScriptNet" />
+                  </x:Array>
+                </script:ScriptEventBindings.EventBindings>
+              </script:ScriptEventBindings>
+            </gwx:GwxPick.EventBindings>
+          </gwx:GwxPick>
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <TextBlock Text="UPDATE" />
+  </Button>
+  <Button Background="#FF001848" Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="12" Name="Save" Width="125" Height="24.999984" Canvas.Left="791.095975" Canvas.Top="190.236365" gwx:GwxProperties.Description="Size=H:25,W:125&#xD;&#xA;Background color=R :255,G : 255,B :255&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :12&#xD;&#xA;Position= X:933  Y:233" gwx:GwxProperties.ShowDescriptionInToolTip="False">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="RemoveScript1" Control="True">
+            <gwx:GwxPick.CommandParameters>
+              <gwxcmd:ScriptCommand />
+            </gwx:GwxPick.CommandParameters>
+            <gwx:GwxPick.EventBindings>
+              <script:ScriptEventBindings>
+                <script:ScriptEventBindings.EventBindings>
+                  <x:Array Type="script:ScriptEventBinding">
+                    <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Save" ScriptType="JScriptNet" />
+                  </x:Array>
+                </script:ScriptEventBindings.EventBindings>
+              </script:ScriptEventBindings>
+            </gwx:GwxPick.EventBindings>
+          </gwx:GwxPick>
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <TextBlock Text="SAVE" />
+  </Button>
+  <Canvas>
+    <Button Background="#FF001848" Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="12" Name="rest_ok" Width="125" Height="24.999984" Canvas.Left="933.851386" Canvas.Top="251.327275" gwx:GwxProperties.Description="Size=H:25,W:125&#xD;&#xA;Background color=R :255,G : 255,B :255&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :12&#xD;&#xA;Position= X:790  Y:233" gwx:GwxProperties.ShowDescriptionInToolTip="False">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="ModifyScript" Control="True">
+              <gwx:GwxPick.CommandParameters>
+                <gwxcmd:ScriptCommand />
+              </gwx:GwxPick.CommandParameters>
+              <gwx:GwxPick.EventBindings>
+                <script:ScriptEventBindings>
+                  <script:ScriptEventBindings.EventBindings>
+                    <x:Array Type="script:ScriptEventBinding">
+                      <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Rest_Ok" ScriptType="JScriptNet" />
+                    </x:Array>
+                  </script:ScriptEventBindings.EventBindings>
+                </script:ScriptEventBindings>
+              </gwx:GwxPick.EventBindings>
+            </gwx:GwxPick>
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="REST OK" />
+    </Button>
+    <Button Background="#FF001848" Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="12" Name="Clear" Width="125" Height="24.999984" Canvas.Left="633.851386" Canvas.Top="251.327275" gwx:GwxProperties.Description="Size=H:25,W:125&#xD;&#xA;Background color=R :255,G : 255,B :255&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :12&#xD;&#xA;Position= X:504  Y:233" gwx:GwxProperties.ShowDescriptionInToolTip="False">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="ClearScript" Control="True">
+              <gwx:GwxPick.CommandParameters>
+                <gwxcmd:ScriptCommand />
+              </gwx:GwxPick.CommandParameters>
+              <gwx:GwxPick.EventBindings>
+                <script:ScriptEventBindings>
+                  <script:ScriptEventBindings.EventBindings>
+                    <x:Array Type="script:ScriptEventBinding">
+                      <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Clear" ScriptType="JScriptNet" />
+                    </x:Array>
+                  </script:ScriptEventBindings.EventBindings>
+                </script:ScriptEventBindings>
+              </gwx:GwxPick.EventBindings>
+            </gwx:GwxPick>
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="CLEAR" />
+    </Button>
+    <Button Background="#FF001848" Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="12" Name="all_ok" Width="125" Height="24.999984" Canvas.Left="783.959745" Canvas.Top="251.327275" gwx:GwxProperties.Description="Size=H:25,W:125&#xD;&#xA;Background color=R :255,G : 255,B :255&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :12&#xD;&#xA;Position= X:647  Y:233" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="CreateScript" Control="True">
+              <gwx:GwxPick.CommandParameters>
+                <gwxcmd:ScriptCommand />
+              </gwx:GwxPick.CommandParameters>
+              <gwx:GwxPick.EventBindings>
+                <script:ScriptEventBindings>
+                  <script:ScriptEventBindings.EventBindings>
+                    <x:Array Type="script:ScriptEventBinding">
+                      <script:ScriptEventBinding EventName="CommandExecuted" MethodName="All_Ok" ScriptType="JScriptNet" />
+                    </x:Array>
+                  </script:ScriptEventBindings.EventBindings>
+                </script:ScriptEventBindings>
+              </gwx:GwxPick.EventBindings>
+            </gwx:GwxPick>
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="ALL OK" />
+    </Button>
+    <Canvas>
+      <Path Fill="#FFFFFFFF" Name="DatabaseRefresh1" Margin="0,0,0,0" gwx:GwxProperties.Description="Icon, Database, Refresh, Network, Connectivity" gwx:GwxProperties.ShowDescriptionInToolTip="False" gwx:GwxProperties.Title="Database - Refresh">
+        <Path.Data>
+          <PathGeometry FillRule="EvenOdd" Figures="M655.456079482869,268.654004243777L659.421218950841,268.654004243777C659.19698064599,269.492582397202 659.067612094707,270.400255845234 659.067612094707,271.3550411488 659.067612094707,272.002034125308 659.130140087707,272.627041150533 659.237947321559,273.223781690487L655.456079482869,273.223781690487C655.104628866265,273.223781690487,654.820018528816,272.809204270368,654.820018365471,272.297263814267L654.820018365471,269.583663643093C654.820018528816,269.068582291948,655.104628866265,268.654004243777,655.456079482869,268.654004243777z M664.23883877484,265.816362270345C664.280068019994,265.81479213685,664.321567164262,265.81479213685,664.363605891178,265.816362270345L664.365762066039,265.816362270345 664.370073553455,265.816362270345C664.898246499045,265.822643746407,665.398394776427,265.985957727656,665.853270711322,266.278038670904L665.868360917283,266.290600994974C667.211430207018,267.160562348658 668.142740160623,269.129752494751 668.127649307939,271.406727117234 668.106091224128,274.465724312685 666.387911534766,276.921716135533 664.288152705629,276.890310325357 662.649737473664,276.865185363185 661.265708191164,275.332545399375 660.74831374854,273.209463015086L662.108629850241,272.863990938429C662.490208127719,274.076284101778 663.324506165239,274.924260446255 664.301087383456,274.939963979397 665.648468376178,274.958807151477 666.750087256566,273.382199053416 666.763021934394,271.419290069359 666.778113002655,269.459521666318 665.695896677941,267.851506501974 664.348515685219,267.832662387813 664.23425738831,267.832662387813 664.122155266261,267.845225339938 664.012209534642,267.864069140073L664.010053359788,267.851506501974C663.647877637984,267.920600540474,663.311571487413,268.105899844953,663.018381073311,268.385417522051L663.486191901615,269.029252018019C663.514217647698,269.066939932314 663.524996150671,269.126612227759 663.509905082407,269.176862466125 663.496970404581,269.230253599536 663.464633817802,269.264800932811 663.425828922018,269.267941827857L662.289717279992,269.355879666491 661.2807986127,269.434396076096 661.274331381575,269.434396076096C661.246305635485,269.434396076096 661.222591807963,269.415552275963 661.20318925229,269.387286732774 661.183787127763,269.355879666491 661.175163937353,269.315051171177 661.181631384053,269.271082094848L661.343317120428,267.961429035784 661.576144339359,266.108443213593C661.58261178606,266.051911499165 661.610637532144,266.007942108807 661.647286468642,265.998520365755 661.686090717699,265.985957727656 661.724895397907,266.007942108807 661.746453266143,266.055052080183L662.119408353213,266.852778500319C662.636802795831,266.309445109136 663.251208292248,265.957691556415 663.917353793415,265.850909289595 663.925976983823,265.847768708576 663.934600174234,265.847768708576 663.943223364644,265.847768708576 664.001430169378,265.838346965524 664.057481445977,265.832065489461 664.115688250712,265.825784327424 664.1566480279,265.821073612911 664.197608451816,265.817932403839 664.23883877484,265.816362270345z M655.455945654295,262.882239675955L664.371717523609,262.882239675955C664.723089951387,262.882239675955,665.00978209165,263.29683185533,665.00978209165,263.811870812871L665.00978209165,264.066285195639C664.729562571875,263.997199321833 664.442844347108,263.953263218308 664.149679370789,263.953263532334 662.326005991718,263.953263218308 660.732976494351,265.353997837289 659.836217938609,267.451956201486L655.455945654295,267.451956201486C655.104573463652,267.451956201486,654.820012701771,267.037364022114,654.820012728748,266.525468471832L654.820012728748,263.811870812871C654.820012701771,263.29683185533,655.104573463652,262.882239675955,655.455945654295,262.882239675955z M656.695435533176,258.444371656425C656.296639912744,258.444371656425 655.971136452584,258.915150843118 655.971136452584,259.495778735948 655.971136452584,260.076406597375 656.296639912744,260.550324512329 656.695435533176,260.550324512329 657.09423093803,260.550324512329 657.417578697599,260.076406597375 657.417578697599,259.495778735948 657.417578697599,258.915150843118 657.09423093803,258.444371656425 656.695435533176,258.444371656425z M655.45593578099,257.210929736969L664.371710840803,257.210929736969C664.72308175956,257.210929736969,665.00978360067,257.628354028935,665.00978360067,258.139934265007L665.00978360067,260.854761778134C665.00978360067,261.366342045611,664.72308175956,261.780627734924,664.371710840803,261.780627734924L655.45593578099,261.780627734924C655.104564538868,261.780627734924,654.820018526676,261.366342045611,654.820018365471,260.854761778134L654.820018365471,258.139934265007C654.820018526676,257.628354028935,655.104564538868,257.210929736969,655.45593578099,257.210929736969z" />
+        </Path.Data>
+      </Path>
+    </Canvas>
+  </Canvas>
+</Canvas>

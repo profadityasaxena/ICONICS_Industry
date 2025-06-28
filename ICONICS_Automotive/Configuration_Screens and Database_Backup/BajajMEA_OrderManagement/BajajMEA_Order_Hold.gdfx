@@ -1,0 +1,538 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Canvas Background="#FFBFBFBF" Width="400" Height="200" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:iwm="clr-namespace:Ico.Windows.Media;assembly=IcoWPF" xmlns:gwx="clr-namespace:Ico.Gwx;assembly=GwxRuntimeCore" xmlns:script="clr-namespace:Ico.Script;assembly=IcoScriptEngine" xmlns:ic="clr-namespace:Ico.Collections;assembly=IcoCollections" xmlns:gwxcmd="clr-namespace:Ico.Gwx;assembly=GwxRuntimeCoreCommands">
+  <Canvas.Resources>
+    <BitmapImage x:Key="GwxThumbnailImageKey">
+      <iwm:BitmapImageInfo.StreamSource>
+        <iwm:Base64Stream Data="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" />
+      </iwm:BitmapImageInfo.StreamSource>
+    </BitmapImage>
+  </Canvas.Resources>
+  <gwx:GwxDocument.GwxDocument>
+    <gwx:GwxDocument FileVersion="10.97.020.00" IsScalable="True" MaximumZoom="1" MinimumZoom="1" ScanRate="500">
+      <gwx:GwxDocument.ScriptCodeManager>
+        <script:ScriptCodeManager>
+          <script:ScriptCodeManager.Scripts>
+            <script:ScriptCode Name="ThisDisplayCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function ThisDisplay_AnimationStarted(sender : System.Object, e : System.EventArgs)
+{
+	var holdReason: System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("holdReason").ToDependencyObject();	
+	holdReason.Clear();
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="Database_Connection" Type="JScriptNet">
+              <x:XData><![CDATA[//[Windows Based Authentication] User is authenticated to the SQL Server based on Windows IAM
+const DB_SERVER               : String = "DESKTOP-BI1L6JI\\SQLEXPRESS2017";
+const DB_NAME                 : String = "BajajMEA";
+const DB_USERID               : String = "sa";
+const DB_PASSWORD             : String = "sql_1234";
+var DB_CONNECT_AUTHENTICATION : String = ";User ID="+DB_USERID+";Password="+DB_PASSWORD+";";
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="holdCode" Type="JScriptNet">
+              <x:XData><![CDATA[var connString : String = "Data Source=10.13.14.75; User ID=sa; Password=bajajadmin1; Initial Catalog=Bajaj; MultipleActiveResultSets=True"
+
+
+function hold_btn(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs)
+{
+
+    var connection : System.Data.SqlClient.SqlConnection = new System.Data.SqlClient.SqlConnection(connString);	
+	var from_Hold;
+	var to_Hold;
+
+	var HoldFromTxtCtl : Ico.Gwx.GwxWindowsFormsControl;
+	var HoldFromTxt : System.Windows.Forms.TextBox;
+	HoldFromTxtCtl = Ico.Gwx.GwxWindowsFormsControl(ThisConfiguration.GetObjectByName("HoldFrom"));
+	HoldFromTxt = System.Windows.Forms.TextBox(HoldFromTxtCtl.Control);
+	
+	var HoldToTxtCtl : Ico.Gwx.GwxWindowsFormsControl;
+	var HoldToTxt : System.Windows.Forms.TextBox;
+	HoldToTxtCtl = Ico.Gwx.GwxWindowsFormsControl(ThisConfiguration.GetObjectByName("HoldTo"));
+	HoldToTxt = System.Windows.Forms.TextBox(HoldToTxtCtl.Control);
+
+	var holdReason: System.Windows.Controls.TextBox=ThisConfiguration.GetObjectByName("holdReason").ToDependencyObject();
+		
+	var sequenceComboBox : System.Windows.Controls.ComboBox = ThisConfiguration.GetObjectByName("sequence_hold").ToDependencyObject();	
+	var variantComboBox : System.Windows.Controls.ComboBox = ThisConfiguration.GetObjectByName("variant_hold").ToDependencyObject();	
+	var shiftComboBox : System.Windows.Controls.ComboBox = ThisConfiguration.GetObjectByName("shift_hold").ToDependencyObject();	
+        
+	var dateCtl : Ico.Gwx.GwxWindowsFormsControl;
+	var dateTimePick : System.Windows.Forms.DateTimePicker;
+	dateCtl = Ico.Gwx.GwxWindowsFormsControl(ThisConfiguration.GetObjectByName("DateTimePicker1"));
+	dateTimePick= System.Windows.Forms.DateTimePicker(dateCtl.Control);
+	var date=System.DateTime.Today;
+	var dialog :System.Windows.MessageBoxResult
+	var HoldRefreader : System.Data.SqlClient.SqlDataReader;
+	
+	var loginReader:System.Data.SqlClient.SqlDataReader;
+	var userName: String
+	var user: String
+	var password: String
+
+////////////////////checking for user authentication//////////////////////////////
+	user=ThisWindow.FwxClientWrapper.Read("@reg:Login.UserId.Value");	
+	password=ThisWindow.FwxClientWrapper.Read("@reg:Login.Password.Value");			
+    
+	connection.Open();
+	var loginCmd: System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand("SELECT User_ID,Password FROM Users where User_ID='" + user.Substring(0,user.IndexOf(",")) + "' and Password='" + password.Substring(0,password.IndexOf(",")) + "'", connection);
+	loginReader=loginCmd.ExecuteReader();
+	if(loginReader.HasRows==true)
+	{
+		loginReader.Close();
+		    try{
+			var fromHold_ref_command : System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand("SELECT Ref_Seq_No FROM Order_Sequence WHERE Sequence_No = '" + HoldFromTxt.Text + "' and Prod_Date='" + date.ToString("yyyy-MM-dd") + "'",connection);
+			var tohold_ref_command : System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand("SELECT Ref_Seq_No FROM Order_Sequence WHERE Sequence_No = '" + HoldToTxt.Text + "' and Prod_Date='" + date.ToString("yyyy-MM-dd") + "'",connection);
+			if(HoldFromTxt.Text != "" &&  HoldToTxt.Text != "")
+			{
+				
+				RefHoldreader = fromHold_ref_command.ExecuteReader();
+				 while (RefHoldreader.Read())
+				{
+					from_Hold = RefHoldreader["Ref_Seq_No"]; 
+					//MessageBox.Show(from_Hold);                         										
+				}
+				RefHoldreader.Close();
+				    
+				RefHoldreader = tohold_ref_command.ExecuteReader();
+				while (RefHoldreader.Read())
+				{
+					to_Hold = RefHoldreader["Ref_Seq_No"]; 
+					//MessageBox.Show(to_Hold);                           										
+				}
+				RefHoldreader.Close();
+			}
+			
+			var val_command : System.Data.SqlClient.SqlCommand= new System.Data.SqlClient.SqlCommand("UPDATE Order_Sequence SET Order_Status = 'Hold',Hold_Reason='" + holdReason.Text + "' WHERE Ref_Seq_No BETWEEN " + from_Hold + " AND " + to_Hold + " AND Order_Status = 'In Plan'" , connection); 
+			var fromhold_command : System.Data.SqlClient.SqlCommand= new System.Data.SqlClient.SqlCommand("UPDATE Order_Sequence SET Order_Status = 'Hold' ,Hold_Reason='" + holdReason.Text + "' WHERE Sequence_No = '" + HoldFromTxt.Text + "' AND Order_Status = 'In Plan'" , connection); 
+			var tohold_command : System.Data.SqlClient.SqlCommand= new System.Data.SqlClient.SqlCommand("UPDATE Order_Sequence SET Order_Status = 'Hold',Hold_Reason='" + holdReason.Text + "' WHERE Sequence_No = '" + HoldToTxt.Text + "' AND Order_Status = 'In Plan'" , connection); 
+			
+			dialog=MessageBox.Show("Do you want to Hold It ","Confirmation", MessageBoxButton.YesNo)
+			
+			if(HoldFromTxt.Text != "" ||  HoldToTxt.Text != "")
+			{
+				if(dialog==MessageBoxResult.Yes)
+				{
+					
+					if(HoldFromTxt.Text != "" &&  HoldToTxt.Text != "" && (from_Hold <= to_Hold))
+					{
+						val_command.ExecuteNonQuery();
+						MessageBox.Show("Updated Status Sucessfully");
+					}
+					else
+					{
+						MessageBox.Show("From Order Number Should Come First In The Sequence"+"\nOr"+"\nSelected sequence not from current date.")
+					}
+					if(HoldFromTxt.Text != "" &&  HoldToTxt.Text == "")
+					{
+						fromhold_command.ExecuteNonQuery();
+						MessageBox.Show("Updated Status Sucessfully");
+					}
+					if(HoldFromTxt.Text == "" &&  HoldToTxt.Text != "")
+					{
+						tohold_command.ExecuteNonQuery();
+						MessageBox.Show("Updated Status Sucessfully");
+						
+					}
+					var insertDeleteLog:System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand("Insert into Audit_Trial(User_ID, Screen_Name, Remark)values('" + user.Substring(0,user.IndexOf(",")) + "', 'Order Sequencing','Order from '+'" + HoldFromTxt.Text + "'+' to '+'" + HoldToTxt.Text + "' + ' on hold' )", connection);
+					insertDeleteLog.ExecuteNonQuery();	
+					HoldFromTxt.Clear();
+					HoldToTxt.Clear();
+					holdReason.Clear();
+				}
+			}
+			else
+			{
+				MessageBox.Show("Please Enter OrderSequence Number");
+			}
+			
+		        }
+		catch(ex : Exception)
+		{
+			MessageBox.Show (ex.Message);	
+		}
+	}
+	else
+	{
+		MessageBox.Show("Please Login First!!")
+	}   
+	connection.Close() 
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="JScriptDotNetGlobalVariablesCode" Type="JScriptNet" EditorBrowsable="Never">
+              <x:XData><![CDATA[
+var ThisWindow : Ico.Gwx.GwxRuntimeViewControl;
+var ThisDocument : Ico.Gwx.GwxDocument;
+var ThisConfiguration : Ico.Gwx.GwxConfiguration;
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="unholdCode" Type="JScriptNet">
+              <x:XData><![CDATA[function unhold_btn(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs)
+{
+	var from_Hold;
+	var to_Hold;
+
+	var HoldFromTxtCtl : Ico.Gwx.GwxWindowsFormsControl;
+	var HoldFromTxt : System.Windows.Forms.TextBox;
+	HoldFromTxtCtl = Ico.Gwx.GwxWindowsFormsControl(ThisConfiguration.GetObjectByName("HoldFrom"));
+	HoldFromTxt = System.Windows.Forms.TextBox(HoldFromTxtCtl.Control);
+	
+	var HoldToTxtCtl : Ico.Gwx.GwxWindowsFormsControl;
+	var HoldToTxt : System.Windows.Forms.TextBox;
+	HoldToTxtCtl = Ico.Gwx.GwxWindowsFormsControl(ThisConfiguration.GetObjectByName("HoldTo"));
+	HoldToTxt = System.Windows.Forms.TextBox(HoldToTxtCtl.Control);
+
+		
+	var sequenceComboBox : System.Windows.Controls.ComboBox = ThisConfiguration.GetObjectByName("sequence_hold").ToDependencyObject();	
+	var variantComboBox : System.Windows.Controls.ComboBox = ThisConfiguration.GetObjectByName("variant_hold").ToDependencyObject();	
+	var shiftComboBox : System.Windows.Controls.ComboBox = ThisConfiguration.GetObjectByName("shift_hold").ToDependencyObject();	
+        
+	var dateCtl : Ico.Gwx.GwxWindowsFormsControl;
+	var dateTimePick : System.Windows.Forms.DateTimePicker;
+	dateCtl = Ico.Gwx.GwxWindowsFormsControl(ThisConfiguration.GetObjectByName("DateTimePicker1"));
+	dateTimePick= System.Windows.Forms.DateTimePicker(dateCtl.Control);
+	
+	var dialog :System.Windows.MessageBoxResult
+	var HoldRefreader : System.Data.SqlClient.SqlDataReader;
+	
+
+    var connection : System.Data.SqlClient.SqlConnection = new System.Data.SqlClient.SqlConnection(connString);
+	var loginReader:System.Data.SqlClient.SqlDataReader;
+	var userName: String
+	var user: String
+	var password: String
+
+////////////////////checking for user authentication//////////////////////////////
+	user=ThisWindow.FwxClientWrapper.Read("@reg:Login.UserId.Value");	
+	password=ThisWindow.FwxClientWrapper.Read("@reg:Login.Password.Value");			
+    
+	connection.Open();
+	var loginCmd: System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand("SELECT User_ID,Password FROM Users where User_ID='" + user.Substring(0,user.IndexOf(",")) + "' and Password='" + password.Substring(0,password.IndexOf(",")) + "'", connection);
+	loginReader=loginCmd.ExecuteReader();
+	if(loginReader.HasRows==true)
+	{
+		loginReader.Close();
+		
+		    try{			
+			var fromHold_ref_command : System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand("SELECT Ref_Seq_No FROM Order_Sequence WHERE Sequence_No = '" + HoldFromTxt.Text + "'",connection);
+			var tohold_ref_command : System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand("SELECT Ref_Seq_No FROM Order_Sequence WHERE Sequence_No = '" + HoldToTxt.Text + "'",connection);
+			if(HoldFromTxt.Text != "" &&  HoldToTxt.Text != "")
+			{
+				
+				RefHoldreader = fromHold_ref_command.ExecuteReader();
+				 while (RefHoldreader.Read())
+				{
+					from_Hold = RefHoldreader["Ref_Seq_No"]; 
+					//MessageBox.Show(from_Hold);                         										
+				}
+				RefHoldreader.Close();
+				    
+				RefHoldreader = tohold_ref_command.ExecuteReader();
+				while (RefHoldreader.Read())
+				{
+					to_Hold = RefHoldreader["Ref_Seq_No"]; 
+					//MessageBox.Show(to_Hold);                           										
+				}
+				RefHoldreader.Close();
+			}
+			
+			var val_command : System.Data.SqlClient.SqlCommand= new System.Data.SqlClient.SqlCommand("UPDATE Order_Sequence SET Order_Status = 'In Plan',Hold_Reason='' WHERE Ref_Seq_No BETWEEN " + from_Hold + " AND " + to_Hold + " AND Order_Status = 'Hold'" , connection); 
+			var fromhold_command : System.Data.SqlClient.SqlCommand= new System.Data.SqlClient.SqlCommand("UPDATE Order_Sequence SET Order_Status = 'In Plan',Hold_Reason='' WHERE Sequence_No = '" + HoldFromTxt.Text + "' AND Order_Status = 'Hold'" , connection); 
+			var tohold_command : System.Data.SqlClient.SqlCommand= new System.Data.SqlClient.SqlCommand("UPDATE Order_Sequence SET Order_Status = 'In Plan',Hold_Reason='' WHERE Sequence_No = '" + HoldToTxt.Text + "' AND Order_Status = 'Hold'" , connection); 
+			
+			dialog=MessageBox.Show("Do you want to UnHold It ","Confirmation", MessageBoxButton.YesNo)
+			
+			if(HoldFromTxt.Text != "" ||  HoldToTxt.Text != "")
+			{
+				if(dialog==MessageBoxResult.Yes)
+				{
+					
+					if(HoldFromTxt.Text != "" &&  HoldToTxt.Text != "" && (from_Hold < to_Hold))
+					{
+						val_command.ExecuteNonQuery();
+						MessageBox.Show("Updated Status Sucessfully");
+					}
+					else
+					{
+						MessageBox.Show("From Order Number Should Come First In The Sequence")
+					}
+					if(HoldFromTxt.Text != "" &&  HoldToTxt.Text == "")
+					{
+						fromhold_command.ExecuteNonQuery();
+						MessageBox.Show("Updated Status Sucessfully");
+					}
+					if(HoldFromTxt.Text == "" &&  HoldToTxt.Text != "")
+					{
+						tohold_command.ExecuteNonQuery();
+						MessageBox.Show("Updated Status Sucessfully");
+						
+					}
+					var insertDeleteLog:System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand("Insert into Audit_Trial(User_ID, Screen_Name, Remark)values('" + user.Substring(0,user.IndexOf(",")) + "', 'Order Sequencing','Order from '+'" + HoldFromTxt.Text + "'+' to '+'" + HoldToTxt.Text + "' + ' on Unhold' )", connection);
+					insertDeleteLog.ExecuteNonQuery();
+					HoldFromTxt.Clear();
+					HoldToTxt.Clear();
+					holdReason.Clear();
+				}
+			}
+			else
+			{
+				MessageBox.Show("Please Enter OrderSequence Number");
+			}
+		}
+		catch(ex : Exception)
+		{
+			MessageBox.Show (ex.Message);	
+		}
+	}
+	else
+	{
+		MessageBox.Show("Please Login First!!")
+	}
+	connection.Close()
+	
+}]]></x:XData>
+            </script:ScriptCode>
+          </script:ScriptCodeManager.Scripts>
+          <script:ScriptCodeManager.AssemblyReferences>
+            <ic:AssemblyReference AssemblyName="mscorlib" />
+            <ic:AssemblyReference AssemblyName="System" />
+            <ic:AssemblyReference AssemblyName="System.Core" />
+            <ic:AssemblyReference AssemblyName="System.Data" />
+            <ic:AssemblyReference AssemblyName="System.Xml" />
+            <ic:AssemblyReference AssemblyName="System.Drawing" />
+            <ic:AssemblyReference AssemblyName="System.Windows.Forms" />
+            <ic:AssemblyReference AssemblyName="WindowsBase" />
+            <ic:AssemblyReference AssemblyName="PresentationCore" />
+            <ic:AssemblyReference AssemblyName="PresentationFramework" />
+            <ic:AssemblyReference AssemblyName="GwxRuntimeCore" />
+            <ic:AssemblyReference AssemblyName="GwxRuntimeCoreCommands" />
+            <ic:AssemblyReference AssemblyName="GwxRuntimeViewControl" />
+            <ic:AssemblyReference AssemblyName="GwxConfigCore" />
+            <ic:AssemblyReference AssemblyName="IcoComponentModel" />
+            <ic:AssemblyReference AssemblyName="IcoFwxClientWrapper" />
+            <ic:AssemblyReference AssemblyName="IcoCommonCore.Net" />
+            <ic:AssemblyReference AssemblyName="IcoSecurityLogin" AssemblyCodebase="file:///C:/Program Files/ICONICS/GENESIS64/Components/IcoSecurityLogin.DLL" />
+          </script:ScriptCodeManager.AssemblyReferences>
+        </script:ScriptCodeManager>
+      </gwx:GwxDocument.ScriptCodeManager>
+      <gwx:GwxDocument.EventBindings>
+        <script:ScriptEventBindings>
+          <script:ScriptEventBindings.EventBindings>
+            <x:Array Type="script:ScriptEventBinding">
+              <script:ScriptEventBinding EventName="AnimationStarted" MethodName="ThisDisplay_AnimationStarted" ScriptType="JScriptNet" />
+            </x:Array>
+          </script:ScriptEventBindings.EventBindings>
+        </script:ScriptEventBindings>
+      </gwx:GwxDocument.EventBindings>
+      <gwx:GwxDocument.RuntimeWindowProperties>
+        <gwx:GwxWindowProperties StartLocation="CenterScreen" WidthString="-1" HeightString="-1" ControlBox="False" MaximizeBox="False" MinimizeBox="False" MenuVisible="False" ShowContextMenu="False" NavigationBarVisible="False" StatusBarVisible="False" TitleBarVisible="False" OuterBorder="False" Resizable="False" CommandingEnabled="False" DragAndDropCommandingEnabled="False" />
+      </gwx:GwxDocument.RuntimeWindowProperties>
+    </gwx:GwxDocument>
+  </gwx:GwxDocument.GwxDocument>
+  <Rectangle Fill="#FF66799F" Stroke="#FF000000" StrokeThickness="0" Width="400" Height="31" Canvas.Left="0" Canvas.Top="0" />
+  <gwx:WindowsFormsControl FontFamily="Segoe UI" FontSize="12" Name="DateTimePicker1" Width="204.302103" Height="23.026831" Visibility="Hidden" Canvas.Left="249.5" Canvas.Top="141.06918">
+    <gwx:WindowsFormsControl.ControlProperties>
+      <XmlDataProvider IsAsynchronous="False">
+        <x:XData>
+          <Data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="">
+            <DateTimePicker xsi:type="System.Windows.Forms.DateTimePicker">
+              <DataBindings>
+                <DefaultDataSourceUpdateMode>OnValidation</DefaultDataSourceUpdateMode>
+              </DataBindings>
+              <Font>Calibri, 12pt</Font>
+              <Location>0, 0</Location>
+              <Name>DateTimePicker1</Name>
+              <Size>204, 27</Size>
+              <TabIndex>0</TabIndex>
+              <Visible>false</Visible>
+            </DateTimePicker>
+          </Data>
+        </x:XData>
+      </XmlDataProvider>
+    </gwx:WindowsFormsControl.ControlProperties>
+    <gwx:WindowsFormsControl.EventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="ValueChanged" MethodName="load_hold_sqc" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:WindowsFormsControl.EventBindings>
+  </gwx:WindowsFormsControl>
+  <Label FontFamily="Calibri" FontSize="15" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Width="43.514849" Height="26.528083" Visibility="Hidden" Canvas.Left="150.5" Canvas.Top="138.458133">
+    <TextBlock Text="Date" />
+  </Label>
+  <Label FontFamily="Calibri" FontSize="15" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Width="35.623333" Height="26.528083" Visibility="Hidden" Canvas.Left="150.5" Canvas.Top="175.851077">
+    <TextBlock Text="Shift" />
+  </Label>
+  <ComboBox IsDropDownOpen="False" Text=" A " FontFamily="Calibri" FontSize="14" Name="shift_hold" Width="204.302103" Height="23.026831" Visibility="Hidden" Canvas.Left="248.348948" Canvas.Top="177.741282">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="DropDownClosed" MethodName="load_variant" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>
+  </ComboBox>
+  <Label FontFamily="Calibri" FontSize="15" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Width="53.167929" Height="26.528083" Visibility="Hidden" Canvas.Left="150.5" Canvas.Top="215.021374">
+    <TextBlock Text="Varinat" />
+  </Label>
+  <ComboBox IsDropDownOpen="False" Text="EV01" FontFamily="Calibri" FontSize="14" Name="variant_hold" Width="204.302103" Height="23.026831" Visibility="Hidden" Canvas.Left="247.348948" Canvas.Top="216.772">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="DropDownClosed" MethodName="sequence_load" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>
+  </ComboBox>
+  <Label FontFamily="Calibri" FontSize="15" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Width="90.072525" Height="26.528083" Visibility="Hidden" Canvas.Left="150.5" Canvas.Top="189.233156">
+    <TextBlock Text="Sequence No" />
+  </Label>
+  <ComboBox IsDropDownOpen="False" Text="" FontFamily="Calibri" FontSize="14" Name="sequence_hold" Width="204.302103" Height="23.026831" Visibility="Hidden" IsHitTestVisible="False" Canvas.Left="247.348948" Canvas.Top="190.983782" />
+  <Image Stretch="Fill" Name="Image1" Width="32" Height="32" Canvas.Left="368.5" Canvas.Top="0.5">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+            <gwx:GwxPick.CommandParameters>
+              <gwxcmd:CloseWindowCommand />
+            </gwx:GwxPick.CommandParameters>
+          </gwx:GwxPick>
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+  </Image>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Canvas.Left="31.558498" Canvas.Top="51">
+    <TextBlock Text="From" />
+  </Label>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Canvas.Left="224.999999" Canvas.Top="51">
+    <TextBlock Text="To" />
+  </Label>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="popup_header_label" Canvas.Left="94.308333" Canvas.Top="-1.706667">
+    <TextBlock Text="Select the orders to hold" />
+  </Label>
+  <Canvas>
+    <Button BorderBrush="#FF000000" BorderThickness="0,0,0,0" Background="#FF7F7F7F" Foreground="#FFFFFFFF" FontFamily="Microsoft Sans Serif" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,0,0" Name="Button1" Width="88" Height="29" Canvas.Left="94.442611" Canvas.Top="155.480142" Block.TextAlignment="Center">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+              <gwx:GwxPick.CommandParameters>
+                <gwxcmd:ScriptCommand />
+              </gwx:GwxPick.CommandParameters>
+              <gwx:GwxPick.EventBindings>
+                <script:ScriptEventBindings>
+                  <script:ScriptEventBindings.EventBindings>
+                    <x:Array Type="script:ScriptEventBinding">
+                      <script:ScriptEventBinding EventName="CommandExecuted" MethodName="hold_btn" ScriptType="JScriptNet" />
+                    </x:Array>
+                  </script:ScriptEventBindings.EventBindings>
+                </script:ScriptEventBindings>
+              </gwx:GwxPick.EventBindings>
+            </gwx:GwxPick>
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="Hold" />
+    </Button>
+    <Image Stretch="Fill" Width="20" Height="20" Canvas.Left="99.29523" Canvas.Top="159.980142" />
+  </Canvas>
+  <Button BorderBrush="#FF000000" BorderThickness="0,0,0,0" Background="#FF7F7F7F" Foreground="#FFFFFFFF" FontFamily="Microsoft Sans Serif" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,0,0" Name="Button2" Width="102.569536" Height="29" Canvas.Left="200.987865" Canvas.Top="155.480137" Block.TextAlignment="Center">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+            <gwx:GwxPick.CommandParameters>
+              <gwxcmd:ScriptCommand />
+            </gwx:GwxPick.CommandParameters>
+            <gwx:GwxPick.EventBindings>
+              <script:ScriptEventBindings>
+                <script:ScriptEventBindings.EventBindings>
+                  <x:Array Type="script:ScriptEventBinding">
+                    <script:ScriptEventBinding EventName="CommandExecuted" MethodName="unhold_btn" ScriptType="JScriptNet" />
+                  </x:Array>
+                </script:ScriptEventBindings.EventBindings>
+              </script:ScriptEventBindings>
+            </gwx:GwxPick.EventBindings>
+          </gwx:GwxPick>
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <TextBlock Text="UnHold" />
+  </Button>
+  <Image Stretch="Fill" Width="20" Height="20" Canvas.Left="204.840484" Canvas.Top="159.480137" />
+  <TextBox MaxLength="50" FontFamily="Calibri" FontSize="16" VerticalContentAlignment="Center" Name="holdReason" Width="334.441502" Height="25" Canvas.Left="31.558498" Canvas.Top="121" />
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Canvas.Left="31.558498" Canvas.Top="101.456954">
+    <TextBlock Text="Hold Reason" />
+  </Label>
+  <Image Stretch="Fill" Name="close_button_image" Width="26" Height="26" Canvas.Left="371" Canvas.Top="2">
+    <Image.Source>
+      <BitmapImage>
+        <iwm:BitmapImageInfo.StreamSource>
+          <iwm:Base64Stream Data="iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAACcFBMVEUAAADyQTT4RTj0Qzb0QzbzQjb0Qzb0QzbzQjX0Qzb0Qzb0Qjb0Qjb0QjXzQjb0QjXzQjb0Qzb0QzbzQjX0Qzb0Qzb0QzbyQTX2RTb2RTj0Qjb0QjX0QjX0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0QjX0Qzb0Qzb0Qzb0Qzb0Qjb0QjX0Qzb0Qzb0QjX0QTT0Qzb0Qzb0Qzb0QjX0QjX0Qzb0QzbzQjb0QjX0Qzb0Qzb0QTT1Vkv2ZFr0QjX0Qzb0Qzb0QjX1V0z1TED0QjX0QzbzQjb0QjX1U0j8u7r+1db3cGj0QTT0Qzb0QTT2Zlz9ysn6paL0QzbzQjb0QjX1Vkr8wcD+1db3cGj0QTT0QTT2ZVz9zM39ysn1V0z0Qzb0QTT2W1D8wcD+1db3cGf2ZVz9zMz2Zlz0Qzb0QTT2W1D8wcD+2Nn909T9zMz0Qzb0Qzb0QTT2Wk/9yMf909T0QTT2ZVv9zs/+2Nn2ZVz9zM39zs/9yMf0Qzb0QjT2ZVz9zM32ZVv+1db3cGj0QjX0Qzb0QjT2XFL9zMz8wcD91NT2YFb0QTT0QjX1U0j8ubf9zMz2W1D8wL77rqv1UET0QjX0QjT2XFL0QjT1U0j1TkL0QjX0QjX0Qzb0Qzb0QjX0QjX0Qzb0QzbzQjb0QjX0Qzb0Qzb0QjX0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0QjbzQjXzQjXzQjXzQjX0QjX0Qzb/7vH/7/L/7vH/7vL/7fD/7fD/7fD/7fD/7fD/7vH/7vL/7vL////lRu92AAAAwnRSTlMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMGBgVUp7W0tLWnVAVV8fFUAqb+/qYCBrX+/v7+/v7+/v61Bga0/v7+/v7+/v7+/v61Bv7+///+/v7+/v//tQb+/v///v7+/v///v7+/v///v7//v7+/v/////+/v7+///+/v///v////7+/v/+//7+/v7+/////v7+/v///v///v7+/v7+/v4Gtf7+/v61BgKmpgJU8fBUBVSntra2tqdUBQMGBgYGAxa1CtMAAAABYktHRM+D3sJpAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAB3RJTUUH4gcXAiwRuLM8LQAAAYNJREFUKM9jYCAXMDJJScsgAWkpJkaIDLOsnLyCohIcKCqrqKqxgGRY2dQ1DqEBTS12DqAUp7bOIV09FKB7SN+ACyjFbWh0SE/P2MTUzBwoamFpZa2nd8jGlgcoxWtnf0jPwdHJ2cXVXM/N3cPTy1rvkLcPH1CKX0bpkJ6vn39AYJBrcEhoWLinld6hiEgBmFRUdMzh2Lj4hMSkI8kplihSqWnpGUczs7JzjiXlulugSOnl5RcUHi8qPlGSGFKqhyqlV1ZeUXnyVFV2QrAeupRbdU3t6ZN1WfFAd6JKuYXUN5xpbDqeGRcElEOWam5pbTvW0F5ReLSjs6sbRaqnt+9sW311eUH/uQkTJ6FITZ4ydVpriFtZ/vQZM2fNhkmBA8p4zpS5LUBX582bv2ChAyyguBctBgXv5J5mUKAvWbpsOdCFK1aCgldw1WrMSFmzVggoJSyybj16VG7YKCoMimaWTZu3bN22HQ627di5a7cYJHGIS+zZu28/HOw7cFCSkew0CABQdcNHf+fRzwAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxOC0wNy0yM1QwMjo0NDoxNy0wNDowMP2o+lgAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTgtMDctMjNUMDI6NDQ6MTctMDQ6MDCM9ULkAAAAAElFTkSuQmCC" />
+        </iwm:BitmapImageInfo.StreamSource>
+      </BitmapImage>
+    </Image.Source>
+    <Image.Effect>
+      <DropShadowEffect ShadowDepth="5" Color="#FF000000" Direction="315" Opacity="0.75" BlurRadius="18.75" />
+    </Image.Effect>
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+            <gwx:GwxPick.CommandParameters>
+              <gwxcmd:CloseWindowCommand />
+            </gwx:GwxPick.CommandParameters>
+          </gwx:GwxPick>
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+  </Image>
+  <gwx:WindowsFormsControl FontFamily="Calibri" FontSize="16" Name="HoldFrom" Width="141" Height="25" Canvas.Left="31.558498" Canvas.Top="70.000003">
+    <gwx:WindowsFormsControl.ControlProperties>
+      <XmlDataProvider IsAsynchronous="False">
+        <x:XData>
+          <Data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="">
+            <TextBox xsi:type="System.Windows.Forms.TextBox">
+              <DataBindings>
+                <DefaultDataSourceUpdateMode>OnValidation</DefaultDataSourceUpdateMode>
+              </DataBindings>
+              <Font>Calibri, 14.25pt</Font>
+              <Location>0, 0</Location>
+              <Name>HoldFrom</Name>
+              <Size>141, 31</Size>
+              <TabIndex>1</TabIndex>
+            </TextBox>
+          </Data>
+        </x:XData>
+      </XmlDataProvider>
+    </gwx:WindowsFormsControl.ControlProperties>
+  </gwx:WindowsFormsControl>
+  <gwx:WindowsFormsControl FontFamily="Calibri" FontSize="16" Name="HoldTo" Width="141" Height="25" Canvas.Left="224.999999" Canvas.Top="70.000003">
+    <gwx:WindowsFormsControl.ControlProperties>
+      <XmlDataProvider IsAsynchronous="False">
+        <x:XData>
+          <Data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="">
+            <TextBox xsi:type="System.Windows.Forms.TextBox">
+              <DataBindings>
+                <DefaultDataSourceUpdateMode>OnValidation</DefaultDataSourceUpdateMode>
+              </DataBindings>
+              <Font>Calibri, 14.25pt</Font>
+              <Location>0, 0</Location>
+              <Name>HoldTo</Name>
+              <Size>141, 31</Size>
+              <TabIndex>1</TabIndex>
+            </TextBox>
+          </Data>
+        </x:XData>
+      </XmlDataProvider>
+    </gwx:WindowsFormsControl.ControlProperties>
+  </gwx:WindowsFormsControl>
+</Canvas>

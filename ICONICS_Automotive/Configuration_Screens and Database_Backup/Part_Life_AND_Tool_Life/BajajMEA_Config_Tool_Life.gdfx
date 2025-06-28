@@ -1,0 +1,2323 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Canvas Background="#FF243782" Width="1100" Height="700" Focusable="False" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:iwm="clr-namespace:Ico.Windows.Media;assembly=IcoWPF" xmlns:gwx="clr-namespace:Ico.Gwx;assembly=GwxRuntimeCore" xmlns:script="clr-namespace:Ico.Script;assembly=IcoScriptEngine" xmlns:ic="clr-namespace:Ico.Collections;assembly=IcoCollections" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:gwxcmd="clr-namespace:Ico.Gwx;assembly=GwxRuntimeCoreCommands" xmlns:icc="clr-namespace:Ico.Commanding.Commands;assembly=IcoCommands" xmlns:ig="clr-namespace:Ico.Gdx;assembly=GdxViewControl" xmlns:iws="clr-namespace:Ico.WPF.Specialized;assembly=IcoWPFSpecialized" xmlns:ig15="clr-namespace:Ico.Gdx;assembly=GdxClientCommon" xmlns:igd="clr-namespace:Ico.Gdx.Data;assembly=GdxClientCommon" xmlns:iwc="clr-namespace:Ico.Windows.Controls;assembly=IcoWPF">
+  <Canvas.Resources>
+    <BitmapImage x:Key="GwxThumbnailImageKey">
+      <iwm:BitmapImageInfo.StreamSource>
+        <iwm:Base64Stream Data="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" />
+      </iwm:BitmapImageInfo.StreamSource>
+    </BitmapImage>
+  </Canvas.Resources>
+  <gwx:GwxDocument.GwxDocument>
+    <gwx:GwxDocument FileVersion="10.97.020.00" IsScalable="True" MinimumZoom="0.16" PanEnabled="False" PreferredStretch="Fill" ScanRate="500">
+      <gwx:GwxDocument.ScriptCodeManager>
+        <script:ScriptCodeManager>
+          <script:ScriptCodeManager.Scripts>
+            <script:ScriptCode Name="ThisDisplayCode" Type="JScriptNet">
+              <x:XData><![CDATA[function ThisDisplay_AnimationStarted(sender : System.Object, e : System.EventArgs)
+{
+	        Clear();
+            ThisWindow.FwxClientWrapper.WriteAsync("@rgs64:headerReg.Value","Tool Life Configuration")
+	
+			var plant_empty_label            			: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("plant_empty_label");
+		    var shop_name_empty_label         			: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("shop_name_empty_label");
+			var line_name_empty_label         			: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("line_name_empty_label");
+			var stage_name_empty_label  				: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("stage_name_empty_label");
+            var equipment_name_empty_label 				: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("equipment_name_empty_label");
+  			var sub_unit_name_empty_label              	: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("sub_unit_name_empty_label");
+			var tool_id_empty_label            			: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("tool_id_empty_label");
+			var tool_name_empty_label           		: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("tool_name_empty_label");
+			var tool_life_value_estimated_empty_label   : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("tool_life_value_estimated_empty_label");
+			var tool_life_units_empty_label    			: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("tool_life_units_empty_label");
+			var alert_value1_empty_label  				: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("alert_value1_empty_label");
+			var alert_value2_empty_label  				: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("alert_value2_empty_label");
+            var alert_user1_empty_label 				: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("alert_user1_empty_label");
+  			var alert_user2_empty_label              	: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("alert_user2_empty_label");
+
+			plant_empty_label.Visible            				= false
+			shop_name_empty_label.Visible          				= false
+			line_name_empty_label.Visible          				= false
+			stage_name_empty_label.Visible   					= false
+			equipment_name_empty_label.Visible  				= false
+			sub_unit_name_empty_label.Visible      		 		= false
+			tool_id_empty_label.Visible     		  			= false
+			tool_name_empty_label.Visible        				= false
+			tool_life_value_estimated_empty_label.Visible     	= false
+	     	tool_life_units_empty_label.Visible            		= false
+			alert_value1_empty_label.Visible          			= false
+			alert_value2_empty_label.Visible          			= false
+			alert_user1_empty_label.Visible   					= false
+			alert_user2_empty_label.Visible  					= false
+
+}
+
+function ThisDisplay_AnimationStopped(sender : System.Object, e : System.EventArgs)
+{
+            Clear();
+			ThisWindow.FwxClientWrapper.WriteAsync("@rgs64:headerReg.Value","")
+			
+			var plant_empty_label            			: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("plant_empty_label");
+		    var shop_name_empty_label         			: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("shop_name_empty_label");
+			var line_name_empty_label         			: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("line_name_empty_label");
+			var stage_name_empty_label  				: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("stage_name_empty_label");
+            var equipment_name_empty_label 				: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("equipment_name_empty_label");
+  			var sub_unit_name_empty_label              	: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("sub_unit_name_empty_label");
+			var tool_id_empty_label            			: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("tool_id_empty_label");
+			var tool_name_empty_label           		: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("tool_name_empty_label");
+			var tool_life_value_estimated_empty_label   : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("tool_life_value_estimated_empty_label");
+			var tool_life_units_empty_label    			: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("tool_life_units_empty_label");
+			var alert_value1_empty_label  				: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("alert_value1_empty_label");
+			var alert_value2_empty_label  				: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("alert_value2_empty_label");
+            var alert_user1_empty_label 				: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("alert_user1_empty_label");
+  			var alert_user2_empty_label              	: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("alert_user2_empty_label");
+
+			plant_empty_label.Visible            				= false
+			shop_name_empty_label.Visible          				= false
+			line_name_empty_label.Visible          				= false
+			stage_name_empty_label.Visible   					= false
+			equipment_name_empty_label.Visible  				= false
+			sub_unit_name_empty_label.Visible      		 		= false
+			tool_id_empty_label.Visible     		  			= false
+			tool_name_empty_label.Visible        				= false
+			tool_life_value_estimated_empty_label.Visible     	= false
+	     	tool_life_units_empty_label.Visible            		= false
+			alert_value1_empty_label.Visible          			= false
+			alert_value2_empty_label.Visible          			= false
+			alert_user1_empty_label.Visible   					= false
+			alert_user2_empty_label.Visible  					= false
+}
+
+
+
+
+
+
+
+
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="Asterisk_Validation" Type="JScriptNet">
+              <x:XData><![CDATA[
+function tool_id_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{
+	var tool_id_empty_label            			: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("tool_id_empty_label");
+	tool_id_empty_label.Visible     		  			= false
+}
+
+function tool_name_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{
+	var tool_name_empty_label           		: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("tool_name_empty_label");
+	tool_name_empty_label.Visible        				= false
+}
+
+function tool_life_value_estimated_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{
+	var tool_life_value_estimated_empty_label   : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("tool_life_value_estimated_empty_label");
+	tool_life_value_estimated_empty_label.Visible     	= false
+}
+
+
+function tool_life_units_DropDownOpened(sender : System.Object, e : System.EventArgs)
+{
+	var tool_life_units_empty_label    			: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("tool_life_units_empty_label");
+	tool_life_units_empty_label.Visible            		= false
+}
+
+
+
+function alert_value1_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{
+	var alert_value1_empty_label  				: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("alert_value1_empty_label");
+	alert_value1_empty_label.Visible          			= false
+
+}
+
+function alert_value2_TextChanged(sender : System.Object, e : System.Windows.Controls.TextChangedEventArgs)
+{
+	var alert_value2_empty_label  				: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("alert_value2_empty_label");
+	alert_value2_empty_label.Visible          			= false
+
+}
+
+
+	
+
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="ClearCode" Type="JScriptNet">
+              <x:XData><![CDATA[function Clear(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs){		
+	
+	// [Variable Declaration] Creating holder variables that will hold the user input values in the script
+	var plant_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("plant_name").ToDependencyObject();
+	var shop_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("shop_name").ToDependencyObject();
+	var line_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("line_name").ToDependencyObject();
+	var stage_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("stage_name").ToDependencyObject();
+	var equipment_name      		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("equipment_name").ToDependencyObject();
+    var sub_unit_name       		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("sub_unit_name").ToDependencyObject();
+	var tool_id           			: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("tool_id").ToDependencyObject();
+    var tool_name           		: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("tool_name").ToDependencyObject();
+    var tool_life_value_estimated   : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("tool_life_value_estimated").ToDependencyObject();
+    var tool_life_units           	: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("tool_life_units").ToDependencyObject();
+	var alert_value1           		: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("alert_value1").ToDependencyObject();
+    var alert_value2           		: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("alert_value2").ToDependencyObject();
+    var alert_user_1           		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("alert_user_1").ToDependencyObject();
+    var alert_user_2           		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("alert_user_2").ToDependencyObject();
+	var line_stop	                : System.Windows.Controls.CheckBox	= ThisConfiguration.GetObjectByName("line_stop").ToDependencyObject();
+    var sms	                        : System.Windows.Controls.CheckBox	= ThisConfiguration.GetObjectByName("sms").ToDependencyObject();
+    var email	                    : System.Windows.Controls.CheckBox	= ThisConfiguration.GetObjectByName("email").ToDependencyObject();
+
+		
+	// [Array Reset] Collection arrays are reset here to default values
+	plant_name.Items.Clear();
+	shop_name.Items.Clear();
+	line_name.Items.Clear();
+	stage_name.Items.Clear();
+    equipment_name.Items.Clear();
+    sub_unit_name.Items.Clear();
+	alert_user_1.Items.Clear();
+	alert_user_2.Items.Clear();
+
+	line_stop.IsChecked= false;
+	sms.IsChecked= false;
+	email.IsChecked= false;
+
+	
+	
+	//[Variable Reset] Variables are reset here to default values
+	plant_name.SelectedIndex        = 0;
+	shop_name.SelectedIndex         = 0;
+	line_name.SelectedIndex 	    = 0;
+	stage_name.SelectedIndex 	    = 0;
+	equipment_name.SelectedIndex 	= 0;
+	sub_unit_name.SelectedIndex     = 0;
+	tool_life_units.SelectedIndex   = 0;
+	alert_user_1.SelectedIndex      = 0;
+	alert_user_2.SelectedIndex      = 0;
+			
+	tool_id.Clear();
+	tool_name.Clear();
+	tool_life_value_estimated.Clear();
+	alert_value1.Clear();
+	alert_value2.Clear();		
+	//[Inline Test Statemnt] MessageBox.Show('Clearing all fields');
+}]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="CreateCode" Type="JScriptNet">
+              <x:XData><![CDATA[function Create(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs){
+	
+	var connection_string : String = "Data Source="+DB_SERVER+"; Initial Catalog="+DB_NAME+"; Password="+DB_PASSWORD+"; User ID="+DB_USERID+";";
+	// [Inline Test Statement] : Prints out connection_string : MessageBox.Show(connection_string);
+			
+	// [Opening connection with the database]
+	var connection : System.Data.SqlClient.SqlConnection;
+	connection = new System.Data.SqlClient.SqlConnection(connection_string);
+			
+	connection.Open();
+    
+    // [Operation Specification] Specifying the kind of operation that happens on pressing the button 
+    var ActionOp = 'Create';
+
+	// [Provisioning Security System]
+	var logged_in_user : System.Windows.Controls.TextBox = ThisConfiguration.GetObjectByName("logged_in_user").ToDependencyObject();
+	//MessageBox.Show(logged_in_user.Text);
+
+    
+	// [Variable Declaration] Creating holder variables that will hold the user input values in the script
+	var plant_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("plant_name").ToDependencyObject();
+	var shop_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("shop_name").ToDependencyObject();
+	var line_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("line_name").ToDependencyObject();
+	var stage_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("stage_name").ToDependencyObject();
+	var equipment_name      		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("equipment_name").ToDependencyObject();
+    var sub_unit_name       		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("sub_unit_name").ToDependencyObject();
+	var tool_id           			: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("tool_id").ToDependencyObject();
+    var tool_name           		: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("tool_name").ToDependencyObject();
+    var tool_life_value_estimated   : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("tool_life_value_estimated").ToDependencyObject();
+    var tool_life_units           	: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("tool_life_units").ToDependencyObject();
+    var alert_value1           		: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("alert_value1").ToDependencyObject();
+    var alert_value2           		: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("alert_value2").ToDependencyObject();
+    var alert_user_1           		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("alert_user_1").ToDependencyObject();
+    var alert_user_2           		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("alert_user_2").ToDependencyObject();
+    var line_stop	                : System.Windows.Controls.CheckBox	= ThisConfiguration.GetObjectByName("line_stop").ToDependencyObject();
+	var sms	                        : System.Windows.Controls.CheckBox	= ThisConfiguration.GetObjectByName("sms").ToDependencyObject();
+    var email	                    : System.Windows.Controls.CheckBox	= ThisConfiguration.GetObjectByName("email").ToDependencyObject();
+
+	var plant_empty_label            			: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("plant_empty_label");
+	var shop_name_empty_label         			: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("shop_name_empty_label");
+	var line_name_empty_label         			: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("line_name_empty_label");
+	var stage_name_empty_label  				: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("stage_name_empty_label");
+    var equipment_name_empty_label 				: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("equipment_name_empty_label");
+  	var sub_unit_name_empty_label              	: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("sub_unit_name_empty_label");
+	var tool_id_empty_label            			: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("tool_id_empty_label");
+	var tool_name_empty_label           		: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("tool_name_empty_label");
+	var tool_life_value_estimated_empty_label   : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("tool_life_value_estimated_empty_label");
+    var tool_life_value_current_empty_label     : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("tool_life_value_current_empty_label");	
+	var tool_life_units_empty_label    			: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("tool_life_units_empty_label");
+	var alert_value1_empty_label  				: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("alert_value1_empty_label");
+	var alert_value2_empty_label  				: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("alert_value2_empty_label");
+    var alert_user1_empty_label 				: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("alert_user1_empty_label");
+  	var alert_user2_empty_label              	: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("alert_user2_empty_label");
+
+
+    // [Hardcoded Variable] These variables have to be replaced using the tag for the logged in user.
+	var created_by 		= logged_in_user.Text;
+	var updated_by 		= logged_in_user.Text;
+	
+	var line_stop_int = -1;
+			if(line_stop.IsChecked == true){
+				line_stop_int =1;
+			}
+		    else {
+				line_stop_int =0;
+			}
+	var sms_int = -1;
+			if(sms.IsChecked == true){
+				sms_int =1;
+			}
+		    else {
+				sms_int =0;
+			}
+	var email_int = -1;
+			if(email.IsChecked == true){
+				email_int =1;
+			}
+		    else {
+				email_int =0;
+			}
+
+
+    
+    //[Error & Exception Handling] Creating a variable for error and exception handling
+    var response		: String;
+    response="";
+		
+    // [Query String] Building Query for calling stored procedure
+    var query_string : String = "EXEC [dbo].[SP_Maintenance_Tool_Life]";
+    query_string += "@plant_name     				= '"+plant_name.Text+"',";
+	query_string += "@shop_name	    				= '"+shop_name.Text+"',";
+	query_string += "@line_name 	    			= '"+line_name.Text+"',";
+	query_string += "@stage_name        			= '"+stage_name.Text+"',";
+    query_string += "@equipment_name        		= '"+equipment_name.Text+"',";
+    query_string += "@sub_unit_name					= '"+sub_unit_name.Text+"',";
+    query_string += "@tool_id						= '"+tool_id.Text+"',";
+    query_string += "@tool_name     				= '"+tool_name.Text+"',";
+    query_string += "@tool_life_value_estimated		= '"+tool_life_value_estimated.Text+"',";
+    query_string += "@tool_life_units				= '"+tool_life_units.Text+"',";
+	query_string += "@alert_value_1				    = '"+alert_value1.Text+"',";
+	query_string += "@alert_value_2				    = '"+alert_value2.Text+"',";
+	query_string += "@line_stop				        = '"+line_stop_int+"',";
+	query_string += "@sms				            = '"+sms_int+"',";
+	query_string += "@email				            = '"+email_int+"',";
+	query_string += "@alert_user_1   				= '"+alert_user_1.Text+"',";
+	query_string += "@alert_user_2   				= '"+alert_user_2.Text+"',";
+	query_string += "@created_by    				= '"+created_by+"',";
+	query_string += "@updated_by    				= '"+updated_by+"',";
+	query_string += "@ActionOp 			    		= '"+ActionOp+"'";		
+			
+	//[Inline Test Statement]MessageBox.Show(query_string);
+					
+    // [Validation Statement] This if-else statement checks if any of the fields have been left empty
+    if ( plant_name.Text == ""|| shop_name.Text =="" || line_name.Text == ""|| stage_name.Text =="" || equipment_name.Text =="" || sub_unit_name.Text==""|| tool_id.Text==""|| tool_name.Text=="" || tool_life_value_estimated.Text==""||   tool_life_units.Text==""||  alert_value1.Text=="" || alert_value2.Text=="" || alert_user_1.Text==""|| alert_user_2.Text=="" ){
+        
+		//MessageBox.Show("Please fill in all the required values!")
+
+        if(plant_name.Text == "")
+        {plant_empty_label.Visible = true}
+        else 
+        {plant_empty_label.Visible = false}
+        
+        if(shop_name.Text == "")
+        {shop_name_empty_label.Visible = true}
+        else					
+        {shop_name_empty_label.Visible = false}
+        
+        if(line_name.Text == "")
+        {line_name_empty_label.Visible = true}
+        else					
+        {line_name_empty_label.Visible = false}
+
+        if(stage_name.Text == "")
+        {stage_name_empty_label.Visible = true}
+        else					
+        {stage_name_empty_label.Visible = false}
+        
+        if(equipment_name.Text == "")
+        {equipment_name_empty_label.Visible = true}
+        else					
+        {equipment_name_empty_label.Visible = false}
+        
+        if(sub_unit_name.Text == "")
+        {sub_unit_name_empty_label.Visible = true}
+        else					
+        {sub_unit_name_empty_label.Visible = false}
+        
+        if(tool_id.Text == "")
+        {tool_id_empty_label.Visible = true}
+        else					
+        {tool_id_empty_label.Visible = false}
+        
+        if(tool_name.Text == "")
+        {tool_name_empty_label.Visible = true}
+        else					
+        {tool_name_empty_label.Visible = false}
+        
+        if(tool_life_value_estimated.Text == "")
+        {tool_life_value_estimated_empty_label.Visible = true}
+        else					
+        {tool_life_value_estimated_empty_label.Visible = false}
+               
+		if(tool_life_units.Text == "")
+        {tool_life_units_empty_label.Visible = true}
+        else					
+        {tool_life_units_empty_label.Visible = false}
+		
+		if(alert_value1.Text == "")
+        {alert_value1_empty_label.Visible = true}
+        else					
+        {alert_value1_empty_label.Visible = false}
+
+        if(alert_value2.Text == "")
+        {alert_value2_empty_label.Visible = true}
+        else					
+        {alert_value2_empty_label.Visible = false}
+
+
+		if(alert_user_1.Text == "")
+        {alert_user1_empty_label.Visible = true}
+        else					
+        {alert_user1_empty_label.Visible = false}
+		
+		if(alert_user_2.Text == "")
+        {alert_user2_empty_label.Visible = true}
+        else					
+        {alert_user2_empty_label.Visible = false}
+
+        
+        } else {
+            // [Inline Test Statement] MessageBox.Show("Thank you for filling all the required values");
+            try {
+                var reader : System.Data.SqlClient.SqlDataReader;
+                //[Inline Test Statement] MessageBox.Show(query_string);
+
+                var stored_procedure_query : System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand(query_string, connection);					
+                reader = stored_procedure_query.ExecuteReader();
+                Clear();	
+                while(reader.Read())
+                {
+                    response = reader["Response"];
+                    MessageBox.Show(response);
+                }
+                reader.Close();
+            }
+        catch(ex : Exception){
+                MessageBox.Show (ex.Message);	
+            }	
+        }			
+                        
+		// [Closing connection with the database]
+		
+
+		connection.Close();
+		
+	}]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="Database_connection" Type="JScriptNet">
+              <x:XData><![CDATA[const DB_SERVER               : String = "DESKTOP-BI1L6JI\\SQLEXPRESS2017";
+const DB_NAME                 : String = "BajajMEA";
+const DB_USERID               : String = "sa";
+const DB_PASSWORD             : String = "sql_1234";
+var DB_CONNECT_AUTHENTICATION : String = ";User ID="+DB_USERID+";Password="+DB_PASSWORD+";";
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="DeleteCode" Type="JScriptNet">
+              <x:XData><![CDATA[function Delete(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs){
+	
+	var connection_string : String = "Data Source="+DB_SERVER+"; Initial Catalog="+DB_NAME+"; Password="+DB_PASSWORD+"; User ID="+DB_USERID+";";
+	// [Inline Test Statement] : Prints out connection_string : MessageBox.Show(connection_string);
+			
+	// [Opening connection with the database]
+	var connection : System.Data.SqlClient.SqlConnection;
+	connection = new System.Data.SqlClient.SqlConnection(connection_string);
+			
+	connection.Open();
+    
+    // [Operation Specification] Specifying the kind of operation that happens on pressing the button 
+    var ActionOp = 'Delete';
+
+	// [Provisioning Security System]
+	var logged_in_user : System.Windows.Controls.TextBox = ThisConfiguration.GetObjectByName("logged_in_user").ToDependencyObject();
+	//MessageBox.Show(logged_in_user.Text);
+
+    
+	// [Variable Declaration] Creating holder variables that will hold the user input values in the script
+	var plant_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("plant_name").ToDependencyObject();
+	var shop_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("shop_name").ToDependencyObject();
+	var line_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("line_name").ToDependencyObject();
+	var stage_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("stage_name").ToDependencyObject();
+	var equipment_name      		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("equipment_name").ToDependencyObject();
+    var sub_unit_name       		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("sub_unit_name").ToDependencyObject();
+	var tool_id           			: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("tool_id").ToDependencyObject();
+    var tool_name           		: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("tool_name").ToDependencyObject();
+    var tool_life_value_estimated   : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("tool_life_value_estimated").ToDependencyObject();
+    var tool_life_units           	: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("tool_life_units").ToDependencyObject();
+    var alert_value1           		: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("alert_value1").ToDependencyObject();
+    var alert_value2           		: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("alert_value2").ToDependencyObject();
+    var alert_user_1           		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("alert_user_1").ToDependencyObject();
+    var alert_user_2           		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("alert_user_2").ToDependencyObject();
+    var line_stop	                : System.Windows.Controls.CheckBox	= ThisConfiguration.GetObjectByName("line_stop").ToDependencyObject();
+	var sms	                        : System.Windows.Controls.CheckBox	= ThisConfiguration.GetObjectByName("sms").ToDependencyObject();
+    var email	                    : System.Windows.Controls.CheckBox	= ThisConfiguration.GetObjectByName("email").ToDependencyObject();
+
+	var plant_empty_label            			: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("plant_empty_label");
+	var shop_name_empty_label         			: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("shop_name_empty_label");
+	var line_name_empty_label         			: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("line_name_empty_label");
+	var stage_name_empty_label  				: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("stage_name_empty_label");
+    var equipment_name_empty_label 				: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("equipment_name_empty_label");
+  	var sub_unit_name_empty_label              	: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("sub_unit_name_empty_label");
+	var tool_id_empty_label            			: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("tool_id_empty_label");
+	var tool_name_empty_label           		: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("tool_name_empty_label");
+	var tool_life_value_estimated_empty_label   : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("tool_life_value_estimated_empty_label");
+    var tool_life_value_current_empty_label     : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("tool_life_value_current_empty_label");	
+	var tool_life_units_empty_label    			: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("tool_life_units_empty_label");
+	var alert_value1_empty_label  				: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("alert_value1_empty_label");
+	var alert_value2_empty_label  				: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("alert_value2_empty_label");
+    var alert_user1_empty_label 				: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("alert_user1_empty_label");
+  	var alert_user2_empty_label              	: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("alert_user2_empty_label");
+
+
+    // [Hardcoded Variable] These variables have to be replaced using the tag for the logged in user.
+	var created_by 		= logged_in_user.Text;
+	var updated_by 		= logged_in_user.Text;
+	
+	var line_stop_int = -1;
+			if(line_stop.IsChecked == true){
+				line_stop_int =1;
+			}
+		    else {
+				line_stop_int =0;
+			}
+	var sms_int = -1;
+			if(sms.IsChecked == true){
+				sms_int =1;
+			}
+		    else {
+				sms_int =0;
+			}
+	var email_int = -1;
+			if(email.IsChecked == true){
+				email_int =1;
+			}
+		    else {
+				email_int =0;
+			}
+
+
+    
+    //[Error & Exception Handling] Creating a variable for error and exception handling
+    var response		: String;
+    response="";
+		
+    // [Query String] Building Query for calling stored procedure
+    var query_string : String = "EXEC [dbo].[SP_Maintenance_Tool_Life]";
+    query_string += "@plant_name     				= '"+plant_name.Text+"',";
+	query_string += "@shop_name	    				= '"+shop_name.Text+"',";
+	query_string += "@line_name 	    			= '"+line_name.Text+"',";
+	query_string += "@stage_name        			= '"+stage_name.Text+"',";
+    query_string += "@equipment_name        		= '"+equipment_name.Text+"',";
+    query_string += "@sub_unit_name					= '"+sub_unit_name.Text+"',";
+    query_string += "@tool_id						= '"+tool_id.Text+"',";
+    query_string += "@tool_name     				= '"+tool_name.Text+"',";
+    query_string += "@tool_life_value_estimated		= '"+tool_life_value_estimated.Text+"',";
+    query_string += "@tool_life_units				= '"+tool_life_units.Text+"',";
+	query_string += "@alert_value_1				    = '"+alert_value1.Text+"',";
+	query_string += "@alert_value_2				    = '"+alert_value2.Text+"',";
+	query_string += "@line_stop				        = '"+line_stop_int+"',";
+	query_string += "@sms				            = '"+sms_int+"',";
+	query_string += "@email				            = '"+email_int+"',";
+	query_string += "@alert_user_1   				= '"+alert_user_1.Text+"',";
+	query_string += "@alert_user_2   				= '"+alert_user_2.Text+"',";
+	query_string += "@created_by    				= '"+created_by+"',";
+	query_string += "@updated_by    				= '"+updated_by+"',";
+	query_string += "@ActionOp 			    		= '"+ActionOp+"'";		
+			
+	//[Inline Test Statement]MessageBox.Show(query_string);
+					
+    // [Validation Statement] This if-else statement checks if any of the fields have been left empty
+    if ( plant_name.Text == ""|| shop_name.Text =="" || line_name.Text == ""|| stage_name.Text =="" || equipment_name.Text =="" || sub_unit_name.Text==""|| tool_id.Text==""|| tool_name.Text=="" || tool_life_value_estimated.Text==""||   tool_life_units.Text==""||  alert_value1.Text=="" || alert_value2.Text=="" || alert_user_1.Text==""|| alert_user_2.Text=="" ){
+        
+		//MessageBox.Show("Please fill in all the required values!")
+
+        if(plant_name.Text == "")
+        {plant_empty_label.Visible = true}
+        else 
+        {plant_empty_label.Visible = false}
+        
+        if(shop_name.Text == "")
+        {shop_name_empty_label.Visible = true}
+        else					
+        {shop_name_empty_label.Visible = false}
+        
+        if(line_name.Text == "")
+        {line_name_empty_label.Visible = true}
+        else					
+        {line_name_empty_label.Visible = false}
+
+        if(stage_name.Text == "")
+        {stage_name_empty_label.Visible = true}
+        else					
+        {stage_name_empty_label.Visible = false}
+        
+        if(equipment_name.Text == "")
+        {equipment_name_empty_label.Visible = true}
+        else					
+        {equipment_name_empty_label.Visible = false}
+        
+        if(sub_unit_name.Text == "")
+        {sub_unit_name_empty_label.Visible = true}
+        else					
+        {sub_unit_name_empty_label.Visible = false}
+        
+        if(tool_id.Text == "")
+        {tool_id_empty_label.Visible = true}
+        else					
+        {tool_id_empty_label.Visible = false}
+        
+        if(tool_name.Text == "")
+        {tool_name_empty_label.Visible = true}
+        else					
+        {tool_name_empty_label.Visible = false}
+        
+        if(tool_life_value_estimated.Text == "")
+        {tool_life_value_estimated_empty_label.Visible = true}
+        else					
+        {tool_life_value_estimated_empty_label.Visible = false}
+               
+		if(tool_life_units.Text == "")
+        {tool_life_units_empty_label.Visible = true}
+        else					
+        {tool_life_units_empty_label.Visible = false}
+		
+		if(alert_value1.Text == "")
+        {alert_value1_empty_label.Visible = true}
+        else					
+        {alert_value1_empty_label.Visible = false}
+
+        if(alert_value2.Text == "")
+        {alert_value2_empty_label.Visible = true}
+        else					
+        {alert_value2_empty_label.Visible = false}
+
+
+		if(alert_user_1.Text == "")
+        {alert_user1_empty_label.Visible = true}
+        else					
+        {alert_user1_empty_label.Visible = false}
+		
+		if(alert_user_2.Text == "")
+        {alert_user2_empty_label.Visible = true}
+        else					
+        {alert_user2_empty_label.Visible = false}
+
+        
+        } else {
+            // [Inline Test Statement] MessageBox.Show("Thank you for filling all the required values");
+            try {
+                var reader : System.Data.SqlClient.SqlDataReader;
+                //[Inline Test Statement] MessageBox.Show(query_string);
+
+                var stored_procedure_query : System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand(query_string, connection);					
+                reader = stored_procedure_query.ExecuteReader();
+                Clear();	
+                while(reader.Read())
+                {
+                    response = reader["Response"];
+                    MessageBox.Show(response);
+                }
+                reader.Close();
+            }
+        catch(ex : Exception){
+                MessageBox.Show (ex.Message);	
+            }	
+        }			
+                        
+		// [Closing connection with the database]
+		
+
+		connection.Close();
+		
+	}]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="Dropdown_Alert_User" Type="JScriptNet">
+              <x:XData><![CDATA[function Dropdown_Alert_User1(sender : System.Object, e : System.EventArgs)
+{
+	var connection_string : String = "Data Source="+DB_SERVER+"; Initial Catalog="+DB_NAME+"; Password="+DB_PASSWORD+"; User ID="+DB_USERID+";";
+		// [Inline Test Statement] : Prints out connection_string : MessageBox.Show(connection_string);
+		// [Opening connection with the database]
+		var connection : System.Data.SqlClient.SqlConnection;
+		connection = new System.Data.SqlClient.SqlConnection(connection_string);
+		
+		connection.Open();
+
+		// [Variable Declaration] Creating holder variables that will hold the user input values in the script
+		var plant_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("plant_name").ToDependencyObject();
+		var shop_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("shop_name").ToDependencyObject();
+		var line_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("line_name").ToDependencyObject();
+		var stage_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("stage_name").ToDependencyObject();
+		var equipment_name      		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("equipment_name").ToDependencyObject();
+	    var sub_unit_name       		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("sub_unit_name").ToDependencyObject();
+		var tool_id           			: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("tool_id").ToDependencyObject();
+    	var tool_name           		: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("tool_name").ToDependencyObject();
+    	var tool_life_value_estimated   : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("tool_life_value_estimated").ToDependencyObject();
+    	var tool_life_units           	: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("tool_life_units").ToDependencyObject();
+    	var alert_user_1           		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("alert_user_1").ToDependencyObject();
+	    var alert_user_2           		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("alert_user_2").ToDependencyObject();
+	
+		var alert_user1_empty_label 				: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("alert_user1_empty_label");
+		alert_user1_empty_label.Visible   					= false
+
+
+        
+        // [Array Reset] Collection arrays are reset here to default values
+		alert_user_1.Items.Clear();
+		alert_user_2.Items.Clear();
+		// [Setting Index] Setting Index to Zero
+		
+		alert_user_1.SelectedIndex   = 0;
+		alert_user_2.SelectedIndex   = 0;
+
+         if (tool_life_units.Text != "") {
+            var DataReader : System.Data.SqlClient.SqlDataReader;
+            var RetrieveDataCmd: System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand("SELECT distinct user_name from Config_User ", connection);
+            
+            try{
+                DataReader=RetrieveDataCmd.ExecuteReader();
+
+                while(DataReader.Read())
+                {
+                    alert_user_1.Items.Add(DataReader["user_name"]);
+                }
+                DataReader.Close();
+                connection.Close()
+                
+            }catch(ex:Exception){
+                MessageBox.Show(ex);
+            }
+        } else {
+            MessageBox.Show("You must select a Part Life Unit");
+        }
+}
+
+function Dropdown_Alert_User2(sender : System.Object, e : System.EventArgs)
+{
+	
+	var connection_string : String = "Data Source="+DB_SERVER+"; Initial Catalog="+DB_NAME+"; Password="+DB_PASSWORD+"; User ID="+DB_USERID+";";
+		// [Inline Test Statement] : Prints out connection_string : MessageBox.Show(connection_string);
+		// [Opening connection with the database]
+		var connection : System.Data.SqlClient.SqlConnection;
+		connection = new System.Data.SqlClient.SqlConnection(connection_string);
+		
+		connection.Open();
+
+		// [Variable Declaration] Creating holder variables that will hold the user input values in the script
+		var plant_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("plant_name").ToDependencyObject();
+		var shop_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("shop_name").ToDependencyObject();
+		var line_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("line_name").ToDependencyObject();
+		var stage_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("stage_name").ToDependencyObject();
+		var equipment_name      		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("equipment_name").ToDependencyObject();
+	    var sub_unit_name       		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("sub_unit_name").ToDependencyObject();
+		var tool_id           			: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("tool_id").ToDependencyObject();
+    	var tool_name           		: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("tool_name").ToDependencyObject();
+    	var tool_life_value_estimated   : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("tool_life_value_estimated").ToDependencyObject();
+    	var tool_life_units           	: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("tool_life_units").ToDependencyObject();
+    	var alert_user_1           		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("alert_user_1").ToDependencyObject();
+	    var alert_user_2           		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("alert_user_2").ToDependencyObject();
+	
+		
+		var alert_user2_empty_label 				: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("alert_user2_empty_label");
+		alert_user2_empty_label.Visible   					= false
+
+
+        
+        // [Array Reset] Collection arrays are reset here to default values
+		alert_user_2.Items.Clear();
+		// [Setting Index] Setting Index to Zero
+		
+		alert_user_2.SelectedIndex   = 0;
+
+         if (alert_user_1.Text != "") {
+            var DataReader : System.Data.SqlClient.SqlDataReader;
+            var RetrieveDataCmd: System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand("SELECT distinct user_name from Config_User ", connection);
+            
+            try{
+                DataReader=RetrieveDataCmd.ExecuteReader();
+
+                while(DataReader.Read())
+                {
+                    alert_user_2.Items.Add(DataReader["user_name"]);
+                }
+                DataReader.Close();
+                connection.Close()
+                
+            }catch(ex:Exception){
+                MessageBox.Show(ex);
+            }
+        } else {
+            MessageBox.Show("You must select a Alert User 1");
+        }
+
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="Dropdown_Equipment_Name" Type="JScriptNet">
+              <x:XData><![CDATA[function Dropdown_Equipment_Name(sender : System.Object, e : System.EventArgs)
+{
+	var connection_string : String = "Data Source="+DB_SERVER+"; Initial Catalog="+DB_NAME+"; Password="+DB_PASSWORD+"; User ID="+DB_USERID+";";
+		// [Inline Test Statement] : Prints out connection_string : MessageBox.Show(connection_string);
+		// [Opening connection with the database]
+		var connection : System.Data.SqlClient.SqlConnection;
+		connection = new System.Data.SqlClient.SqlConnection(connection_string);
+		
+		connection.Open();
+
+		// [Variable Declaration] Creating holder variables that will hold the user input values in the script
+		var plant_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("plant_name").ToDependencyObject();
+		var shop_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("shop_name").ToDependencyObject();
+		var line_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("line_name").ToDependencyObject();
+		var stage_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("stage_name").ToDependencyObject();
+		var equipment_name      		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("equipment_name").ToDependencyObject();
+	    var sub_unit_name       		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("sub_unit_name").ToDependencyObject();
+		var tool_id           			: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("tool_id").ToDependencyObject();
+	    var tool_name           		: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("tool_name").ToDependencyObject();
+	    var tool_life_value_estimated   : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("tool_life_value_estimated").ToDependencyObject();
+	    var tool_life_units           	: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("tool_life_units").ToDependencyObject();
+	    var alert_value1           		: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("alert_value1").ToDependencyObject();
+	    var alert_user_1           		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("alert_user_1").ToDependencyObject();
+	    var alert_user_2           		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("alert_user_2").ToDependencyObject();
+	
+        var equipment_name_empty_label  : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("equipment_name_empty_label");
+        equipment_name_empty_label.Visible    = false
+
+        
+        // [Array Reset] Collection arrays are reset here to default values
+		equipment_name.Items.Clear();
+		sub_unit_name.Items.Clear();
+		
+		// [Setting Index] Setting Index to Zero
+		equipment_name.SelectedIndex = 0;
+		sub_unit_name.SelectedIndex  = 0;
+
+         if (stage_name.Text != "") {
+            var DataReader : System.Data.SqlClient.SqlDataReader;
+            var RetrieveDataCmd: System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand("SELECT DISTINCT equipment_name from Config_Equipment where stage_id IN (SELECT stage_id from Config_Stage WHERE line_id IN(SELECT line_id from Config_Line WHERE line_name = '"+line_name.Text+"' and stage_name  = '"+stage_name.Text+"'))",connection);
+            
+            try{
+                DataReader=RetrieveDataCmd.ExecuteReader();
+
+                while(DataReader.Read())
+                {
+                    equipment_name.Items.Add(DataReader["equipment_name"]);
+                }
+                DataReader.Close();
+                connection.Close()
+                
+            }catch(ex:Exception){
+                MessageBox.Show(ex);
+            }
+        } else {
+            MessageBox.Show("You must select a stage first");
+        }	
+}]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="Dropdown_Line_Name" Type="JScriptNet">
+              <x:XData><![CDATA[function Dropdown_Line_Name(sender : System.Object, e : System.EventArgs)
+{
+	var connection_string : String = "Data Source="+DB_SERVER+"; Initial Catalog="+DB_NAME+"; Password="+DB_PASSWORD+"; User ID="+DB_USERID+";";
+		// [Inline Test Statement] : Prints out connection_string : MessageBox.Show(connection_string);
+		// [Opening connection with the database]
+		var connection : System.Data.SqlClient.SqlConnection;
+		connection = new System.Data.SqlClient.SqlConnection(connection_string);
+		
+		connection.Open();
+
+		// [Variable Declaration] Creating holder variables that will hold the user input values in the script
+		var plant_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("plant_name").ToDependencyObject();
+		var shop_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("shop_name").ToDependencyObject();
+		var line_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("line_name").ToDependencyObject();
+		var stage_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("stage_name").ToDependencyObject();
+		var equipment_name      		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("equipment_name").ToDependencyObject();
+	    var sub_unit_name       		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("sub_unit_name").ToDependencyObject();
+		var tool_id           			: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("tool_id").ToDependencyObject();
+	    var tool_name           		: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("tool_name").ToDependencyObject();
+	    var tool_life_value_estimated   : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("tool_life_value_estimated").ToDependencyObject();
+	    var tool_life_units           	: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("tool_life_units").ToDependencyObject();
+	    var alert_value1           		: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("alert_value1").ToDependencyObject();
+	    var alert_user_1           		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("alert_user_1").ToDependencyObject();
+	    var alert_user_2           		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("alert_user_2").ToDependencyObject();
+	
+        var line_name_empty_label  : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("line_name_empty_label");
+        line_name_empty_label.Visible    = false
+
+        
+        // [Array Reset] Collection arrays are reset here to default values
+		line_name.Items.Clear();
+		stage_name.Items.Clear();
+		equipment_name.Items.Clear();
+		sub_unit_name.Items.Clear();
+		
+		// [Setting Index] Setting Index to Zero
+		line_name.SelectedIndex 	 = 0;
+		stage_name.SelectedIndex     = 0;
+		equipment_name.SelectedIndex = 0;
+		sub_unit_name.SelectedIndex  = 0;
+
+        if (shop_name.Text != "") {
+            var DataReader : System.Data.SqlClient.SqlDataReader;
+            var RetrieveDataCmd: System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand("SELECT distinct line_name from Config_Line WHERE shop_name = '"+shop_name.Text+"'", connection);
+            
+            try{
+                DataReader=RetrieveDataCmd.ExecuteReader();
+
+                while(DataReader.Read())
+                {
+                    line_name.Items.Add(DataReader["line_name"]);
+                }
+                DataReader.Close();
+                connection.Close()
+                
+            }catch(ex:Exception){
+                MessageBox.Show(ex);
+            }
+         } else {
+            MessageBox.Show("You must select a shop first");
+        }	
+
+        	
+}]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="Dropdown_Plant_Name" Type="JScriptNet">
+              <x:XData><![CDATA[function Dropdown_Plant_name(sender : System.Object, e : System.EventArgs)
+{
+	    var connection_string : String = "Data Source="+DB_SERVER+"; Initial Catalog="+DB_NAME+"; Password="+DB_PASSWORD+"; User ID="+DB_USERID+";";
+		// [Inline Test Statement] : Prints out connection_string : MessageBox.Show(connection_string);
+		// [Opening connection with the database]
+		var connection : System.Data.SqlClient.SqlConnection;
+		connection = new System.Data.SqlClient.SqlConnection(connection_string);
+		
+		connection.Open();
+
+		// [Variable Declaration] Creating holder variables that will hold the user input values in the script
+		var plant_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("plant_name").ToDependencyObject();
+		var shop_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("shop_name").ToDependencyObject();
+		var line_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("line_name").ToDependencyObject();
+		var stage_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("stage_name").ToDependencyObject();
+		var equipment_name      		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("equipment_name").ToDependencyObject();
+	    var sub_unit_name       		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("sub_unit_name").ToDependencyObject();
+		var tool_id           			: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("tool_id").ToDependencyObject();
+	    var tool_name           		: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("tool_name").ToDependencyObject();
+	    var tool_life_value_estimated   : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("tool_life_value_estimated").ToDependencyObject();
+	    var tool_life_units           	: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("tool_life_units").ToDependencyObject();
+	    var alert_value1           		: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("alert_value1").ToDependencyObject();
+	    var alert_user_1           		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("alert_user_1").ToDependencyObject();
+	    var alert_user_2           		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("alert_user_2").ToDependencyObject();
+	
+ 
+        var plant_empty_label  			: Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("plant_empty_label");
+        plant_empty_label.Visible    	= false
+
+		
+		// [Array Reset] Collection arrays are reset here to default values
+		plant_name.Items.Clear();
+		shop_name.Items.Clear();
+		line_name.Items.Clear();
+		stage_name.Items.Clear();
+		equipment_name.Items.Clear();
+		sub_unit_name.Items.Clear();
+		
+		// [Setting Index] Setting Index to Zero
+		plant_name.SelectedIndex     = 0;
+		shop_name.SelectedIndex      = 0;
+		line_name.SelectedIndex 	 = 0;
+		stage_name.SelectedIndex     = 0;
+		equipment_name.SelectedIndex = 0;
+		sub_unit_name.SelectedIndex  = 0;
+
+
+     
+            var DataReader : System.Data.SqlClient.SqlDataReader;
+            var RetrieveDataCmd: System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand("SELECT distinct plant_name from Config_Plant", connection);
+            
+            try{
+                DataReader=RetrieveDataCmd.ExecuteReader();
+
+                while(DataReader.Read())
+                {
+                    plant_name.Items.Add(DataReader["plant_name"]);
+                }
+                DataReader.Close();
+                connection.Close()
+                
+            }catch(ex:Exception){
+                MessageBox.Show(ex);
+            }
+         
+        	
+}]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="Dropdown_Shop_Name" Type="JScriptNet">
+              <x:XData><![CDATA[function Dropdown_Shop_Name(sender : System.Object, e : System.EventArgs)
+{
+	var connection_string : String = "Data Source="+DB_SERVER+"; Initial Catalog="+DB_NAME+"; Password="+DB_PASSWORD+"; User ID="+DB_USERID+";";
+		// [Inline Test Statement] : Prints out connection_string : MessageBox.Show(connection_string);
+		// [Opening connection with the database]
+		var connection : System.Data.SqlClient.SqlConnection;
+		connection = new System.Data.SqlClient.SqlConnection(connection_string);
+		
+		connection.Open();
+
+		// [Variable Declaration] Creating holder variables that will hold the user input values in the script
+		var plant_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("plant_name").ToDependencyObject();
+		var shop_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("shop_name").ToDependencyObject();
+		var line_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("line_name").ToDependencyObject();
+		var stage_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("stage_name").ToDependencyObject();
+		var equipment_name      		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("equipment_name").ToDependencyObject();
+	    var sub_unit_name       		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("sub_unit_name").ToDependencyObject();
+		var tool_id           			: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("tool_id").ToDependencyObject();
+	    var tool_name           		: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("tool_name").ToDependencyObject();
+	    var tool_life_value_estimated   : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("tool_life_value_estimated").ToDependencyObject();
+	    var tool_life_units           	: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("tool_life_units").ToDependencyObject();
+	    var alert_value1           		: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("alert_value1").ToDependencyObject();
+	    var alert_user_1           		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("alert_user_1").ToDependencyObject();
+	    var alert_user_2           		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("alert_user_2").ToDependencyObject();
+	
+ 
+        var shop_name_empty_label  : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("shop_name_empty_label");
+        shop_name_empty_label.Visible    = false
+
+		
+		// [Array Reset] Collection arrays are reset here to default values
+		shop_name.Items.Clear();
+		line_name.Items.Clear();
+		stage_name.Items.Clear();
+		equipment_name.Items.Clear();
+		sub_unit_name.Items.Clear();
+		
+		// [Setting Index] Setting Index to Zero
+		shop_name.SelectedIndex      = 0;
+		line_name.SelectedIndex 	 = 0;
+		stage_name.SelectedIndex     = 0;
+		equipment_name.SelectedIndex = 0;
+		sub_unit_name.SelectedIndex  = 0;
+
+
+     	if (plant_name.Text != "") {
+            var DataReader : System.Data.SqlClient.SqlDataReader;
+            var RetrieveDataCmd: System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand("SELECT distinct shop_name from Config_Shop", connection);
+            
+            try{
+                DataReader=RetrieveDataCmd.ExecuteReader();
+
+                while(DataReader.Read())
+                {
+                    shop_name.Items.Add(DataReader["shop_name"]);
+                }
+                DataReader.Close();
+                connection.Close()
+                
+            }catch(ex:Exception){
+                MessageBox.Show(ex);
+            }
+         } 
+		   else {
+            		MessageBox.Show("You must select a Plant first");
+        		}
+        	
+}]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="Dropdown_Stage_Name" Type="JScriptNet">
+              <x:XData><![CDATA[function Dropdown_Stage_Name(sender : System.Object, e : System.EventArgs)
+{
+	var connection_string : String = "Data Source="+DB_SERVER+"; Initial Catalog="+DB_NAME+"; Password="+DB_PASSWORD+"; User ID="+DB_USERID+";";
+		// [Inline Test Statement] : Prints out connection_string : MessageBox.Show(connection_string);
+		// [Opening connection with the database]
+		var connection : System.Data.SqlClient.SqlConnection;
+		connection = new System.Data.SqlClient.SqlConnection(connection_string);
+		
+		connection.Open();
+
+		// [Variable Declaration] Creating holder variables that will hold the user input values in the script
+		var plant_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("plant_name").ToDependencyObject();
+		var shop_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("shop_name").ToDependencyObject();
+		var line_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("line_name").ToDependencyObject();
+		var stage_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("stage_name").ToDependencyObject();
+		var equipment_name      		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("equipment_name").ToDependencyObject();
+	    var sub_unit_name       		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("sub_unit_name").ToDependencyObject();
+		var tool_id           			: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("tool_id").ToDependencyObject();
+	    var tool_name           		: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("tool_name").ToDependencyObject();
+	    var tool_life_value_estimated   : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("tool_life_value_estimated").ToDependencyObject();
+	    var tool_life_units           	: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("tool_life_units").ToDependencyObject();
+	    var alert_value1           		: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("alert_value1").ToDependencyObject();
+	    var alert_user_1           		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("alert_user_1").ToDependencyObject();
+	    var alert_user_2           		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("alert_user_2").ToDependencyObject();
+	
+        var stage_name_empty_label  : Ico.Gwx.GwxLabel                  = ThisConfiguration.GetObjectByName("stage_name_empty_label");
+        stage_name_empty_label.Visible    = false
+
+		
+		// [Array Reset] Collection arrays are reset here to default values
+		stage_name.Items.Clear();
+		equipment_name.Items.Clear();
+		sub_unit_name.Items.Clear();
+		
+		// [Setting Index] Setting Index to Zero
+		stage_name.SelectedIndex     = 0;
+		equipment_name.SelectedIndex = 0;
+		sub_unit_name.SelectedIndex  = 0;
+				
+   
+        if (line_name.Text != "") {
+            var DataReader : System.Data.SqlClient.SqlDataReader;
+            var RetrieveDataCmd: System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand("SELECT distinct stage_name from Config_Stage WHERE line_id IN (Select line_id from Config_Line WHERE line_name = '"+line_name.Text+"'); ", connection);
+            
+            try{
+                DataReader=RetrieveDataCmd.ExecuteReader();
+
+                while(DataReader.Read())
+                {
+                    stage_name.Items.Add(DataReader["stage_name"]);
+                }
+                DataReader.Close();
+                connection.Close()
+                
+            }catch(ex:Exception){
+                MessageBox.Show(ex);
+            }
+	} else {
+            MessageBox.Show("You must select a line first");
+        }
+	
+}]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="Dropdown_Sub_Unit" Type="JScriptNet">
+              <x:XData><![CDATA[function sub_unit_name_DropDownOpened(sender : System.Object, e : System.EventArgs)
+{
+	    var connection_string : String = "Data Source="+DB_SERVER+"; Initial Catalog="+DB_NAME+"; Password="+DB_PASSWORD+"; User ID="+DB_USERID+";";
+		// [Opening connection with the database]
+		var connection : System.Data.SqlClient.SqlConnection;
+		connection = new System.Data.SqlClient.SqlConnection(connection_string);
+		
+		connection.Open();
+
+		
+		// [Variable Declaration] Creating holder variables that will hold the user input values in the script
+		var plant_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("plant_name").ToDependencyObject();
+		var shop_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("shop_name").ToDependencyObject();
+		var line_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("line_name").ToDependencyObject();
+		var stage_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("stage_name").ToDependencyObject();
+		var equipment_name      		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("equipment_name").ToDependencyObject();
+	    var sub_unit_name       		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("sub_unit_name").ToDependencyObject();
+		var tool_id           			: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("tool_id").ToDependencyObject();
+	    var tool_name           		: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("tool_name").ToDependencyObject();
+	    var tool_life_value_estimated   : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("tool_life_value_estimated").ToDependencyObject();
+	    var tool_life_units           	: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("tool_life_units").ToDependencyObject();
+	    var alert_value1          		: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("alert_value1").ToDependencyObject();
+	    var alert_user_1           		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("alert_user_1").ToDependencyObject();
+	    var alert_user_2           		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("alert_user_2").ToDependencyObject();
+	
+		var sub_unit_name_empty_label  	: Ico.Gwx.GwxLabel=ThisConfiguration.GetObjectByName("sub_unit_name_empty_label");
+	    sub_unit_name_empty_label.Visible  = false
+
+
+		// [Array Reset] Collection arrays are reset here to default values
+		sub_unit_name.Items.Clear();
+		
+		// [Setting Index] Setting Index to Zero
+		sub_unit_name.SelectedIndex  = 0;
+
+		if(equipment_name.Text!=""){	
+			var DataReader : System.Data.SqlClient.SqlDataReader;
+			var RetrieveDataCmd: System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand("SELECT DISTINCT sub_unit_name from Config_Sub_Unit WHERE equipment_id IN( SELECT equipment_id from Config_Equipment where stage_id IN (SELECT stage_id from Config_Stage WHERE line_id IN(SELECT line_id from Config_Line WHERE line_name = '"+line_name.Text+"' and stage_name  = '"+stage_name.Text+"' and equipment_name  = '"+equipment_name.Text+"')))",connection);
+			
+			try{
+				DataReader=RetrieveDataCmd.ExecuteReader();
+	
+				while(DataReader.Read())
+				{
+					sub_unit_name.Items.Add(DataReader["sub_unit_name"]);
+				}
+				DataReader.Close();
+				connection.Close()
+				
+			}catch(ex:Exception){
+				MessageBox.Show(ex);
+			}
+		}
+		else{
+				MessageBox.Show("You must select a Equipment name first");
+			}
+
+
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="GridCode" Type="JScriptNet">
+              <x:XData><![CDATA[function Grid(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs)
+{
+	
+	// [Variable Declaration] Creating holder variables that will hold the user input values in the script
+	var plant_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("plant_name").ToDependencyObject();
+	var shop_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("shop_name").ToDependencyObject();
+	var line_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("line_name").ToDependencyObject();
+	var stage_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("stage_name").ToDependencyObject();
+	var equipment_name      		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("equipment_name").ToDependencyObject();
+    var sub_unit_name       		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("sub_unit_name").ToDependencyObject();
+	var tool_id           			: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("tool_id").ToDependencyObject();
+    var tool_name           		: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("tool_name").ToDependencyObject();
+    var tool_life_value_estimated   : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("tool_life_value_estimated").ToDependencyObject();
+    var tool_life_units           	: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("tool_life_units").ToDependencyObject();
+    var alert_value1           		: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("alert_value1").ToDependencyObject();
+    var alert_value2           		: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("alert_value2").ToDependencyObject();
+    var alert_user_1           		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("alert_user_1").ToDependencyObject();
+    var alert_user_2           		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("alert_user_2").ToDependencyObject();
+	var line_stop	                : System.Windows.Controls.CheckBox	= ThisConfiguration.GetObjectByName("line_stop").ToDependencyObject();
+    var sms	                        : System.Windows.Controls.CheckBox	= ThisConfiguration.GetObjectByName("sms").ToDependencyObject();
+    var email	                    : System.Windows.Controls.CheckBox	= ThisConfiguration.GetObjectByName("email").ToDependencyObject();
+
+	var plant_empty_label            			: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("plant_empty_label");
+	var shop_name_empty_label         			: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("shop_name_empty_label");
+	var line_name_empty_label         			: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("line_name_empty_label");
+	var stage_name_empty_label  				: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("stage_name_empty_label");
+    var equipment_name_empty_label 				: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("equipment_name_empty_label");
+  	var sub_unit_name_empty_label              	: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("sub_unit_name_empty_label");
+	var tool_id_empty_label            			: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("tool_id_empty_label");
+	var tool_name_empty_label           		: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("tool_name_empty_label");
+	var tool_life_value_estimated_empty_label   : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("tool_life_value_estimated_empty_label");
+	var tool_life_units_empty_label    			: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("tool_life_units_empty_label");
+	var alert_value1_empty_label  				: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("alert_value1_empty_label");
+    var alert_user1_empty_label 				: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("alert_user1_empty_label");
+  	var alert_user2_empty_label              	: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("alert_user2_empty_label");
+
+
+	//[Grid Selection Code]
+	var gdxViewer		: Ico.Gdx.GdxViewControl = Ico.Gdx.GdxViewControl(ThisConfiguration.GetObjectByName("default_grid").ToDependencyObject());
+	var tab_list 		: ItemsControl = ItemsControl(gdxViewer.Items[0]);
+	var grid_list 		: Ico.Gdx.GdxGridView = Ico.Gdx.GdxGridView(tab_list.Items[0]);
+	var Row_Selected 	: DataRow;
+	Row_Selected = grid_list.GetHighlightedRow();
+		
+	if(grid_list.GetHighlightedRow() != null)
+	{
+			//if (Row_Selected.Item[0] != String.IsNullOrEmpty){
+				
+				
+				Dropdown_Plant_name();
+				plant_name.SelectedValue = Row_Selected.Item[0];	
+
+				Dropdown_Shop_Name();
+				shop_name.SelectedValue = Row_Selected.Item[1];
+				
+				Dropdown_Line_Name();
+				line_name.SelectedValue = Row_Selected.Item[3];
+				
+				Dropdown_Stage_Name();
+				stage_name.SelectedValue = Row_Selected.Item[5];
+				
+				Dropdown_Equipment_Name();
+				equipment_name.SelectedValue = Row_Selected.Item[7];
+				
+				sub_unit_name_DropDownOpened();
+				sub_unit_name.SelectedValue = Row_Selected.Item[9];
+				
+				tool_life_units.SelectedValue = Row_Selected.Item[15];
+				tool_life_units_empty_label.Visible  = false
+				
+				Dropdown_Alert_User1();
+				alert_user_1.SelectedValue = Row_Selected.Item[23];
+
+				Dropdown_Alert_User2();
+				alert_user_2.SelectedValue = Row_Selected.Item[24];
+
+				tool_id.Text = Row_Selected.Item[11];
+				
+				tool_name.Text = Row_Selected.Item[12];
+						
+				tool_life_value_estimated.Text = Row_Selected.Item[13];
+							    
+				
+				alert_value1.Text = Row_Selected.Item[18];
+				
+				alert_value2.Text = Row_Selected.Item[19];
+				
+				if (Row_Selected.Item[20] == 1) {
+						line_stop.IsChecked = true;
+				} else {
+						line_stop.IsChecked = false;
+				}
+				if (Row_Selected.Item[21] == 1) {
+						sms.IsChecked = true;
+				} else {
+						sms.IsChecked = false;
+				}if (Row_Selected.Item[22] == 1) {
+						email.IsChecked = true;
+				} else {
+						email.IsChecked = false;
+				}		
+			
+
+		
+			}
+	}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="JScriptDotNetGlobalVariablesCode" Type="JScriptNet" EditorBrowsable="Never">
+              <x:XData><![CDATA[
+var ThisWindow : Ico.Gwx.GwxRuntimeViewControl;
+var ThisDocument : Ico.Gwx.GwxDocument;
+var ThisConfiguration : Ico.Gwx.GwxConfiguration;
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="toolCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function tool_id_SelectionChanged(sender : System.Object, e : System.Windows.RoutedEventArgs)
+{
+	var tool_id           			: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("tool_id").ToDependencyObject();
+
+	ThisWindow.SetGlobalAliases("#tool_id="+tool_id.Text+";\2");
+	//@rgs64:MaterialManagement.Auxiliary.<#tool_id#>.tool_id.Value
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="UpdateCode" Type="JScriptNet">
+              <x:XData><![CDATA[function Update(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs){
+	
+	var connection_string : String = "Data Source="+DB_SERVER+"; Initial Catalog="+DB_NAME+"; Password="+DB_PASSWORD+"; User ID="+DB_USERID+";";
+	// [Inline Test Statement] : Prints out connection_string : MessageBox.Show(connection_string);
+			
+	// [Opening connection with the database]
+	var connection : System.Data.SqlClient.SqlConnection;
+	connection = new System.Data.SqlClient.SqlConnection(connection_string);
+			
+	connection.Open();
+    
+    // [Operation Specification] Specifying the kind of operation that happens on pressing the button 
+    var ActionOp = 'Update';
+
+	// [Provisioning Security System]
+	var logged_in_user : System.Windows.Controls.TextBox = ThisConfiguration.GetObjectByName("logged_in_user").ToDependencyObject();
+	//MessageBox.Show(logged_in_user.Text);
+
+    
+	// [Variable Declaration] Creating holder variables that will hold the user input values in the script
+	var plant_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("plant_name").ToDependencyObject();
+	var shop_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("shop_name").ToDependencyObject();
+	var line_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("line_name").ToDependencyObject();
+	var stage_name       			: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("stage_name").ToDependencyObject();
+	var equipment_name      		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("equipment_name").ToDependencyObject();
+    var sub_unit_name       		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("sub_unit_name").ToDependencyObject();
+	var tool_id           			: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("tool_id").ToDependencyObject();
+    var tool_name           		: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("tool_name").ToDependencyObject();
+    var tool_life_value_estimated   : System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("tool_life_value_estimated").ToDependencyObject();
+    var tool_life_units           	: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("tool_life_units").ToDependencyObject();
+    var alert_value1           		: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("alert_value1").ToDependencyObject();
+    var alert_value2           		: System.Windows.Controls.TextBox	= ThisConfiguration.GetObjectByName("alert_value2").ToDependencyObject();
+    var alert_user_1           		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("alert_user_1").ToDependencyObject();
+    var alert_user_2           		: System.Windows.Controls.ComboBox	= ThisConfiguration.GetObjectByName("alert_user_2").ToDependencyObject();
+    var line_stop	                : System.Windows.Controls.CheckBox	= ThisConfiguration.GetObjectByName("line_stop").ToDependencyObject();
+	var sms	                        : System.Windows.Controls.CheckBox	= ThisConfiguration.GetObjectByName("sms").ToDependencyObject();
+    var email	                    : System.Windows.Controls.CheckBox	= ThisConfiguration.GetObjectByName("email").ToDependencyObject();
+
+	var plant_empty_label            			: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("plant_empty_label");
+	var shop_name_empty_label         			: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("shop_name_empty_label");
+	var line_name_empty_label         			: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("line_name_empty_label");
+	var stage_name_empty_label  				: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("stage_name_empty_label");
+    var equipment_name_empty_label 				: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("equipment_name_empty_label");
+  	var sub_unit_name_empty_label              	: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("sub_unit_name_empty_label");
+	var tool_id_empty_label            			: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("tool_id_empty_label");
+	var tool_name_empty_label           		: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("tool_name_empty_label");
+	var tool_life_value_estimated_empty_label   : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("tool_life_value_estimated_empty_label");
+    var tool_life_value_current_empty_label     : Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("tool_life_value_current_empty_label");	
+	var tool_life_units_empty_label    			: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("tool_life_units_empty_label");
+	var alert_value1_empty_label  				: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("alert_value1_empty_label");
+	var alert_value2_empty_label  				: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("alert_value2_empty_label");
+    var alert_user1_empty_label 				: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("alert_user1_empty_label");
+  	var alert_user2_empty_label              	: Ico.Gwx.GwxLabel        = ThisConfiguration.GetObjectByName("alert_user2_empty_label");
+
+
+    // [Hardcoded Variable] These variables have to be replaced using the tag for the logged in user.
+	var created_by 		= logged_in_user.Text;
+	var updated_by 		= logged_in_user.Text;
+	
+	var line_stop_int = -1;
+			if(line_stop.IsChecked == true){
+				line_stop_int =1;
+			}
+		    else {
+				line_stop_int =0;
+			}
+	var sms_int = -1;
+			if(sms.IsChecked == true){
+				sms_int =1;
+			}
+		    else {
+				sms_int =0;
+			}
+	var email_int = -1;
+			if(email.IsChecked == true){
+				email_int =1;
+			}
+		    else {
+				email_int =0;
+			}
+
+
+    
+    //[Error & Exception Handling] Creating a variable for error and exception handling
+    var response		: String;
+    response="";
+		
+    // [Query String] Building Query for calling stored procedure
+    var query_string : String = "EXEC [dbo].[SP_Maintenance_Tool_Life]";
+    query_string += "@plant_name     				= '"+plant_name.Text+"',";
+	query_string += "@shop_name	    				= '"+shop_name.Text+"',";
+	query_string += "@line_name 	    			= '"+line_name.Text+"',";
+	query_string += "@stage_name        			= '"+stage_name.Text+"',";
+    query_string += "@equipment_name        		= '"+equipment_name.Text+"',";
+    query_string += "@sub_unit_name					= '"+sub_unit_name.Text+"',";
+    query_string += "@tool_id						= '"+tool_id.Text+"',";
+    query_string += "@tool_name     				= '"+tool_name.Text+"',";
+    query_string += "@tool_life_value_estimated		= '"+tool_life_value_estimated.Text+"',";
+    query_string += "@tool_life_units				= '"+tool_life_units.Text+"',";
+	query_string += "@alert_value_1				    = '"+alert_value1.Text+"',";
+	query_string += "@alert_value_2				    = '"+alert_value2.Text+"',";
+	query_string += "@line_stop				        = '"+line_stop_int+"',";
+	query_string += "@sms				            = '"+sms_int+"',";
+	query_string += "@email				            = '"+email_int+"',";
+	query_string += "@alert_user_1   				= '"+alert_user_1.Text+"',";
+	query_string += "@alert_user_2   				= '"+alert_user_2.Text+"',";
+	query_string += "@created_by    				= '"+created_by+"',";
+	query_string += "@updated_by    				= '"+updated_by+"',";
+	query_string += "@ActionOp 			    		= '"+ActionOp+"'";		
+			
+	//[Inline Test Statement]MessageBox.Show(query_string);
+					
+    // [Validation Statement] This if-else statement checks if any of the fields have been left empty
+    if ( plant_name.Text == ""|| shop_name.Text =="" || line_name.Text == ""|| stage_name.Text =="" || equipment_name.Text =="" || sub_unit_name.Text==""|| tool_id.Text==""|| tool_name.Text=="" || tool_life_value_estimated.Text==""||   tool_life_units.Text==""||  alert_value1.Text=="" || alert_value2.Text=="" || alert_user_1.Text==""|| alert_user_2.Text=="" ){
+        
+		//MessageBox.Show("Please fill in all the required values!")
+
+        if(plant_name.Text == "")
+        {plant_empty_label.Visible = true}
+        else 
+        {plant_empty_label.Visible = false}
+        
+        if(shop_name.Text == "")
+        {shop_name_empty_label.Visible = true}
+        else					
+        {shop_name_empty_label.Visible = false}
+        
+        if(line_name.Text == "")
+        {line_name_empty_label.Visible = true}
+        else					
+        {line_name_empty_label.Visible = false}
+
+        if(stage_name.Text == "")
+        {stage_name_empty_label.Visible = true}
+        else					
+        {stage_name_empty_label.Visible = false}
+        
+        if(equipment_name.Text == "")
+        {equipment_name_empty_label.Visible = true}
+        else					
+        {equipment_name_empty_label.Visible = false}
+        
+        if(sub_unit_name.Text == "")
+        {sub_unit_name_empty_label.Visible = true}
+        else					
+        {sub_unit_name_empty_label.Visible = false}
+        
+        if(tool_id.Text == "")
+        {tool_id_empty_label.Visible = true}
+        else					
+        {tool_id_empty_label.Visible = false}
+        
+        if(tool_name.Text == "")
+        {tool_name_empty_label.Visible = true}
+        else					
+        {tool_name_empty_label.Visible = false}
+        
+        if(tool_life_value_estimated.Text == "")
+        {tool_life_value_estimated_empty_label.Visible = true}
+        else					
+        {tool_life_value_estimated_empty_label.Visible = false}
+               
+		if(tool_life_units.Text == "")
+        {tool_life_units_empty_label.Visible = true}
+        else					
+        {tool_life_units_empty_label.Visible = false}
+		
+		if(alert_value1.Text == "")
+        {alert_value1_empty_label.Visible = true}
+        else					
+        {alert_value1_empty_label.Visible = false}
+
+        if(alert_value2.Text == "")
+        {alert_value2_empty_label.Visible = true}
+        else					
+        {alert_value2_empty_label.Visible = false}
+
+
+		if(alert_user_1.Text == "")
+        {alert_user1_empty_label.Visible = true}
+        else					
+        {alert_user1_empty_label.Visible = false}
+		
+		if(alert_user_2.Text == "")
+        {alert_user2_empty_label.Visible = true}
+        else					
+        {alert_user2_empty_label.Visible = false}
+
+        
+        } else {
+            // [Inline Test Statement] MessageBox.Show("Thank you for filling all the required values");
+            try {
+                var reader : System.Data.SqlClient.SqlDataReader;
+                //[Inline Test Statement] MessageBox.Show(query_string);
+
+                var stored_procedure_query : System.Data.SqlClient.SqlCommand = new System.Data.SqlClient.SqlCommand(query_string, connection);					
+                reader = stored_procedure_query.ExecuteReader();
+                Clear();	
+                while(reader.Read())
+                {
+                    response = reader["Response"];
+                    MessageBox.Show(response);
+                }
+                reader.Close();
+            }
+        catch(ex : Exception){
+                MessageBox.Show (ex.Message);	
+            }	
+        }			
+                        
+		// [Closing connection with the database]
+		
+
+		connection.Close();
+		
+	}]]></x:XData>
+            </script:ScriptCode>
+          </script:ScriptCodeManager.Scripts>
+          <script:ScriptCodeManager.AssemblyReferences>
+            <ic:AssemblyReference AssemblyName="mscorlib" />
+            <ic:AssemblyReference AssemblyName="System" />
+            <ic:AssemblyReference AssemblyName="System.Core" />
+            <ic:AssemblyReference AssemblyName="System.Data" />
+            <ic:AssemblyReference AssemblyName="System.Xml" />
+            <ic:AssemblyReference AssemblyName="System.Drawing" />
+            <ic:AssemblyReference AssemblyName="System.Windows.Forms" />
+            <ic:AssemblyReference AssemblyName="WindowsBase" />
+            <ic:AssemblyReference AssemblyName="PresentationCore" />
+            <ic:AssemblyReference AssemblyName="PresentationFramework" />
+            <ic:AssemblyReference AssemblyName="GwxRuntimeCore" />
+            <ic:AssemblyReference AssemblyName="GwxRuntimeCoreCommands" />
+            <ic:AssemblyReference AssemblyName="GwxRuntimeViewControl" />
+            <ic:AssemblyReference AssemblyName="GwxConfigCore" />
+            <ic:AssemblyReference AssemblyName="IcoComponentModel" />
+            <ic:AssemblyReference AssemblyName="IcoFwxClientWrapper" />
+            <ic:AssemblyReference AssemblyName="GdxViewControl" AssemblyCodebase="file:///C:/Program Files/MELSOFT/MC Works64/Components/GdxViewControl.DLL" />
+            <ic:AssemblyReference AssemblyName="IcoWPFSpecialized" AssemblyCodebase="file:///C:/Program Files/MELSOFT/MC Works64/Components/IcoWPFSpecialized.DLL" />
+            <ic:AssemblyReference AssemblyName="IcoCommonCore.Net" />
+          </script:ScriptCodeManager.AssemblyReferences>
+          <script:ScriptCodeManager.Namespaces>
+            <s:String>System</s:String>
+            <s:String>System.Collections</s:String>
+            <s:String>System.ComponentModel</s:String>
+            <s:String>System.Data</s:String>
+            <s:String>System.Xml</s:String>
+            <s:String>System.Windows</s:String>
+            <s:String>System.Windows.Media</s:String>
+            <s:String>System.Windows.Input</s:String>
+            <s:String>System.Windows.Controls</s:String>
+            <s:String>Ico.Gwx</s:String>
+            <s:String>System.Diagnostics</s:String>
+            <s:String>Ico.Fwx.ClientWrapper</s:String>
+            <s:String>System.Flags</s:String>
+          </script:ScriptCodeManager.Namespaces>
+        </script:ScriptCodeManager>
+      </gwx:GwxDocument.ScriptCodeManager>
+      <gwx:GwxDocument.EventBindings>
+        <script:ScriptEventBindings>
+          <script:ScriptEventBindings.EventBindings>
+            <x:Array Type="script:ScriptEventBinding">
+              <script:ScriptEventBinding EventName="AnimationStopped" MethodName="ThisDisplay_AnimationStopped" ScriptType="JScriptNet" />
+              <script:ScriptEventBinding EventName="AnimationStopping" MethodName="ThisDisplay_AnimationStopped" ScriptType="JScriptNet" />
+              <script:ScriptEventBinding EventName="AnimationStarting" MethodName="ThisDisplay_AnimationStarted" ScriptType="JScriptNet" />
+              <script:ScriptEventBinding EventName="AnimationStarted" MethodName="ThisDisplay_AnimationStarted" ScriptType="JScriptNet" />
+            </x:Array>
+          </script:ScriptEventBindings.EventBindings>
+        </script:ScriptEventBindings>
+      </gwx:GwxDocument.EventBindings>
+      <gwx:GwxDocument.RuntimeWindowProperties>
+        <gwx:GwxWindowProperties LeftString="0%" TopString="0%" WidthString="100%" HeightString="100%" ControlBox="False" MaximizeBox="False" MinimizeBox="False" MenuVisible="False" ShowContextMenu="False" NavigationBarVisible="False" StatusBarVisible="False" OuterBorder="False" Resizable="False" />
+      </gwx:GwxDocument.RuntimeWindowProperties>
+    </gwx:GwxDocument>
+  </gwx:GwxDocument.GwxDocument>
+  <Label Background="{x:Null}" Foreground="#FFFF0000" FontFamily="Calibri" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="shop_name_empty_label" Width="9.96" Height="24.413333" RenderTransform="1,0,0.00280955,1,-6.24799187029112,-24.53125" Visibility="Hidden" Canvas.Left="720.484674" Canvas.Top="39.53125">
+    <TextBlock Text="*" />
+  </Label>
+  <Label Background="{x:Null}" Foreground="#FFFF0000" FontFamily="Calibri" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="line_name_empty_label" Width="9.96" Height="24.413333" RenderTransform="1,0,0.00280955,1,-6.24799187029112,-24.53125" Visibility="Hidden" Canvas.Left="1090.097561" Canvas.Top="42.53125">
+    <TextBlock Text="*" />
+  </Label>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" VerticalContentAlignment="Center" Padding="0,0,0,0" Name="plant_label" Canvas.Left="10" Canvas.Top="15">
+    <TextBlock Text="Plant Name " />
+  </Label>
+  <ComboBox IsDropDownOpen="False" Text="" FontFamily="Calibri" FontSize="16" VerticalContentAlignment="Center" TabIndex="6" Padding="4,2,5,3" Name="plant_name" Width="220" Height="25" Focusable="False" Canvas.Left="120" Canvas.Top="15" gwx:GwxProperties.Description="Select Plant">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="DropDownOpened" MethodName="Dropdown_Plant_name" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>
+  </ComboBox>
+  <Label Background="{x:Null}" Foreground="#FFFF0000" FontFamily="Calibri" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="plant_empty_label" Width="9.96" Height="24.413333" RenderTransform="1,0,0.00280955,1,-6.24799187029112,-24.53125" Visibility="Hidden" Canvas.Left="350.484663" Canvas.Top="41.751123">
+    <TextBlock Text="*" />
+  </Label>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="shop_name_label" Canvas.Left="380" Canvas.Top="15" gwx:GwxProperties.Description="Size=H:25,W:Automatic&#xD;&#xA;Background color=None&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :16&#xD;&#xA;Position= X:589  Y:55" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <TextBlock Text="Shop Name" />
+  </Label>
+  <ComboBox IsDropDownOpen="False" Text="" Background="#FFD8D8D8" FontFamily="Calibri" FontSize="16" Padding="4,2,5,3" Name="shop_name" Width="220" Height="25" Canvas.Left="490" Canvas.Top="15">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="DropDownOpened" MethodName="Dropdown_Shop_Name" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>
+  </ComboBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="line_name_label" Canvas.Left="750" Canvas.Top="15" gwx:GwxProperties.Description="Size=H:25,W:Automatic&#xD;&#xA;Background color=None&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :16&#xD;&#xA;Position= X:589  Y:15" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <TextBlock Text="Line Name" />
+  </Label>
+  <ComboBox IsDropDownOpen="False" Text="" Background="#FFD8D8D8" FontFamily="Calibri" FontSize="16" Padding="4,2,5,3" Name="line_name" Width="220" Height="25" Canvas.Left="860" Canvas.Top="15">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="DropDownOpened" MethodName="Dropdown_Line_Name" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>
+  </ComboBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="stage_name_label" Canvas.Left="10" Canvas.Top="55.189478" gwx:GwxProperties.Description="Size=H:25,W:Automatic&#xD;&#xA;Background color=None&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :16&#xD;&#xA;Position= X:589  Y:55" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <TextBlock Text="Stage Name" />
+  </Label>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="equipment_name_label" Canvas.Left="380" Canvas.Top="55.189478" gwx:GwxProperties.Description="Size=H:25,W:Automatic&#xD;&#xA;Background color=None&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :16&#xD;&#xA;Position= X:589  Y:15" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <TextBlock Text="Equipment " />
+  </Label>
+  <ComboBox IsDropDownOpen="False" Text="" Background="#FFD8D8D8" FontFamily="Calibri" FontSize="16" Padding="4,2,5,3" Name="equipment_name" Width="220" Height="25" Canvas.Left="490" Canvas.Top="55.189478">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="DropDownOpened" MethodName="Dropdown_Equipment_Name" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>
+  </ComboBox>
+  <ComboBox IsDropDownOpen="False" Text="" Background="#FFD8D8D8" FontFamily="Calibri" FontSize="16" Padding="4,2,5,3" Name="stage_name" Width="220" Height="25" Canvas.Left="120" Canvas.Top="55.189478">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="DropDownOpened" MethodName="Dropdown_Stage_Name" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>
+  </ComboBox>
+  <Label Background="{x:Null}" Foreground="#FFFF0000" FontFamily="Calibri" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="stage_name_empty_label" Width="9.96" Height="24.413333" RenderTransform="1,0,0.00280955,1,-6.24799187029112,-24.53125" Visibility="Hidden" Canvas.Left="350.484663" Canvas.Top="79.720728">
+    <TextBlock Text="*" />
+  </Label>
+  <Label Background="{x:Null}" Foreground="#FFFF0000" FontFamily="Calibri" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="equipment_name_empty_label" Width="9.96" Height="24.413333" RenderTransform="1,0,0.00280955,1,-6.24799187029112,-24.53125" Visibility="Hidden" Canvas.Left="720.484674" Canvas.Top="79.720728">
+    <TextBlock Text="*" />
+  </Label>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" Padding="0,0,0,0" Name="sub_unit_name_label" Canvas.Left="750" Canvas.Top="55.189478" gwx:GwxProperties.ShowDescriptionInToolTip="False">
+    <TextBlock Text="Sub-Unit " />
+  </Label>
+  <ComboBox IsDropDownOpen="False" Text="" Background="#FFD8D8D8" FontFamily="Calibri" FontSize="16" Padding="4,2,5,3" Name="sub_unit_name" Width="220" Height="25" Canvas.Left="860" Canvas.Top="55.189478">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="DropDownOpened" MethodName="sub_unit_name_DropDownOpened" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>
+  </ComboBox>
+  <Label Background="{x:Null}" Foreground="#FFFF0000" FontFamily="Calibri" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="sub_unit_name_empty_label" Width="9.96" Height="24.413333" RenderTransform="1,0,0.00280955,1,-6.24799187029112,-24.53125" Visibility="Hidden" Canvas.Left="1090.097561" Canvas.Top="79.720728">
+    <TextBlock Text="*" />
+  </Label>
+  <TextBox FontFamily="Calibri" FontSize="16" Padding="4,2,5,3" Name="tool_id" Width="220" Height="25" IsEnabled="True" Canvas.Left="120" Canvas.Top="95">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="SelectionChanged" MethodName="tool_id_SelectionChanged" ScriptType="JScriptNet" />
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="tool_id_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings></TextBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="tool_id_label" Canvas.Left="10" Canvas.Top="95" gwx:GwxProperties.Description="Size=H:25,W:Automatic&#xD;&#xA;Background color=None&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :16&#xD;&#xA;Position= X:589  Y:55" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <TextBlock Text="Tool ID" />
+  </Label>
+  <Label Background="{x:Null}" Foreground="#FFFF0000" FontFamily="Calibri" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="tool_id_empty_label" Width="9.96" Height="24.413333" RenderTransform="1,0,0.00280955,1,-6.24799187029112,-24.53125" Visibility="Hidden" Canvas.Left="350.484663" Canvas.Top="119.53125">
+    <TextBlock Text="*" />
+  </Label>
+  <TextBox FontFamily="Calibri" FontSize="16" Padding="4,2,5,3" Name="tool_name" Width="220" Height="25" IsEnabled="True" Canvas.Left="490.000011" Canvas.Top="95.000004">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="tool_name_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings></TextBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="tool_name_label" Canvas.Left="380.000011" Canvas.Top="95.000004" gwx:GwxProperties.Description="Size=H:25,W:Automatic&#xD;&#xA;Background color=None&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :16&#xD;&#xA;Position= X:589  Y:55" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <TextBlock Text="Tool Name" />
+  </Label>
+  <Label Background="{x:Null}" Foreground="#FFFF0000" FontFamily="Calibri" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="tool_name_empty_label" Width="9.96" Height="24.413333" RenderTransform="1,0,0.00280955,1,-6.24799187029112,-24.53125" Visibility="Hidden" Canvas.Left="720.484674" Canvas.Top="119.531254">
+    <TextBlock Text="*" />
+  </Label>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="part_life_value_label" Canvas.Left="750" Canvas.Top="95.000004" gwx:GwxProperties.Description="Size=H:25,W:Automatic&#xD;&#xA;Background color=None&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :16&#xD;&#xA;Position= X:589  Y:55" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <TextBlock Text="Tool Life Value" />
+  </Label>
+  <TextBox FontFamily="Calibri" FontSize="16" Padding="4,2,5,3" Name="tool_life_value_estimated" Width="100" Height="25" IsEnabled="True" Canvas.Left="860" Canvas.Top="95.000004">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="tool_life_value_estimated_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings></TextBox>
+  <Label Background="{x:Null}" Foreground="#FFFF0000" FontFamily="Calibri" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="tool_life_value_estimated_empty_label" Width="9.96" Height="24.413333" RenderTransform="1,0,0.00280955,1,-6.24799187029112,-24.53125" Visibility="Hidden" Canvas.Left="970.380783" Canvas.Top="119.531254">
+    <TextBlock Text="*" />
+  </Label>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="total_label" Canvas.Left="880.69" Canvas.Top="120.47" gwx:GwxProperties.Description="Size=H:25,W:Automatic&#xD;&#xA;Background color=None&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :16&#xD;&#xA;Position= X:589  Y:55" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <TextBlock Text="Total" />
+  </Label>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" VerticalContentAlignment="Center" Padding="0,0,0,0" Name="part_life_units_label" Canvas.Left="10" Canvas.Top="143.61706">
+    <TextBlock Text="Tool Life Units" />
+  </Label>
+  <ComboBox IsDropDownOpen="False" Text="" FontFamily="Calibri" FontSize="16" VerticalContentAlignment="Center" TabIndex="6" Padding="4,2,5,3" Name="tool_life_units" Width="220" Height="25" Focusable="False" Canvas.Left="120" Canvas.Top="143.61706" gwx:GwxProperties.Description="Select Plant">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="DropDownOpened" MethodName="tool_life_units_DropDownOpened" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>
+    <s:String></s:String>
+    <s:String>Cycles</s:String>
+    <s:String>Days</s:String>
+    <s:String></s:String>
+  </ComboBox>
+  <Label Background="{x:Null}" Foreground="#FFFF0000" FontFamily="Calibri" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="tool_life_units_empty_label" Width="9.96" Height="24.413333" RenderTransform="1,0,0.00280955,1,-6.24799187029112,-24.53125" Visibility="Hidden" Canvas.Left="350.484663" Canvas.Top="171.751119">
+    <TextBlock Text="*" />
+  </Label>
+  <Label Background="{x:Null}" Foreground="#FFFF0000" FontFamily="Calibri" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="alert_value1_empty_label" Width="9.96" Height="24.413333" RenderTransform="1,0,0.00280955,1,-6.24799187029112,-24.53125" Visibility="Hidden" Canvas.Left="719.25257" Canvas.Top="171.418721">
+    <TextBlock Text="*" />
+  </Label>
+  <Canvas>
+    <Button Background="#FF001848" Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="12" Name="Modify2" Width="125" Height="24.999984" Canvas.Left="806.320932" Canvas.Top="261.000003" gwx:GwxProperties.Description="Size=H:25,W:125&#xD;&#xA;Background color=R :255,G : 255,B :255&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :12&#xD;&#xA;Position= X:790  Y:233" gwx:GwxProperties.ShowDescriptionInToolTip="False">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="ModifyScript" Control="True">
+              <gwx:GwxPick.CommandParameters>
+                <gwxcmd:ScriptCommand />
+              </gwx:GwxPick.CommandParameters>
+              <gwx:GwxPick.EventBindings>
+                <script:ScriptEventBindings>
+                  <script:ScriptEventBindings.EventBindings>
+                    <x:Array Type="script:ScriptEventBinding">
+                      <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Update" ScriptType="JScriptNet" />
+                    </x:Array>
+                  </script:ScriptEventBindings.EventBindings>
+                </script:ScriptEventBindings>
+              </gwx:GwxPick.EventBindings>
+            </gwx:GwxPick>
+            <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="DBRefreshMod2" DataSource="db:CumiMetz.GridPreventive.@@Refresh" Control="True">
+              <gwx:GwxPick.CommandParameters>
+                <gwxcmd:ToggleValueCommand>
+                  <gwxcmd:ToggleValueCommand.Values>
+                    <s:String>0</s:String>
+                    <s:String>1</s:String>
+                  </gwxcmd:ToggleValueCommand.Values>
+                </gwxcmd:ToggleValueCommand>
+              </gwx:GwxPick.CommandParameters>
+            </gwx:GwxPick>
+            <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="GridRefreshMod2" Control="True">
+              <gwx:GwxPick.CommandParameters>
+                <gwxcmd:IcoCommandingCommand>
+                  <gwxcmd:IcoCommandingCommand.Command>
+                    <icc:RefreshCommandData Target="Preventitve" />
+                  </gwxcmd:IcoCommandingCommand.Command>
+                </gwxcmd:IcoCommandingCommand>
+              </gwx:GwxPick.CommandParameters>
+            </gwx:GwxPick>
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="MODIFY" />
+    </Button>
+    <Path Fill="#FFFFFFFF" Name="DatabaseEdit4" Margin="0,0,0,0" gwx:GwxProperties.Description="Icon, Database, Edit, Network, Connectivity" gwx:GwxProperties.ShowDescriptionInToolTip="False" gwx:GwxProperties.Title="Database - Edit">
+      <Path.Data>
+        <PathGeometry FillRule="EvenOdd" Figures="M832.830439313267,278.312895446659L842.172883730341,278.312895446659C842.540295163672,278.312895446659,842.839745748366,278.78782307625,842.839745748366,279.373904246119L842.839745748366,282.46935780316C842.839745748366,283.052071071943,842.540295163672,283.526998701533,842.172883730341,283.526998701533L832.830439313267,283.526998701533C832.460904027764,283.526998701533,832.163576848706,283.052071071943,832.163576934229,282.46935780316L832.163576934229,279.373904246119C832.163576848706,278.78782307625,832.460904027764,278.312895446659,832.830439313267,278.312895446659z M832.830439313267,271.725371226652L839.027587182256,271.725371226652 838.719640934038,274.659858655365 842.446849023344,273.137024861006 842.824879929897,272.560908230501C842.835498553684,272.631659762167,842.839745748366,272.705780205796,842.839745748366,272.783269561387L842.839745748366,275.882842774124C842.839745748366,276.465697902472,842.540295163672,276.940740097982,842.172883730341,276.940740097982L832.830439313267,276.940740097982C832.460904027764,276.940740097982,832.163576848706,276.465697902472,832.163576934229,275.882842774124L832.163576934229,272.783269561387C832.163576848706,272.197045858035,832.460904027764,271.725371226652,832.830439313267,271.725371226652z M839.844769099883,270.182045295769L841.58449479251,272.756972302309 839.377443048726,273.292853381746z M834.127699972516,266.657929904788C833.711529066587,266.657929567829 833.369670667706,267.200528051502 833.369670773884,267.861125422857 833.369670667706,268.528470895377 833.711529066587,269.064404203396 834.127699972516,269.064404203396 834.545996408259,269.064404203396 834.883629910229,268.528470895377 834.883629910229,267.861125422857 834.883629910229,267.200528051502 834.545996408259,266.657929567829 834.127699972516,266.657929904788z M842.616275777665,265.532032956356L844.383384833287,268.311671402944 842.040691070003,272.061655897406 842.015203229993,271.445081997081 841.420503173222,271.087940263654 841.418379788243,270.434304288243 840.823679519112,270.147917119108 840.768457493848,269.410049920679 840.27358201438,269.282017787776z M832.830328079237,265.255764013394L841.827018315636,265.255764013394 839.266255314409,269.411571962622 839.155836109971,270.469861169317 832.830328079237,270.469861169317C832.460864847392,270.469861169317,832.163588776337,269.99465554889,832.163588832259,269.411571962622L832.163588832259,266.31413564016C832.163588776337,265.727678289724,832.460864847392,265.255764013394,832.830328079237,265.255764013394z M843.869829554526,263.847482001726C843.966263171593,263.843854617027,844.056726507097,263.892218728274,844.12361642559,263.995395697248L845.374347941586,265.966284394135C845.52723909285,266.202117329364,845.495386406889,266.643461644331,845.306396861499,266.946675244906L845.049455598942,267.361067421778 843.246618292212,264.524335116403 843.505682727388,264.113312131167C843.611989797934,263.942754355326,843.745843960833,263.85214557541,843.869829554526,263.847482001726z" />
+      </Path.Data>
+    </Path>
+    <Button Background="#FF001848" Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="12" Name="Clear2" Width="125" Height="24.999984" Canvas.Left="520.320932" Canvas.Top="261.000003" gwx:GwxProperties.Description="Size=H:25,W:125&#xD;&#xA;Background color=R :255,G : 255,B :255&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :12&#xD;&#xA;Position= X:504  Y:233" gwx:GwxProperties.ShowDescriptionInToolTip="False">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="ClearScript" Control="True">
+              <gwx:GwxPick.CommandParameters>
+                <gwxcmd:ScriptCommand />
+              </gwx:GwxPick.CommandParameters>
+              <gwx:GwxPick.EventBindings>
+                <script:ScriptEventBindings>
+                  <script:ScriptEventBindings.EventBindings>
+                    <x:Array Type="script:ScriptEventBinding">
+                      <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Clear" ScriptType="JScriptNet" />
+                    </x:Array>
+                  </script:ScriptEventBindings.EventBindings>
+                </script:ScriptEventBindings>
+              </gwx:GwxPick.EventBindings>
+            </gwx:GwxPick>
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="CLEAR" />
+    </Button>
+    <Button Background="#FF001848" Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="12" Name="Add1" Width="125" Height="24.999984" Canvas.Left="663.320932" Canvas.Top="261.000003" gwx:GwxProperties.Description="Size=H:25,W:125&#xD;&#xA;Background color=R :255,G : 255,B :255&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :12&#xD;&#xA;Position= X:647  Y:233" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="AddScript" Control="True">
+              <gwx:GwxPick.CommandParameters>
+                <gwxcmd:ScriptCommand />
+              </gwx:GwxPick.CommandParameters>
+              <gwx:GwxPick.EventBindings>
+                <script:ScriptEventBindings>
+                  <script:ScriptEventBindings.EventBindings>
+                    <x:Array Type="script:ScriptEventBinding">
+                      <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Create" ScriptType="JScriptNet" />
+                    </x:Array>
+                  </script:ScriptEventBindings.EventBindings>
+                </script:ScriptEventBindings>
+              </gwx:GwxPick.EventBindings>
+            </gwx:GwxPick>
+            <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="DBRefreshAdd1" DataSource="db:CumiMetz.GridPreventive.@@Refresh" Control="True">
+              <gwx:GwxPick.CommandParameters>
+                <gwxcmd:ToggleValueCommand>
+                  <gwxcmd:ToggleValueCommand.Values>
+                    <s:String>0</s:String>
+                    <s:String>1</s:String>
+                  </gwxcmd:ToggleValueCommand.Values>
+                </gwxcmd:ToggleValueCommand>
+              </gwx:GwxPick.CommandParameters>
+            </gwx:GwxPick>
+            <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="GridRefreshAdd1" Control="True">
+              <gwx:GwxPick.CommandParameters>
+                <gwxcmd:IcoCommandingCommand>
+                  <gwxcmd:IcoCommandingCommand.Command>
+                    <icc:RefreshCommandData Target="Preventitve" />
+                  </gwxcmd:IcoCommandingCommand.Command>
+                </gwxcmd:IcoCommandingCommand>
+              </gwx:GwxPick.CommandParameters>
+            </gwx:GwxPick>
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="ADD" />
+    </Button>
+    <Path Fill="#FFFFFFFF" Name="DatabaseAdd2" Margin="0,0,0,0" gwx:GwxProperties.Description="Icon, Database, Add, Connect, Network, Connectivity" gwx:GwxProperties.ShowDescriptionInToolTip="False" gwx:GwxProperties.Title="Database - Add">
+      <Path.Data>
+        <PathGeometry FillRule="EvenOdd" Figures="M698.311557648035,276.985359524368L703.419286471562,276.985359524368 703.396511796055,277.076143812255C703.22058278148,277.804249164696 703.124517016388,278.590360423602 703.124517016388,279.409877393196 703.124517016388,280.229356073484 703.22058278148,281.015398616757 703.396511796055,281.743420211342L703.419259449728,281.834085870753 698.311557648035,281.834085870753C697.953556655757,281.834085870753,697.662954503925,281.3925335867,697.662954417434,280.84947464143L697.662954417434,277.969115397929C697.662954503925,277.426056452659,697.953556655757,276.985359524368,698.311557648035,276.985359524368z M707.051149713554,276.083510973194L707.051149713554,278.724179499058 705.3119347623,278.724179499058 705.3119347623,280.39799414529 707.051149713554,280.39799414529 707.051149713554,283.038490369277 708.153596546231,283.038490369277 708.153596546231,280.39799414529 709.892811497486,280.39799414529 709.892811497486,278.724179499058 708.153596546231,278.724179499058 708.153596546231,276.083510973194z M707.599444751447,274.291434333535C709.461287253047,274.291434333535 710.970756284054,276.582164236967 710.970756284054,279.409723552231 710.970756284054,282.234446040117 709.461287253047,284.526987506369 707.599444751447,284.526987506369 705.737536271542,284.526987506369 704.228358851138,282.234446040117 704.228358851138,279.409723552231 704.228358851138,276.582164236967 705.737536271542,274.291434333535 707.599444751447,274.291434333535z M698.311557648035,270.862148992262L707.386787888083,270.862148992262C707.744780098264,270.862148992262,708.035059650879,271.302798742658,708.035059650879,271.845971188375L708.035059650879,272.647526712601 707.943209291567,272.635103200076C707.82972232624,272.621949797642 707.715065540771,272.615251562064 707.599399264697,272.615251562064 706.057334698551,272.615251562064 704.694850021654,273.805980624482 703.889839023417,275.613665626491L703.849333297339,275.709507179674 698.311557648035,275.709507179674C697.953556655757,275.709506495935,697.662954503925,275.26885674554,697.662954615732,274.725034065348L697.662954615732,271.845971188375C697.662954503925,271.302798742658,697.953556655757,270.862148992262,698.311557648035,270.862148992262z M699.572380068223,266.153248082815C699.16685605033,266.153248082815 698.836377559503,266.654564538803 698.836377784685,267.270736539028 698.836377559503,267.887738767656 699.16685605033,268.388043736397 699.572380068223,268.388043736397 699.978190382423,268.388043736397 700.308391764366,267.887738767656 700.308391764366,267.270736539028 700.308391764366,266.654564538803 699.978190382423,266.153248082815 699.572380068223,266.153248082815z M698.311557648035,264.84730847959L707.386786987355,264.84730847959C707.744780098264,264.847308670703,708.035059650879,265.288008074458,708.035059650879,265.831203869812L708.035059650879,268.711260525229C708.035059650879,269.255322171716,707.744780098264,269.69500819394,707.386786987355,269.69500819394L698.311557648035,269.69500819394C697.953556655757,269.69500819394,697.662954503925,269.255322171716,697.662954417434,268.711260525229L697.662954417434,265.831203869812C697.662954503925,265.288008074458,697.953556655757,264.847308670703,698.311557648035,264.84730847959z" />
+      </Path.Data>
+    </Path>
+    <Button Background="#FF001848" Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="12" Name="Remove1" Width="125" Height="24.999984" Canvas.Left="949.320932" Canvas.Top="261.000003" gwx:GwxProperties.Description="Size=H:25,W:125&#xD;&#xA;Background color=R :255,G : 255,B :255&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :12&#xD;&#xA;Position= X:933  Y:233" gwx:GwxProperties.ShowDescriptionInToolTip="False">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="RemoveScript" Control="True">
+              <gwx:GwxPick.CommandParameters>
+                <gwxcmd:ScriptCommand />
+              </gwx:GwxPick.CommandParameters>
+              <gwx:GwxPick.EventBindings>
+                <script:ScriptEventBindings>
+                  <script:ScriptEventBindings.EventBindings>
+                    <x:Array Type="script:ScriptEventBinding">
+                      <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Delete" ScriptType="JScriptNet" />
+                    </x:Array>
+                  </script:ScriptEventBindings.EventBindings>
+                </script:ScriptEventBindings>
+              </gwx:GwxPick.EventBindings>
+            </gwx:GwxPick>
+            <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="DBRefreshRemove1" DataSource="db:CumiMetz.GridPreventive.@@Refresh" Control="True">
+              <gwx:GwxPick.CommandParameters>
+                <gwxcmd:ToggleValueCommand>
+                  <gwxcmd:ToggleValueCommand.Values>
+                    <s:String>0</s:String>
+                    <s:String>1</s:String>
+                  </gwxcmd:ToggleValueCommand.Values>
+                </gwxcmd:ToggleValueCommand>
+              </gwx:GwxPick.CommandParameters>
+            </gwx:GwxPick>
+            <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="GridRefreshRemove1" Control="True">
+              <gwx:GwxPick.CommandParameters>
+                <gwxcmd:IcoCommandingCommand>
+                  <gwxcmd:IcoCommandingCommand.Command>
+                    <icc:RefreshCommandData Target="Preventitve" />
+                  </gwxcmd:IcoCommandingCommand.Command>
+                </gwxcmd:IcoCommandingCommand>
+              </gwx:GwxPick.CommandParameters>
+            </gwx:GwxPick>
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="REMOVE" />
+    </Button>
+    <Path Fill="#FFFFFFFF" Name="DatabaseRemove3" Margin="0,0,0,0" gwx:GwxProperties.Description="Icon, Database, Remove, Delete, Disconnect, Network, Connectivity" gwx:GwxProperties.ShowDescriptionInToolTip="False" gwx:GwxProperties.Title="Database - Remove">
+      <Path.Data>
+        <PathGeometry FillRule="EvenOdd" Figures="M976.215703827424,277.030461759688L981.323368451581,277.030461759688 981.300665609112,277.120958883314C981.124731415353,277.849074536376 981.028663398441,278.635195415709 981.028663398441,279.454722349649 981.028663398441,280.274249625456 981.124731415353,281.060331189878 981.300665609112,281.788384280941L981.323447040077,281.879188060908 976.215703827424,281.879188060908C975.857702902701,281.879188060908,975.567100755117,281.437480541388,975.567100799486,280.894441049409L975.567100799486,278.014354440981C975.567100755117,277.471142647111,975.857702902701,277.030461759688,976.215703827424,277.030461759688z M984.27667160972,276.555606980268L983.497108421712,277.739280284766 984.726899690681,279.606205795746 983.497108421712,281.47309609424 984.27667160972,282.65659846432 985.506485171703,280.789708165828 986.736299634412,282.65659846432 987.515705420247,281.47309609424 986.285958061754,279.606205795746 987.515705420247,277.739280284766 986.736299634412,276.555606980268 985.506485171703,278.422532833118z M985.503591133501,274.33653606214C987.365433635101,274.33653606214 988.874902666106,276.627133118772 988.874902666106,279.45473944309 988.874902666106,282.279679874269 987.365433635101,284.572088493834 985.503591133501,284.572088493834 983.641682653594,284.572088493834 982.132505233194,282.279679874269 982.132505233194,279.45473944309 982.132505233194,276.627133118772 983.641682653594,274.33653606214 985.503591133501,274.33653606214z M976.215703827424,270.907250511023L985.290933369407,270.907250511023C985.648926480316,270.907250511023,985.939206032933,271.347931740316,985.939206032933,271.890971574162L985.939206032933,272.69226972021 985.847476821501,272.679862958495C985.733987153989,272.666708871521 985.61932789152,272.660010977401 985.503658237718,272.660010977401 983.961554940278,272.660010977401 982.599036035729,273.850755154912 981.794004771116,275.658462830879L981.753225448991,275.754950522014 976.215703827424,275.754950522014C975.857702902701,275.754950522014,975.567100755117,275.314269634591,975.567100799486,274.770238381135L975.567100799486,271.890971574162C975.567100755117,271.347931740316,975.857702902701,270.907250511023,976.215703827424,270.907250511023z M977.476526450277,266.198348698066C977.071002319792,266.198348561318 976.740523851484,266.699459960871 976.74052351371,267.315584239727 976.740523851484,267.932543464822 977.071002319792,268.432803576801 977.476526450277,268.432803576801 977.882336764478,268.432803576801 978.212538146419,267.932543464822 978.212538146419,267.315584239727 978.212538146419,266.699459960871 977.882336764478,266.198348561318 977.476526450277,266.198348698066z M976.215703827424,264.892409630287L985.290933369407,264.892409630287C985.648926480316,264.892409689091,985.939206032933,265.33310843164,985.939206032933,265.876137633367L985.939206032933,268.756224481102C985.939206032933,269.300251974,985.648926480316,269.740109641279,985.290933369407,269.74010998315L976.215703827424,269.74010998315C975.857702902701,269.740109641279,975.567100755117,269.300251974,975.567100799486,268.756224481102L975.567100799486,265.876137633367C975.567100755117,265.33310843164,975.857702902701,264.892409689091,976.215703827424,264.892409630287z" />
+      </Path.Data>
+    </Path>
+    <Canvas>
+      <Path Fill="#FFFFFFFF" Name="DatabaseRefresh2" Margin="0,0,0,0" gwx:GwxProperties.Description="Icon, Database, Refresh, Network, Connectivity" gwx:GwxProperties.ShowDescriptionInToolTip="False" gwx:GwxProperties.Title="Database - Refresh">
+        <Path.Data>
+          <PathGeometry FillRule="EvenOdd" Figures="M551.764641749532,276.290369203156L555.729781217504,276.290369203156C555.505542912653,277.128947356581 555.37617436137,278.036620804613 555.37617436137,278.991406108179 555.37617436137,279.638399084687 555.43870235437,280.263406109912 555.546509588222,280.860146649866L551.764641749532,280.860146649866C551.413191132928,280.860146649866,551.128580795479,280.445569229747,551.128580632134,279.933628773646L551.128580632134,277.220028602472C551.128580795479,276.704947251327,551.413191132928,276.290369203156,551.764641749532,276.290369203156z M560.547401041503,273.452727229724C560.588630286657,273.451157096229,560.630129430925,273.451157096229,560.672168157841,273.452727229724L560.674324332702,273.452727229724 560.678635820118,273.452727229724C561.206808765708,273.459008705786,561.70695704309,273.622322687035,562.161832977985,273.914403630283L562.176923183946,273.926965954353C563.519992473681,274.796927308037 564.451302427286,276.76611745413 564.436211574602,279.043092076613 564.414653490791,282.102089272064 562.696473801429,284.558081094912 560.596714972292,284.526675284736 558.958299740327,284.501550322564 557.574270457827,282.968910358754 557.056876015203,280.845827974465L558.417192116904,280.500355897808C558.798770394382,281.712649061157 559.633068431902,282.560625405634 560.609649650119,282.576328938776 561.957030642841,282.595172110856 563.058649523229,281.018564012795 563.071584201057,279.055655028738 563.086675269318,277.095886625697 562.004458944604,275.487871461353 560.657077951882,275.469027347192 560.542819654973,275.469027347192 560.430717532924,275.481590299317 560.320771801305,275.500434099452L560.318615626451,275.487871461353C559.956439904647,275.556965499853,559.620133754076,275.742264804332,559.326943339974,276.02178248143L559.794754168278,276.665616977398C559.822779914361,276.703304891693 559.833558417334,276.762977187138 559.81846734907,276.813227425504 559.805532671244,276.866618558915 559.773196084465,276.90116589219 559.734391188681,276.904306787236L558.598279546655,276.99224462587 557.589360879363,277.070761035475 557.582893648238,277.070761035475C557.554867902148,277.070761035475 557.531154074626,277.051917235342 557.511751518953,277.023651692153 557.492349394426,276.99224462587 557.483726204016,276.951416130556 557.490193650716,276.907447054227L557.651879387091,275.597793995163 557.884706606022,273.744808172972C557.891174052723,273.688276458544 557.919199798807,273.644307068186 557.955848735305,273.634885325134 557.994652984362,273.622322687035 558.03345766457,273.644307068186 558.055015532806,273.691417039562L558.427970619876,274.489143459698C558.945365062494,273.945810068515 559.559770558911,273.594056515794 560.225916060078,273.487274248974 560.234539250486,273.484133667955 560.243162440897,273.484133667955 560.251785631307,273.484133667955 560.309992436041,273.474711924903 560.36604371264,273.46843044884 560.424250517375,273.462149286803 560.465210294563,273.45743857229 560.506170718479,273.454297363218 560.547401041503,273.452727229724z M551.764507920958,270.518604635334L560.680279790272,270.518604635334C561.03165221805,270.518604635334,561.318344358313,270.933196814709,561.318344358313,271.44823577225L561.318344358313,271.702650155018C561.038124838538,271.633564281212 560.751406613771,271.589628177687 560.458241637452,271.589628491713 558.634568258381,271.589628177687 557.041538761014,272.990362796668 556.144780205272,275.088321160865L551.764507920958,275.088321160865C551.413135730315,275.088321160865,551.128574968434,274.673728981493,551.128574995411,274.161833431211L551.128574995411,271.44823577225C551.128574968434,270.933196814709,551.413135730315,270.518604635334,551.764507920958,270.518604635334z M553.003997799839,266.080736615804C552.605202179407,266.080736615804 552.279698719247,266.551515802497 552.279698719247,267.132143695327 552.279698719247,267.712771556754 552.605202179407,268.186689471708 553.003997799839,268.186689471708 553.402793204693,268.186689471708 553.726140964262,267.712771556754 553.726140964262,267.132143695327 553.726140964262,266.551515802497 553.402793204693,266.080736615804 553.003997799839,266.080736615804z M551.764498047653,264.847294696348L560.680273107466,264.847294696348C561.031644026223,264.847294696348,561.318345867333,265.264718988314,561.318345867333,265.776299224386L561.318345867333,268.491126737513C561.318345867333,269.00270700499,561.031644026223,269.416992694303,560.680273107466,269.416992694303L551.764498047653,269.416992694303C551.413126805531,269.416992694303,551.128580793339,269.00270700499,551.128580632134,268.491126737513L551.128580632134,265.776299224386C551.128580793339,265.264718988314,551.413126805531,264.847294696348,551.764498047653,264.847294696348z" />
+        </Path.Data>
+      </Path>
+    </Canvas>
+  </Canvas>
+  <Canvas Visibility="Hidden" gwx:GwxProperties.Locked="True">
+    <TextBox FontFamily="Segoe UI" FontSize="12" Name="logged_in_user" Width="220" Height="25" Canvas.Left="119.999999" Canvas.Top="239.999993">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="localsim::currentUser" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxEvents.ScriptEventBindings>
+        <script:ScriptEventBindings>
+          <script:ScriptEventBindings.EventBindings>
+            <x:Array Type="script:ScriptEventBinding">
+              <script:ScriptEventBinding EventName="TextChanged" MethodName="CurrentUser_TextChanged" ScriptType="JScriptNet" />
+            </x:Array>
+          </script:ScriptEventBindings.EventBindings>
+        </script:ScriptEventBindings>
+      </gwx:GwxEvents.ScriptEventBindings>*.??</TextBox>
+    <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="logged_in_user_label" Height="25" Canvas.Left="9.999999" Canvas.Top="239.999993" gwx:GwxProperties.Description="Size=H:25,W:Automatic&#xD;&#xA;Background color=None&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :16&#xD;&#xA;Position= X:589  Y:55" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+      <TextBlock Text="Logged in User" />
+    </Label>
+  </Canvas>
+  <Label Background="{x:Null}" Foreground="#FFFF0000" FontFamily="Calibri" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="alert_value2_empty_label" Width="9.96" Height="24.413333" RenderTransform="1,0,0.00280955,1,-6.24799187029112,-24.53125" Visibility="Hidden" Canvas.Left="1090.288107" Canvas.Top="171.337058">
+    <TextBlock Text="*" />
+  </Label>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="sms_label" Canvas.Left="380.000001" Canvas.Top="222.76951" gwx:GwxProperties.Description="Size=H:25,W:Automatic&#xD;&#xA;Background color=None&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :16&#xD;&#xA;Position= X:589  Y:55" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <TextBlock Text="SMS" />
+  </Label>
+  <CheckBox IsChecked="False" Foreground="#FFFFFFFF" FontFamily="Segoe UI" FontSize="12" Name="sms" Width="71.3949803543091" Height="15.0983400344849" Canvas.Left="490.000001" Canvas.Top="222.76951">
+    <TextBlock Text="Enabled" />
+  </CheckBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="email_label" Canvas.Left="750" Canvas.Top="222.76951" gwx:GwxProperties.Description="Size=H:25,W:Automatic&#xD;&#xA;Background color=None&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :16&#xD;&#xA;Position= X:589  Y:55" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <TextBlock Text="Email" />
+  </Label>
+  <CheckBox IsChecked="False" Foreground="#FFFFFFFF" FontFamily="Segoe UI" FontSize="12" Name="email" Width="71.3949803543091" Height="15.0983400344849" Canvas.Left="860.000029" Canvas.Top="222.76951">
+    <TextBlock Text="Enabled" />
+  </CheckBox>
+  <TextBox FontFamily="Calibri" FontSize="16" Padding="4,2,5,3" Name="alert_value1" Width="220" Height="25" IsEnabled="True" Canvas.Left="490.000011" Canvas.Top="143.61706">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="alert_value1_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings></TextBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="alert_value_1_label" Canvas.Left="380.000011" Canvas.Top="143.61706" gwx:GwxProperties.Description="Size=H:25,W:Automatic&#xD;&#xA;Background color=None&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :16&#xD;&#xA;Position= X:589  Y:55" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <TextBlock Text="Alert Value 1" />
+  </Label>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="alert_value_2_label1" Canvas.Left="750" Canvas.Top="143.61706" gwx:GwxProperties.Description="Size=H:25,W:Automatic&#xD;&#xA;Background color=None&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :16&#xD;&#xA;Position= X:589  Y:55" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <TextBlock Text="Alert Value 2" />
+  </Label>
+  <TextBox FontFamily="Calibri" FontSize="16" Padding="4,2,5,3" Name="alert_value2" Width="220" Height="25" IsEnabled="True" Canvas.Left="860" Canvas.Top="143.61706">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="TextChanged" MethodName="alert_value2_TextChanged" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings></TextBox>
+  <Label Background="{x:Null}" Foreground="#FFFF0000" FontFamily="Calibri" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="alert_user1_empty_label" Width="9.96" Height="24.413333" RenderTransform="1,0,0.00280955,1,-6.24799187029112,-24.53125" Visibility="Hidden" Canvas.Left="350.02391" Canvas.Top="211.00311">
+    <TextBlock Text="*" />
+  </Label>
+  <Label Background="{x:Null}" Foreground="#FFFF0000" FontFamily="Calibri" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="alert_user2_empty_label" Width="9.96" Height="24.413333" RenderTransform="1,0,0.00280955,1,-6.24799187029112,-24.53125" Visibility="Hidden" Canvas.Left="720.676651" Canvas.Top="211.00311">
+    <TextBlock Text="*" />
+  </Label>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="alert_user1_label" Canvas.Left="10.191977" Canvas.Top="181.279492" gwx:GwxProperties.Description="Size=H:25,W:Automatic&#xD;&#xA;Background color=None&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :16&#xD;&#xA;Position= X:589  Y:55" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <TextBlock Text="Alert User 1" />
+  </Label>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="alert_user2_label" Canvas.Left="380.191988" Canvas.Top="181.279492" gwx:GwxProperties.Description="Size=H:25,W:Automatic&#xD;&#xA;Background color=None&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :16&#xD;&#xA;Position= X:589  Y:55" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <TextBlock Text="Alert User 2" />
+  </Label>
+  <ComboBox IsDropDownOpen="False" Text="" FontFamily="Calibri" FontSize="16" VerticalContentAlignment="Center" TabIndex="6" Padding="4,2,5,3" Name="alert_user_1" Width="220" Height="25" Focusable="False" Canvas.Left="121.045845" Canvas.Top="180.46824" gwx:GwxProperties.Description="Select Plant">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="DropDownOpened" MethodName="Dropdown_Alert_User1" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>
+  </ComboBox>
+  <ComboBox IsDropDownOpen="False" Text="" FontFamily="Calibri" FontSize="16" VerticalContentAlignment="Center" TabIndex="6" Padding="4,2,5,3" Name="alert_user_2" Width="220" Height="25" Focusable="False" Canvas.Left="491.045856" Canvas.Top="180.46824" gwx:GwxProperties.Description="Select Plant">
+    <gwx:GwxEvents.ScriptEventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="DropDownOpened" MethodName="Dropdown_Alert_User2" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:GwxEvents.ScriptEventBindings>
+  </ComboBox>
+  <Label Foreground="#FFFFFFFF" FontFamily="Calibri" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="0,0,0,0" Name="line_stop_label" Canvas.Left="10" Canvas.Top="235.122451" gwx:GwxProperties.Description="Size=H:25,W:Automatic&#xD;&#xA;Background color=None&#xD;&#xA;Text color=White&#xD;&#xA;Text Font= Style :Calibri,Size :16&#xD;&#xA;Position= X:589  Y:55" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <TextBlock Text="Line Stop" />
+  </Label>
+  <CheckBox IsChecked="False" Foreground="#FFFFFFFF" FontFamily="Segoe UI" FontSize="12" Name="line_stop" Width="71.3949803543091" Height="15.0983400344849" Canvas.Left="120" Canvas.Top="235.122451">
+    <TextBlock Text="Enabled" />
+  </CheckBox>
+  <Canvas>
+    <Rectangle Stroke="#FF000000" Name="Rectangle1" Width="1100" Height="30" Canvas.Left="0" Canvas.Top="296.111111">
+      <Rectangle.Fill>
+        <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+          <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#FFF5F5F5" Offset="0" />
+            <GradientStop Color="#FFEBEBEB" Offset="0.49" />
+            <GradientStop Color="#FFE1E1E1" Offset="0.51" />
+            <GradientStop Color="#FFCDCDCD" Offset="1" />
+          </LinearGradientBrush.GradientStops>
+          <LinearGradientBrush.RelativeTransform>
+            <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+          </LinearGradientBrush.RelativeTransform>
+        </LinearGradientBrush>
+      </Rectangle.Fill>
+    </Rectangle>
+  </Canvas>
+  <ig:GdxViewControl FileVersion="10.97.020.00" Background="#FFBFBFBF" FontFamily="Segoe UI" FontSize="12" IsTabStop="True" Name="default_grid" Width="1100" Height="400" Canvas.Left="0" Canvas.Top="300" gwx:GwxProperties.Description="Grid Size=H:443,W:1100&#xD;&#xA;Position=X:0,Y:300&#xD;&#xA;Grid Header Font=Style :Calibri,Size:17,Color:White&#xD;&#xA;Grid Header Background color=R :0,G : 24,B :72&#xD;&#xA;Grid Text Font=Style :Calibri,Size:16,Color:White&#xD;&#xA;Grid Scrolbar Foreground color=R :0,G : 24,B :72&#xD;&#xA;" gwx:GwxProperties.ShowDescriptionInToolTip="True">
+    <ig:GdxViewControl.DataDictionaryRepository>
+      <ig15:DataDictionary Name="DailyStatus" Key="47993581">
+        <ig15:TextDataTranslation Text="Applicable" FilterKey="15056362" />
+        <ig15:TextDataTranslation Text="Not Applicable" FilterKey="49320909" />
+      </ig15:DataDictionary>
+      <ig15:DataDictionary Name="WeeklyStatus" Key="53237738">
+        <ig15:TextDataTranslation Text="Applicable" FilterKey="61233639" />
+        <ig15:TextDataTranslation Text="Not Applicable" FilterKey="49445506" />
+      </ig15:DataDictionary>
+      <ig15:DataDictionary Name="MonthlyStatus" Key="27952209">
+        <ig15:TextDataTranslation Text="Applicable" FilterKey="1264671" />
+        <ig15:TextDataTranslation Text="Not Applicable" FilterKey="35726287" />
+      </ig15:DataDictionary>
+      <ig15:DataDictionary Name="AnnualStatus" Key="63571381">
+        <ig15:TextDataTranslation Text="Applicable" FilterKey="54214786" />
+        <ig15:TextDataTranslation Text="Not Applicable" FilterKey="47842506" />
+      </ig15:DataDictionary>
+    </ig:GdxViewControl.DataDictionaryRepository>
+    <ig:GdxViewControl.FiltersRepository>
+      <igd:GdxFilter Key="49320909" Expression="x={{Daily}}==0" Name="Daily_Not Applicable" />
+      <igd:GdxFilter Key="15056362" Expression="x={{Daily}}==1" Name="Daily_Applicable" />
+      <igd:GdxFilter Key="61233639" Expression="x={{Weekly}}==1" Name="Weekly_Applicable" />
+      <igd:GdxFilter Key="49445506" Expression="x={{Weekly}}==0" Name="Weekly_Not Applicable" />
+      <igd:GdxFilter Key="1264671" Expression="x={{Monthly}}==1" Name="Monthly_Applicable" />
+      <igd:GdxFilter Key="35726287" Expression="x={{Monthly}}==0" Name="Monthly_Not Applicable" />
+      <igd:GdxFilter Key="54214786" Expression="x={{Annual}}==1" Name="Annual_Applicable" />
+      <igd:GdxFilter Key="47842506" Expression="x={{Annual}}==0" Name="Annual_Not Applicable" />
+    </ig:GdxViewControl.FiltersRepository>
+    <ig:GdxViewControl.SubscriptionsRepository>
+      <igd:GdxSubscription Key="11348180" Name="New Subscription">
+        <igd:GdxSubscription.Fields>
+          <igd:GdxDataField Key="RowID" BuiltInType="Int64" />
+          <igd:GdxDataField Key="AssetID" />
+          <igd:GdxDataField Key="AssetName" />
+          <igd:GdxDataField Key="AssemblyID" />
+          <igd:GdxDataField Key="AssemblyName" />
+          <igd:GdxDataField Key="SubAssemblyID" />
+          <igd:GdxDataField Key="SubAssemblyName" />
+          <igd:GdxDataField Key="ComponentID" />
+          <igd:GdxDataField Key="ComponentName" />
+        </igd:GdxSubscription.Fields>
+        <igd:GdxSubscription.Tags>
+          <s:String>db:CumiMetz. GridAssetComponentInfo</s:String>
+        </igd:GdxSubscription.Tags>
+      </igd:GdxSubscription>
+      <igd:GdxSubscription Key="3170613" Name="New Subscription">
+        <igd:GdxSubscription.Fields>
+          <igd:GdxDataField Key="RowID" BuiltInType="Int64" />
+          <igd:GdxDataField Key="TimeStamp" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="AssetName" />
+          <igd:GdxDataField Key="StartDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="Daily" BuiltInType="Int32" />
+          <igd:GdxDataField Key="Weekly" BuiltInType="Int32" />
+          <igd:GdxDataField Key="WLastDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="WNextDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="WWarning" BuiltInType="Int32" />
+          <igd:GdxDataField Key="Monthly" BuiltInType="Int32" />
+          <igd:GdxDataField Key="MLastDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="MNextDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="MWarning" BuiltInType="Int32" />
+          <igd:GdxDataField Key="Annual" BuiltInType="Int32" />
+          <igd:GdxDataField Key="ALastDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="ANextDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="AWarning" BuiltInType="Int32" />
+          <igd:GdxDataField Key="Maintenancetype" BuiltInType="Int32" />
+        </igd:GdxSubscription.Fields>
+        <igd:GdxSubscription.Tags>
+          <s:String>db:CumiMetz.GridPreventive</s:String>
+        </igd:GdxSubscription.Tags>
+      </igd:GdxSubscription>
+      <igd:GdxSubscription Key="706558" Name="New Subscription">
+        <igd:GdxSubscription.Fields>
+          <igd:GdxDataField Key="RowID" BuiltInType="Int64" />
+          <igd:GdxDataField Key="TimeStamp" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="AssetID" />
+          <igd:GdxDataField Key="AssetName" />
+          <igd:GdxDataField Key="StartDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="Daily" BuiltInType="Int32" />
+          <igd:GdxDataField Key="Weekly" BuiltInType="Int32" />
+          <igd:GdxDataField Key="WLastDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="WNextDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="WWarning" BuiltInType="Int32" />
+          <igd:GdxDataField Key="Monthly" BuiltInType="Int32" />
+          <igd:GdxDataField Key="MLastDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="MNextDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="MWarning" BuiltInType="Int32" />
+          <igd:GdxDataField Key="Annual" BuiltInType="Int32" />
+          <igd:GdxDataField Key="ALastDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="ANextDate" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="AWarning" BuiltInType="Int32" />
+          <igd:GdxDataField Key="Maintenancetype" BuiltInType="Int32" />
+        </igd:GdxSubscription.Fields>
+        <igd:GdxSubscription.Tags>
+          <s:String>db:CumiMetz.GridPreventive</s:String>
+        </igd:GdxSubscription.Tags>
+      </igd:GdxSubscription>
+      <igd:GdxSubscription Key="60979881" Name="New Subscription" />
+      <igd:GdxSubscription Key="20043253" Name="New Subscription">
+        <igd:GdxSubscription.Fields>
+          <igd:GdxDataField Key="uid" BuiltInType="Int32" />
+          <igd:GdxDataField Key="tool_id" />
+          <igd:GdxDataField IsPrimaryKey="True" Key="tool_name" />
+          <igd:GdxDataField Key="tool_life_value_estimated" BuiltInType="Int32" />
+          <igd:GdxDataField Key="tool_life_value_actual" BuiltInType="Int32" />
+          <igd:GdxDataField Key="tool_life_units" />
+          <igd:GdxDataField Key="change_reason" />
+          <igd:GdxDataField Key="remarks" />
+          <igd:GdxDataField Key="alert_value_1" BuiltInType="Int32" />
+          <igd:GdxDataField Key="alert_value_2" BuiltInType="Int32" />
+          <igd:GdxDataField Key="enabled" BuiltInType="Int32" />
+          <igd:GdxDataField Key="alert_user_1" />
+          <igd:GdxDataField Key="alert_user_2" />
+          <igd:GdxDataField IsPrimaryKey="True" Key="sub_unit_id" BuiltInType="Int32" />
+          <igd:GdxDataField Key="sub_unit_name" />
+          <igd:GdxDataField IsPrimaryKey="True" Key="equipment_id" BuiltInType="Int32" />
+          <igd:GdxDataField Key="equipment_name" />
+          <igd:GdxDataField IsPrimaryKey="True" Key="stage_id" BuiltInType="Int32" />
+          <igd:GdxDataField Key="stage_name" />
+          <igd:GdxDataField IsPrimaryKey="True" Key="line_id" BuiltInType="Int32" />
+          <igd:GdxDataField Key="line_name" />
+          <igd:GdxDataField IsPrimaryKey="True" Key="shop_name" />
+          <igd:GdxDataField IsPrimaryKey="True" Key="plant_name" />
+          <igd:GdxDataField Key="created_by" />
+          <igd:GdxDataField Key="created_on" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="updated_by" />
+          <igd:GdxDataField Key="updated_on" BuiltInType="DateTime" />
+        </igd:GdxSubscription.Fields>
+        <igd:GdxSubscription.Tags>
+          <s:String>db:BajajMEA.Maintenance_Tool_Life</s:String>
+        </igd:GdxSubscription.Tags>
+      </igd:GdxSubscription>
+      <igd:GdxSubscription Key="33816194" Name="New Subscription">
+        <igd:GdxSubscription.Fields>
+          <igd:GdxDataField IsPrimaryKey="True" Key="plant_name" />
+          <igd:GdxDataField IsPrimaryKey="True" Key="shop_name" />
+          <igd:GdxDataField IsPrimaryKey="True" Key="line_id" BuiltInType="Int32" />
+          <igd:GdxDataField Key="line_name" />
+          <igd:GdxDataField IsPrimaryKey="True" Key="stage_id" BuiltInType="Int32" />
+          <igd:GdxDataField Key="stage_name" />
+          <igd:GdxDataField IsPrimaryKey="True" Key="equipment_id" BuiltInType="Int32" />
+          <igd:GdxDataField Key="equipment_name" />
+          <igd:GdxDataField IsPrimaryKey="True" Key="sub_unit_id" BuiltInType="Int32" />
+          <igd:GdxDataField Key="sub_unit_name" />
+          <igd:GdxDataField Key="uid" BuiltInType="Int32" />
+          <igd:GdxDataField Key="tool_id" />
+          <igd:GdxDataField IsPrimaryKey="True" Key="tool_name" />
+          <igd:GdxDataField Key="tool_life_value_estimated" BuiltInType="Int32" />
+          <igd:GdxDataField Key="tool_life_value_actual" BuiltInType="Int32" />
+          <igd:GdxDataField Key="tool_life_units" />
+          <igd:GdxDataField Key="change_reason" />
+          <igd:GdxDataField Key="remarks" />
+          <igd:GdxDataField Key="alert_value_1" BuiltInType="Int32" />
+          <igd:GdxDataField Key="alert_value_2" BuiltInType="Int32" />
+          <igd:GdxDataField Key="line_stop" BuiltInType="Int32" />
+          <igd:GdxDataField Key="sms" BuiltInType="Int32" />
+          <igd:GdxDataField Key="email" BuiltInType="Int32" />
+          <igd:GdxDataField Key="alert_user_1" />
+          <igd:GdxDataField Key="alert_user_2" />
+          <igd:GdxDataField Key="created_by" />
+          <igd:GdxDataField Key="created_on" BuiltInType="DateTime" />
+          <igd:GdxDataField Key="updated_by" />
+          <igd:GdxDataField Key="updated_on" BuiltInType="DateTime" />
+        </igd:GdxSubscription.Fields>
+        <igd:GdxSubscription.Tags>
+          <s:String>db:BajajMEA.Maintenance_Tool_Life</s:String>
+        </igd:GdxSubscription.Tags>
+      </igd:GdxSubscription>
+    </ig:GdxViewControl.SubscriptionsRepository>
+    <ig:GdxViewControl.Header>
+      <TextBlock Text="Tool Life Maintenance" FontFamily="Calibri" FontStyle="Normal" FontWeight="Bold" FontSize="19" Foreground="#FF001848" Padding="0,0,0,0" TextAlignment="Center" Visibility="Visible" />
+    </ig:GdxViewControl.Header>
+    <ig:GdxViewControl.Items>
+      <iwc:MultipleTabItem IsSelected="True" Header="Tab" FontFamily="Calibri" FontSize="16">
+        <ig:GdxGridView HeaderBackground="#FF001848" HeaderBorderBrush="#FFC6C7B5" HeaderCellBorderThickness="0,0,0,0" HeaderFontFamily="Calibri" HeaderFontSize="17" HeaderMouseOverForeground="#FFFFFFFF" HeaderMouseOverBorderBrush="#FF000000" HeaderSelectedForeground="#FFFFFFFF" HeaderSelectedBorderBrush="#FF000000" GroupHeaderBorderBrush="#FFD8D8D8" GroupHeaderBackground="#FFD8D8D8" GroupHeaderForeground="#FFFFFFFF" RowHeaderBackground="#FFD8D8D8" RowHeaderBorderBrush="#FFD8D8D8" RowHeaderCellBorderBrush="#FF626262" RowHeaderBorderThickness="0,0,1,2" RowHeight="25" ScrollBarBackground="#FFD8D8D8" ScrollBarForeground="#FF001848" ScrollBarMouseOverForeground="#FF171F31" ScrollBarMousePressedForeground="#FF171F31" ScrollBarBorderBrush="#FF373D54" ScrollBarMouseOverBorderBrush="#FF229EC8" DateTimeFormat="d" DoubleFormat="N0" SubscriptionID="33816194" AllowPaging="False" BorderBrush="#FFA5B6CB" BorderThickness="0,0,0,0" Background="#FFFFFFFF" FontFamily="Calibri" FontSize="16" Uid="local:GdxView_1">
+          <ig:GdxGridView.HeaderMouseOverBackground>
+            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+              <LinearGradientBrush.GradientStops>
+                <GradientStop Color="#FF8993A2" Offset="0" />
+                <GradientStop Color="#FF545F6D" Offset="0.5" />
+                <GradientStop Color="#FF0C1C32" Offset="0.51" />
+                <GradientStop Color="#FF132F54" Offset="1" />
+              </LinearGradientBrush.GradientStops>
+              <LinearGradientBrush.RelativeTransform>
+                <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+              </LinearGradientBrush.RelativeTransform>
+            </LinearGradientBrush>
+          </ig:GdxGridView.HeaderMouseOverBackground>
+          <ig:GdxGridView.HeaderSelectedBackground>
+            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+              <LinearGradientBrush.GradientStops>
+                <GradientStop Color="#FF6078C8" Offset="0" />
+                <GradientStop Color="#FF4961B2" Offset="0.4" />
+                <GradientStop Color="#FF16399C" Offset="0.41" />
+                <GradientStop Color="#FF16399C" Offset="0.74" />
+                <GradientStop Color="#FF173C9F" Offset="0.75" />
+                <GradientStop Color="#FF39C0DC" Offset="1" />
+              </LinearGradientBrush.GradientStops>
+              <LinearGradientBrush.RelativeTransform>
+                <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+              </LinearGradientBrush.RelativeTransform>
+            </LinearGradientBrush>
+          </ig:GdxGridView.HeaderSelectedBackground>
+          <ig:GdxGridView.MouseOverBackground>
+            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="0.3">
+              <LinearGradientBrush.GradientStops>
+                <GradientStop Color="#FF6078C8" Offset="0" />
+                <GradientStop Color="#FF4961B2" Offset="0.4" />
+                <GradientStop Color="#FF16399C" Offset="0.41" />
+                <GradientStop Color="#FF16399C" Offset="0.74" />
+                <GradientStop Color="#FF173C9F" Offset="0.75" />
+                <GradientStop Color="#FF39C0DC" Offset="1" />
+              </LinearGradientBrush.GradientStops>
+              <LinearGradientBrush.RelativeTransform>
+                <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+              </LinearGradientBrush.RelativeTransform>
+            </LinearGradientBrush>
+          </ig:GdxGridView.MouseOverBackground>
+          <ig:GdxGridView.SelectionBackground>
+            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="0.9">
+              <LinearGradientBrush.GradientStops>
+                <GradientStop Color="#FF6078C8" Offset="0" />
+                <GradientStop Color="#FF4961B2" Offset="0.4" />
+                <GradientStop Color="#FF16399C" Offset="0.41" />
+                <GradientStop Color="#FF16399C" Offset="0.74" />
+                <GradientStop Color="#FF173C9F" Offset="0.75" />
+                <GradientStop Color="#FF39C0DC" Offset="1" />
+              </LinearGradientBrush.GradientStops>
+              <LinearGradientBrush.RelativeTransform>
+                <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+              </LinearGradientBrush.RelativeTransform>
+            </LinearGradientBrush>
+          </ig:GdxGridView.SelectionBackground>
+          <ig:GdxGridView.Columns>
+            <ig:GdxColumn Key="plant_name" Index="19" Format="{x:Null}" Text="Plant Name" TextAlignment="Center" IsAuto="True" />
+            <ig:GdxColumn Key="shop_name" Index="18" Format="{x:Null}" Text="Shop Name" TextAlignment="Center" IsAuto="True" />
+            <ig:GdxColumn Key="line_id" Index="20" IsVisible="False" Format="{x:Null}" Text="line_id" />
+            <ig:GdxColumn Key="line_name" Index="17" Format="{x:Null}" Text="Line Name" TextAlignment="Center" IsAuto="True" />
+            <ig:GdxColumn Key="stage_id" Index="21" IsVisible="False" Format="{x:Null}" Text="stage_id" />
+            <ig:GdxColumn Key="stage_name" Index="16" Format="{x:Null}" Text="Stage Name" TextAlignment="Center" IsAuto="True" />
+            <ig:GdxColumn Key="equipment_id" Index="22" IsVisible="False" Format="{x:Null}" Text="equipment_id" />
+            <ig:GdxColumn Key="equipment_name" Index="15" Format="{x:Null}" Text="Equipment Name" TextAlignment="Center" IsAuto="True" />
+            <ig:GdxColumn Key="sub_unit_id" Index="23" IsVisible="False" Format="{x:Null}" Text="sub_unit_id" />
+            <ig:GdxColumn Key="sub_unit_name" Index="14" Format="{x:Null}" Text="Sub-Unit" TextAlignment="Center" IsAuto="True" />
+            <ig:GdxColumn Key="uid" Index="24" IsVisible="False" Format="{x:Null}" Text="uid" />
+            <ig:GdxColumn Key="tool_id" Format="{x:Null}" Text="Tool ID" TextAlignment="Center" IsAuto="True" />
+            <ig:GdxColumn Key="tool_name" Index="1" Format="{x:Null}" Text="Tool Name" TextAlignment="Center" IsAuto="True" />
+            <ig:GdxColumn Key="tool_life_value_estimated" Index="2" Format="{x:Null}" Text="Estimated Value" TextAlignment="Center" IsAuto="True" />
+            <ig:GdxColumn Key="tool_life_value_actual" Index="3" IsVisible="False" Format="{x:Null}" Text="Actual Value" TextAlignment="Center" IsAuto="True" />
+            <ig:GdxColumn Key="tool_life_units" Index="4" Format="{x:Null}" Text="Tool Life Units" TextAlignment="Center" IsAuto="True" />
+            <ig:GdxColumn Key="change_reason" Index="5" IsVisible="False" Format="{x:Null}" Text="Change Reason" TextAlignment="Center" IsAuto="True" />
+            <ig:GdxColumn Key="remarks" Index="6" IsVisible="False" Format="{x:Null}" Text="Remarks" TextAlignment="Center" IsAuto="True" />
+            <ig:GdxColumn Key="alert_value_1" Index="7" Format="{x:Null}" Text="Alert Value 1" TextAlignment="Center" IsAuto="True" />
+            <ig:GdxColumn Key="alert_value_2" Index="8" Format="{x:Null}" Text="Alert Value 2" TextAlignment="Center" IsAuto="True" />
+            <ig:GdxColumn Key="line_stop" Index="9" Format="{x:Null}" Text="Line Stop" TextAlignment="Center" IsAuto="True" />
+            <ig:GdxColumn Key="sms" Index="10" Format="{x:Null}" Text="SMS" TextAlignment="Center" IsAuto="True" />
+            <ig:GdxColumn Key="email" Index="11" Format="{x:Null}" Text="Email" TextAlignment="Center" IsAuto="True" />
+            <ig:GdxColumn Key="alert_user_1" Index="12" Format="{x:Null}" Text="Alert User 1" TextAlignment="Center" IsAuto="True" />
+            <ig:GdxColumn Key="alert_user_2" Index="13" Format="{x:Null}" Text="Alert User 2" TextAlignment="Center" IsAuto="True" />
+            <ig:GdxColumn Key="created_by" Index="25" IsVisible="False" Format="{x:Null}" Text="created_by" />
+            <ig:GdxColumn Key="created_on" Index="26" IsVisible="False" Format="{x:Null}" Text="created_on" />
+            <ig:GdxColumn Key="updated_by" Index="27" IsVisible="False" Format="{x:Null}" Text="updated_by" />
+            <ig:GdxColumn Key="updated_on" Index="28" IsVisible="False" Format="{x:Null}" Text="updated_on" />
+          </ig:GdxGridView.Columns>
+          <ig:GdxGridView.Sorts>
+            <ig:GdxSort PropertyName="tool_id" Direction="Ascending" />
+          </ig:GdxGridView.Sorts>
+        </ig:GdxGridView>
+      </iwc:MultipleTabItem>
+    </ig:GdxViewControl.Items>
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Grid" ShowToolTip="False" Control="True">
+            <gwx:GwxPick.CommandParameters>
+              <gwxcmd:ScriptCommand />
+            </gwx:GwxPick.CommandParameters>
+            <gwx:GwxPick.EventBindings>
+              <script:ScriptEventBindings>
+                <script:ScriptEventBindings.EventBindings>
+                  <x:Array Type="script:ScriptEventBinding">
+                    <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Grid" ScriptType="JScriptNet" />
+                  </x:Array>
+                </script:ScriptEventBindings.EventBindings>
+              </script:ScriptEventBindings>
+            </gwx:GwxPick.EventBindings>
+          </gwx:GwxPick>
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+  </ig:GdxViewControl>
+</Canvas>
