@@ -16,8 +16,8 @@ The implementation consists of the following major modules and script containers
 - `AMR` – Autonomous Mobile Robots interface (if integrated)  
 - `Andon_Dwell_Time` – Real-time dwell time calculations for Andon systems  
 - `Assembly Process` – Operator interface and logic for discrete assembly operations  
-- `BajajMEA_Genealogy` – Part traceability and batch-level genealogy  
-- `BajajMEA_OrderManagement` – Work order dispatch and production scheduling  
+- `Genealogy` – Part traceability and batch-level genealogy  
+- `OrderManagement` – Work order dispatch and production scheduling  
 - `Configuration Download Popups` – UI controls for PLC/HMI configuration dispatch  
 - `Heartbeat and Shopfloor` – System alive signals and machine runtime monitoring  
 - `JH_PM` – Possibly Job Handling or Preventive Maintenance functions  
